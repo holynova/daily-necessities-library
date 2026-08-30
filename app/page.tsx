@@ -63,9 +63,45 @@ const products: Product[] = [
   { id: '38', name: '鸡蛋', group: '饮料食品', reference: '鲜鸡蛋', brand: '德青源', image: '/assets/daily-necessities-top20/38-eggs.png', accent: '#c48a52' },
   { id: '39', name: '薯片', group: '饮料食品', reference: '原味薯片', brand: '乐事', image: '/assets/daily-necessities-top20/39-potato-chips.png', accent: '#f47720' },
   { id: '40', name: '饼干', group: '饮料食品', reference: '巧克力夹心饼干', brand: '奥利奥', image: '/assets/daily-necessities-top20/40-cookies.png', accent: '#9e765b' },
+  { id: '41', name: '海飞丝去屑洗发水', group: '宝洁公司', reference: '去屑洗发露', brand: '海飞丝', image: '/assets/brand-products/41-pg-head-shoulders-shampoo.png', accent: '#1d58c9' },
+  { id: '42', name: '舒肤佳香皂', group: '宝洁公司', reference: '经典香皂', brand: '舒肤佳', image: '/assets/brand-products/42-pg-safeguard-bar-soap.png', accent: '#e33f43' },
+  { id: '43', name: '潘婷护发素', group: '宝洁公司', reference: '乳液修护护发素', brand: '潘婷', image: '/assets/brand-products/43-pg-pantene-conditioner.png', accent: '#c99842' },
+  { id: '44', name: '佳洁士牙膏', group: '宝洁公司', reference: '健白防蛀牙膏', brand: '佳洁士', image: '/assets/brand-products/44-pg-crest-toothpaste.png', accent: '#1e6ed0' },
+  { id: '45', name: '玉兰油面霜', group: '宝洁公司', reference: '大红瓶面霜', brand: '玉兰油', image: '/assets/brand-products/45-pg-olay-face-cream.png', accent: '#d7506b' },
+  { id: '46', name: '雀巢咖啡', group: '雀巢公司', reference: '速溶咖啡', brand: '雀巢', image: '/assets/brand-products/46-nestle-instant-coffee.png', accent: '#8e633f' },
+  { id: '47', name: '雀巢奶粉', group: '雀巢公司', reference: '成人奶粉', brand: '雀巢', image: '/assets/brand-products/47-nestle-milk-powder.png', accent: '#2e65c7' },
+  { id: '48', name: '奇巧巧克力', group: '雀巢公司', reference: '巧克力威化', brand: '奇巧', image: '/assets/brand-products/48-nestle-kitkat-chocolate.png', accent: '#e32c2c' },
+  { id: '49', name: '美极鲜味汁', group: '雀巢公司', reference: '鲜味汁', brand: '美极', image: '/assets/brand-products/49-nestle-maggi-seasoning.png', accent: '#e7b61d' },
+  { id: '50', name: '雀巢炼乳', group: '雀巢公司', reference: '甜炼乳', brand: '雀巢', image: '/assets/brand-products/50-nestle-condensed-milk.png', accent: '#c9d7ec' },
+  { id: '51', name: '百事可乐', group: '百事公司', reference: '经典可乐', brand: '百事', image: '/assets/brand-products/51-pepsico-pepsi-cola.png', accent: '#1f61cf' },
+  { id: '52', name: '七喜柠檬汽水', group: '百事公司', reference: '柠檬味汽水', brand: '七喜', image: '/assets/brand-products/52-pepsico-7up-soda.png', accent: '#3fae53' },
+  { id: '53', name: '美年达橙味汽水', group: '百事公司', reference: '橙味汽水', brand: '美年达', image: '/assets/brand-products/53-pepsico-mirinda-orange-soda.png', accent: '#f39a31' },
+  { id: '54', name: '乐事原味薯片', group: '百事公司', reference: '原味薯片', brand: '乐事', image: '/assets/brand-products/54-pepsico-lays-potato-chips.png', accent: '#f4c20f' },
+  { id: '55', name: '佳得乐运动饮料', group: '百事公司', reference: '橙味运动饮料', brand: '佳得乐', image: '/assets/brand-products/55-pepsico-gatorade-sports-drink.png', accent: '#ef761c' },
+  { id: '56', name: '力士洗发水', group: '联合利华', reference: '丝滑柔亮洗发水', brand: '力士', image: '/assets/brand-products/56-unilever-lux-shampoo.png', accent: '#76615f' },
+  { id: '57', name: '多芬沐浴露', group: '联合利华', reference: '滋养沐浴露', brand: '多芬', image: '/assets/brand-products/57-unilever-dove-body-wash.png', accent: '#a5c7eb' },
+  { id: '58', name: '清扬洗发水', group: '联合利华', reference: '去屑洗发水', brand: '清扬', image: '/assets/brand-products/58-unilever-clear-shampoo.png', accent: '#2f65d4' },
+  { id: '59', name: '奥妙洗衣液', group: '联合利华', reference: '深层洁净洗衣液', brand: '奥妙', image: '/assets/brand-products/59-unilever-omo-laundry-liquid.png', accent: '#68bf3e' },
+  { id: '60', name: '立顿红茶', group: '联合利华', reference: '经典红茶', brand: '立顿', image: '/assets/brand-products/60-unilever-lipton-tea.png', accent: '#efc31a' },
+  { id: '61', name: '飞天茅台', group: '茅台', reference: '53度白酒', brand: '茅台', image: '/assets/brand-products/61-moutai-feitian-baijiu.png', accent: '#d93938' },
+  { id: '62', name: '茅台1935', group: '茅台', reference: '酱香型白酒', brand: '茅台', image: '/assets/brand-products/62-moutai-1935-baijiu.png', accent: '#76152b' },
+  { id: '63', name: '茅台王子酒', group: '茅台', reference: '酱香型白酒', brand: '茅台', image: '/assets/brand-products/63-moutai-prince-baijiu.png', accent: '#991d26' },
+  { id: '64', name: '茅台迎宾酒', group: '茅台', reference: '酱香型白酒', brand: '茅台', image: '/assets/brand-products/64-moutai-yingbin-baijiu.png', accent: '#df343d' },
+  { id: '65', name: '贵州大曲', group: '茅台', reference: '酱香型白酒', brand: '贵州大曲', image: '/assets/brand-products/65-moutai-guizhou-daqu.png', accent: '#8f3820' },
+  { id: '66', name: '金典纯牛奶', group: '伊利', reference: '有机纯牛奶', brand: '伊利', image: '/assets/brand-products/66-yili-golden-milk.png', accent: '#1e7048' },
+  { id: '67', name: '安慕希酸奶', group: '伊利', reference: '希腊风味酸奶', brand: '安慕希', image: '/assets/brand-products/67-yili-ambrosial-yogurt.png', accent: '#d39a37' },
+  { id: '68', name: '伊利舒化奶', group: '伊利', reference: '舒化无乳糖牛奶', brand: '伊利', image: '/assets/brand-products/68-yili-shuhua-milk.png', accent: '#79b8df' },
+  { id: '69', name: 'QQ 星儿童牛奶', group: '伊利', reference: '儿童成长牛奶', brand: 'QQ星', image: '/assets/brand-products/69-yili-childrens-milk.png', accent: '#34a9df' },
+  { id: '70', name: '伊利优酸乳', group: '伊利', reference: '乳酸菌饮品', brand: '优酸乳', image: '/assets/brand-products/70-yili-yogurt-drink.png', accent: '#2d77d9' },
+  { id: '71', name: '蓝月亮洗衣液（大包装）', group: '品牌补充', reference: '深层洁净大包装', brand: '蓝月亮', image: '/assets/brand-products/71-blue-moon-laundry-large.png', accent: '#1c76c6' },
+  { id: '72', name: '蓝月亮洗衣液（中包装）', group: '品牌补充', reference: '深层洁净中包装', brand: '蓝月亮', image: '/assets/brand-products/72-blue-moon-laundry-medium.png', accent: '#2588d4' },
+  { id: '73', name: '蓝月亮洗衣液（小包装）', group: '品牌补充', reference: '深层洁净小包装', brand: '蓝月亮', image: '/assets/brand-products/73-blue-moon-laundry-small.png', accent: '#389bd6' },
+  { id: '74', name: '心相印抽纸', group: '品牌补充', reference: '经典抽纸', brand: '心相印', image: '/assets/brand-products/74-heart-to-heart-tissues.png', accent: '#e5a8b2' },
+  { id: '75', name: '德宝抽纸', group: '品牌补充', reference: '柔韧抽纸', brand: '德宝', image: '/assets/brand-products/75-tempo-tissues.png', accent: '#34538a' },
+  { id: '76', name: '维达抽纸', group: '品牌补充', reference: '超韧抽纸', brand: '维达', image: '/assets/brand-products/76-vinda-tissues.png', accent: '#2f64bc' },
 ];
 
-const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品'];
+const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品', '宝洁公司', '雀巢公司', '百事公司', '联合利华', '茅台', '伊利', '品牌补充'];
 
 const categorySummaries = [
   { group: '洗护用品', image: '/assets/category-summaries/01-laundry-care.png', stillLife: '/assets/category-still-life/01-laundry-care-still-life.png', description: '衣物清洁与护理' },
@@ -75,6 +111,13 @@ const categorySummaries = [
   { group: '消毒收纳', image: '/assets/category-summaries/05-disinfect-storage.png', stillLife: '/assets/category-still-life/05-disinfect-storage-still-life.png', description: '消毒与家庭收纳' },
   { group: '家用电器', image: '/assets/category-summaries/06-home-appliances.png', stillLife: '/assets/category-still-life/06-home-appliances-still-life.png', description: '高频小家电' },
   { group: '饮料食品', image: '/assets/category-summaries/07-food-beverages.png', stillLife: '/assets/category-still-life/07-food-beverages-still-life.png', description: '日常饮品与即食食品' },
+  { group: '宝洁公司', image: '/assets/category-summaries/08-procter-gamble.png', stillLife: '/assets/category-still-life/08-procter-gamble-still-life.png', description: '海飞丝、舒肤佳、潘婷等日常护理产品' },
+  { group: '雀巢公司', image: '/assets/category-summaries/09-nestle.png', stillLife: '/assets/category-still-life/09-nestle-still-life.png', description: '咖啡、乳制品与巧克力食品' },
+  { group: '百事公司', image: '/assets/category-summaries/10-pepsico.png', stillLife: '/assets/category-still-life/10-pepsico-still-life.png', description: '汽水、薯片与运动饮料' },
+  { group: '联合利华', image: '/assets/category-summaries/11-unilever.png', stillLife: '/assets/category-still-life/11-unilever-still-life.png', description: '洗护、清洁与茶饮产品' },
+  { group: '茅台', image: '/assets/category-summaries/12-moutai.png', stillLife: '/assets/category-still-life/12-moutai-still-life.png', description: '常见酱香型白酒产品' },
+  { group: '伊利', image: '/assets/category-summaries/13-yili.png', stillLife: '/assets/category-still-life/13-yili-still-life.png', description: '牛奶、酸奶与乳饮品' },
+  { group: '品牌补充', image: '/assets/category-summaries/14-brand-supplements.png', stillLife: '/assets/category-still-life/14-brand-supplements-still-life.png', description: '多种包装规格洗衣液与主流抽纸' },
 ];
 
 export default function Home() {
@@ -148,7 +191,7 @@ export default function Home() {
         <div className="rail-footer">
           <div className="rail-rule" />
           <p>LOCAL ASSET SET</p>
-          <span>40 PNG / 1:1 / WHITE FIELD</span>
+          <span>76 PNG / 1:1 / WHITE FIELD</span>
         </div>
       </aside>
 
@@ -175,7 +218,7 @@ export default function Home() {
             <div>
               <p className="eyebrow">A CLEAN PRODUCT STUDY</p>
               <h2>日用品图鉴</h2>
-              <p className="intro-copy">40 个常见品类，统一的纯色白底产品图。<br className="desktop-break" />直接找到需要的那一件。</p>
+              <p className="intro-copy">76 个常见产品条目，统一的纯色白底产品图。<br className="desktop-break" />直接找到需要的那一件。</p>
             </div>
             <div className="intro-index" aria-label="素材数量">
               <span className="intro-index-number">{String(filteredProducts.length).padStart(2, '0')}</span>
