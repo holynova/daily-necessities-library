@@ -16,7 +16,7 @@ delegated: OpenAI Sites scaffold with Vinext/React; selected because the request
 
 ## Product Purpose
 
-根据当前请求推断：把已经生成的 20 张去 Logo、纯色白底日用品图片整理成一个可直接使用的素材库。成功标准是用户能在首屏理解这是什么，并能快速找到、放大预览和下载某一张图片。
+根据当前请求推断：把已经生成的 30 张去 Logo、纯色白底日用品图片整理成一个可直接使用的素材库。成功标准是用户能在首屏理解这是什么，并能快速找到、放大预览和下载某一张图片。
 
 ## Positioning
 
@@ -28,7 +28,7 @@ delegated: OpenAI Sites scaffold with Vinext/React; selected because the request
 
 ## Capabilities and Constraints
 
-- 展示 20 个日用品分类和对应的无品牌 PNG 图片。
+- 展示 30 个日用品分类和对应的无品牌 PNG 图片，其中新增 10 个家用电器品类。
 - 支持关键词搜索、分类筛选、图片放大预览和下载。
 - 图片文件来自工作区已有产物，不重新生成，不依赖外部图片服务。
 - 生成图片不应展示 Logo、商标、标签文字或功效宣称。
@@ -40,8 +40,8 @@ delegated: OpenAI Sites scaffold with Vinext/React; selected because the request
 
 ## Evidence on Hand
 
-- 20 张已生成的 1254×1254 PNG，位于项目根目录的 `outputs/daily-necessities-top20/`。
-- 类别、通用提示词、负面提示词和参考来源记录位于 `outputs/daily-necessities-top20/README.md`。
+- 20 张既有的 1254×1254 PNG，位于项目根目录的 `outputs/daily-necessities-top20/`；新增 10 张家电 PNG 位于 `outputs/daily-appliances-top10/`。
+- 既有类别、通用提示词、负面提示词和参考来源记录位于 `outputs/daily-necessities-top20/README.md`；新增图片采用同一套去品牌白底提示规范。
 
 ## Product Principles
 

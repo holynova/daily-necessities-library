@@ -9,14 +9,14 @@ related_targets: []
 
 ## Scope and visitor mode
 
-Single-route, responsive web workspace for browsing and downloading the existing 20-item daily-necessities image set. Visitor mode: Operate.
+Single-route, responsive web workspace for browsing and downloading the existing 30-item daily-necessities image set. Visitor mode: Operate.
 
 ## Audience, job, action/task, proof/content, constraints
 
 - Audience: content creators, designers, and asset organizers.
 - Job: find a clean unbranded daily-necessity product image quickly.
 - Primary actions: search, filter by category, open a larger preview, download the PNG.
-- Proof/content: 20 real generated PNGs and their 20 category/product-reference labels.
+- Proof/content: 30 real generated PNGs and their 30 category/product-reference labels, including 10 new household-appliance items.
 - Constraints: use the local output images; do not invent counts, specs, dates, or commercial claims; preserve the white-background product-photo treatment.
 
 ## Chosen direction and memorable moment
@@ -34,7 +34,7 @@ Use the approved comp B direction: a graphite index rail anchors a bright white 
 | --- | --- | --- |
 | Graphite rail | semantic HTML/CSS | compact title, collection note, category navigation |
 | Search and category controls | semantic HTML/CSS/SVG icon | keyboard-accessible search, selected category state |
-| Product grid | existing local PNG assets + semantic HTML/CSS | 20 real assets, one readable label per item, responsive columns |
+| Product grid | existing local PNG assets + semantic HTML/CSS | 30 real assets, one readable label per item, responsive columns |
 | Selected preview | existing local PNG asset + semantic HTML/CSS | enlarged image, truthful item metadata, download action |
 | Motion | CSS transitions | one restrained selection/drawer reveal, respects reduced motion |
 
