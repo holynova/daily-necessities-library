@@ -10,7 +10,6 @@ import {
   SlidersHorizontal,
   X,
 } from 'lucide-react';
-import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
 type Product = {
@@ -207,7 +206,8 @@ export default function Home() {
                 return (
                   <button className={`product-card${isSelected ? ' is-selected' : ''}`} key={product.id} type="button" style={{ '--accent': product.accent, '--delay': `${index * 35}ms` } as React.CSSProperties} onClick={() => chooseProduct(product)}>
                     <span className="card-image-wrap">
-                      <Image src={product.image} alt={`${product.name}，去品牌纯色白底产品图`} fill sizes="(max-width: 620px) 50vw, (max-width: 1200px) 38vw, 24vw" />
+                      {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
+                      <img src={product.image} alt={`${product.name}，去品牌纯色白底产品图`} loading="lazy" decoding="async" />
                       <span className="card-index">{product.id}</span>
                       <span className="card-open" aria-hidden="true"><ArrowUpRight size={15} strokeWidth={1.7} /></span>
                     </span>
@@ -254,7 +254,8 @@ export default function Home() {
         {selectedProduct ? (
           <>
             <div className="preview-image-wrap">
-              <Image src={selectedProduct.image} alt={`${selectedProduct.name}大图预览`} fill sizes="(max-width: 900px) 90vw, 28vw" />
+              {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
+              <img src={selectedProduct.image} alt={`${selectedProduct.name}大图预览`} decoding="async" />
               <span className="preview-number">{selectedProduct.id}</span>
             </div>
             <div className="preview-copy">
