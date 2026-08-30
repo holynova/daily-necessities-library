@@ -16,7 +16,7 @@ delegated: OpenAI Sites scaffold with Vinext/React; selected because the request
 
 ## Product Purpose
 
-根据当前请求推断：把已经生成的 40 张去 Logo、纯色白底日用品、饮料与食品图片整理成一个可直接使用的素材库。成功标准是用户能在首屏理解这是什么，并能快速找到、放大预览和下载某一张图片。
+根据当前请求推断：把已经生成的 40 张去 Logo、纯色白底日用品、饮料与食品图片整理成一个可直接使用的素材库，并为每个类别提供一张全类汇总图。成功标准是用户能在首屏理解这是什么，并能快速查看类别全貌、找到、放大预览和下载某一张图片。
 
 ## Positioning
 
@@ -29,7 +29,7 @@ delegated: OpenAI Sites scaffold with Vinext/React; selected because the request
 ## Capabilities and Constraints
 
 - 展示 40 个日用品分类和对应的无品牌 PNG 图片，其中新增 10 个家用电器与 10 个饮料食品品类。
-- 支持关键词搜索、分类筛选、图片放大预览和下载。
+- 支持关键词搜索、分类筛选、类别汇总图、图片放大预览和下载。
 - 图片文件来自工作区已有产物，不重新生成，不依赖外部图片服务。
 - 生成图片不应展示 Logo、商标、标签文字或功效宣称。
 - “最常见”是代表性选品，不构成统一的全国销量排名。

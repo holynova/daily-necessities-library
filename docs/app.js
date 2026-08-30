@@ -42,9 +42,19 @@ const products = [
 ].map(([id, name, group, reference, brand, file, accent]) => ({ id, name, group, reference, brand, file, accent }));
 
 const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品'];
+const categorySummaries = [
+  ['洗护用品', './assets/category-summaries/01-laundry-care.png', '衣物清洁与护理'],
+  ['个人护理', './assets/category-summaries/02-personal-care.png', '清洁、洗护与日常护理'],
+  ['纸品湿巾', './assets/category-summaries/03-paper-wipes.png', '纸品、抽取式与擦拭用品'],
+  ['厨房清洁', './assets/category-summaries/04-kitchen-cleaning.png', '厨房与卫生间清洁用品'],
+  ['消毒收纳', './assets/category-summaries/05-disinfect-storage.png', '消毒与家庭收纳'],
+  ['家用电器', './assets/category-summaries/06-home-appliances.png', '高频小家电'],
+  ['饮料食品', './assets/category-summaries/07-food-beverages.png', '日常饮品与即食食品']
+].map(([group, image, description]) => ({ group, image, description }));
 const assetRoot = './assets/daily-necessities-top20/';
 const productGrid = document.querySelector('#productGrid');
 const emptyState = document.querySelector('#emptyState');
+const categoryOverview = document.querySelector('#categoryOverview');
 const searchInput = document.querySelector('#searchInput');
 const visibleCount = document.querySelector('#visibleCount');
 const filterLabel = document.querySelector('#filterLabel');
@@ -82,7 +92,37 @@ function cardMarkup(product, index) {
       <span class="card-title-row"><span class="card-name">${product.name}</span><span class="card-accent" aria-hidden="true"></span></span>
       <span class="card-meta">${product.group} · ${product.brand}参考</span>
     </span>
-  </button>`;
+</button>`;
+}
+
+function renderCategoryOverview() {
+  const summary = categorySummaries.find((item) => item.group === activeGroup);
+  const hasSearch = searchInput.value.trim().length > 0;
+  if (!summary || hasSearch) {
+    categoryOverview.hidden = true;
+    categoryOverview.innerHTML = '';
+    return;
+  }
+
+  const count = products.filter((product) => product.group === summary.group).length;
+  categoryOverview.innerHTML = `<div class="category-overview-copy">
+    <p class="eyebrow">CATEGORY OVERVIEW / ${String(count).padStart(2, '0')} ITEMS</p>
+    <h3 id="categoryOverviewTitle">${summary.group}<span>汇总图</span></h3>
+    <p class="category-overview-description">${summary.description}。将当前类别的全部素材集中在一张全图中，方便快速查看整体形态。</p>
+    <div class="category-overview-meta">
+      <div><span>内容</span><strong>${count} 件素材</strong></div>
+      <div><span>画面</span><strong>白底 · 3:2 PNG</strong></div>
+    </div>
+    <a class="download-button category-download" href="${summary.image}" download="daily-index-${summary.group}-汇总图.png" data-umami-event="download-category-summary" data-umami-event-item="${summary.group}">
+      <span>↓</span>
+      <span>下载汇总图</span>
+      <span>↗</span>
+    </a>
+  </div>
+  <div class="category-overview-image-wrap">
+    <img src="${summary.image}" alt="${summary.group}汇总图，包含该类别全部素材" decoding="async" />
+  </div>`;
+  categoryOverview.hidden = false;
 }
 
 function renderPreview(product) {
@@ -102,6 +142,7 @@ function render() {
   const filtered = getFilteredProducts();
   visibleCount.textContent = String(filtered.length).padStart(2, '0');
   filterLabel.textContent = activeGroup === '全部' ? '全部分类' : activeGroup;
+  renderCategoryOverview();
   productGrid.classList.toggle('is-list', viewMode === 'list');
   productGrid.innerHTML = filtered.map(cardMarkup).join('');
   emptyState.hidden = filtered.length > 0;

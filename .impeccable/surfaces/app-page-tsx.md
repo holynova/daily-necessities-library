@@ -15,8 +15,8 @@ Single-route, responsive web workspace for browsing and downloading the existing
 
 - Audience: content creators, designers, and asset organizers.
 - Job: find a clean unbranded daily-necessity product image quickly.
-- Primary actions: search, filter by category, open a larger preview, download the PNG.
-- Proof/content: 40 real generated PNGs and their 40 category/product-reference labels, including 10 household-appliance items and 10 beverage/food items.
+- Primary actions: search, filter by category, inspect the category summary sheet, open a larger preview, download the PNG.
+- Proof/content: 40 real generated PNGs and seven category summary sheets, with 40 category/product-reference labels including 10 household-appliance items and 10 beverage/food items.
 - Constraints: use the local output images; do not invent counts, specs, dates, or commercial claims; preserve the white-background product-photo treatment.
 
 ## Chosen direction and memorable moment
@@ -34,6 +34,7 @@ Use the approved comp B direction: a graphite index rail anchors a bright white 
 | --- | --- | --- |
 | Graphite rail | semantic HTML/CSS | compact title, collection note, category navigation |
 | Search and category controls | semantic HTML/CSS/SVG icon | keyboard-accessible search, selected category state |
+| Category summary | generated local PNG sheet + semantic HTML/CSS | one full-category overview appears when a collection is selected, with a download action |
 | Product grid | existing local PNG assets + semantic HTML/CSS | 40 real assets, one readable label per item, responsive columns |
 | Selected preview | existing local PNG asset + semantic HTML/CSS | enlarged image, truthful item metadata, download action |
 | Motion | CSS transitions | one restrained selection/drawer reveal, respects reduced motion |

@@ -67,6 +67,16 @@ const products: Product[] = [
 
 const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品'];
 
+const categorySummaries = [
+  { group: '洗护用品', image: '/assets/category-summaries/01-laundry-care.png', description: '衣物清洁与护理' },
+  { group: '个人护理', image: '/assets/category-summaries/02-personal-care.png', description: '清洁、洗护与日常护理' },
+  { group: '纸品湿巾', image: '/assets/category-summaries/03-paper-wipes.png', description: '纸品、抽取式与擦拭用品' },
+  { group: '厨房清洁', image: '/assets/category-summaries/04-kitchen-cleaning.png', description: '厨房与卫生间清洁用品' },
+  { group: '消毒收纳', image: '/assets/category-summaries/05-disinfect-storage.png', description: '消毒与家庭收纳' },
+  { group: '家用电器', image: '/assets/category-summaries/06-home-appliances.png', description: '高频小家电' },
+  { group: '饮料食品', image: '/assets/category-summaries/07-food-beverages.png', description: '日常饮品与即食食品' },
+];
+
 export default function Home() {
   const [activeGroup, setActiveGroup] = useState('全部');
   const [searchTerm, setSearchTerm] = useState('');
@@ -94,6 +104,7 @@ export default function Home() {
   }, []);
 
   const selectedProduct = filteredProducts.find((product) => product.id === selectedId) ?? filteredProducts[0] ?? null;
+  const activeSummary = categorySummaries.find((summary) => summary.group === activeGroup) ?? null;
 
   const chooseProduct = (product: Product) => {
     setSelectedId(product.id);
@@ -207,6 +218,29 @@ export default function Home() {
               </button>
             ))}
           </div>
+
+          {activeSummary && !searchTerm.trim() ? (
+            <section className="category-overview" aria-labelledby="category-overview-title">
+              <div className="category-overview-copy">
+                <p className="eyebrow">CATEGORY OVERVIEW / {String(products.filter((product) => product.group === activeSummary.group).length).padStart(2, '0')} ITEMS</p>
+                <h3 id="category-overview-title">{activeSummary.group}<span>汇总图</span></h3>
+                <p className="category-overview-description">{activeSummary.description}。将当前类别的全部素材集中在一张全图中，方便快速查看整体形态。</p>
+                <div className="category-overview-meta">
+                  <div><span>内容</span><strong>{products.filter((product) => product.group === activeSummary.group).length} 件素材</strong></div>
+                  <div><span>画面</span><strong>白底 · 3:2 PNG</strong></div>
+                </div>
+                <a className="download-button category-download" href={activeSummary.image} download={`daily-index-${activeSummary.group}-汇总图.png`} data-umami-event="download-category-summary" data-umami-event-item={activeSummary.group}>
+                  <Download size={17} strokeWidth={1.8} aria-hidden="true" />
+                  <span>下载汇总图</span>
+                  <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
+                </a>
+              </div>
+              <div className="category-overview-image-wrap">
+                {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
+                <img src={activeSummary.image} alt={`${activeSummary.group}汇总图，包含该类别全部素材`} decoding="async" />
+              </div>
+            </section>
+          ) : null}
 
           {filteredProducts.length > 0 ? (
             <div className={`product-grid${viewMode === 'list' ? ' is-list' : ''}`}>
