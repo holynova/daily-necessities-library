@@ -43,14 +43,14 @@ const products = [
 
 const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品'];
 const categorySummaries = [
-  ['洗护用品', './assets/category-summaries/01-laundry-care.png', '衣物清洁与护理'],
-  ['个人护理', './assets/category-summaries/02-personal-care.png', '清洁、洗护与日常护理'],
-  ['纸品湿巾', './assets/category-summaries/03-paper-wipes.png', '纸品、抽取式与擦拭用品'],
-  ['厨房清洁', './assets/category-summaries/04-kitchen-cleaning.png', '厨房与卫生间清洁用品'],
-  ['消毒收纳', './assets/category-summaries/05-disinfect-storage.png', '消毒与家庭收纳'],
-  ['家用电器', './assets/category-summaries/06-home-appliances.png', '高频小家电'],
-  ['饮料食品', './assets/category-summaries/07-food-beverages.png', '日常饮品与即食食品']
-].map(([group, image, description]) => ({ group, image, description }));
+  ['洗护用品', './assets/category-summaries/01-laundry-care.png', './assets/category-still-life/01-laundry-care-still-life.png', '衣物清洁与护理'],
+  ['个人护理', './assets/category-summaries/02-personal-care.png', './assets/category-still-life/02-personal-care-still-life.png', '清洁、洗护与日常护理'],
+  ['纸品湿巾', './assets/category-summaries/03-paper-wipes.png', './assets/category-still-life/03-paper-wipes-still-life.png', '纸品、抽取式与擦拭用品'],
+  ['厨房清洁', './assets/category-summaries/04-kitchen-cleaning.png', './assets/category-still-life/04-kitchen-cleaning-still-life.png', '厨房与卫生间清洁用品'],
+  ['消毒收纳', './assets/category-summaries/05-disinfect-storage.png', './assets/category-still-life/05-disinfect-storage-still-life.png', '消毒与家庭收纳'],
+  ['家用电器', './assets/category-summaries/06-home-appliances.png', './assets/category-still-life/06-home-appliances-still-life.png', '高频小家电'],
+  ['饮料食品', './assets/category-summaries/07-food-beverages.png', './assets/category-still-life/07-food-beverages-still-life.png', '日常饮品与即食食品']
+].map(([group, image, stillLife, description]) => ({ group, image, stillLife, description }));
 const assetRoot = './assets/daily-necessities-top20/';
 const productGrid = document.querySelector('#productGrid');
 const emptyState = document.querySelector('#emptyState');
@@ -107,20 +107,35 @@ function renderCategoryOverview() {
   const count = products.filter((product) => product.group === summary.group).length;
   categoryOverview.innerHTML = `<div class="category-overview-copy">
     <p class="eyebrow">CATEGORY OVERVIEW / ${String(count).padStart(2, '0')} ITEMS</p>
-    <h3 id="categoryOverviewTitle">${summary.group}<span>汇总图</span></h3>
-    <p class="category-overview-description">${summary.description}。将当前类别的全部素材集中在一张全图中，方便快速查看整体形态。</p>
+    <h3 id="categoryOverviewTitle">${summary.group}<span>静物合集 · 排版汇总</span></h3>
+    <p class="category-overview-description">${summary.description}。一张自然摆放的桌面静物合集，加上一张便于核对的排版汇总图。</p>
     <div class="category-overview-meta">
       <div><span>内容</span><strong>${count} 件素材</strong></div>
-      <div><span>画面</span><strong>白底 · 3:2 PNG</strong></div>
+      <div><span>画面</span><strong>静物桌面 · 3:2 PNG</strong></div>
     </div>
-    <a class="download-button category-download" href="${summary.image}" download="daily-index-${summary.group}-汇总图.png" data-umami-event="download-category-summary" data-umami-event-item="${summary.group}">
+    <a class="download-button category-download" href="${summary.stillLife}" download="daily-index-${summary.group}-静物合集.png" data-umami-event="download-category-still-life" data-umami-event-item="${summary.group}">
       <span>↓</span>
-      <span>下载汇总图</span>
+      <span>下载静物合集</span>
+      <span>↗</span>
+    </a>
+    <a class="category-secondary-download" href="${summary.image}" download="daily-index-${summary.group}-排版汇总.png" data-umami-event="download-category-summary" data-umami-event-item="${summary.group}">
+      <span>下载排版汇总</span>
       <span>↗</span>
     </a>
   </div>
-  <div class="category-overview-image-wrap">
-    <img src="${summary.image}" alt="${summary.group}汇总图，包含该类别全部素材" decoding="async" />
+  <div class="category-overview-gallery">
+    <figure class="category-overview-figure is-primary">
+      <div class="category-overview-image-wrap">
+        <img src="${summary.stillLife}" alt="${summary.group}静物合集图，所有类别素材一起摆放在干净桌面上" decoding="async" />
+      </div>
+      <figcaption><span>STILL LIFE / 合集</span><strong>桌面静物</strong></figcaption>
+    </figure>
+    <figure class="category-overview-figure">
+      <div class="category-overview-image-wrap">
+        <img src="${summary.image}" alt="${summary.group}排版汇总图，包含该类别全部素材" decoding="async" />
+      </div>
+      <figcaption><span>CATALOG / 汇总</span><strong>排版全图</strong></figcaption>
+    </figure>
   </div>`;
   categoryOverview.hidden = false;
 }

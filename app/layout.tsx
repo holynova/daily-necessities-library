@@ -3,10 +3,10 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: '日用品图鉴｜去品牌产品图素材库',
-  description: '40 个常见日用品、饮料与食品的去品牌、纯色白底 PNG 素材库，附分类汇总图。',
+  description: '40 个常见日用品、饮料与食品的去品牌、纯色白底 PNG 素材库，附分类汇总图与静物合集图。',
   openGraph: {
     title: '日用品图鉴｜去品牌产品图素材库',
-    description: '40 个常见日用品、饮料与食品的去品牌、纯色白底 PNG 素材库，附分类汇总图。',
+    description: '40 个常见日用品、饮料与食品的去品牌、纯色白底 PNG 素材库，附分类汇总图与静物合集图。',
     type: 'website',
   },
 };
