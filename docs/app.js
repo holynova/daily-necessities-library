@@ -29,9 +29,19 @@ const products = [
   ['28', '加湿器', '家用电器', '冷雾加湿器', '小熊', '28-humidifier.png', '#e7a6a9'],
   ['29', '电动牙刷', '家用电器', '声波电动牙刷', '飞利浦', '29-electric-toothbrush.png', '#253f8b'],
   ['30', '电熨斗', '家用电器', '蒸汽电熨斗', '飞利浦', '30-steam-iron.png', '#a4c2b0'],
+  ['31', '瓶装水', '饮料食品', '天然饮用水', '农夫山泉', '31-bottled-water.png', '#71b6d6'],
+  ['32', '碳酸饮料', '饮料食品', '经典可乐', '可口可乐', '32-soda-can.png', '#e35f56'],
+  ['33', '橙汁', '饮料食品', '果粒橙', '美汁源', '33-orange-juice.png', '#f39a31'],
+  ['34', '牛奶', '饮料食品', '纯牛奶', '伊利', '34-milk-carton.png', '#8ea8cf'],
+  ['35', '即溶咖啡', '饮料食品', '速溶咖啡', '雀巢', '35-instant-coffee.png', '#8e633f'],
+  ['36', '方便面', '饮料食品', '红烧牛肉面', '康师傅', '36-instant-noodles.png', '#e0b64a'],
+  ['37', '面包', '饮料食品', '鲜切吐司', '桃李', '37-bread.png', '#d28d48'],
+  ['38', '鸡蛋', '饮料食品', '鲜鸡蛋', '德青源', '38-eggs.png', '#c48a52'],
+  ['39', '薯片', '饮料食品', '原味薯片', '乐事', '39-potato-chips.png', '#f47720'],
+  ['40', '饼干', '饮料食品', '巧克力夹心饼干', '奥利奥', '40-cookies.png', '#9e765b'],
 ].map(([id, name, group, reference, brand, file, accent]) => ({ id, name, group, reference, brand, file, accent }));
 
-const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器'];
+const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品'];
 const assetRoot = './assets/daily-necessities-top20/';
 const productGrid = document.querySelector('#productGrid');
 const emptyState = document.querySelector('#emptyState');
