@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="30 个常见日用品品类的去品牌、纯色白底 PNG 素材库。" />
+    <title>日用品图鉴｜去品牌产品图素材库</title>
+    <style>[hidden] { display: none !important; }</style>
+    <link rel="stylesheet" href="./site.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="side-rail" aria-label="日用品图鉴导航">
+        <div class="rail-topline">
+          <span class="rail-mark" aria-hidden="true">DI</span>
+          <span>DAILY INDEX</span>
+        </div>
+
+        <div class="rail-brand">
+          <p class="rail-kicker">IMAGE LIBRARY / 2026</p>
+          <h1>日用品<br />图鉴</h1>
+          <p class="rail-description">去标签、纯色白底的常见用品图集。</p>
+        </div>
+
+        <nav class="rail-nav" aria-label="按品类筛选">
+          <p class="nav-label">COLLECTION</p>
+          <button class="rail-nav-item is-active" type="button" data-group-filter="全部" aria-pressed="true"><span>全部</span><span class="nav-count">30</span></button>
+          <button class="rail-nav-item" type="button" data-group-filter="洗护用品" aria-pressed="false"><span>洗护用品</span><span class="nav-count">04</span></button>
+          <button class="rail-nav-item" type="button" data-group-filter="个人护理" aria-pressed="false"><span>个人护理</span><span class="nav-count">07</span></button>
+          <button class="rail-nav-item" type="button" data-group-filter="纸品湿巾" aria-pressed="false"><span>纸品湿巾</span><span class="nav-count">04</span></button>
+          <button class="rail-nav-item" type="button" data-group-filter="厨房清洁" aria-pressed="false"><span>厨房清洁</span><span class="nav-count">03</span></button>
+          <button class="rail-nav-item" type="button" data-group-filter="消毒收纳" aria-pressed="false"><span>消毒收纳</span><span class="nav-count">02</span></button>
+          <button class="rail-nav-item" type="button" data-group-filter="家用电器" aria-pressed="false"><span>家用电器</span><span class="nav-count">10</span></button>
+        </nav>
+
+        <div class="rail-footer">
+          <div class="rail-rule"></div>
+          <p>LOCAL ASSET SET</p>
+          <span>30 PNG / 1:1 / WHITE FIELD</span>
+        </div>
+      </aside>
+
+      <section class="workspace" aria-label="日用品图片素材库">
+        <header class="workspace-header">
+          <div class="mobile-brand">
+            <span class="rail-mark" aria-hidden="true">DI</span>
+            <span>日用品图鉴</span>
+          </div>
+          <div class="header-context">
+            <span class="context-dot" aria-hidden="true"></span>
+            <span>日常用品</span>
+            <span class="context-separator">/</span>
+            <span>去品牌产品图</span>
+          </div>
+          <div class="header-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>素材已就绪</span>
+          </div>
+        </header>
+
+        <div class="workspace-body">
+          <div class="page-intro">
+            <div>
+              <p class="eyebrow">A CLEAN PRODUCT STUDY</p>
+              <h2>日用品图鉴</h2>
+              <p class="intro-copy">30 个常见品类，统一的纯色白底产品图。<br class="desktop-break" />直接找到需要的那一件。</p>
+            </div>
+            <div class="intro-index" aria-label="素材数量">
+              <span class="intro-index-number" id="visibleCount">30</span>
+              <span class="intro-index-label">当前显示<br />/ 30 项</span>
+            </div>
+          </div>
+
+          <div class="control-strip">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <span class="sr-only">搜索日用品素材</span>
+              <input id="searchInput" placeholder="搜索品类、品牌参考或编号" type="search" />
+              <kbd>/</kbd>
+            </label>
+
+            <div class="control-actions">
+              <button class="filter-button" id="resetFilter" type="button"><span aria-hidden="true">☷</span><span id="filterLabel">全部分类</span></button>
+              <div class="view-toggle" aria-label="视图模式">
+                <button class="is-active" id="gridView" type="button" aria-label="网格视图" aria-pressed="true">▦</button>
+                <button id="listView" type="button" aria-label="列表视图" aria-pressed="false">☰</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-group-nav" aria-label="移动端按品类筛选">
+            <button class="is-active" type="button" data-group-filter="全部" aria-pressed="true">全部</button>
+            <button type="button" data-group-filter="洗护用品" aria-pressed="false">洗护用品</button>
+            <button type="button" data-group-filter="个人护理" aria-pressed="false">个人护理</button>
+            <button type="button" data-group-filter="纸品湿巾" aria-pressed="false">纸品湿巾</button>
+            <button type="button" data-group-filter="厨房清洁" aria-pressed="false">厨房清洁</button>
+            <button type="button" data-group-filter="消毒收纳" aria-pressed="false">消毒收纳</button>
+            <button type="button" data-group-filter="家用电器" aria-pressed="false">家用电器</button>
+          </div>
+
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+          <div class="empty-state" id="emptyState" hidden>
+            <div class="empty-mark" aria-hidden="true">∅</div>
+            <h3>没有匹配的素材</h3>
+            <p>试试别的关键词，或回到全部分类。</p>
+            <button id="clearFilters" type="button">清除筛选</button>
+          </div>
+
+          <footer class="workspace-footer">
+            <span>ALL IMAGES ARE UNBRANDED / LOCAL PNG ASSETS</span>
+            <span>点击图片查看大图与下载</span>
+            <a class="workspace-repo-link" href="https://github.com/holynova/daily-necessities-library" target="_blank" rel="noreferrer" data-umami-event="open-github">
+              <span aria-hidden="true">◉</span>
+              <span>GitHub Repo</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </footer>
+        </div>
+      </section>
+
+      <aside class="preview-panel" id="previewPanel" aria-label="所选素材预览">
+        <div class="preview-header">
+          <span>SELECTED ITEM</span>
+          <button class="preview-close" id="previewClose" type="button" aria-label="关闭预览">×</button>
+        </div>
+        <div class="preview-image-wrap">
+          <img id="previewImage" src="./assets/daily-necessities-top20/01-laundry-liquid.png" alt="洗衣液大图预览" />
+          <span class="preview-number" id="previewNumber">01</span>
+        </div>
+        <div class="preview-copy">
+          <p class="preview-kicker" id="previewKicker">洗护用品 / 01</p>
+          <h3 id="previewName">洗衣液</h3>
+          <p class="preview-description" id="previewDescription">参考：蓝月亮 深层洁净洗衣液</p>
+          <div class="detail-lines">
+            <div><span>处理</span><strong>去 Logo · 纯色表面</strong></div>
+            <div><span>画面</span><strong>白底 · 1:1 PNG</strong></div>
+          </div>
+          <a class="download-button" id="downloadButton" href="./assets/daily-necessities-top20/01-laundry-liquid.png" download="daily-index-01-洗衣液.png" data-umami-event="download-png" data-umami-event-item="洗衣液">
+            <span>↓</span>
+            <span>下载 PNG</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </aside>
+
+      <button class="mobile-backdrop" id="mobileBackdrop" type="button" aria-label="关闭预览" hidden></button>
+    </main>
+
+    <script src="./app.js" defer></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4" data-domains="daily-necessities-library.holy-nova.chatgpt.site,holynova.github.io"></script>
+  </body>
+</html>

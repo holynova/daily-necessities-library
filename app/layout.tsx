@@ -28,6 +28,7 @@ export default function RootLayout({
           FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
         */}
         {children}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4" data-domains="daily-necessities-library.holy-nova.chatgpt.site,holynova.github.io" />
       </body>
     </html>
   );

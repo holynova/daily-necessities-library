@@ -669,6 +669,25 @@ img {
   font-size: 8px;
 }
 
+.workspace-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-deep);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.workspace-repo-link:hover {
+  color: var(--cobalt);
+}
+
+.workspace-repo-link span {
+  color: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
 .preview-panel {
   position: sticky;
   top: 0;

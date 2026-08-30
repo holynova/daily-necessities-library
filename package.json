@@ -1,6 +1,7 @@
 {
-  "name": "sites-project",
-  "version": "0.1.0",
+  "name": "daily-necessities-library",
+  "version": "1.0.0",
+  "description": "30 个常见日用品与家用电器的去品牌、纯色白底 PNG 素材库",
   "private": true,
   "engines": {
     "node": ">=22.13.0"

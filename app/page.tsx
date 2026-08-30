@@ -234,6 +234,11 @@ export default function Home() {
           <footer className="workspace-footer">
             <span>ALL IMAGES ARE UNBRANDED / LOCAL PNG ASSETS</span>
             <span>点击图片查看大图与下载</span>
+            <a className="workspace-repo-link" href="https://github.com/holynova/daily-necessities-library" target="_blank" rel="noreferrer" data-umami-event="open-github">
+              <span aria-hidden="true">◉</span>
+              <span>GitHub Repo</span>
+              <ArrowUpRight size={13} strokeWidth={1.7} aria-hidden="true" />
+            </a>
           </footer>
         </div>
       </section>
@@ -260,7 +265,7 @@ export default function Home() {
                 <div><span>处理</span><strong>去 Logo · 纯色表面</strong></div>
                 <div><span>画面</span><strong>白底 · 1:1 PNG</strong></div>
               </div>
-              <a className="download-button" href={selectedProduct.image} download={`daily-index-${selectedProduct.id}-${selectedProduct.name}.png`}>
+              <a className="download-button" href={selectedProduct.image} download={`daily-index-${selectedProduct.id}-${selectedProduct.name}.png`} data-umami-event="download-png" data-umami-event-item={selectedProduct.name}>
                 <Download size={17} strokeWidth={1.8} aria-hidden="true" />
                 <span>下载 PNG</span>
                 <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
