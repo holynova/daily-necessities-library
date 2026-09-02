@@ -22,6 +22,13 @@ type Product = {
   accent: string;
 };
 
+type CategorySummary = {
+  group: string;
+  stillLife: string;
+  description: string;
+  accent: string;
+};
+
 const products: Product[] = [
   { id: '01', name: '洗衣液', group: '洗护用品', reference: '深层洁净洗衣液', brand: '蓝月亮', image: '/assets/daily-necessities-top20/01-laundry-liquid.png', accent: '#168bd1' },
   { id: '02', name: '洗衣粉', group: '洗护用品', reference: '净白去渍洗衣粉', brand: '汰渍', image: '/assets/daily-necessities-top20/02-laundry-powder.png', accent: '#f36b21' },
@@ -101,29 +108,30 @@ const products: Product[] = [
   { id: '76', name: '维达抽纸', group: '品牌补充', reference: '超韧抽纸', brand: '维达', image: '/assets/brand-products/76-vinda-tissues.png', accent: '#2f64bc' },
 ];
 
-const groups = ['全部', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品', '宝洁公司', '雀巢公司', '百事公司', '联合利华', '茅台', '伊利', '品牌补充'];
+const groups = ['全部', '合集', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品', '宝洁公司', '雀巢公司', '百事公司', '联合利华', '茅台', '伊利', '品牌补充'];
 
-const categorySummaries = [
-  { group: '洗护用品', image: '/assets/category-summaries/01-laundry-care.png', stillLife: '/assets/category-still-life/01-laundry-care-still-life.png', description: '衣物清洁与护理' },
-  { group: '个人护理', image: '/assets/category-summaries/02-personal-care.png', stillLife: '/assets/category-still-life/02-personal-care-still-life.png', description: '清洁、洗护与日常护理' },
-  { group: '纸品湿巾', image: '/assets/category-summaries/03-paper-wipes.png', stillLife: '/assets/category-still-life/03-paper-wipes-still-life.png', description: '纸品、抽取式与擦拭用品' },
-  { group: '厨房清洁', image: '/assets/category-summaries/04-kitchen-cleaning.png', stillLife: '/assets/category-still-life/04-kitchen-cleaning-still-life.png', description: '厨房与卫生间清洁用品' },
-  { group: '消毒收纳', image: '/assets/category-summaries/05-disinfect-storage.png', stillLife: '/assets/category-still-life/05-disinfect-storage-still-life.png', description: '消毒与家庭收纳' },
-  { group: '家用电器', image: '/assets/category-summaries/06-home-appliances.png', stillLife: '/assets/category-still-life/06-home-appliances-still-life.png', description: '高频小家电' },
-  { group: '饮料食品', image: '/assets/category-summaries/07-food-beverages.png', stillLife: '/assets/category-still-life/07-food-beverages-still-life.png', description: '日常饮品与即食食品' },
-  { group: '宝洁公司', image: '/assets/category-summaries/08-procter-gamble.png', stillLife: '/assets/category-still-life/08-procter-gamble-still-life.png', description: '海飞丝、舒肤佳、潘婷等日常护理产品' },
-  { group: '雀巢公司', image: '/assets/category-summaries/09-nestle.png', stillLife: '/assets/category-still-life/09-nestle-still-life.png', description: '咖啡、乳制品与巧克力食品' },
-  { group: '百事公司', image: '/assets/category-summaries/10-pepsico.png', stillLife: '/assets/category-still-life/10-pepsico-still-life.png', description: '汽水、薯片与运动饮料' },
-  { group: '联合利华', image: '/assets/category-summaries/11-unilever.png', stillLife: '/assets/category-still-life/11-unilever-still-life.png', description: '洗护、清洁与茶饮产品' },
-  { group: '茅台', image: '/assets/category-summaries/12-moutai.png', stillLife: '/assets/category-still-life/12-moutai-still-life.png', description: '常见酱香型白酒产品' },
-  { group: '伊利', image: '/assets/category-summaries/13-yili.png', stillLife: '/assets/category-still-life/13-yili-still-life.png', description: '牛奶、酸奶与乳饮品' },
-  { group: '品牌补充', image: '/assets/category-summaries/14-brand-supplements.png', stillLife: '/assets/category-still-life/14-brand-supplements-still-life.png', description: '多种包装规格洗衣液与主流抽纸' },
+const categorySummaries: CategorySummary[] = [
+  { group: '洗护用品', stillLife: '/assets/category-still-life/01-laundry-care-still-life.png', description: '衣物清洁与护理', accent: '#168bd1' },
+  { group: '个人护理', stillLife: '/assets/category-still-life/02-personal-care-still-life.png', description: '清洁、洗护与日常护理', accent: '#9184c9' },
+  { group: '纸品湿巾', stillLife: '/assets/category-still-life/03-paper-wipes-still-life.png', description: '纸品、抽取式与擦拭用品', accent: '#8bbfe8' },
+  { group: '厨房清洁', stillLife: '/assets/category-still-life/04-kitchen-cleaning-still-life.png', description: '厨房与卫生间清洁用品', accent: '#4caf42' },
+  { group: '消毒收纳', stillLife: '/assets/category-still-life/05-disinfect-storage-still-life.png', description: '消毒与家庭收纳', accent: '#168b58' },
+  { group: '家用电器', stillLife: '/assets/category-still-life/06-home-appliances-still-life.png', description: '高频小家电', accent: '#8aadc9' },
+  { group: '饮料食品', stillLife: '/assets/category-still-life/07-food-beverages-still-life.png', description: '日常饮品与即食食品', accent: '#f39a31' },
+  { group: '宝洁公司', stillLife: '/assets/category-still-life/08-procter-gamble-still-life.png', description: '海飞丝、舒肤佳、潘婷等日常护理产品', accent: '#d7506b' },
+  { group: '雀巢公司', stillLife: '/assets/category-still-life/09-nestle-still-life.png', description: '咖啡、乳制品与巧克力食品', accent: '#e32c2c' },
+  { group: '百事公司', stillLife: '/assets/category-still-life/10-pepsico-still-life.png', description: '汽水、薯片与运动饮料', accent: '#1f61cf' },
+  { group: '联合利华', stillLife: '/assets/category-still-life/11-unilever-still-life.png', description: '洗护、清洁与茶饮产品', accent: '#68bf3e' },
+  { group: '茅台', stillLife: '/assets/category-still-life/12-moutai-still-life.png', description: '常见酱香型白酒产品', accent: '#d93938' },
+  { group: '伊利', stillLife: '/assets/category-still-life/13-yili-still-life.png', description: '牛奶、酸奶与乳饮品', accent: '#2d77d9' },
+  { group: '品牌补充', stillLife: '/assets/category-still-life/14-brand-supplements-still-life.png', description: '多种包装规格洗衣液与主流抽纸', accent: '#389bd6' },
 ];
 
 export default function Home() {
-  const [activeGroup, setActiveGroup] = useState('全部');
+  const [activeGroup, setActiveGroup] = useState('合集');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedId, setSelectedId] = useState('01');
+  const [selectedCollectionGroup, setSelectedCollectionGroup] = useState(categorySummaries[0].group);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [mobilePreviewOpen, setMobilePreviewOpen] = useState(false);
 
@@ -131,11 +139,21 @@ export default function Home() {
     const query = searchTerm.trim().toLowerCase();
 
     return products.filter((product) => {
-      const matchesGroup = activeGroup === '全部' || product.group === activeGroup;
+      const matchesGroup = activeGroup === '全部' || (activeGroup !== '合集' && product.group === activeGroup);
       const searchText = `${product.id} ${product.name} ${product.group} ${product.brand} ${product.reference}`.toLowerCase();
       return matchesGroup && (!query || searchText.includes(query));
     });
   }, [activeGroup, searchTerm]);
+
+  const filteredCollections = useMemo(() => {
+    const query = searchTerm.trim().toLowerCase();
+
+    return categorySummaries.filter((summary, index) => {
+      const number = String(index + 1).padStart(2, '0');
+      const searchText = `${number} ${summary.group} ${summary.description} 桌面静物`.toLowerCase();
+      return !query || searchText.includes(query);
+    });
+  }, [searchTerm]);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -147,10 +165,20 @@ export default function Home() {
   }, []);
 
   const selectedProduct = filteredProducts.find((product) => product.id === selectedId) ?? filteredProducts[0] ?? null;
+  const selectedCollection = filteredCollections.find((summary) => summary.group === selectedCollectionGroup) ?? filteredCollections[0] ?? null;
   const activeSummary = categorySummaries.find((summary) => summary.group === activeGroup) ?? null;
+  const isCollectionView = activeGroup === '合集';
+  const visibleCount = isCollectionView ? filteredCollections.length : filteredProducts.length;
+  const totalCount = isCollectionView ? categorySummaries.length : products.length;
+  const selectedCollectionIndex = selectedCollection ? categorySummaries.findIndex((summary) => summary.group === selectedCollection.group) + 1 : 0;
 
   const chooseProduct = (product: Product) => {
     setSelectedId(product.id);
+    setMobilePreviewOpen(true);
+  };
+
+  const chooseCollection = (summary: CategorySummary) => {
+    setSelectedCollectionGroup(summary.group);
     setMobilePreviewOpen(true);
   };
 
@@ -161,7 +189,7 @@ export default function Home() {
 
   return (
     <main className="app-shell">
-      <aside className="side-rail" aria-label="日用品图鉴导航">
+      <aside className="side-rail" aria-label="撕标签导航">
         <div className="rail-topline">
           <span className="rail-mark" aria-hidden="true">DI</span>
           <span>DAILY INDEX</span>
@@ -169,14 +197,14 @@ export default function Home() {
 
         <div className="rail-brand">
           <p className="rail-kicker">IMAGE LIBRARY / 2026</p>
-          <h1>日用品<br />图鉴</h1>
-          <p className="rail-description">去标签、纯色白底的常见用品图集。</p>
+          <h1>撕<br />标签</h1>
+          <p className="rail-description">撕掉包装标签，保留干净、可用的常见用品图。</p>
         </div>
 
         <nav className="rail-nav" aria-label="按品类筛选">
           <p className="nav-label">COLLECTION</p>
           {groups.map((group) => {
-            const count = group === '全部' ? products.length : products.filter((product) => product.group === group).length;
+            const count = group === '全部' ? products.length : group === '合集' ? categorySummaries.length : products.filter((product) => product.group === group).length;
             const isActive = activeGroup === group;
 
             return (
@@ -191,21 +219,21 @@ export default function Home() {
         <div className="rail-footer">
           <div className="rail-rule" />
           <p>LOCAL ASSET SET</p>
-          <span>76 PNG / 1:1 / WHITE FIELD</span>
+          <span>76 PNG / 14 STILL LIFE / LOCAL ASSETS</span>
         </div>
       </aside>
 
-      <section className="workspace" aria-label="日用品图片素材库">
+      <section className="workspace" aria-label="撕标签图片素材库">
         <header className="workspace-header">
           <div className="mobile-brand">
             <span className="rail-mark" aria-hidden="true">DI</span>
-            <span>日用品图鉴</span>
+            <span>撕标签</span>
           </div>
           <div className="header-context">
             <span className="context-dot" aria-hidden="true" />
-            <span>日常用品</span>
+            <span>撕标签</span>
             <span className="context-separator">/</span>
-            <span>去品牌产品图</span>
+            <span>去标签产品图</span>
           </div>
           <div className="header-status">
             <span className="status-dot" aria-hidden="true" />
@@ -217,12 +245,12 @@ export default function Home() {
           <div className="page-intro">
             <div>
               <p className="eyebrow">A CLEAN PRODUCT STUDY</p>
-              <h2>日用品图鉴</h2>
-              <p className="intro-copy">76 个常见产品条目，统一的纯色白底产品图。<br className="desktop-break" />直接找到需要的那一件。</p>
+              <h2>撕标签</h2>
+              <p className="intro-copy">76 个常见产品条目，撕掉包装标签，保留干净的产品图。<br className="desktop-break" />另收录 14 组桌面静物合集。</p>
             </div>
             <div className="intro-index" aria-label="素材数量">
-              <span className="intro-index-number">{String(filteredProducts.length).padStart(2, '0')}</span>
-              <span className="intro-index-label">当前显示<br />/ {products.length} 项</span>
+              <span className="intro-index-number">{String(visibleCount).padStart(2, '0')}</span>
+              <span className="intro-index-label">当前显示<br />/ {totalCount} {isCollectionView ? '组' : '项'}</span>
             </div>
           </div>
 
@@ -262,27 +290,60 @@ export default function Home() {
             ))}
           </div>
 
-          {activeSummary && !searchTerm.trim() ? (
+          {isCollectionView && filteredCollections.length > 0 ? (
+            <section className="collection-overview" aria-labelledby="collection-overview-title">
+              <div className="collection-overview-copy">
+                <p className="eyebrow">STILL LIFE COLLECTION / {String(filteredCollections.length).padStart(2, '0')} SETS</p>
+                <h3 id="collection-overview-title">合集<span>桌面静物</span></h3>
+                <p className="collection-overview-description">14 个品类的桌面静物合照集中收录在这里。其他品类页也保留对应的合集照片，方便按品类核对。</p>
+                <div className="category-overview-meta">
+                  <div><span>内容</span><strong>{filteredCollections.length} 组品类合集</strong></div>
+                  <div><span>画面</span><strong>桌面静物 · 3:2 PNG</strong></div>
+                </div>
+                <p className="collection-note">点击照片查看大图与下载</p>
+              </div>
+              <div className={`collection-grid${viewMode === 'list' ? ' is-list' : ''}`} aria-label="桌面静物合集照片">
+                {filteredCollections.map((summary) => {
+                  const summaryIndex = categorySummaries.findIndex((item) => item.group === summary.group) + 1;
+                  const itemCount = products.filter((product) => product.group === summary.group).length;
+                  const isSelected = summary.group === selectedCollection?.group;
+
+                  return (
+                    <button className={`still-life-card${isSelected ? ' is-selected' : ''}`} key={summary.group} type="button" style={{ '--accent': summary.accent } as React.CSSProperties} onClick={() => chooseCollection(summary)}>
+                      <span className="still-life-image-wrap">
+                        {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
+                        <img src={summary.stillLife} alt={`${summary.group}桌面静物合集图`} loading="lazy" decoding="async" />
+                        <span className="card-index">{String(summaryIndex).padStart(2, '0')}</span>
+                        <span className="card-open" aria-hidden="true"><ArrowUpRight size={15} strokeWidth={1.7} /></span>
+                      </span>
+                      <span className="still-life-copy">
+                        <span className="still-life-title-row"><span className="still-life-name">{summary.group}</span><span className="card-accent" aria-hidden="true" /></span>
+                        <span className="still-life-meta">桌面静物 · {itemCount} 件素材</span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          ) : null}
+
+          {activeSummary && !isCollectionView && !searchTerm.trim() ? (
             <section className="category-overview" aria-labelledby="category-overview-title">
               <div className="category-overview-copy">
                 <p className="eyebrow">CATEGORY OVERVIEW / {String(products.filter((product) => product.group === activeSummary.group).length).padStart(2, '0')} ITEMS</p>
-                <h3 id="category-overview-title">{activeSummary.group}<span>静物合集 · 排版汇总</span></h3>
-                <p className="category-overview-description">{activeSummary.description}。一张自然摆放的桌面静物合集，加上一张便于核对的排版汇总图。</p>
+                <h3 id="category-overview-title">{activeSummary.group}<span>桌面静物</span></h3>
+                <p className="category-overview-description">{activeSummary.description}。保留一张自然摆放的桌面静物合集照片，方便快速了解这一组素材。</p>
                 <div className="category-overview-meta">
                   <div><span>内容</span><strong>{products.filter((product) => product.group === activeSummary.group).length} 件素材</strong></div>
-                  <div><span>画面</span><strong>静物桌面 · 3:2 PNG</strong></div>
+                  <div><span>画面</span><strong>桌面静物 · 3:2 PNG</strong></div>
                 </div>
-                <a className="download-button category-download" href={activeSummary.stillLife} download={`daily-index-${activeSummary.group}-静物合集.png`} data-umami-event="download-category-still-life" data-umami-event-item={activeSummary.group}>
+                <a className="download-button category-download" href={activeSummary.stillLife} download={`tear-labels-${activeSummary.group}-桌面静物.png`} data-umami-event="download-category-still-life" data-umami-event-item={activeSummary.group}>
                   <Download size={17} strokeWidth={1.8} aria-hidden="true" />
                   <span>下载静物合集</span>
                   <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
                 </a>
-                <a className="category-secondary-download" href={activeSummary.image} download={`daily-index-${activeSummary.group}-排版汇总.png`} data-umami-event="download-category-summary" data-umami-event-item={activeSummary.group}>
-                  <span>下载排版汇总</span>
-                  <ArrowUpRight size={14} strokeWidth={1.7} aria-hidden="true" />
-                </a>
               </div>
-              <div className="category-overview-gallery">
+              <div className="category-overview-gallery is-single">
                 <figure className="category-overview-figure is-primary">
                   <div className="category-overview-image-wrap">
                     {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
@@ -290,18 +351,11 @@ export default function Home() {
                   </div>
                   <figcaption><span>STILL LIFE / 合集</span><strong>桌面静物</strong></figcaption>
                 </figure>
-                <figure className="category-overview-figure">
-                  <div className="category-overview-image-wrap">
-                    {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
-                    <img src={activeSummary.image} alt={`${activeSummary.group}排版汇总图，包含该类别全部素材`} decoding="async" />
-                  </div>
-                  <figcaption><span>CATALOG / 汇总</span><strong>排版全图</strong></figcaption>
-                </figure>
               </div>
             </section>
           ) : null}
 
-          {filteredProducts.length > 0 ? (
+          {!isCollectionView && filteredProducts.length > 0 ? (
             <div className={`product-grid${viewMode === 'list' ? ' is-list' : ''}`}>
               {filteredProducts.map((product, index) => {
                 const isSelected = product.id === selectedId;
@@ -310,7 +364,7 @@ export default function Home() {
                   <button className={`product-card${isSelected ? ' is-selected' : ''}`} key={product.id} type="button" style={{ '--accent': product.accent, '--delay': `${index * 35}ms` } as React.CSSProperties} onClick={() => chooseProduct(product)}>
                     <span className="card-image-wrap">
                       {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
-                      <img src={product.image} alt={`${product.name}，去品牌纯色白底产品图`} loading="lazy" decoding="async" />
+                      <img src={product.image} alt={`${product.name}，去标签纯色白底产品图`} loading="lazy" decoding="async" />
                       <span className="card-index">{product.id}</span>
                       <span className="card-open" aria-hidden="true"><ArrowUpRight size={15} strokeWidth={1.7} /></span>
                     </span>
@@ -325,17 +379,24 @@ export default function Home() {
                 );
               })}
             </div>
-          ) : (
+          ) : isCollectionView && filteredCollections.length === 0 ? (
+            <div className="empty-state">
+              <div className="empty-mark" aria-hidden="true">∅</div>
+              <h3>没有匹配的合集</h3>
+              <p>试试别的关键词，或回到全部分类。</p>
+              <button type="button" onClick={clearFilters}>清除筛选</button>
+            </div>
+          ) : !isCollectionView && filteredProducts.length === 0 ? (
             <div className="empty-state">
               <div className="empty-mark" aria-hidden="true">∅</div>
               <h3>没有匹配的素材</h3>
               <p>试试别的关键词，或回到全部分类。</p>
               <button type="button" onClick={clearFilters}>清除筛选</button>
             </div>
-          )}
+          ) : null}
 
           <footer className="workspace-footer">
-            <span>ALL IMAGES ARE UNBRANDED / LOCAL PNG ASSETS</span>
+            <span>UNBRANDED PRODUCTS / 14 STILL LIFE SETS</span>
             <span>点击图片查看大图与下载</span>
             <a className="workspace-repo-link" href="https://github.com/holynova/daily-necessities-library" target="_blank" rel="noreferrer" data-umami-event="open-github">
               <span aria-hidden="true">◉</span>
@@ -346,7 +407,7 @@ export default function Home() {
         </div>
       </section>
 
-      <aside className={`preview-panel${mobilePreviewOpen ? ' is-mobile-open' : ''}`} aria-label="所选素材预览">
+      <aside className={`preview-panel${mobilePreviewOpen ? ' is-mobile-open' : ''}`} aria-label={isCollectionView ? '所选合集预览' : '所选素材预览'}>
         <div className="preview-header">
           <span>SELECTED ITEM</span>
           <button className="preview-close" type="button" aria-label="关闭预览" onClick={() => setMobilePreviewOpen(false)}>
@@ -354,7 +415,34 @@ export default function Home() {
           </button>
         </div>
 
-        {selectedProduct ? (
+        {isCollectionView ? selectedCollection ? (
+          <>
+            <div className="preview-image-wrap">
+              {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
+              <img src={selectedCollection.stillLife} alt={`${selectedCollection.group}桌面静物合集大图预览`} decoding="async" />
+              <span className="preview-number">{String(selectedCollectionIndex).padStart(2, '0')}</span>
+            </div>
+            <div className="preview-copy">
+              <p className="preview-kicker">合集 / {String(selectedCollectionIndex).padStart(2, '0')}</p>
+              <h3>{selectedCollection.group}</h3>
+              <p className="preview-description">桌面静物合集 · {selectedCollection.description}</p>
+              <div className="detail-lines">
+                <div><span>内容</span><strong>{products.filter((product) => product.group === selectedCollection.group).length} 件素材</strong></div>
+                <div><span>画面</span><strong>桌面静物 · 3:2 PNG</strong></div>
+              </div>
+              <a className="download-button" href={selectedCollection.stillLife} download={`tear-labels-${selectedCollection.group}-桌面静物.png`} data-umami-event="download-category-still-life" data-umami-event-item={selectedCollection.group}>
+                <Download size={17} strokeWidth={1.8} aria-hidden="true" />
+                <span>下载静物合集</span>
+                <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
+              </a>
+            </div>
+          </>
+        ) : (
+          <div className="preview-empty">
+            <Check size={18} aria-hidden="true" />
+            <p>选择一张合集查看详情</p>
+          </div>
+        ) : selectedProduct ? (
           <>
             <div className="preview-image-wrap">
               {/* oxlint-disable-next-line next/no-img-element -- local PNG assets need no runtime image optimization. */}
@@ -366,10 +454,10 @@ export default function Home() {
               <h3>{selectedProduct.name}</h3>
               <p className="preview-description">参考：{selectedProduct.brand} {selectedProduct.reference}</p>
               <div className="detail-lines">
-                <div><span>处理</span><strong>去 Logo · 纯色表面</strong></div>
+                <div><span>处理</span><strong>去标签 · 纯色表面</strong></div>
                 <div><span>画面</span><strong>白底 · 1:1 PNG</strong></div>
               </div>
-              <a className="download-button" href={selectedProduct.image} download={`daily-index-${selectedProduct.id}-${selectedProduct.name}.png`} data-umami-event="download-png" data-umami-event-item={selectedProduct.name}>
+              <a className="download-button" href={selectedProduct.image} download={`tear-labels-${selectedProduct.id}-${selectedProduct.name}.png`} data-umami-event="download-png" data-umami-event-item={selectedProduct.name}>
                 <Download size={17} strokeWidth={1.8} aria-hidden="true" />
                 <span>下载 PNG</span>
                 <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
@@ -384,7 +472,7 @@ export default function Home() {
         )}
       </aside>
 
-      {mobilePreviewOpen && selectedProduct ? <button className="mobile-backdrop" type="button" aria-label="关闭预览" onClick={() => setMobilePreviewOpen(false)} /> : null}
+      {mobilePreviewOpen && (isCollectionView ? selectedCollection : selectedProduct) ? <button className="mobile-backdrop" type="button" aria-label="关闭预览" onClick={() => setMobilePreviewOpen(false)} /> : null}
     </main>
   );
 }
