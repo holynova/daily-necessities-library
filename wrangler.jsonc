@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "daily-necessities-library",
+  "compatibility_date": "2026-09-04",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    {
+      "pattern": "daily-necessities-library.xiaosang.cc",
+      "custom_domain": true
+    }
+  ]
+}
