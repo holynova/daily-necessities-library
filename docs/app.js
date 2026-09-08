@@ -75,7 +75,47 @@ const products = [
   ['74', '心相印抽纸', '品牌补充', '经典抽纸', '心相印', 'brand-products/74-heart-to-heart-tissues.png', '#e5a8b2'],
   ['75', '德宝抽纸', '品牌补充', '柔韧抽纸', '德宝', 'brand-products/75-tempo-tissues.png', '#34538a'],
   ['76', '维达抽纸', '品牌补充', '超韧抽纸', '维达', 'brand-products/76-vinda-tissues.png', '#2f64bc'],
-].map(([id, name, group, reference, brand, file, accent]) => ({ id, name, group, reference, brand, file, accent }));
+  ['77', '汰渍洗衣液', '洗护用品', '液体洗衣液', 'Tide', 'fmcg-tear-labels/tide-laundry-detergent.png', '#8ea8b6'],
+  ['78', '碧浪洗衣液', '洗护用品', '液体洗衣液', 'Ariel', 'fmcg-tear-labels/ariel-laundry-detergent.png', '#8ba5a0'],
+  ['79', '当妮衣物柔顺剂', '洗护用品', '衣物柔顺剂', 'Downy', 'fmcg-tear-labels/downy-fabric-softener.png', '#aa9aa9'],
+  ['80', 'Persil 洗衣液', '洗护用品', '液体洗衣液', 'Persil', 'fmcg-tear-labels/persil-laundry-detergent.png', '#6f7d75'],
+  ['81', 'Surf 洗衣液', '洗护用品', '洗衣液补充袋', 'Surf', 'fmcg-tear-labels/surf-laundry-detergent.png', '#a198a7'],
+  ['82', '金纺衣物柔顺剂', '洗护用品', '衣物柔顺剂', 'Comfort', 'fmcg-tear-labels/comfort-fabric-softener.png', '#9aa58e'],
+  ['83', '欧乐 B 牙刷', '个人护理', '透明罩卡纸牙刷', 'Oral-B', 'fmcg-tear-labels/oral-b-toothbrush.png', '#7f9cab'],
+  ['84', '吉列剃须刀', '个人护理', '剃须刀与纸套', 'Gillette', 'fmcg-tear-labels/gillette-razor.png', '#787f87'],
+  ['85', '高露洁牙膏', '个人护理', '软管牙膏', 'Colgate', 'fmcg-tear-labels/colgate-toothpaste.png', '#a77f82'],
+  ['86', '棕榄沐浴露', '个人护理', '透明泵头沐浴露', 'Palmolive', 'fmcg-tear-labels/palmolive-body-wash.png', '#858e75'],
+  ['87', 'Softsoap 洗手液', '个人护理', '按压泵洗手液', 'Softsoap', 'fmcg-tear-labels/softsoap-hand-soap.png', '#b1969b'],
+  ['88', '凡士林修护霜', '个人护理', '身体护理霜罐', 'Vaseline', 'fmcg-tear-labels/vaseline-body-care.png', '#b89d87'],
+  ['89', '欧莱雅洗发水', '个人护理', '扁椭圆洗发水', "L'Oréal Paris", 'fmcg-tear-labels/loreal-shampoo.png', '#83787b'],
+  ['90', '妮维雅防晒乳', '个人护理', '翻盖防晒乳', 'NIVEA', 'fmcg-tear-labels/nivea-sunscreen.png', '#8da4b1'],
+  ['91', 'Bounty 厨房纸', '纸品湿巾', '厨房纸卷与纸套', 'Bounty', 'fmcg-tear-labels/bounty-paper-towels.png', '#a9a18d'],
+  ['92', 'Charmin 卷纸', '纸品湿巾', '多卷卫生纸包', 'Charmin', 'fmcg-tear-labels/charmin-toilet-paper.png', '#b6a1ab'],
+  ['93', 'Puffs 抽纸', '纸品湿巾', '方盒抽纸', 'Puffs', 'fmcg-tear-labels/puffs-facial-tissues.png', '#9ba4b0'],
+  ['94', '舒洁湿巾', '纸品湿巾', '软抽湿巾包', 'Kleenex', 'fmcg-tear-labels/kleenex-wet-wipes.png', '#9aafa7'],
+  ['95', 'Dawn 洗洁精', '厨房清洁', '透明洗洁精', 'Dawn', 'fmcg-tear-labels/dawn-dish-soap.png', '#8fa5af'],
+  ['96', 'Cascade 洗碗机凝珠', '厨房清洁', '洗碗机凝珠纸盒', 'Cascade', 'fmcg-tear-labels/cascade-dishwasher-pods.png', '#9aa995'],
+  ['97', 'Mr. Clean 多用途清洁剂', '厨房清洁', '扳机喷雾清洁剂', 'Mr. Clean', 'fmcg-tear-labels/mr-clean-all-purpose-cleaner.png', '#949f8e'],
+  ['98', 'Cif 厨房清洁乳', '厨房清洁', '挤压式清洁乳', 'Cif', 'fmcg-tear-labels/cif-cream-cleaner.png', '#ae8585'],
+  ['99', 'Febreze 空气清新剂', '消毒收纳', '空气清新剂喷雾', 'Febreze', 'fmcg-tear-labels/febreze-air-freshener.png', '#9590a4'],
+  ['100', 'Clorox 消毒喷雾', '消毒收纳', '扳机消毒喷雾', 'Clorox', 'fmcg-tear-labels/clorox-disinfecting-spray.png', '#a5b2a0'],
+  ['101', 'Glad 保鲜袋', '消毒收纳', '保鲜袋分配纸盒', 'Glad', 'fmcg-tear-labels/glad-food-storage-bags.png', '#94a4aa'],
+  ['102', 'Swiffer 除尘拖把', '消毒收纳', '除尘工具与纸套', 'Swiffer', 'fmcg-tear-labels/swiffer-duster.png', '#9696a7'],
+  ['103', '可口可乐', '饮料食品', '玻璃瓶可乐', 'Coca-Cola', 'fmcg-tear-labels/coca-cola-soft-drink.png', '#9a7772'],
+  ['104', 'Sprite 柠檬汽水', '饮料食品', '柠檬青柠汽水罐', 'Sprite', 'fmcg-tear-labels/sprite-lemon-lime-soda.png', '#92a699'],
+  ['105', 'Fanta 橙味汽水', '饮料食品', '橙味汽水罐', 'Fanta Orange', 'fmcg-tear-labels/fanta-orange-soda.png', '#b29a84'],
+  ['106', 'Aquafina 瓶装水', '饮料食品', '细长 PET 瓶装水', 'Aquafina', 'fmcg-tear-labels/aquafina-bottled-water.png', '#9caeb5'],
+  ['107', '红牛能量饮料', '饮料食品', '金属能量饮料罐', 'Red Bull', 'fmcg-tear-labels/red-bull-energy-drink.png', '#9c9482'],
+  ['108', '星巴克即饮咖啡', '饮料食品', '即饮咖啡瓶', 'Starbucks', 'fmcg-tear-labels/starbucks-rtd-coffee.png', '#9a8074'],
+  ['109', '美禄麦芽饮料', '饮料食品', '麦芽可可饮料罐', 'Milo', 'fmcg-tear-labels/milo-malt-drink.png', '#889889'],
+  ['110', '多力多滋玉米片', '饮料食品', '三角玉米片立袋', 'Doritos', 'fmcg-tear-labels/doritos-tortilla-chips.png', '#a78e78'],
+  ['111', '奇多芝士膨化', '饮料食品', '芝士膨化零食立袋', 'Cheetos', 'fmcg-tear-labels/cheetos-cheese-snacks.png', '#afa388'],
+  ['112', '桂格燕麦片', '饮料食品', '燕麦圆罐', 'Quaker', 'fmcg-tear-labels/quaker-oats.png', '#9ea8af'],
+  ['113', 'Indomie 方便面', '饮料食品', '方形枕式面饼袋', 'Indomie', 'fmcg-tear-labels/indomie-instant-noodles.png', '#9c8279'],
+  ['114', 'Ottogi 辣味方便面', '饮料食品', '辣味方形枕式面袋', 'Ottogi Jin Ramen', 'fmcg-tear-labels/ottogi-jin-ramen.png', '#9e817d'],
+  ['115', 'Parle-G 饼干', '饮料食品', '小型枕式饼干包', 'Parle-G', 'fmcg-tear-labels/parle-g-biscuits.png', '#ab9b75'],
+  ['116', 'Britannia Good Day 饼干', '饮料食品', '立式饼干袋', 'Good Day', 'fmcg-tear-labels/britannia-good-day-cookies.png', '#ae917b'],
+].map(([id, name, group, reference, brand, file, accent]) => ({ id, name, group, reference, brand, file, accent, treatment: file.startsWith('fmcg-tear-labels/') ? '完整去标 · 低饱和表面' : '去标签 · 纯色表面' }));
 
 const categorySummaries = [
   ['洗护用品', './assets/category-still-life/01-laundry-care-still-life.png', '衣物清洁与护理', '#168bd1'],
@@ -142,7 +182,7 @@ function cardMarkup(product, index) {
   const selected = product.id === selectedId ? ' is-selected' : '';
   return `<button class="product-card${selected}" type="button" data-product-id="${product.id}" style="--accent:${product.accent};--delay:${index * 35}ms">
     <span class="card-image-wrap">
-      <img src="${getAssetPath(product)}" alt="${product.name}，去标签纯色白底产品图" loading="lazy" />
+      <img src="${getAssetPath(product)}" alt="${product.name}，${product.treatment === '完整去标 · 低饱和表面' ? '完整去标、低饱和白底' : '去标签、纯色白底'}产品图" loading="lazy" />
       <span class="card-index">${product.id}</span>
       <span class="card-open" aria-hidden="true">↗</span>
     </span>
@@ -238,7 +278,7 @@ function renderPreview(product) {
   previewName.textContent = product.name;
   previewDescription.textContent = `参考：${product.brand} ${product.reference}`;
   previewDetailLabel.textContent = '处理';
-  previewDetailValue.textContent = '去标签 · 纯色表面';
+  previewDetailValue.textContent = product.treatment;
   previewFormat.textContent = '白底 · 1:1 PNG';
   downloadButton.href = getAssetPath(product);
   downloadButton.download = `tear-labels-${product.id}-${product.name}.png`;
