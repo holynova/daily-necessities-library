@@ -3,10 +3,10 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: '撕标签｜去除包装标签的产品图素材库',
-  description: '撕掉包装标签，保留 116 个常见日用品、饮料与食品的低饱和白底 PNG，并收录 14 组桌面静物合集。',
+  description: '撕掉包装标签，保留 116 个常见日用品、饮料与食品的低饱和白底 PNG，并收录 21 组桌面静物合集。',
   openGraph: {
     title: '撕标签｜去除包装标签的产品图素材库',
-    description: '撕掉包装标签，保留 116 个常见日用品、饮料与食品的低饱和白底 PNG，并收录 14 组桌面静物合集。',
+    description: '撕掉包装标签，保留 116 个常见日用品、饮料与食品的低饱和白底 PNG，并收录 21 组桌面静物合集。',
     type: 'website',
   },
 };

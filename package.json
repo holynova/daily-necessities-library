@@ -1,7 +1,7 @@
 {
   "name": "tear-labels",
   "version": "1.0.0",
-  "description": "撕掉包装标签的 76 个常见产品 PNG 素材库，附 14 组桌面静物合集",
+  "description": "撕掉包装标签的 116 个常见产品 PNG 素材库，附 21 组桌面静物合集",
   "private": true,
   "engines": {
     "node": ">=22.13.0"

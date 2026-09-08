@@ -1,3 +1,5 @@
+const newFmcgProductIds = new Set(Array.from({ length: 40 }, (_, index) => String(index + 77)));
+
 const products = [
   ['01', '洗衣液', '洗护用品', '深层洁净洗衣液', '蓝月亮', '01-laundry-liquid.png', '#168bd1'],
   ['02', '洗衣粉', '洗护用品', '净白去渍洗衣粉', '汰渍', '02-laundry-powder.png', '#f36b21'],
@@ -115,7 +117,10 @@ const products = [
   ['114', 'Ottogi 辣味方便面', '饮料食品', '辣味方形枕式面袋', 'Ottogi Jin Ramen', 'fmcg-tear-labels/ottogi-jin-ramen.png', '#9e817d'],
   ['115', 'Parle-G 饼干', '饮料食品', '小型枕式饼干包', 'Parle-G', 'fmcg-tear-labels/parle-g-biscuits.png', '#ab9b75'],
   ['116', 'Britannia Good Day 饼干', '饮料食品', '立式饼干袋', 'Good Day', 'fmcg-tear-labels/britannia-good-day-cookies.png', '#ae917b'],
-].map(([id, name, group, reference, brand, file, accent]) => ({ id, name, group, reference, brand, file, accent, treatment: file.startsWith('fmcg-tear-labels/') ? '完整去标 · 低饱和表面' : '去标签 · 纯色表面' }));
+].map(([id, name, group, reference, brand, file, accent]) => {
+  const product = { id, name, group, reference, brand, file, accent, treatment: file.startsWith('fmcg-tear-labels/') ? '完整去标 · 低饱和表面' : '去标签 · 纯色表面' };
+  return newFmcgProductIds.has(id) ? { ...product, collectionGroup: '新增快销品' } : product;
+});
 
 const categorySummaries = [
   ['洗护用品', './assets/category-still-life/01-laundry-care-still-life.png', '衣物清洁与护理', '#168bd1'],
@@ -131,8 +136,28 @@ const categorySummaries = [
   ['联合利华', './assets/category-still-life/11-unilever-still-life.png', '洗护、清洁与茶饮产品', '#68bf3e'],
   ['茅台', './assets/category-still-life/12-moutai-still-life.png', '常见酱香型白酒产品', '#d93938'],
   ['伊利', './assets/category-still-life/13-yili-still-life.png', '牛奶、酸奶与乳饮品', '#2d77d9'],
-  ['品牌补充', './assets/category-still-life/14-brand-supplements-still-life.png', '多种包装规格洗衣液与主流抽纸', '#389bd6']
+  ['品牌补充', './assets/category-still-life/14-brand-supplements-still-life.png', '多种包装规格洗衣液与主流抽纸', '#389bd6'],
+  ['新增快销品', './assets/category-still-life/15-fmcg-laundry-still-life.png', '40 张完整去标快销品，配套 7 组细分桌面静物合照', '#a78e78']
 ].map(([group, stillLife, description, accent]) => ({ group, stillLife, description, accent }));
+
+const newFmcgCollections = [
+  { id: 'fmcg-laundry', group: '新增快销品', label: '新增快销品 · 洗护', stillLife: './assets/category-still-life/15-fmcg-laundry-still-life.png', description: '6 件新增洗护素材', accent: '#8ea8b6', itemIds: ['77', '78', '79', '80', '81', '82'] },
+  { id: 'fmcg-personal-care', group: '新增快销品', label: '新增快销品 · 个人护理', stillLife: './assets/category-still-life/16-fmcg-personal-care-still-life.png', description: '8 件新增个人护理素材', accent: '#a77f82', itemIds: ['83', '84', '85', '86', '87', '88', '89', '90'] },
+  { id: 'fmcg-paper-wipes', group: '新增快销品', label: '新增快销品 · 纸品湿巾', stillLife: './assets/category-still-life/17-fmcg-paper-wipes-still-life.png', description: '4 件新增纸品湿巾素材', accent: '#9ba4b0', itemIds: ['91', '92', '93', '94'] },
+  { id: 'fmcg-kitchen-cleaning', group: '新增快销品', label: '新增快销品 · 厨房清洁', stillLife: './assets/category-still-life/18-fmcg-kitchen-cleaning-still-life.png', description: '4 件新增厨房清洁素材', accent: '#949f8e', itemIds: ['95', '96', '97', '98'] },
+  { id: 'fmcg-disinfect-storage', group: '新增快销品', label: '新增快销品 · 消毒收纳', stillLife: './assets/category-still-life/19-fmcg-disinfect-storage-still-life.png', description: '4 件新增消毒收纳素材', accent: '#9696a7', itemIds: ['99', '100', '101', '102'] },
+  { id: 'fmcg-beverages', group: '新增快销品', label: '新增快销品 · 饮料', stillLife: './assets/category-still-life/20-fmcg-beverages-still-life.png', description: '7 件新增饮料素材', accent: '#9a8074', itemIds: ['103', '104', '105', '106', '107', '108', '109'] },
+  { id: 'fmcg-snacks-food', group: '新增快销品', label: '新增快销品 · 零食食品', stillLife: './assets/category-still-life/21-fmcg-snacks-food-still-life.png', description: '7 件新增零食食品素材', accent: '#a78e78', itemIds: ['110', '111', '112', '113', '114', '115', '116'] }
+];
+
+const collectionSummaries = [
+  ...categorySummaries.filter((summary) => summary.group !== '新增快销品').map((summary) => ({ ...summary, id: summary.group })),
+  ...newFmcgCollections
+];
+
+const isProductInGroup = (product, group) => product.group === group || product.collectionGroup === group;
+const getProductCount = (group) => products.filter((product) => isProductInGroup(product, group)).length;
+const getCollectionProductCount = (summary) => summary.itemIds?.length ?? getProductCount(summary.group);
 const assetRoot = './assets/';
 function getAssetPath(product) {
   return `${assetRoot}${product.file.includes('/') ? product.file : `daily-necessities-top20/${product.file}`}`;
@@ -157,23 +182,23 @@ const downloadButton = document.querySelector('#downloadButton');
 
 let activeGroup = '合集';
 let selectedId = '01';
-let selectedCollectionGroup = categorySummaries[0].group;
+let selectedCollectionId = collectionSummaries[0].id;
 let viewMode = 'grid';
 
 function getFilteredProducts() {
   const query = searchInput.value.trim().toLowerCase();
   return products.filter((product) => {
-    const matchesGroup = activeGroup === '全部' || (activeGroup !== '合集' && product.group === activeGroup);
-    const searchText = `${product.id} ${product.name} ${product.group} ${product.brand} ${product.reference}`.toLowerCase();
+    const matchesGroup = activeGroup === '全部' || (activeGroup !== '合集' && isProductInGroup(product, activeGroup));
+    const searchText = `${product.id} ${product.name} ${product.group} ${product.collectionGroup ?? ''} ${product.brand} ${product.reference}`.toLowerCase();
     return matchesGroup && (!query || searchText.includes(query));
   });
 }
 
 function getFilteredCollections() {
   const query = searchInput.value.trim().toLowerCase();
-  return categorySummaries.filter((summary, index) => {
+  return collectionSummaries.filter((summary, index) => {
     const number = String(index + 1).padStart(2, '0');
-    const searchText = `${number} ${summary.group} ${summary.description} 桌面静物`.toLowerCase();
+    const searchText = `${number} ${summary.label ?? summary.group} ${summary.description} 桌面静物`.toLowerCase();
     return !query || searchText.includes(query);
   });
 }
@@ -203,17 +228,18 @@ function renderCategoryOverview(collections) {
     }
 
     const collectionCards = collections.map((summary) => {
-      const summaryIndex = categorySummaries.findIndex((item) => item.group === summary.group) + 1;
-      const itemCount = products.filter((product) => product.group === summary.group).length;
-      const selected = summary.group === selectedCollectionGroup ? ' is-selected' : '';
-      return `<button class="still-life-card${selected}" type="button" data-collection-group="${summary.group}" style="--accent:${summary.accent}">
+      const summaryIndex = collectionSummaries.findIndex((item) => item.id === summary.id) + 1;
+      const itemCount = getCollectionProductCount(summary);
+      const collectionLabel = summary.label ?? summary.group;
+      const selected = summary.id === selectedCollectionId ? ' is-selected' : '';
+      return `<button class="still-life-card${selected}" type="button" data-collection-id="${summary.id}" style="--accent:${summary.accent}">
         <span class="still-life-image-wrap">
-          <img src="${summary.stillLife}" alt="${summary.group}桌面静物合集图" loading="lazy" />
+          <img src="${summary.stillLife}" alt="${collectionLabel}桌面静物合集图" loading="lazy" />
           <span class="card-index">${String(summaryIndex).padStart(2, '0')}</span>
           <span class="card-open" aria-hidden="true">↗</span>
         </span>
         <span class="still-life-copy">
-          <span class="still-life-title-row"><span class="still-life-name">${summary.group}</span><span class="card-accent" aria-hidden="true"></span></span>
+          <span class="still-life-title-row"><span class="still-life-name">${collectionLabel}</span><span class="card-accent" aria-hidden="true"></span></span>
           <span class="still-life-meta">桌面静物 · ${itemCount} 件素材</span>
         </span>
       </button>`;
@@ -222,7 +248,7 @@ function renderCategoryOverview(collections) {
     categoryOverview.innerHTML = `<div class="collection-overview-copy">
       <p class="eyebrow">STILL LIFE COLLECTION / ${String(collections.length).padStart(2, '0')} SETS</p>
       <h3 id="collectionOverviewTitle">合集<span>桌面静物</span></h3>
-      <p class="collection-overview-description">14 个品类的桌面静物合照集中收录在这里。其他品类页也保留对应的合集照片，方便按品类核对。</p>
+      <p class="collection-overview-description">原有 14 个品类与新增快销品的 7 组细分合照集中收录在这里。其他品类页也保留对应的合集照片，方便按品类核对。</p>
       <div class="category-overview-meta">
         <div><span>内容</span><strong>${collections.length} 组品类合集</strong></div>
         <div><span>画面</span><strong>桌面静物 · 3:2 PNG</strong></div>
@@ -243,29 +269,54 @@ function renderCategoryOverview(collections) {
     return;
   }
 
-  const count = products.filter((product) => product.group === summary.group).length;
+  const count = getProductCount(summary.group);
+  const isNewFmcg = summary.group === '新增快销品';
+  const description = isNewFmcg
+    ? `${summary.description}。按细分场景配有 ${newFmcgCollections.length} 张桌面静物合照，方便快速核对这一组素材。`
+    : `${summary.description}。保留一张自然摆放的桌面静物合集照片，方便快速了解这一组素材。`;
+  const downloadMarkup = isNewFmcg
+    ? `<div class="category-download-list">${newFmcgCollections.map((collection) => {
+        const collectionLabel = collection.label ?? collection.group;
+        return `<a class="category-secondary-download" href="${collection.stillLife}" download="tear-labels-${collectionLabel}-桌面静物.png" data-umami-event="download-category-still-life" data-umami-event-item="${collectionLabel}">
+          <span>↓</span>
+          <span>下载${collectionLabel}合照</span>
+        </a>`;
+      }).join('')}</div>`
+    : `<a class="download-button category-download" href="${summary.stillLife}" download="tear-labels-${summary.group}-桌面静物.png" data-umami-event="download-category-still-life" data-umami-event-item="${summary.group}">
+        <span>↓</span>
+        <span>下载静物合集</span>
+        <span>↗</span>
+      </a>`;
+  const galleryMarkup = isNewFmcg
+    ? `<div class="category-overview-gallery is-multi" aria-label="新增快销品各细分类别桌面静物合集">${newFmcgCollections.map((collection, index) => {
+        const collectionLabel = collection.label ?? collection.group;
+        const figureLabel = collectionLabel.replace('新增快销品 · ', '');
+        return `<figure class="category-overview-figure${index === 0 ? ' is-primary' : ''}">
+          <a class="category-overview-image-wrap" href="${collection.stillLife}" download="tear-labels-${collectionLabel}-桌面静物.png">
+            <img src="${collection.stillLife}" alt="${collectionLabel}桌面静物合集图" loading="lazy" decoding="async" />
+          </a>
+          <figcaption><span>STILL LIFE / ${String(index + 1).padStart(2, '0')}</span><strong>${figureLabel}</strong></figcaption>
+        </figure>`;
+      }).join('')}</div>`
+    : `<div class="category-overview-gallery is-single">
+        <figure class="category-overview-figure is-primary">
+          <div class="category-overview-image-wrap">
+            <img src="${summary.stillLife}" alt="${summary.group}静物合集图，所有类别素材一起摆放在干净桌面上" decoding="async" />
+          </div>
+          <figcaption><span>STILL LIFE / 合集</span><strong>桌面静物</strong></figcaption>
+        </figure>
+      </div>`;
   categoryOverview.innerHTML = `<div class="category-overview-copy">
     <p class="eyebrow">CATEGORY OVERVIEW / ${String(count).padStart(2, '0')} ITEMS</p>
     <h3 id="categoryOverviewTitle">${summary.group}<span>桌面静物</span></h3>
-    <p class="category-overview-description">${summary.description}。保留一张自然摆放的桌面静物合集照片，方便快速了解这一组素材。</p>
+    <p class="category-overview-description">${description}</p>
     <div class="category-overview-meta">
       <div><span>内容</span><strong>${count} 件素材</strong></div>
-      <div><span>画面</span><strong>桌面静物 · 3:2 PNG</strong></div>
+      <div><span>合照</span><strong>${isNewFmcg ? `${newFmcgCollections.length} 张` : '1 张'}</strong></div>
     </div>
-    <a class="download-button category-download" href="${summary.stillLife}" download="tear-labels-${summary.group}-桌面静物.png" data-umami-event="download-category-still-life" data-umami-event-item="${summary.group}">
-      <span>↓</span>
-      <span>下载静物合集</span>
-      <span>↗</span>
-    </a>
+    ${downloadMarkup}
   </div>
-  <div class="category-overview-gallery is-single">
-    <figure class="category-overview-figure is-primary">
-      <div class="category-overview-image-wrap">
-        <img src="${summary.stillLife}" alt="${summary.group}静物合集图，所有类别素材一起摆放在干净桌面上" decoding="async" />
-      </div>
-      <figcaption><span>STILL LIFE / 合集</span><strong>桌面静物</strong></figcaption>
-    </figure>
-  </div>`;
+  ${galleryMarkup}`;
   categoryOverview.hidden = false;
 }
 
@@ -288,21 +339,22 @@ function renderPreview(product) {
 
 function renderCollectionPreview(summary) {
   if (!summary) return;
-  const summaryIndex = categorySummaries.findIndex((item) => item.group === summary.group) + 1;
-  const count = products.filter((product) => product.group === summary.group).length;
+  const summaryIndex = collectionSummaries.findIndex((item) => item.id === summary.id) + 1;
+  const count = getCollectionProductCount(summary);
+  const collectionLabel = summary.label ?? summary.group;
   previewImage.src = summary.stillLife;
-  previewImage.alt = `${summary.group}桌面静物合集大图预览`;
+  previewImage.alt = `${collectionLabel}桌面静物合集大图预览`;
   previewNumber.textContent = String(summaryIndex).padStart(2, '0');
   previewKicker.textContent = `合集 / ${String(summaryIndex).padStart(2, '0')}`;
-  previewName.textContent = summary.group;
+  previewName.textContent = collectionLabel;
   previewDescription.textContent = `桌面静物合集 · ${summary.description}`;
   previewDetailLabel.textContent = '内容';
   previewDetailValue.textContent = `${count} 件素材`;
   previewFormat.textContent = '桌面静物 · 3:2 PNG';
   downloadButton.href = summary.stillLife;
-  downloadButton.download = `tear-labels-${summary.group}-桌面静物.png`;
+  downloadButton.download = `tear-labels-${collectionLabel}-桌面静物.png`;
   downloadButton.children[1].textContent = '下载静物合集';
-  downloadButton.dataset.umamiEventItem = summary.group;
+  downloadButton.dataset.umamiEventItem = collectionLabel;
 }
 
 function render() {
@@ -319,9 +371,9 @@ function render() {
   emptyState.hidden = collectionView ? filteredCollections.length > 0 : filtered.length > 0;
   emptyState.querySelector('h3').textContent = collectionView ? '没有匹配的合集' : '没有匹配的素材';
   if (collectionView) {
-    const selectedCollection = filteredCollections.find((summary) => summary.group === selectedCollectionGroup) || filteredCollections[0];
+    const selectedCollection = filteredCollections.find((summary) => summary.id === selectedCollectionId) || filteredCollections[0];
     if (selectedCollection) {
-      selectedCollectionGroup = selectedCollection.group;
+      selectedCollectionId = selectedCollection.id;
       renderCollectionPreview(selectedCollection);
     }
   } else {
@@ -344,9 +396,9 @@ function render() {
       mobileBackdrop.hidden = false;
     });
   });
-  categoryOverview.querySelectorAll('[data-collection-group]').forEach((card) => {
+  categoryOverview.querySelectorAll('[data-collection-id]').forEach((card) => {
     card.addEventListener('click', () => {
-      selectedCollectionGroup = card.dataset.collectionGroup;
+      selectedCollectionId = card.dataset.collectionId;
       render();
       previewPanel.classList.add('is-mobile-open');
       mobileBackdrop.hidden = false;
