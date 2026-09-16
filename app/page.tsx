@@ -11,8 +11,7 @@ import {
   Share2,
   X,
 } from 'lucide-react';
-import QRCode from 'qrcode';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 type Product = {
   id: string;
@@ -42,6 +41,83 @@ type CollectionSummary = CategorySummary & {
 type ShareTarget =
   | { type: 'product'; product: Product }
   | { type: 'collection'; collection: CollectionSummary };
+
+const INITIAL_FEED_ITEMS = 20;
+const FEED_CHUNK_SIZE = 20;
+
+const getThumbnailUrl = (source: string) =>
+  source.startsWith('/assets/') ? source.replace('/assets/', '/assets/thumbnails/').replace(/\.png$/i, '.webp') : source;
+
+type ProgressiveImageProps = {
+  src: string;
+  thumbnailSrc?: string;
+  alt: string;
+  className?: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+  fetchPriority?: 'high' | 'low' | 'auto';
+};
+
+function ProgressiveImage({
+  src,
+  thumbnailSrc = getThumbnailUrl(src),
+  alt,
+  className,
+  width,
+  height,
+  loading = 'lazy',
+  fetchPriority = 'auto',
+}: ProgressiveImageProps) {
+  const [displaySrc, setDisplaySrc] = useState(thumbnailSrc || src);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    if (!src || !thumbnailSrc || thumbnailSrc === src) {
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    const highResolutionImage = new Image();
+    const promoteImage = () => {
+      if (!cancelled) setDisplaySrc(src);
+    };
+
+    highResolutionImage.decoding = 'async';
+    highResolutionImage.onload = promoteImage;
+    highResolutionImage.src = src;
+    if (typeof highResolutionImage.decode === 'function') {
+      void highResolutionImage.decode().then(promoteImage).catch(() => undefined);
+    }
+
+    return () => {
+      cancelled = true;
+      highResolutionImage.onload = null;
+    };
+  }, [src, thumbnailSrc]);
+
+  return (
+    // oxlint-disable-next-line next/no-img-element -- local assets need a thumbnail-first loading path.
+    <img
+      className={className}
+      src={displaySrc || src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      decoding="async"
+      fetchPriority={fetchPriority}
+      onError={(event) => {
+        if (event.currentTarget.src !== src) {
+          event.currentTarget.onerror = null;
+          event.currentTarget.src = src;
+        }
+      }}
+    />
+  );
+}
 
 const newFmcgProductIds = new Set(Array.from({ length: 40 }, (_, index) => String(index + 77)));
 
@@ -243,6 +319,8 @@ export default function Home() {
   const [shareQrDataUrl, setShareQrDataUrl] = useState('');
   const [shareFeedback, setShareFeedback] = useState('');
   const [isSavingShareCard, setIsSavingShareCard] = useState(false);
+  const [feedRenderState, setFeedRenderState] = useState({ key: '', limit: INITIAL_FEED_ITEMS });
+  const feedSentinelRef = useRef<HTMLDivElement>(null);
   const [favoriteIds, setFavoriteIds] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
 
@@ -290,6 +368,13 @@ export default function Home() {
 
   const selectedProduct = products.find((product) => product.id === selectedId) ?? filteredProducts[0] ?? null;
   const selectedCollection = collectionSummaries.find((summary) => summary.id === selectedCollectionId) ?? filteredCollections[0] ?? null;
+  const filteredFeedLength = isCollectionView ? filteredCollections.length : filteredProducts.length;
+  const feedFilterKey = `${activeGroup}\u0000${query}`;
+  const supportsProgressiveFeed = typeof window === 'undefined' || 'IntersectionObserver' in window;
+  const renderLimit = supportsProgressiveFeed && feedRenderState.key === feedFilterKey ? feedRenderState.limit : supportsProgressiveFeed ? INITIAL_FEED_ITEMS : filteredFeedLength;
+  const visibleProducts = filteredProducts.slice(0, renderLimit);
+  const visibleCollections = filteredCollections.slice(0, renderLimit);
+  const hasMoreFeedItems = renderLimit < filteredFeedLength;
   const modalItem = selectedType === 'collection' ? selectedCollection : selectedProduct;
   const modalListCount = selectedType === 'collection' ? filteredCollections.length : filteredProducts.length;
   const modalIndex =
@@ -300,6 +385,25 @@ export default function Home() {
   const visibleCount = isCollectionView ? filteredCollections.length : filteredProducts.length;
   const totalCount = isCollectionView ? collectionSummaries.length : isFavoritesView ? favoriteIds.length : activeGroup === '全部' ? products.length : getProductCount(activeGroup);
   const shareUrl = shareItem ? getShareUrl(shareItem) : '';
+
+  useEffect(() => {
+    const sentinel = feedSentinelRef.current;
+    if (!sentinel || !hasMoreFeedItems) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0]?.isIntersecting) return;
+        setFeedRenderState((current) => {
+          const currentLimit = current.key === feedFilterKey ? current.limit : INITIAL_FEED_ITEMS;
+          return { key: feedFilterKey, limit: Math.min(currentLimit + FEED_CHUNK_SIZE, filteredFeedLength) };
+        });
+      },
+      { rootMargin: '480px 0px' },
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [feedFilterKey, filteredFeedLength, hasMoreFeedItems]);
 
   const countForGroup = (group: string) => {
     if (group === '全部') return products.length;
@@ -354,11 +458,14 @@ export default function Home() {
       };
     }
 
-    QRCode.toDataURL(shareUrl, {
-      width: 220,
-      margin: 1,
-      color: { dark: '#2d3230', light: '#ffffff' },
-    })
+    import('qrcode')
+      .then(({ default: QRCode }) =>
+        QRCode.toDataURL(shareUrl, {
+          width: 220,
+          margin: 1,
+          color: { dark: '#2d3230', light: '#ffffff' },
+        }),
+      )
       .then((dataUrl) => {
         if (active) setShareQrDataUrl(dataUrl);
       })
@@ -652,9 +759,10 @@ export default function Home() {
 
         {isCollectionView ? (
           <div className="feed-grid collection-feed" aria-label="桌面静物合集">
-            {filteredCollections.map((summary) => {
+            {visibleCollections.map((summary, index) => {
               const collectionLabel = summary.label ?? summary.group;
               const itemCount = getCollectionProductCount(summary);
+              const isLcpCandidate = index < 4;
 
               return (
                 <article className="feed-card collection-card" key={summary.id}>
@@ -666,7 +774,21 @@ export default function Home() {
                   >
                     <span className="feed-card-media">
                       {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
-                      <img src={summary.stillLife} alt={collectionLabel + '桌面静物合集图'} loading="lazy" decoding="async" />
+                      <img
+                        src={getThumbnailUrl(summary.stillLife)}
+                        alt={collectionLabel + '桌面静物合集图'}
+                        width={400}
+                        height={267}
+                        loading={isLcpCandidate ? 'eager' : 'lazy'}
+                        decoding="async"
+                        fetchPriority={isLcpCandidate ? 'high' : 'auto'}
+                        onError={(event) => {
+                          if (event.currentTarget.src !== summary.stillLife) {
+                            event.currentTarget.onerror = null;
+                            event.currentTarget.src = summary.stillLife;
+                          }
+                        }}
+                      />
                     </span>
                     <span className="feed-card-info">
                       <span className="feed-card-title">{collectionLabel}</span>
@@ -682,8 +804,9 @@ export default function Home() {
           </div>
         ) : (
           <div className="feed-grid product-feed" aria-label="日用品产品素材">
-            {filteredProducts.map((product) => {
+            {visibleProducts.map((product, index) => {
               const isFavorite = favoriteIds.includes(product.id);
+              const isLcpCandidate = index < 4;
 
               return (
                 <article className="feed-card" key={product.id}>
@@ -695,7 +818,21 @@ export default function Home() {
                   >
                     <span className="feed-card-media product-media">
                       {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
-                      <img src={product.image} alt={product.name + '，' + (product.treatment ?? '去标签纯色白底') + '产品图'} loading="lazy" decoding="async" />
+                      <img
+                        src={getThumbnailUrl(product.image)}
+                        alt={product.name + '，' + (product.treatment ?? '去标签纯色白底') + '产品图'}
+                        width={400}
+                        height={400}
+                        loading={isLcpCandidate ? 'eager' : 'lazy'}
+                        decoding="async"
+                        fetchPriority={isLcpCandidate ? 'high' : 'auto'}
+                        onError={(event) => {
+                          if (event.currentTarget.src !== product.image) {
+                            event.currentTarget.onerror = null;
+                            event.currentTarget.src = product.image;
+                          }
+                        }}
+                      />
                     </span>
                     <span className="feed-card-info">
                       <span className="feed-card-title">{product.name}</span>
@@ -719,6 +856,7 @@ export default function Home() {
             })}
           </div>
         )}
+        {hasMoreFeedItems ? <div ref={feedSentinelRef} className="feed-sentinel" aria-hidden="true" /> : null}
         {visibleCount === 0 ? (
           <div className="empty-state">
             <span className="empty-symbol" aria-hidden="true">⌕</span>
@@ -760,11 +898,13 @@ export default function Home() {
 
             <div className="note-scroll-body">
               <div className="note-media-wrap">
-                {/* oxlint-disable-next-line next/no-img-element -- modal uses the same local asset as the feed card. */}
-                <img
+                <ProgressiveImage
+                  key={(selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image) ?? ''}
                   className={selectedType === 'collection' ? 'note-main-img collection-main-img' : 'note-main-img'}
-                  src={selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image}
+                  src={(selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image) ?? ''}
                   alt={selectedType === 'collection' ? (selectedCollection?.label ?? selectedCollection?.group ?? '') + '桌面静物合集大图' : (selectedProduct?.name ?? '') + '大图预览'}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
 
@@ -857,8 +997,7 @@ export default function Home() {
               </div>
 
               <div className="share-card-art-box">
-                {/* oxlint-disable-next-line next/no-img-element -- share preview uses the same local asset. */}
-                <img src={getShareImage(shareItem)} alt={getShareTitle(shareItem) + '分享卡片预览'} />
+                <ProgressiveImage key={getShareImage(shareItem)} src={getShareImage(shareItem)} alt={getShareTitle(shareItem) + '分享卡片预览'} loading="eager" fetchPriority="high" />
               </div>
 
               <div className="share-card-meta">

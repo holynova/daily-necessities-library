@@ -422,6 +422,12 @@ img {
   gap: 12px 10px;
 }
 
+.feed-sentinel {
+  width: 100%;
+  min-height: 1px;
+  pointer-events: none;
+}
+
 .feed-card {
   position: relative;
   display: flex;

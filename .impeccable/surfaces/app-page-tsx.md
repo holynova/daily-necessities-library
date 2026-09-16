@@ -29,8 +29,8 @@ Use the rubber-stamp-world-cities interface grammar as the structural reference:
 | --- | --- | --- |
 | Sticky header | semantic HTML/CSS | brand mark, search, visible result count, GitHub source link, favorites download action |
 | Horizontal category rail | semantic buttons | all products, collections, product groups, favorites with active underline |
-| Card feed | local PNG assets + semantic buttons | five-column desktop, two-column mobile, product and still-life variants |
-| Detail layer | semantic dialog + local assets | keyboard navigation, favorite state, metadata, download and share actions, mobile full-height layout |
+| Card feed | WebP thumbnails + local PNG fallback | five-column desktop, two-column mobile, first batch eager, remaining cards appended by IntersectionObserver |
+| Detail layer | semantic dialog + progressive local assets | thumbnail-first preview, background PNG decode, keyboard navigation, favorite state, metadata, download and share actions |
 | Share card | semantic dialog + canvas/QR | reference-style paper poster, natural-ratio preview, copyable deep link, downloadable PNG |
 | Motion | CSS transitions | restrained lift, focus, modal polish, reduced-motion fallback |
 
