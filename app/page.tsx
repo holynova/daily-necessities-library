@@ -4,10 +4,14 @@ import {
   ChevronLeft,
   ChevronRight,
   Download,
+  GitBranch as Github,
   Heart,
+  Link2,
   Search,
+  Share2,
   X,
 } from 'lucide-react';
+import QRCode from 'qrcode';
 import { useEffect, useMemo, useState } from 'react';
 
 type Product = {
@@ -34,6 +38,10 @@ type CollectionSummary = CategorySummary & {
   label?: string;
   itemIds?: string[];
 };
+
+type ShareTarget =
+  | { type: 'product'; product: Product }
+  | { type: 'collection'; collection: CollectionSummary };
 
 const newFmcgProductIds = new Set(Array.from({ length: 40 }, (_, index) => String(index + 77)));
 
@@ -195,6 +203,35 @@ const isProductInGroup = (product: Product, group: string) => product.group === 
 const getProductCount = (group: string) => products.filter((product) => isProductInGroup(product, group)).length;
 const getCollectionProductCount = (summary: CollectionSummary) => summary.itemIds?.length ?? getProductCount(summary.group);
 
+const getShareTitle = (target: ShareTarget) => target.type === 'product' ? target.product.name : target.collection.label ?? target.collection.group;
+const getShareImage = (target: ShareTarget) => target.type === 'product' ? target.product.image : target.collection.stillLife;
+const getShareSeries = (target: ShareTarget) => target.type === 'product' ? target.product.group : '桌面静物合集';
+const getShareDescription = (target: ShareTarget) => target.type === 'product'
+  ? `${target.product.group} · ${target.product.brand}参考 · ${target.product.reference}`
+  : `${target.collection.description} · 本地 PNG 素材`;
+const getShareUrl = (target: ShareTarget) => {
+  if (typeof window === 'undefined') return '';
+  const id = target.type === 'product' ? target.product.id : target.collection.id;
+  return `${window.location.origin}${window.location.pathname}?item=${encodeURIComponent(id)}&type=${target.type}&share=1`;
+};
+
+const loadImage = (src: string) => new Promise<HTMLImageElement>((resolve, reject) => {
+  const image = new Image();
+  image.onload = () => resolve(image);
+  image.onerror = () => reject(new Error('图片加载失败'));
+  image.src = src;
+});
+
+const drawContain = (context: CanvasRenderingContext2D, image: HTMLImageElement, x: number, y: number, width: number, height: number) => {
+  const imageRatio = (image.naturalWidth || image.width) / (image.naturalHeight || image.height);
+  const boxRatio = width / height;
+  const drawWidth = imageRatio > boxRatio ? width : height * imageRatio;
+  const drawHeight = imageRatio > boxRatio ? width / imageRatio : height;
+  const drawX = x + (width - drawWidth) / 2;
+  const drawY = y + (height - drawHeight) / 2;
+  context.drawImage(image, drawX, drawY, drawWidth, drawHeight);
+};
+
 export default function Home() {
   const [activeGroup, setActiveGroup] = useState('全部');
   const [searchTerm, setSearchTerm] = useState('');
@@ -202,6 +239,10 @@ export default function Home() {
   const [selectedCollectionId, setSelectedCollectionId] = useState(collectionSummaries[0].id);
   const [selectedType, setSelectedType] = useState<'product' | 'collection'>('product');
   const [modalOpen, setModalOpen] = useState(false);
+  const [shareItem, setShareItem] = useState<ShareTarget | null>(null);
+  const [shareQrDataUrl, setShareQrDataUrl] = useState('');
+  const [shareFeedback, setShareFeedback] = useState('');
+  const [isSavingShareCard, setIsSavingShareCard] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
 
@@ -258,6 +299,7 @@ export default function Home() {
 
   const visibleCount = isCollectionView ? filteredCollections.length : filteredProducts.length;
   const totalCount = isCollectionView ? collectionSummaries.length : isFavoritesView ? favoriteIds.length : activeGroup === '全部' ? products.length : getProductCount(activeGroup);
+  const shareUrl = shareItem ? getShareUrl(shareItem) : '';
 
   const countForGroup = (group: string) => {
     if (group === '全部') return products.length;
@@ -278,6 +320,18 @@ export default function Home() {
     setModalOpen(true);
   };
 
+  const openShareCard = (target: ShareTarget) => {
+    setShareFeedback('');
+    setShareQrDataUrl('');
+    setShareItem(target);
+  };
+
+  const closeShareCard = () => {
+    setShareItem(null);
+    setShareQrDataUrl('');
+    setShareFeedback('');
+  };
+
   const navigateSelection = (offset: number) => {
     if (!modalOpen || modalListCount === 0) return;
 
@@ -292,7 +346,66 @@ export default function Home() {
   };
 
   useEffect(() => {
+    let active = true;
+
+    if (!shareUrl) {
+      return () => {
+        active = false;
+      };
+    }
+
+    QRCode.toDataURL(shareUrl, {
+      width: 220,
+      margin: 1,
+      color: { dark: '#2d3230', light: '#ffffff' },
+    })
+      .then((dataUrl) => {
+        if (active) setShareQrDataUrl(dataUrl);
+      })
+      .catch(() => {
+        if (active) setShareQrDataUrl('');
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [shareUrl]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const itemId = params.get('item');
+    const itemType = params.get('type');
+
+    if (!itemId) return;
+
+    const timeoutId = window.setTimeout(() => {
+      if (itemType === 'collection') {
+        const collection = collectionSummaries.find((summary) => summary.id === itemId);
+        if (!collection) return;
+        setSelectedCollectionId(collection.id);
+        setSelectedType('collection');
+        setModalOpen(true);
+        if (params.get('share') === '1') setShareItem({ type: 'collection', collection });
+        return;
+      }
+
+      const product = products.find((item) => item.id === itemId);
+      if (!product) return;
+      setSelectedId(product.id);
+      setSelectedType('product');
+      setModalOpen(true);
+      if (params.get('share') === '1') setShareItem({ type: 'product', product });
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (shareItem) {
+        if (event.key === 'Escape') closeShareCard();
+        return;
+      }
       if (!modalOpen) return;
       if (event.key === 'Escape') setModalOpen(false);
       if (event.key === 'ArrowLeft') navigateSelection(-1);
@@ -323,8 +436,120 @@ export default function Home() {
           document.body.appendChild(anchor);
           anchor.click();
           anchor.remove();
-        }, index * 160);
-      });
+      }, index * 160);
+    });
+  };
+
+  const copyShareLink = async () => {
+    if (!shareItem || !shareUrl) return;
+
+    const text = `【日常图鉴】${getShareTitle(shareItem)}\n${shareUrl}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setShareFeedback('分享链接已复制');
+    } catch {
+      setShareFeedback('复制失败，请检查浏览器剪贴板权限');
+    }
+  };
+
+  const saveShareCard = async () => {
+    if (!shareItem || !shareQrDataUrl || isSavingShareCard) return;
+
+    setIsSavingShareCard(true);
+    setShareFeedback('正在生成分享卡片…');
+
+    try {
+      const canvas = document.createElement('canvas');
+      const width = 840;
+      const height = 1180;
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('画布不可用');
+
+      context.fillStyle = '#fbf8f2';
+      context.fillRect(0, 0, width, height);
+      context.strokeStyle = '#e5dbcb';
+      context.lineWidth = 3;
+      context.strokeRect(16, 16, width - 32, height - 32);
+      context.strokeStyle = '#eedecb';
+      context.lineWidth = 1.5;
+      context.strokeRect(27, 27, width - 54, height - 54);
+
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillStyle = '#68716b';
+      context.font = '500 22px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.fillText(getShareSeries(shareItem), width / 2, 70);
+
+      const image = await loadImage(getShareImage(shareItem));
+      const imageBoxX = 56;
+      const imageBoxY = 112;
+      const imageBoxWidth = width - 112;
+      const imageBoxHeight = 690;
+      context.fillStyle = '#ece3d4';
+      context.fillRect(imageBoxX, imageBoxY, imageBoxWidth, imageBoxHeight);
+      context.save();
+      context.beginPath();
+      context.roundRect(imageBoxX, imageBoxY, imageBoxWidth, imageBoxHeight, 16);
+      context.clip();
+      drawContain(context, image, imageBoxX, imageBoxY, imageBoxWidth, imageBoxHeight);
+      context.restore();
+
+      context.textAlign = 'left';
+      context.fillStyle = '#2d3230';
+      context.font = '700 34px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.fillText(getShareTitle(shareItem), 56, 872);
+      context.fillStyle = '#68716b';
+      context.font = '20px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      const description = getShareDescription(shareItem);
+      context.fillText(description.length > 34 ? `${description.slice(0, 33)}…` : description, 56, 916);
+
+      context.beginPath();
+      context.setLineDash([9, 7]);
+      context.strokeStyle = '#dcd1c0';
+      context.lineWidth = 1.5;
+      context.moveTo(56, 972);
+      context.lineTo(width - 56, 972);
+      context.stroke();
+      context.setLineDash([]);
+
+      context.fillStyle = '#2d3230';
+      context.font = '700 22px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.fillText('扫码查看素材', 56, 1038);
+      context.fillStyle = '#878c84';
+      context.font = '18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.fillText('日常图鉴 · 本地 PNG 素材库', 56, 1078);
+
+      const qrImage = await loadImage(shareQrDataUrl);
+      const qrSize = 132;
+      const qrX = width - 56 - qrSize;
+      const qrY = 1000;
+      context.fillStyle = '#ffffff';
+      context.strokeStyle = '#e5ddcf';
+      context.lineWidth = 1.5;
+      context.beginPath();
+      context.roundRect(qrX - 8, qrY - 8, qrSize + 16, qrSize + 16, 10);
+      context.fill();
+      context.stroke();
+      context.drawImage(qrImage, qrX, qrY, qrSize, qrSize);
+
+      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'));
+      if (!blob) throw new Error('海报生成失败');
+      const downloadUrl = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = downloadUrl;
+      anchor.download = `日常图鉴分享卡片_${getShareTitle(shareItem)}.png`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(downloadUrl);
+      setShareFeedback('分享卡片已保存');
+    } catch {
+      setShareFeedback('生成失败，请稍后重试');
+    } finally {
+      setIsSavingShareCard(false);
+    }
   };
 
   const clearSearch = () => setSearchTerm('');
@@ -357,6 +582,18 @@ export default function Home() {
           </label>
 
           <div className="header-tools">
+            <a
+              className="github-link"
+              href="https://github.com/holynova/daily-necessities-library"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="打开 GitHub 源码仓库"
+              title="GitHub 源码仓库"
+              data-umami-event="open-github"
+            >
+              <Github size={16} strokeWidth={1.8} aria-hidden="true" />
+              <span>GitHub</span>
+            </a>
             <span className="header-count">{String(visibleCount).padStart(2, '0')} / {String(totalCount).padStart(2, '0')}</span>
             <button
               className="btn-top-download"
@@ -566,6 +803,21 @@ export default function Home() {
 
             <div className="note-bottom-bar">
               <span className="note-bottom-hint">本地素材 · 点击下载</span>
+              <button
+                className="note-bottom-action note-share-action"
+                type="button"
+                onClick={() => {
+                  if (selectedType === 'collection' && selectedCollection) {
+                    openShareCard({ type: 'collection', collection: selectedCollection });
+                  } else if (selectedType === 'product' && selectedProduct) {
+                    openShareCard({ type: 'product', product: selectedProduct });
+                  }
+                }}
+                aria-label="生成分享卡片"
+              >
+                <Share2 size={18} strokeWidth={1.9} aria-hidden="true" />
+                <span>分享</span>
+              </button>
               <a
                 className="note-bottom-action"
                 href={selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image}
@@ -580,6 +832,67 @@ export default function Home() {
                 <span>下载原图</span>
               </a>
             </div>
+          </div>
+        </dialog>
+      ) : null}
+
+      {shareItem ? (
+        <dialog
+          className="share-card-modal open"
+          aria-modal="true"
+          aria-labelledby="share-card-title"
+          open
+        >
+          <div className="share-modal-window">
+            <div className="share-modal-header">
+              <span className="share-modal-heading" id="share-card-title">分享素材卡片</span>
+              <button className="share-modal-close" type="button" aria-label="关闭分享卡片" onClick={closeShareCard}>
+                <X size={17} strokeWidth={2.4} aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="share-card-paper">
+              <div className="share-card-header">
+                <span className="share-card-series">{getShareSeries(shareItem)}</span>
+              </div>
+
+              <div className="share-card-art-box">
+                {/* oxlint-disable-next-line next/no-img-element -- share preview uses the same local asset. */}
+                <img src={getShareImage(shareItem)} alt={getShareTitle(shareItem) + '分享卡片预览'} />
+              </div>
+
+              <div className="share-card-meta">
+                <h2>{getShareTitle(shareItem)}</h2>
+                <p>{getShareDescription(shareItem)}</p>
+              </div>
+
+              <div className="share-card-footer">
+                <div className="share-card-footer-copy">
+                  <strong>扫码查看素材</strong>
+                  <span>日常图鉴 · 本地 PNG 素材库</span>
+                </div>
+                <div className="share-card-qr-wrap">
+                  {shareQrDataUrl ? (
+                    /* oxlint-disable-next-line next/no-img-element -- QR preview is generated as a data URL. */
+                    <img className="share-card-qr" src={shareQrDataUrl} alt="分享链接二维码" />
+                  ) : (
+                    <span className="share-card-qr-loading">生成中</span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="share-modal-actions">
+              <button className="share-save-btn" type="button" onClick={saveShareCard} disabled={!shareQrDataUrl || isSavingShareCard}>
+                <Download size={17} strokeWidth={2.1} aria-hidden="true" />
+                <span>{isSavingShareCard ? '正在生成…' : '保存分享卡片'}</span>
+              </button>
+              <button className="share-link-btn" type="button" onClick={copyShareLink}>
+                <Link2 size={16} strokeWidth={2.1} aria-hidden="true" />
+                <span>复制链接</span>
+              </button>
+            </div>
+            {shareFeedback ? <output className="share-feedback">{shareFeedback}</output> : null}
           </div>
         </dialog>
       ) : null}
