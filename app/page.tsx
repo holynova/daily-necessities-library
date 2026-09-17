@@ -45,8 +45,19 @@ type ShareTarget =
 const INITIAL_FEED_ITEMS = 20;
 const FEED_CHUNK_SIZE = 20;
 
-const getThumbnailUrl = (source: string) =>
-  source.startsWith('/assets/') ? source.replace('/assets/', '/assets/thumbnails/').replace(/\.png$/i, '.webp') : source;
+const GITHUB_PAGES_PATH = '/daily-necessities-library';
+
+const getAssetUrl = (source: string) => {
+  if (!source.startsWith('/assets/')) return source;
+
+  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith(GITHUB_PAGES_PATH) ? GITHUB_PAGES_PATH : '';
+  return `${basePath}${source}`;
+};
+
+const getThumbnailUrl = (source: string) => {
+  const thumbnailSource = source.startsWith('/assets/') ? source.replace('/assets/', '/assets/thumbnails/').replace(/\.png$/i, '.webp') : source;
+  return getAssetUrl(thumbnailSource);
+};
 
 type ProgressiveImageProps = {
   src: string;
@@ -69,12 +80,14 @@ function ProgressiveImage({
   loading = 'lazy',
   fetchPriority = 'auto',
 }: ProgressiveImageProps) {
-  const [displaySrc, setDisplaySrc] = useState(thumbnailSrc || src);
+  const resolvedSrc = getAssetUrl(src);
+  const resolvedThumbnailSrc = thumbnailSrc ? getAssetUrl(thumbnailSrc) : getThumbnailUrl(src);
+  const [displaySrc, setDisplaySrc] = useState(resolvedThumbnailSrc || resolvedSrc);
 
   useEffect(() => {
     let cancelled = false;
 
-    if (!src || !thumbnailSrc || thumbnailSrc === src) {
+    if (!resolvedSrc || !resolvedThumbnailSrc || resolvedThumbnailSrc === resolvedSrc) {
       return () => {
         cancelled = true;
       };
@@ -82,12 +95,12 @@ function ProgressiveImage({
 
     const highResolutionImage = new Image();
     const promoteImage = () => {
-      if (!cancelled) setDisplaySrc(src);
+      if (!cancelled) setDisplaySrc(resolvedSrc);
     };
 
     highResolutionImage.decoding = 'async';
     highResolutionImage.onload = promoteImage;
-    highResolutionImage.src = src;
+    highResolutionImage.src = resolvedSrc;
     if (typeof highResolutionImage.decode === 'function') {
       void highResolutionImage.decode().then(promoteImage).catch(() => undefined);
     }
@@ -96,13 +109,13 @@ function ProgressiveImage({
       cancelled = true;
       highResolutionImage.onload = null;
     };
-  }, [src, thumbnailSrc]);
+  }, [resolvedSrc, resolvedThumbnailSrc]);
 
   return (
     // oxlint-disable-next-line next/no-img-element -- local assets need a thumbnail-first loading path.
     <img
       className={className}
-      src={displaySrc || src}
+      src={displaySrc || resolvedSrc}
       alt={alt}
       width={width}
       height={height}
@@ -110,9 +123,9 @@ function ProgressiveImage({
       decoding="async"
       fetchPriority={fetchPriority}
       onError={(event) => {
-        if (event.currentTarget.src !== src) {
+        if (event.currentTarget.src !== resolvedSrc) {
           event.currentTarget.onerror = null;
-          event.currentTarget.src = src;
+          event.currentTarget.src = resolvedSrc;
         }
       }}
     />
@@ -295,7 +308,7 @@ const loadImage = (src: string) => new Promise<HTMLImageElement>((resolve, rejec
   const image = new Image();
   image.onload = () => resolve(image);
   image.onerror = () => reject(new Error('图片加载失败'));
-  image.src = src;
+  image.src = getAssetUrl(src);
 });
 
 const drawContain = (context: CanvasRenderingContext2D, image: HTMLImageElement, x: number, y: number, width: number, height: number) => {
@@ -538,7 +551,7 @@ export default function Home() {
       .forEach((product, index) => {
         window.setTimeout(() => {
           const anchor = document.createElement('a');
-          anchor.href = product.image;
+          anchor.href = getAssetUrl(product.image);
           anchor.download = 'daily-necessities-' + product.id + '-' + product.name + '.png';
           document.body.appendChild(anchor);
           anchor.click();
@@ -783,9 +796,10 @@ export default function Home() {
                         decoding="async"
                         fetchPriority={isLcpCandidate ? 'high' : 'auto'}
                         onError={(event) => {
-                          if (event.currentTarget.src !== summary.stillLife) {
+                          const originalSrc = getAssetUrl(summary.stillLife);
+                          if (event.currentTarget.src !== originalSrc) {
                             event.currentTarget.onerror = null;
-                            event.currentTarget.src = summary.stillLife;
+                            event.currentTarget.src = originalSrc;
                           }
                         }}
                       />
@@ -827,9 +841,10 @@ export default function Home() {
                         decoding="async"
                         fetchPriority={isLcpCandidate ? 'high' : 'auto'}
                         onError={(event) => {
-                          if (event.currentTarget.src !== product.image) {
+                          const originalSrc = getAssetUrl(product.image);
+                          if (event.currentTarget.src !== originalSrc) {
                             event.currentTarget.onerror = null;
-                            event.currentTarget.src = product.image;
+                            event.currentTarget.src = originalSrc;
                           }
                         }}
                       />
@@ -960,7 +975,7 @@ export default function Home() {
               </button>
               <a
                 className="note-bottom-action"
-                href={selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image}
+                href={getAssetUrl(selectedType === 'collection' ? selectedCollection?.stillLife ?? '' : selectedProduct?.image ?? '')}
                 download={
                   selectedType === 'collection'
                     ? 'daily-necessities-' + (selectedCollection?.label ?? selectedCollection?.group ?? 'collection') + '.png'
