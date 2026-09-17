@@ -1,44 +1,43 @@
-# 撕标签 Design QA
+# 日常图鉴 Design QA
 
 final result: passed
 
 ## Reference and comparison inputs
 
-- Source visual truth: https://holynova.github.io/daily-necessities-library/
-- Source desktop capture: `design-qa-source-desktop.png` — 1920 × 878, 洗护用品品类状态。
-- Implementation desktop capture: `design-qa-implementation-desktop.png` — 1920 × 878, 洗护用品品类状态。
-- Side-by-side desktop comparison: `design-qa-comparison-desktop.jpg` — source on the left, implementation on the right.
-- Source mobile capture: `design-qa-source-mobile.png` — 390 × 844, 洗护用品品类状态。
-- Implementation mobile capture: `design-qa-implementation-mobile.png` — 390 × 844, 洗护用品品类状态。
-- Side-by-side mobile comparison: `design-qa-comparison-mobile.jpg` — source on the left, implementation on the right.
+- Reference interaction language: https://holynova.github.io/rubber-stamp-world-cities/
+- Target content source: https://holynova.github.io/daily-necessities-library/
+- Desktop visual check: local Chrome preview at 1920 × 878.
+- Mobile visual check: local in-app preview at 320 × 844.
 
 ## Visual review
 
-- Desktop shell, proportions, typography hierarchy, rule system, cobalt action color, product image treatment, and fixed preview panel remain aligned with the source.
-- The requested content changes are visible and intentional: the project is named “撕标签”, the default home state is “合集”, the 14-card tabletop still-life gallery replaces the old full-page layout sheet, and category pages keep only their tabletop still-life image.
-- Mobile layout keeps the horizontal category rail, two-column collection cards, responsive category image, and bottom preview drawer without clipping at 390 × 844.
+- Sticky top header, centered search capsule, horizontal category rail, five-column desktop feed, two-column mobile feed, warm paper ground, compact cards, and modal detail layer follow the reference project's visual grammar.
+- Palette is intentionally adjusted for daily products: warm linen background, sea-green primary action, and clay-orange favorites/download state.
+- Product and still-life images remain local assets; transparent product cutouts keep their white treatment and every image keeps its complete source frame without `cover` cropping.
+- The detail layer is centered on desktop and becomes a full-height mobile sheet with a fixed download action.
+- Media containers now follow each source image's natural ratio; product and still-life images use `contain`/auto height in both cards and detail views, with no hover scale that could clip edges.
+- Card and detail media no longer carry a top-left index badge; the image starts flush with the card media edge without inner image padding.
 
 ## Interaction coverage
 
-- Default “合集” state: 14 collection cards, 14 loaded still-life images, product grid hidden.
-- Collection card selection: updates selected card, preview title, image, item count, and download target.
-- Category selection: keeps the category still-life image and shows the category product cards.
-- Grid/list toggle: works for both the collection gallery and product grid.
-- Search and clear-search: filter counts and empty-state behavior work for products and collections.
-- Mobile collection selection: opens the bottom preview drawer and close control dismisses it.
-- Static `docs/` version: collection selection, category retention, image loading, and download targets verified at `http://localhost:4175/`.
+- Category tabs switch between all products, the 21 still-life collections, every existing product group, and “我的收藏”.
+- Search filters products or collections by name, group, brand reference, and id; clear controls restore the current view.
+- Product cards open the detail layer, which supports previous/next navigation, Escape/back/close actions, favorite state, and local PNG download.
+- Collection cards open the same detail layer with the matching still-life image and download target.
+- Favorites persist in localStorage; the header count and “我的收藏” tab update immediately.
 
 ## Verification
 
 - `npm run build` passed.
-- `node --check docs/app.js` passed.
-- `git diff --check` passed.
-- No `排版`, `category-summaries`, `去 Logo`, `去品牌`, or old `daily-index` references remain in the implementation or docs.
-- Static preview console: no errors.
-- Local dev preview console: one React hydration warning caused by the installed browser translation extension injecting `data-immersive-translate-page-theme`; no application stack trace or runtime failure.
+- `npx tsc --noEmit` passed.
+- `npx oxlint app/page.tsx` passed.
+- The workspace is a projectless checkout without `.git` metadata, so source-level checks use the build and targeted linter instead of a Git diff check.
+- Manual desktop and mobile browser checks completed; images loaded after native lazy-loading settled.
+- Finish-reviewer handoff did not return after two bounded attempts; the final disposition below is the in-thread contract review of the same screenshots and source.
+- The repository-wide `npm run lint` still reports pre-existing findings in shared `components/ui/*`, `hooks/use-mobile.ts`, and `components/ui/chart.tsx`; no page-level findings remain.
 
 ## Findings
 
+- Manual finish disposition: PASS.
 - P0/P1/P2 visual or functional issues: none found.
-- `npm run lint` still reports the repository’s existing accessibility/compiler findings in shared `components/ui/*`, `hooks/use-mobile.ts`, and `components/ui/chart.tsx`; no new finding points to the changed page or static script.
-
+- Remaining repository-wide lint findings are outside the refactored surface.

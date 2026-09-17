@@ -2,12 +2,15 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '撕标签｜去除包装标签的产品图素材库',
-  description: '撕掉包装标签，保留 76 个常见日用品、饮料与食品的纯色白底 PNG，并收录 14 组桌面静物合集。',
+  title: '日常图鉴｜无品牌产品素材库',
+  description: '以暖纸张、海绿色操作色和卡片流展示 116 个无品牌日用品 PNG 与 21 组桌面静物合集。',
   openGraph: {
-    title: '撕标签｜去除包装标签的产品图素材库',
-    description: '撕掉包装标签，保留 76 个常见日用品、饮料与食品的纯色白底 PNG，并收录 14 组桌面静物合集。',
+    title: '日常图鉴｜无品牌产品素材库',
+    description: '以暖纸张、海绿色操作色和卡片流展示 116 个无品牌日用品 PNG 与 21 组桌面静物合集。',
     type: 'website',
+  },
+  other: {
+    'data-impeccable-direction': 'c134f795',
   },
 };
 
@@ -20,11 +23,11 @@ export default function RootLayout({
     <html lang="zh-CN">
       <body>
         {/*
-          THESIS: 让撕掉包装标签的产品图先被找到，再被下载；拒绝把素材库藏在营销式首屏后。
-          OWN-WORLD: 石墨索引栏、纸白工作区、钴蓝操作色、细规则和真实产品图。
-          STORY: 用户从 76 个真实条目开始，筛选一类或进入合集，先看桌面静物，再选中一件，在原位看清并下载。
-          FIRST VIEWPORT: 左侧分组，中间直接展示网格，右侧固定预览；搜索位于内容顶部。
-          FORM: 工作台式索引，direction seed 6e92f04f；完成条件是每张图可找、可看、可下。
+          THESIS: 让日用品素材像一条可连续浏览的图片流，打开即见、点开即下；不把检索藏在营销首屏之后。
+          OWN-WORLD: 暖纸张底、海绿色操作色、陶土色收藏色、细边框与按原始比例展示的本地产品卡片。
+          STORY: 用户从全部素材开始，横向切换分类或合集，搜索后点开一张图，在详情层收藏、翻页或下载原图。
+          FIRST VIEWPORT: 吸顶品牌栏含搜索与收藏下载，第二行是横向分类，首屏直接显示 5 列产品卡片流。
+          FORM: 参考 rubber-stamp-world-cities 的图片流与详情层，用户指定该界面语言；direction seed c134f795。
           FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
         */}
         {children}

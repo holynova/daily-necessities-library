@@ -9,36 +9,31 @@ related_targets: []
 
 ## Scope and visitor mode
 
-Single-route, responsive web workspace for browsing and downloading the existing 76-item daily-necessities image set. Visitor mode: Operate.
+Single-route responsive web library for browsing and downloading 116 unbranded product PNGs and 21 still-life collection images. Visitor mode: Operate.
 
 ## Audience, job, action/task, proof/content, constraints
 
 - Audience: content creators, designers, and asset organizers.
-- Job: find a clean unbranded daily-necessity product image quickly.
-- Primary actions: search, filter by category, inspect the still-life and catalog summary sheets, open a larger preview, download the PNG.
-- Proof/content: 76 real generated PNGs, fourteen category still-life sheets, and fourteen catalog summary sheets, with brand专题、规格补充、10 household-appliance items, and 10 beverage/food items.
-- Constraints: use the local output images; do not invent counts, specs, dates, or commercial claims; preserve the white-background product-photo treatment.
+- Job: find a clean daily-necessity image quickly, then inspect and download it.
+- Primary actions: search, switch horizontal categories, open a product or still-life detail, favorite an item, move between items, download local assets.
+- Proof/content: 116 real product PNGs, 21 real still-life sheets, existing product groups and brand references.
+- Constraints: keep all imagery local, preserve truthful item metadata, and retain transparent white-background product treatment.
 
 ## Chosen direction and memorable moment
 
-Use the approved comp B direction: a graphite index rail anchors a bright white studio workspace. The first viewport shows the product grid immediately, with a compact search field and a small category index. Selecting an item opens a focused preview drawer with the actual image, category, reference product, and download action. The memorable moment is the selected image becoming the clear, quiet center of the workspace without leaving the catalog.
-
-## Approved composition
-
-- Approved comp: `.impeccable/mocks/comp-b.png`.
-- The comp is a composition reference, not a source of factual metadata; remove its invented counts, sizes, dates, and extra categories.
+Use the rubber-stamp-world-cities interface grammar as the structural reference: sticky top header, centered search capsule, horizontal tabs, compact feed cards, and an immersive note-style detail layer. Adjust the palette for daily products with warm linen, sea-green actions, and clay-orange favorites. The memorable moment is opening any item into a quiet, focused detail layer without losing the feed context.
 
 ## Implementation inventory
 
 | Region | Medium | Commitment |
 | --- | --- | --- |
-| Graphite rail | semantic HTML/CSS | compact title, collection note, category navigation |
-| Search and category controls | semantic HTML/CSS/SVG icon | keyboard-accessible search, selected category state |
-| Category summary gallery | generated local PNG sheets + semantic HTML/CSS | one still-life sheet and one catalog sheet appear when a collection is selected, with separate download actions |
-| Product grid | existing local PNG assets + semantic HTML/CSS | 76 real assets, one readable label per item, responsive columns |
-| Selected preview | existing local PNG asset + semantic HTML/CSS | enlarged image, truthful item metadata, download action |
-| Motion | CSS transitions | one restrained selection/drawer reveal, respects reduced motion |
+| Sticky header | semantic HTML/CSS | brand mark, search, visible result count, GitHub source link, favorites download action |
+| Horizontal category rail | semantic buttons | all products, collections, product groups, favorites with active underline |
+| Card feed | WebP thumbnails + local PNG fallback | five-column desktop, two-column mobile, first batch eager, remaining cards appended by IntersectionObserver |
+| Detail layer | semantic dialog + progressive local assets | thumbnail-first preview, background PNG decode, keyboard navigation, favorite state, metadata, download and share actions |
+| Share card | semantic dialog + canvas/QR | reference-style paper poster, natural-ratio preview, copyable deep link, downloadable PNG |
+| Motion | CSS transitions | restrained lift, focus, modal polish, reduced-motion fallback |
 
 ## Unresolved decisions
 
-No open product decisions for this route. Future uploads, authentication, persistent favorites, and ranking are out of scope until requested.
+No open product decisions for this route. Future uploads, authentication, and ranking remain out of scope.
