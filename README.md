@@ -54,18 +54,28 @@
 - 🚀 **备选镜像 (GitHub Pages)**：[https://holynova.github.io/daily-necessities-library/](https://holynova.github.io/daily-necessities-library/)
 
 ### 2. 本地运行与调试
-克隆仓库后执行以下命令：
+需要 Node.js **22.13.0 或更高版本**（见 `package.json`）。克隆仓库后执行：
 
 ```bash
 git clone https://github.com/holynova/daily-necessities-library.git
 cd daily-necessities-library
-npm install && npm run dev
+npm ci
+npm run dev
 ```
 
 ---
 
+## 开发检查
+
+```bash
+npm run lint
+npm run build
+```
+
+`npm run dev` 用于开发；`npm start` 读取构建后的 `dist/server/wrangler.json`，请先完成构建。
+
 ## 开源协议与作者 (License & Author)
 
 - **作者**：[holynova (小桑)](https://xiaosang.cc/)
-- **授权协议**：[MIT License](./LICENSE)
+- **授权说明**：仓库当前未附独立 LICENSE 文件；使用图片前请向作者确认相应授权。
 - **合辑收录**：本仓库作为精选项目收录于 [Where Craft Lives (xiaosang.cc)](https://xiaosang.cc/)。
