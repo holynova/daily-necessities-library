@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GalleryCard from '../components/GalleryCard.astro';
+import { ManifestSchema, SiteConfigSchema } from '../lib/schema';
+import siteData from '../data/site.json';
+import manifestData from '../data/manifest.json';
+import catalog from '../../content/catalog.json';
+import {withBase} from '../lib/paths';
+const site = SiteConfigSchema.parse(siteData);
+const manifest = ManifestSchema.parse(manifestData);
+const images = catalog.records.map(record => ({...manifest.images.find(image => image.slug === record.slug)!, record}));
+const manifestJson = JSON.stringify({...manifest, images}).replace(/</g, '\\u003c');
+const configJson = JSON.stringify({features:site.features,batchSize:24,layoutMode:'grid'});
+const hero = images.find(image => image.slug === 'scene-15')!;
+---
+<BaseLayout site={site}>
+  <header class="topbar"><a href={withBase('/')} class="wordmark">撕标签<span>日常物品素材库</span></a><a class="toplink" href="#materials">浏览素材 ↗</a></header>
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy"><p class="eyebrow">EVERYDAY OBJECTS / 001—137</p><h1 id="intro-title">去掉标签，<br/>看见日常。</h1><p class="lead">熟悉的物品，纯粹的形状。<br/>一份持续整理的去品牌静物素材集。</p><a class="primary" href="#materials">探索素材 <span>↓</span></a><dl class="facts"><div><dt>116</dt><dd>件单品</dd></div><div><dt>21</dt><dd>组桌面静物</dd></div><div><dt>PNG</dt><dd>高清下载</dd></div></dl></div>
+      <figure class="intro-image"><picture><source type="image/avif" srcset={withBase(hero.variants.detail.avif.at(-1)!.src)}/><source type="image/webp" srcset={withBase(hero.variants.detail.webp.at(-1)!.src)}/><img src={withBase(hero.variants.detail.jpeg.at(-1)!.src)} width={hero.width} height={hero.height} alt={hero.alt} fetchpriority="high"/></picture><figcaption><span>无字包装 · 柔和色彩 · 日常形态</span><span>STILL LIFE / 015</span></figcaption></figure>
+    </section>
+    <section id="materials" class="catalogue" aria-labelledby="catalogue-title">
+      <div class="catalogue-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="catalogue-title">日常物品目录<span>137</span></h2></div><label class="search"><span>⌕</span><input id="gallery-search" type="search" placeholder="搜索物品、分类或参考品牌" aria-label="搜索素材"/><kbd>/</kbd></label></div>
+      <div class="catalogue-body"><aside class="sidebar"><h3>素材分类</h3><nav aria-label="素材分类"><button data-collection-filter="all" class="is-active" aria-pressed="true">全部素材<span>137</span></button>{catalog.groups.map((group,index)=><button data-collection-filter={'category-'+index} aria-pressed="false">{group}<span>{images.filter(image=>image.collection==='category-'+index).length}</span></button>)}</nav><p class="sidebar-note">物品名称与参考品牌沿用原项目。图片呈现去标后的外观。</p></aside>
+      <div class="results"><div class="results-toolbar"><div class="kind-tabs" aria-label="素材类型"><button data-kind="all" class="is-active" aria-pressed="true">全部</button><button data-kind="single" aria-pressed="false">单品</button><button data-kind="scene" aria-pressed="false">桌面静物</button><button data-kind="new" aria-pressed="false">去标快销品</button><button data-kind="saved" aria-pressed="false">收藏</button></div><p class="result-count" aria-live="polite"><span id="visible-count">24</span> / <span id="matched-count">137</span></p></div>
+      <div class="gallery" data-gallery data-layout="grid">{images.map((image,index)=><GalleryCard image={image} index={index}/>)}</div><div id="gallery-empty" class="empty" hidden><h3>这里暂时没有素材</h3><p>试试其他关键词，或重新选择分类。</p><button id="gallery-reset">显示全部素材</button></div><button id="gallery-load-more" class="load-more">再看 24 张 ↓</button>
+      </div></div>
+    </section>
+    <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-caption">
+      <div class="lightbox__surface">
+        <div class="lightbox__toolbar">
+          <p id="lightbox-position" class="lightbox__position" aria-live="polite"></p>
+          <button class="icon-button" type="button" data-lightbox-close aria-label="关闭图片预览">关闭</button>
+        </div>
+        <div class="lightbox__media" data-lightbox-media>
+          <picture>
+            <source data-lightbox-avif type="image/avif" />
+            <source data-lightbox-webp type="image/webp" />
+            <img
+              data-lightbox-image
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+              width="1"
+              height="1"
+              alt=""
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="lightbox__footer">
+          <p id="lightbox-caption" data-lightbox-caption></p>
+          <div class="lightbox__actions">
+            <button class="icon-button" type="button" data-lightbox-prev aria-label="上一张">上一张</button>
+            <button class="icon-button" type="button" data-lightbox-next aria-label="下一张">下一张</button>
+            {site.features.download && <a class="icon-button" data-lightbox-download download>下载</a>}
+            {site.features.share && <button class="icon-button" type="button" data-lightbox-share>分享</button>}
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+<footer class="site-footer"><div><strong>撕标签</strong><p>让日常物品，回到形状与色彩。</p></div><p>137 张素材 · 本地 PNG 下载<br/>来源：原项目整理的 AI 生成静物</p><a href="https://github.com/holynova/daily-necessities-library" target="_blank" rel="noopener">项目与素材说明 ↗</a></footer>
+<script type="application/json" id="gallery-manifest" set:html={manifestJson}></script><script type="application/json" id="gallery-config" set:html={configJson}></script><script src="../scripts/gallery.ts"></script>
+</main></BaseLayout>

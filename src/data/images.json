@@ -1,0 +1,963 @@
+{
+  "images": [
+    {
+      "source": "洗护用品/01-laundry-liquid.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的洗衣液物品素材",
+      "caption": "洗衣液",
+      "slug": "item-01"
+    },
+    {
+      "source": "洗护用品/02-laundry-powder.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的洗衣粉物品素材",
+      "caption": "洗衣粉",
+      "slug": "item-02"
+    },
+    {
+      "source": "洗护用品/03-laundry-pods.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的洗衣凝珠物品素材",
+      "caption": "洗衣凝珠",
+      "slug": "item-03"
+    },
+    {
+      "source": "洗护用品/04-fabric-softener.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的衣物柔顺剂物品素材",
+      "caption": "衣物柔顺剂",
+      "slug": "item-04"
+    },
+    {
+      "source": "个人护理/05-hand-wash.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的洗手液物品素材",
+      "caption": "洗手液",
+      "slug": "item-05"
+    },
+    {
+      "source": "个人护理/06-shampoo.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的洗发水物品素材",
+      "caption": "洗发水",
+      "slug": "item-06"
+    },
+    {
+      "source": "个人护理/07-conditioner.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的护发素物品素材",
+      "caption": "护发素",
+      "slug": "item-07"
+    },
+    {
+      "source": "个人护理/08-body-wash.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的沐浴露物品素材",
+      "caption": "沐浴露",
+      "slug": "item-08"
+    },
+    {
+      "source": "个人护理/09-toothpaste.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的牙膏物品素材",
+      "caption": "牙膏",
+      "slug": "item-09"
+    },
+    {
+      "source": "个人护理/10-facial-cleanser.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的洁面乳物品素材",
+      "caption": "洁面乳",
+      "slug": "item-10"
+    },
+    {
+      "source": "个人护理/11-body-lotion.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的身体乳物品素材",
+      "caption": "身体乳",
+      "slug": "item-11"
+    },
+    {
+      "source": "纸品湿巾/12-toilet-paper.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的卫生纸物品素材",
+      "caption": "卫生纸",
+      "slug": "item-12"
+    },
+    {
+      "source": "纸品湿巾/13-tissues.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的抽纸物品素材",
+      "caption": "抽纸",
+      "slug": "item-13"
+    },
+    {
+      "source": "纸品湿巾/14-wet-wipes.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的湿巾物品素材",
+      "caption": "湿巾",
+      "slug": "item-14"
+    },
+    {
+      "source": "纸品湿巾/15-kitchen-towel.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的厨房纸巾物品素材",
+      "caption": "厨房纸巾",
+      "slug": "item-15"
+    },
+    {
+      "source": "厨房清洁/16-dishwashing-liquid.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的洗洁精物品素材",
+      "caption": "洗洁精",
+      "slug": "item-16"
+    },
+    {
+      "source": "厨房清洁/17-kitchen-cleaner.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的厨房重油污净物品素材",
+      "caption": "厨房重油污净",
+      "slug": "item-17"
+    },
+    {
+      "source": "厨房清洁/18-toilet-cleaner.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的洁厕液物品素材",
+      "caption": "洁厕液",
+      "slug": "item-18"
+    },
+    {
+      "source": "消毒收纳/19-disinfectant.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的84 消毒液物品素材",
+      "caption": "84 消毒液",
+      "slug": "item-19"
+    },
+    {
+      "source": "消毒收纳/20-trash-bags.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的垃圾袋物品素材",
+      "caption": "垃圾袋",
+      "slug": "item-20"
+    },
+    {
+      "source": "家用电器/21-electric-kettle.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的电热水壶物品素材",
+      "caption": "电热水壶",
+      "slug": "item-21"
+    },
+    {
+      "source": "家用电器/22-rice-cooker.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的电饭煲物品素材",
+      "caption": "电饭煲",
+      "slug": "item-22"
+    },
+    {
+      "source": "家用电器/23-microwave-oven.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的微波炉物品素材",
+      "caption": "微波炉",
+      "slug": "item-23"
+    },
+    {
+      "source": "家用电器/24-cordless-vacuum.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的无线吸尘器物品素材",
+      "caption": "无线吸尘器",
+      "slug": "item-24"
+    },
+    {
+      "source": "家用电器/25-hair-dryer.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的吹风机物品素材",
+      "caption": "吹风机",
+      "slug": "item-25"
+    },
+    {
+      "source": "家用电器/26-electric-fan.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的电风扇物品素材",
+      "caption": "电风扇",
+      "slug": "item-26"
+    },
+    {
+      "source": "家用电器/27-air-purifier.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的空气净化器物品素材",
+      "caption": "空气净化器",
+      "slug": "item-27"
+    },
+    {
+      "source": "家用电器/28-humidifier.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的加湿器物品素材",
+      "caption": "加湿器",
+      "slug": "item-28"
+    },
+    {
+      "source": "家用电器/29-electric-toothbrush.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的电动牙刷物品素材",
+      "caption": "电动牙刷",
+      "slug": "item-29"
+    },
+    {
+      "source": "家用电器/30-steam-iron.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的电熨斗物品素材",
+      "caption": "电熨斗",
+      "slug": "item-30"
+    },
+    {
+      "source": "饮料食品/31-bottled-water.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的瓶装水物品素材",
+      "caption": "瓶装水",
+      "slug": "item-31"
+    },
+    {
+      "source": "饮料食品/32-soda-can.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的碳酸饮料物品素材",
+      "caption": "碳酸饮料",
+      "slug": "item-32"
+    },
+    {
+      "source": "饮料食品/33-orange-juice.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的橙汁物品素材",
+      "caption": "橙汁",
+      "slug": "item-33"
+    },
+    {
+      "source": "饮料食品/34-milk-carton.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的牛奶物品素材",
+      "caption": "牛奶",
+      "slug": "item-34"
+    },
+    {
+      "source": "饮料食品/35-instant-coffee.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的即溶咖啡物品素材",
+      "caption": "即溶咖啡",
+      "slug": "item-35"
+    },
+    {
+      "source": "饮料食品/36-instant-noodles.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的方便面物品素材",
+      "caption": "方便面",
+      "slug": "item-36"
+    },
+    {
+      "source": "饮料食品/37-bread.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的面包物品素材",
+      "caption": "面包",
+      "slug": "item-37"
+    },
+    {
+      "source": "饮料食品/38-eggs.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的鸡蛋物品素材",
+      "caption": "鸡蛋",
+      "slug": "item-38"
+    },
+    {
+      "source": "饮料食品/39-potato-chips.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的薯片物品素材",
+      "caption": "薯片",
+      "slug": "item-39"
+    },
+    {
+      "source": "饮料食品/40-cookies.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的饼干物品素材",
+      "caption": "饼干",
+      "slug": "item-40"
+    },
+    {
+      "source": "宝洁公司/41-pg-head-shoulders-shampoo.png",
+      "collection": "category-7",
+      "alt": "浅色背景上的海飞丝去屑洗发水物品素材",
+      "caption": "海飞丝去屑洗发水",
+      "slug": "item-41"
+    },
+    {
+      "source": "宝洁公司/42-pg-safeguard-bar-soap.png",
+      "collection": "category-7",
+      "alt": "浅色背景上的舒肤佳香皂物品素材",
+      "caption": "舒肤佳香皂",
+      "slug": "item-42"
+    },
+    {
+      "source": "宝洁公司/43-pg-pantene-conditioner.png",
+      "collection": "category-7",
+      "alt": "浅色背景上的潘婷护发素物品素材",
+      "caption": "潘婷护发素",
+      "slug": "item-43"
+    },
+    {
+      "source": "宝洁公司/44-pg-crest-toothpaste.png",
+      "collection": "category-7",
+      "alt": "浅色背景上的佳洁士牙膏物品素材",
+      "caption": "佳洁士牙膏",
+      "slug": "item-44"
+    },
+    {
+      "source": "宝洁公司/45-pg-olay-face-cream.png",
+      "collection": "category-7",
+      "alt": "浅色背景上的玉兰油面霜物品素材",
+      "caption": "玉兰油面霜",
+      "slug": "item-45"
+    },
+    {
+      "source": "雀巢公司/46-nestle-instant-coffee.png",
+      "collection": "category-8",
+      "alt": "浅色背景上的雀巢咖啡物品素材",
+      "caption": "雀巢咖啡",
+      "slug": "item-46"
+    },
+    {
+      "source": "雀巢公司/47-nestle-milk-powder.png",
+      "collection": "category-8",
+      "alt": "浅色背景上的雀巢奶粉物品素材",
+      "caption": "雀巢奶粉",
+      "slug": "item-47"
+    },
+    {
+      "source": "雀巢公司/48-nestle-kitkat-chocolate.png",
+      "collection": "category-8",
+      "alt": "浅色背景上的奇巧巧克力物品素材",
+      "caption": "奇巧巧克力",
+      "slug": "item-48"
+    },
+    {
+      "source": "雀巢公司/49-nestle-maggi-seasoning.png",
+      "collection": "category-8",
+      "alt": "浅色背景上的美极鲜味汁物品素材",
+      "caption": "美极鲜味汁",
+      "slug": "item-49"
+    },
+    {
+      "source": "雀巢公司/50-nestle-condensed-milk.png",
+      "collection": "category-8",
+      "alt": "浅色背景上的雀巢炼乳物品素材",
+      "caption": "雀巢炼乳",
+      "slug": "item-50"
+    },
+    {
+      "source": "百事公司/51-pepsico-pepsi-cola.png",
+      "collection": "category-9",
+      "alt": "浅色背景上的百事可乐物品素材",
+      "caption": "百事可乐",
+      "slug": "item-51"
+    },
+    {
+      "source": "百事公司/52-pepsico-7up-soda.png",
+      "collection": "category-9",
+      "alt": "浅色背景上的七喜柠檬汽水物品素材",
+      "caption": "七喜柠檬汽水",
+      "slug": "item-52"
+    },
+    {
+      "source": "百事公司/53-pepsico-mirinda-orange-soda.png",
+      "collection": "category-9",
+      "alt": "浅色背景上的美年达橙味汽水物品素材",
+      "caption": "美年达橙味汽水",
+      "slug": "item-53"
+    },
+    {
+      "source": "百事公司/54-pepsico-lays-potato-chips.png",
+      "collection": "category-9",
+      "alt": "浅色背景上的乐事原味薯片物品素材",
+      "caption": "乐事原味薯片",
+      "slug": "item-54"
+    },
+    {
+      "source": "百事公司/55-pepsico-gatorade-sports-drink.png",
+      "collection": "category-9",
+      "alt": "浅色背景上的佳得乐运动饮料物品素材",
+      "caption": "佳得乐运动饮料",
+      "slug": "item-55"
+    },
+    {
+      "source": "联合利华/56-unilever-lux-shampoo.png",
+      "collection": "category-10",
+      "alt": "浅色背景上的力士洗发水物品素材",
+      "caption": "力士洗发水",
+      "slug": "item-56"
+    },
+    {
+      "source": "联合利华/57-unilever-dove-body-wash.png",
+      "collection": "category-10",
+      "alt": "浅色背景上的多芬沐浴露物品素材",
+      "caption": "多芬沐浴露",
+      "slug": "item-57"
+    },
+    {
+      "source": "联合利华/58-unilever-clear-shampoo.png",
+      "collection": "category-10",
+      "alt": "浅色背景上的清扬洗发水物品素材",
+      "caption": "清扬洗发水",
+      "slug": "item-58"
+    },
+    {
+      "source": "联合利华/59-unilever-omo-laundry-liquid.png",
+      "collection": "category-10",
+      "alt": "浅色背景上的奥妙洗衣液物品素材",
+      "caption": "奥妙洗衣液",
+      "slug": "item-59"
+    },
+    {
+      "source": "联合利华/60-unilever-lipton-tea.png",
+      "collection": "category-10",
+      "alt": "浅色背景上的立顿红茶物品素材",
+      "caption": "立顿红茶",
+      "slug": "item-60"
+    },
+    {
+      "source": "茅台/61-moutai-feitian-baijiu.png",
+      "collection": "category-11",
+      "alt": "浅色背景上的飞天茅台物品素材",
+      "caption": "飞天茅台",
+      "slug": "item-61"
+    },
+    {
+      "source": "茅台/62-moutai-1935-baijiu.png",
+      "collection": "category-11",
+      "alt": "浅色背景上的茅台1935物品素材",
+      "caption": "茅台1935",
+      "slug": "item-62"
+    },
+    {
+      "source": "茅台/63-moutai-prince-baijiu.png",
+      "collection": "category-11",
+      "alt": "浅色背景上的茅台王子酒物品素材",
+      "caption": "茅台王子酒",
+      "slug": "item-63"
+    },
+    {
+      "source": "茅台/64-moutai-yingbin-baijiu.png",
+      "collection": "category-11",
+      "alt": "浅色背景上的茅台迎宾酒物品素材",
+      "caption": "茅台迎宾酒",
+      "slug": "item-64"
+    },
+    {
+      "source": "茅台/65-moutai-guizhou-daqu.png",
+      "collection": "category-11",
+      "alt": "浅色背景上的贵州大曲物品素材",
+      "caption": "贵州大曲",
+      "slug": "item-65"
+    },
+    {
+      "source": "伊利/66-yili-golden-milk.png",
+      "collection": "category-12",
+      "alt": "浅色背景上的金典纯牛奶物品素材",
+      "caption": "金典纯牛奶",
+      "slug": "item-66"
+    },
+    {
+      "source": "伊利/67-yili-ambrosial-yogurt.png",
+      "collection": "category-12",
+      "alt": "浅色背景上的安慕希酸奶物品素材",
+      "caption": "安慕希酸奶",
+      "slug": "item-67"
+    },
+    {
+      "source": "伊利/68-yili-shuhua-milk.png",
+      "collection": "category-12",
+      "alt": "浅色背景上的伊利舒化奶物品素材",
+      "caption": "伊利舒化奶",
+      "slug": "item-68"
+    },
+    {
+      "source": "伊利/69-yili-childrens-milk.png",
+      "collection": "category-12",
+      "alt": "浅色背景上的QQ 星儿童牛奶物品素材",
+      "caption": "QQ 星儿童牛奶",
+      "slug": "item-69"
+    },
+    {
+      "source": "伊利/70-yili-yogurt-drink.png",
+      "collection": "category-12",
+      "alt": "浅色背景上的伊利优酸乳物品素材",
+      "caption": "伊利优酸乳",
+      "slug": "item-70"
+    },
+    {
+      "source": "品牌补充/71-blue-moon-laundry-large.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的蓝月亮洗衣液（大包装）物品素材",
+      "caption": "蓝月亮洗衣液（大包装）",
+      "slug": "item-71"
+    },
+    {
+      "source": "品牌补充/72-blue-moon-laundry-medium.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的蓝月亮洗衣液（中包装）物品素材",
+      "caption": "蓝月亮洗衣液（中包装）",
+      "slug": "item-72"
+    },
+    {
+      "source": "品牌补充/73-blue-moon-laundry-small.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的蓝月亮洗衣液（小包装）物品素材",
+      "caption": "蓝月亮洗衣液（小包装）",
+      "slug": "item-73"
+    },
+    {
+      "source": "品牌补充/74-heart-to-heart-tissues.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的心相印抽纸物品素材",
+      "caption": "心相印抽纸",
+      "slug": "item-74"
+    },
+    {
+      "source": "品牌补充/75-tempo-tissues.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的德宝抽纸物品素材",
+      "caption": "德宝抽纸",
+      "slug": "item-75"
+    },
+    {
+      "source": "品牌补充/76-vinda-tissues.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的维达抽纸物品素材",
+      "caption": "维达抽纸",
+      "slug": "item-76"
+    },
+    {
+      "source": "洗护用品/tide-laundry-detergent.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的汰渍洗衣液物品素材",
+      "caption": "汰渍洗衣液",
+      "slug": "item-77"
+    },
+    {
+      "source": "洗护用品/ariel-laundry-detergent.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的碧浪洗衣液物品素材",
+      "caption": "碧浪洗衣液",
+      "slug": "item-78"
+    },
+    {
+      "source": "洗护用品/downy-fabric-softener.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的当妮衣物柔顺剂物品素材",
+      "caption": "当妮衣物柔顺剂",
+      "slug": "item-79"
+    },
+    {
+      "source": "洗护用品/persil-laundry-detergent.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的Persil 洗衣液物品素材",
+      "caption": "Persil 洗衣液",
+      "slug": "item-80"
+    },
+    {
+      "source": "洗护用品/surf-laundry-detergent.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的Surf 洗衣液物品素材",
+      "caption": "Surf 洗衣液",
+      "slug": "item-81"
+    },
+    {
+      "source": "洗护用品/comfort-fabric-softener.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的金纺衣物柔顺剂物品素材",
+      "caption": "金纺衣物柔顺剂",
+      "slug": "item-82"
+    },
+    {
+      "source": "个人护理/oral-b-toothbrush.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的欧乐 B 牙刷物品素材",
+      "caption": "欧乐 B 牙刷",
+      "slug": "item-83"
+    },
+    {
+      "source": "个人护理/gillette-razor.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的吉列剃须刀物品素材",
+      "caption": "吉列剃须刀",
+      "slug": "item-84"
+    },
+    {
+      "source": "个人护理/colgate-toothpaste.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的高露洁牙膏物品素材",
+      "caption": "高露洁牙膏",
+      "slug": "item-85"
+    },
+    {
+      "source": "个人护理/palmolive-body-wash.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的棕榄沐浴露物品素材",
+      "caption": "棕榄沐浴露",
+      "slug": "item-86"
+    },
+    {
+      "source": "个人护理/softsoap-hand-soap.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的Softsoap 洗手液物品素材",
+      "caption": "Softsoap 洗手液",
+      "slug": "item-87"
+    },
+    {
+      "source": "个人护理/vaseline-body-care.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的凡士林修护霜物品素材",
+      "caption": "凡士林修护霜",
+      "slug": "item-88"
+    },
+    {
+      "source": "个人护理/loreal-shampoo.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的欧莱雅洗发水物品素材",
+      "caption": "欧莱雅洗发水",
+      "slug": "item-89"
+    },
+    {
+      "source": "个人护理/nivea-sunscreen.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的妮维雅防晒乳物品素材",
+      "caption": "妮维雅防晒乳",
+      "slug": "item-90"
+    },
+    {
+      "source": "纸品湿巾/bounty-paper-towels.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的Bounty 厨房纸物品素材",
+      "caption": "Bounty 厨房纸",
+      "slug": "item-91"
+    },
+    {
+      "source": "纸品湿巾/charmin-toilet-paper.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的Charmin 卷纸物品素材",
+      "caption": "Charmin 卷纸",
+      "slug": "item-92"
+    },
+    {
+      "source": "纸品湿巾/puffs-facial-tissues.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的Puffs 抽纸物品素材",
+      "caption": "Puffs 抽纸",
+      "slug": "item-93"
+    },
+    {
+      "source": "纸品湿巾/kleenex-wet-wipes.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的舒洁湿巾物品素材",
+      "caption": "舒洁湿巾",
+      "slug": "item-94"
+    },
+    {
+      "source": "厨房清洁/dawn-dish-soap.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的Dawn 洗洁精物品素材",
+      "caption": "Dawn 洗洁精",
+      "slug": "item-95"
+    },
+    {
+      "source": "厨房清洁/cascade-dishwasher-pods.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的Cascade 洗碗机凝珠物品素材",
+      "caption": "Cascade 洗碗机凝珠",
+      "slug": "item-96"
+    },
+    {
+      "source": "厨房清洁/mr-clean-all-purpose-cleaner.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的Mr. Clean 多用途清洁剂物品素材",
+      "caption": "Mr. Clean 多用途清洁剂",
+      "slug": "item-97"
+    },
+    {
+      "source": "厨房清洁/cif-cream-cleaner.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的Cif 厨房清洁乳物品素材",
+      "caption": "Cif 厨房清洁乳",
+      "slug": "item-98"
+    },
+    {
+      "source": "消毒收纳/febreze-air-freshener.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的Febreze 空气清新剂物品素材",
+      "caption": "Febreze 空气清新剂",
+      "slug": "item-99"
+    },
+    {
+      "source": "消毒收纳/clorox-disinfecting-spray.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的Clorox 消毒喷雾物品素材",
+      "caption": "Clorox 消毒喷雾",
+      "slug": "item-100"
+    },
+    {
+      "source": "消毒收纳/glad-food-storage-bags.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的Glad 保鲜袋物品素材",
+      "caption": "Glad 保鲜袋",
+      "slug": "item-101"
+    },
+    {
+      "source": "消毒收纳/swiffer-duster.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的Swiffer 除尘拖把物品素材",
+      "caption": "Swiffer 除尘拖把",
+      "slug": "item-102"
+    },
+    {
+      "source": "饮料食品/coca-cola-soft-drink.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的可口可乐物品素材",
+      "caption": "可口可乐",
+      "slug": "item-103"
+    },
+    {
+      "source": "饮料食品/sprite-lemon-lime-soda.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Sprite 柠檬汽水物品素材",
+      "caption": "Sprite 柠檬汽水",
+      "slug": "item-104"
+    },
+    {
+      "source": "饮料食品/fanta-orange-soda.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Fanta 橙味汽水物品素材",
+      "caption": "Fanta 橙味汽水",
+      "slug": "item-105"
+    },
+    {
+      "source": "饮料食品/aquafina-bottled-water.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Aquafina 瓶装水物品素材",
+      "caption": "Aquafina 瓶装水",
+      "slug": "item-106"
+    },
+    {
+      "source": "饮料食品/red-bull-energy-drink.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的红牛能量饮料物品素材",
+      "caption": "红牛能量饮料",
+      "slug": "item-107"
+    },
+    {
+      "source": "饮料食品/starbucks-rtd-coffee.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的星巴克即饮咖啡物品素材",
+      "caption": "星巴克即饮咖啡",
+      "slug": "item-108"
+    },
+    {
+      "source": "饮料食品/milo-malt-drink.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的美禄麦芽饮料物品素材",
+      "caption": "美禄麦芽饮料",
+      "slug": "item-109"
+    },
+    {
+      "source": "饮料食品/doritos-tortilla-chips.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的多力多滋玉米片物品素材",
+      "caption": "多力多滋玉米片",
+      "slug": "item-110"
+    },
+    {
+      "source": "饮料食品/cheetos-cheese-snacks.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的奇多芝士膨化物品素材",
+      "caption": "奇多芝士膨化",
+      "slug": "item-111"
+    },
+    {
+      "source": "饮料食品/quaker-oats.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的桂格燕麦片物品素材",
+      "caption": "桂格燕麦片",
+      "slug": "item-112"
+    },
+    {
+      "source": "饮料食品/indomie-instant-noodles.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Indomie 方便面物品素材",
+      "caption": "Indomie 方便面",
+      "slug": "item-113"
+    },
+    {
+      "source": "饮料食品/ottogi-jin-ramen.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Ottogi 辣味方便面物品素材",
+      "caption": "Ottogi 辣味方便面",
+      "slug": "item-114"
+    },
+    {
+      "source": "饮料食品/parle-g-biscuits.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Parle-G 饼干物品素材",
+      "caption": "Parle-G 饼干",
+      "slug": "item-115"
+    },
+    {
+      "source": "饮料食品/britannia-good-day-cookies.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的Britannia Good Day 饼干物品素材",
+      "caption": "Britannia Good Day 饼干",
+      "slug": "item-116"
+    },
+    {
+      "source": "桌面静物/洗护用品/01-laundry-care-still-life.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的洗护用品物品组合",
+      "caption": "洗护用品 · 桌面静物",
+      "slug": "scene-1"
+    },
+    {
+      "source": "桌面静物/个人护理/02-personal-care-still-life.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的个人护理物品组合",
+      "caption": "个人护理 · 桌面静物",
+      "slug": "scene-2"
+    },
+    {
+      "source": "桌面静物/纸品湿巾/03-paper-wipes-still-life.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的纸品湿巾物品组合",
+      "caption": "纸品湿巾 · 桌面静物",
+      "slug": "scene-3"
+    },
+    {
+      "source": "桌面静物/厨房清洁/04-kitchen-cleaning-still-life.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的厨房清洁物品组合",
+      "caption": "厨房清洁 · 桌面静物",
+      "slug": "scene-4"
+    },
+    {
+      "source": "桌面静物/消毒收纳/05-disinfect-storage-still-life.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的消毒收纳物品组合",
+      "caption": "消毒收纳 · 桌面静物",
+      "slug": "scene-5"
+    },
+    {
+      "source": "桌面静物/家用电器/06-home-appliances-still-life.png",
+      "collection": "category-5",
+      "alt": "浅色背景上的家用电器物品组合",
+      "caption": "家用电器 · 桌面静物",
+      "slug": "scene-6"
+    },
+    {
+      "source": "桌面静物/饮料食品/07-food-beverages-still-life.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的饮料食品物品组合",
+      "caption": "饮料食品 · 桌面静物",
+      "slug": "scene-7"
+    },
+    {
+      "source": "桌面静物/宝洁公司/08-procter-gamble-still-life.png",
+      "collection": "category-7",
+      "alt": "浅色背景上的宝洁公司物品组合",
+      "caption": "宝洁公司 · 桌面静物",
+      "slug": "scene-8"
+    },
+    {
+      "source": "桌面静物/雀巢公司/09-nestle-still-life.png",
+      "collection": "category-8",
+      "alt": "浅色背景上的雀巢公司物品组合",
+      "caption": "雀巢公司 · 桌面静物",
+      "slug": "scene-9"
+    },
+    {
+      "source": "桌面静物/百事公司/10-pepsico-still-life.png",
+      "collection": "category-9",
+      "alt": "浅色背景上的百事公司物品组合",
+      "caption": "百事公司 · 桌面静物",
+      "slug": "scene-10"
+    },
+    {
+      "source": "桌面静物/联合利华/11-unilever-still-life.png",
+      "collection": "category-10",
+      "alt": "浅色背景上的联合利华物品组合",
+      "caption": "联合利华 · 桌面静物",
+      "slug": "scene-11"
+    },
+    {
+      "source": "桌面静物/茅台/12-moutai-still-life.png",
+      "collection": "category-11",
+      "alt": "浅色背景上的茅台物品组合",
+      "caption": "茅台 · 桌面静物",
+      "slug": "scene-12"
+    },
+    {
+      "source": "桌面静物/伊利/13-yili-still-life.png",
+      "collection": "category-12",
+      "alt": "浅色背景上的伊利物品组合",
+      "caption": "伊利 · 桌面静物",
+      "slug": "scene-13"
+    },
+    {
+      "source": "桌面静物/品牌补充/14-brand-supplements-still-life.png",
+      "collection": "category-13",
+      "alt": "浅色背景上的品牌补充物品组合",
+      "caption": "品牌补充 · 桌面静物",
+      "slug": "scene-14"
+    },
+    {
+      "source": "桌面静物/洗护用品/15-fmcg-laundry-still-life.png",
+      "collection": "category-0",
+      "alt": "浅色背景上的洗护用品物品组合",
+      "caption": "洗护 · 去标静物",
+      "slug": "scene-15"
+    },
+    {
+      "source": "桌面静物/个人护理/16-fmcg-personal-care-still-life.png",
+      "collection": "category-1",
+      "alt": "浅色背景上的个人护理物品组合",
+      "caption": "个人护理 · 去标静物",
+      "slug": "scene-16"
+    },
+    {
+      "source": "桌面静物/纸品湿巾/17-fmcg-paper-wipes-still-life.png",
+      "collection": "category-2",
+      "alt": "浅色背景上的纸品湿巾物品组合",
+      "caption": "纸品湿巾 · 去标静物",
+      "slug": "scene-17"
+    },
+    {
+      "source": "桌面静物/厨房清洁/18-fmcg-kitchen-cleaning-still-life.png",
+      "collection": "category-3",
+      "alt": "浅色背景上的厨房清洁物品组合",
+      "caption": "厨房清洁 · 去标静物",
+      "slug": "scene-18"
+    },
+    {
+      "source": "桌面静物/消毒收纳/19-fmcg-disinfect-storage-still-life.png",
+      "collection": "category-4",
+      "alt": "浅色背景上的消毒收纳物品组合",
+      "caption": "消毒收纳 · 去标静物",
+      "slug": "scene-19"
+    },
+    {
+      "source": "桌面静物/饮料食品/20-fmcg-beverages-still-life.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的饮料食品物品组合",
+      "caption": "饮料 · 去标静物",
+      "slug": "scene-20"
+    },
+    {
+      "source": "桌面静物/饮料食品/21-fmcg-snacks-food-still-life.png",
+      "collection": "category-6",
+      "alt": "浅色背景上的饮料食品物品组合",
+      "caption": "零食食品 · 去标静物",
+      "slug": "scene-21"
+    }
+  ]
+}

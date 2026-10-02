@@ -1,0 +1,12 @@
+---
+import type { ImageManifest } from '../lib/schema';
+import {withBase} from '../lib/paths';
+type Props={image:ImageManifest & {record:{title:string,group:string,kind:string,brand?:string}},index:number};
+const {image,index}=Astro.props;
+const srcset=(format:'avif'|'webp'|'jpeg')=>image.variants.thumb[format].map(v=>`${withBase(v.src)} ${v.width}w`).join(', ');
+const sizes='(min-width:1200px) 240px,(min-width:700px) 28vw,45vw';
+---
+<article class="gallery-card" data-gallery-card data-image-id={image.id} hidden={index>=24}>
+<button class="gallery-card__button" type="button" data-gallery-open={image.id} aria-label={`预览：${image.record.title}`}><picture><source type="image/avif" srcset={srcset('avif')} sizes={sizes}/><source type="image/webp" srcset={srcset('webp')} sizes={sizes}/><img src={withBase(image.variants.thumb.jpeg[0].src)} srcset={srcset('jpeg')} sizes={sizes} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async"/></picture><span class="preview-label">查看素材 ↗</span></button>
+<div class="card-caption"><div><h3>{image.record.title}</h3><p>{image.record.group} · {image.record.kind==='scene'?'静物组合':'单品'}</p></div><button class="save-button" data-save={image.id} aria-label={`收藏：${image.record.title}`} aria-pressed="false">♡</button></div>
+</article>

@@ -1,0 +1,88 @@
+{
+  "collections": [
+    {
+      "id": "category-0",
+      "title": "洗护用品",
+      "order": 0,
+      "description": ""
+    },
+    {
+      "id": "category-1",
+      "title": "个人护理",
+      "order": 1,
+      "description": ""
+    },
+    {
+      "id": "category-2",
+      "title": "纸品湿巾",
+      "order": 2,
+      "description": ""
+    },
+    {
+      "id": "category-3",
+      "title": "厨房清洁",
+      "order": 3,
+      "description": ""
+    },
+    {
+      "id": "category-4",
+      "title": "消毒收纳",
+      "order": 4,
+      "description": ""
+    },
+    {
+      "id": "category-5",
+      "title": "家用电器",
+      "order": 5,
+      "description": ""
+    },
+    {
+      "id": "category-6",
+      "title": "饮料食品",
+      "order": 6,
+      "description": ""
+    },
+    {
+      "id": "category-7",
+      "title": "宝洁公司",
+      "order": 7,
+      "description": ""
+    },
+    {
+      "id": "category-8",
+      "title": "雀巢公司",
+      "order": 8,
+      "description": ""
+    },
+    {
+      "id": "category-9",
+      "title": "百事公司",
+      "order": 9,
+      "description": ""
+    },
+    {
+      "id": "category-10",
+      "title": "联合利华",
+      "order": 10,
+      "description": ""
+    },
+    {
+      "id": "category-11",
+      "title": "茅台",
+      "order": 11,
+      "description": ""
+    },
+    {
+      "id": "category-12",
+      "title": "伊利",
+      "order": 12,
+      "description": ""
+    },
+    {
+      "id": "category-13",
+      "title": "品牌补充",
+      "order": 13,
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,2991 @@
+{
+  "repository": "https://github.com/holynova/daily-necessities-library",
+  "commit": "3acbc6e8e67543f0c6acddb7e00b9d0d61efc059",
+  "sourceFiles": 426,
+  "uniqueImages": 289,
+  "galleryImages": 137,
+  "images": [
+    {
+      "sourcePath": ".impeccable/mocks/comp-a.png",
+      "sha": "8090f6bbe0a802d872c70f1ff0a3278b60ebe70d",
+      "bytes": 1063953,
+      "role": "reference",
+      "organizedPath": "reference-images/.impeccable/mocks/comp-a.png"
+    },
+    {
+      "sourcePath": ".impeccable/mocks/comp-b.png",
+      "sha": "6a0f8265d71381f9c2247f3c76d4f492e0059d59",
+      "bytes": 1111083,
+      "role": "reference",
+      "organizedPath": "reference-images/.impeccable/mocks/comp-b.png"
+    },
+    {
+      "sourcePath": ".impeccable/mocks/comp-c.png",
+      "sha": "d272e793f2b4f719bdd39465e0a72414bb012581",
+      "bytes": 987474,
+      "role": "reference",
+      "organizedPath": "reference-images/.impeccable/mocks/comp-c.png"
+    },
+    {
+      "sourcePath": "assets/readme/hero.svg",
+      "sha": "53ac10d78e45d07659e42786720de9e85697d7e6",
+      "bytes": 5899,
+      "role": "reference",
+      "organizedPath": "reference-images/assets/readme/hero.svg"
+    },
+    {
+      "sourcePath": "assets/readme/screenshot.png",
+      "sha": "23c0062ec16b2ff835035f1509506dd51e27426b",
+      "bytes": 445565,
+      "role": "reference",
+      "organizedPath": "reference-images/assets/readme/screenshot.png"
+    },
+    {
+      "sourcePath": "design-qa-comparison-desktop.jpg",
+      "sha": "cb85c92c59f22b4fb5f25d0948528451df3fbb87",
+      "bytes": 245880,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-comparison-desktop.jpg"
+    },
+    {
+      "sourcePath": "design-qa-comparison-mobile.jpg",
+      "sha": "9528d5aa1b547acca1073b347644c1ca38e3cfa0",
+      "bytes": 79369,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-comparison-mobile.jpg"
+    },
+    {
+      "sourcePath": "design-qa-implementation-desktop.png",
+      "sha": "491d6c097ca305a5b48aea10458fbbfe36e0f5e1",
+      "bytes": 117776,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-implementation-desktop.png"
+    },
+    {
+      "sourcePath": "design-qa-implementation-mobile-collection.png",
+      "sha": "7fa655f6950b4efd9a5a40d1f705dae222f91b90",
+      "bytes": 38207,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-implementation-mobile-collection.png"
+    },
+    {
+      "sourcePath": "design-qa-implementation-mobile.png",
+      "sha": "6112d3e5217e4af964c6447b6c000666d62af057",
+      "bytes": 38471,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-implementation-mobile.png"
+    },
+    {
+      "sourcePath": "design-qa-source-desktop.png",
+      "sha": "9f1a4863f128f5a7944a673a444911d6b13c34a7",
+      "bytes": 124876,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-source-desktop.png"
+    },
+    {
+      "sourcePath": "design-qa-source-mobile.png",
+      "sha": "82ef2e88dfd1decb3952bb0aa91a827f24e6b3b9",
+      "bytes": 36996,
+      "role": "reference",
+      "organizedPath": "reference-images/design-qa-source-mobile.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/41-pg-head-shoulders-shampoo.png",
+      "sha": "013d3945e7a2d52ce9b6838365cff05a88b3976f",
+      "bytes": 1037265,
+      "role": "original-copy",
+      "organizedPath": "originals/宝洁公司/41-pg-head-shoulders-shampoo.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/42-pg-safeguard-bar-soap.png",
+      "sha": "3ea9462402739710a536b37eea06a7d05a6a6655",
+      "bytes": 1202777,
+      "role": "original-copy",
+      "organizedPath": "originals/宝洁公司/42-pg-safeguard-bar-soap.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/43-pg-pantene-conditioner.png",
+      "sha": "a44b90da9c0efc373d3041454e062d7efe3a8062",
+      "bytes": 841628,
+      "role": "original-copy",
+      "organizedPath": "originals/宝洁公司/43-pg-pantene-conditioner.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/44-pg-crest-toothpaste.png",
+      "sha": "79c9a06d3c3522436e4943c83d0bf5af7d2c0c74",
+      "bytes": 853872,
+      "role": "original-copy",
+      "organizedPath": "originals/宝洁公司/44-pg-crest-toothpaste.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/45-pg-olay-face-cream.png",
+      "sha": "28d2b15774bfd6e46ae18be97583ffd73a86318d",
+      "bytes": 879186,
+      "role": "original-copy",
+      "organizedPath": "originals/宝洁公司/45-pg-olay-face-cream.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/46-nestle-instant-coffee.png",
+      "sha": "4ce44bf884686380a3cce4311675f4dce4397afe",
+      "bytes": 1441610,
+      "role": "original-copy",
+      "organizedPath": "originals/雀巢公司/46-nestle-instant-coffee.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/47-nestle-milk-powder.png",
+      "sha": "357b820c6490b7e40e6b98a5e95e6c876f559265",
+      "bytes": 1081404,
+      "role": "original-copy",
+      "organizedPath": "originals/雀巢公司/47-nestle-milk-powder.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/48-nestle-kitkat-chocolate.png",
+      "sha": "c95e7d5d49835dd1eaaf374a2095c96c5756a09f",
+      "bytes": 1042761,
+      "role": "original-copy",
+      "organizedPath": "originals/雀巢公司/48-nestle-kitkat-chocolate.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/49-nestle-maggi-seasoning.png",
+      "sha": "5e3849876122872915c6a1b33c0a08c3c7a08af1",
+      "bytes": 824755,
+      "role": "original-copy",
+      "organizedPath": "originals/雀巢公司/49-nestle-maggi-seasoning.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/50-nestle-condensed-milk.png",
+      "sha": "f5cedaaf9635f5193bb2c07cfa5a28ff8ba0d609",
+      "bytes": 1051361,
+      "role": "original-copy",
+      "organizedPath": "originals/雀巢公司/50-nestle-condensed-milk.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/51-pepsico-pepsi-cola.png",
+      "sha": "102b2fc709b8ece0f5f3912f8d66f2861ed9514e",
+      "bytes": 1141762,
+      "role": "original-copy",
+      "organizedPath": "originals/百事公司/51-pepsico-pepsi-cola.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/52-pepsico-7up-soda.png",
+      "sha": "d938e4c05b5228ee136ffca60ee6cf8efa8fd135",
+      "bytes": 1050481,
+      "role": "original-copy",
+      "organizedPath": "originals/百事公司/52-pepsico-7up-soda.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/53-pepsico-mirinda-orange-soda.png",
+      "sha": "ecafd91b78f3460412c8c59a0ff1eebb78c6752f",
+      "bytes": 1023414,
+      "role": "original-copy",
+      "organizedPath": "originals/百事公司/53-pepsico-mirinda-orange-soda.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/54-pepsico-lays-potato-chips.png",
+      "sha": "62f26146ca29556851656e2d43d374bc0298d7f9",
+      "bytes": 1184753,
+      "role": "original-copy",
+      "organizedPath": "originals/百事公司/54-pepsico-lays-potato-chips.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/55-pepsico-gatorade-sports-drink.png",
+      "sha": "1d7158565f0f36442f0b6e1c8718272264d3b58e",
+      "bytes": 989271,
+      "role": "original-copy",
+      "organizedPath": "originals/百事公司/55-pepsico-gatorade-sports-drink.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/56-unilever-lux-shampoo.png",
+      "sha": "2043c3bec61dbe5f79d57631ce35be21070d57b4",
+      "bytes": 878766,
+      "role": "original-copy",
+      "organizedPath": "originals/联合利华/56-unilever-lux-shampoo.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/57-unilever-dove-body-wash.png",
+      "sha": "956b873c8a9f9b3a40327e456662bfbdec4ce34a",
+      "bytes": 910644,
+      "role": "original-copy",
+      "organizedPath": "originals/联合利华/57-unilever-dove-body-wash.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/58-unilever-clear-shampoo.png",
+      "sha": "858cf22672c6d4318aee2f535a905ed06eb2e283",
+      "bytes": 954704,
+      "role": "original-copy",
+      "organizedPath": "originals/联合利华/58-unilever-clear-shampoo.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/59-unilever-omo-laundry-liquid.png",
+      "sha": "a907bd415370855a427dfa6945e09b11061b218f",
+      "bytes": 1077005,
+      "role": "original-copy",
+      "organizedPath": "originals/联合利华/59-unilever-omo-laundry-liquid.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/60-unilever-lipton-tea.png",
+      "sha": "2839c924e8d095a8cb548d0847c46df1224e8fd1",
+      "bytes": 1312189,
+      "role": "original-copy",
+      "organizedPath": "originals/联合利华/60-unilever-lipton-tea.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/61-moutai-feitian-baijiu.png",
+      "sha": "df183b1d2f822b95e8cfc87cea4536680300af75",
+      "bytes": 1069631,
+      "role": "original-copy",
+      "organizedPath": "originals/茅台/61-moutai-feitian-baijiu.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/62-moutai-1935-baijiu.png",
+      "sha": "f8f6d3aaddf06fb38b419409caca298b9bac27bd",
+      "bytes": 927002,
+      "role": "original-copy",
+      "organizedPath": "originals/茅台/62-moutai-1935-baijiu.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/63-moutai-prince-baijiu.png",
+      "sha": "9707d54c74cd9b2508ffcfff0926252f58dfa805",
+      "bytes": 901756,
+      "role": "original-copy",
+      "organizedPath": "originals/茅台/63-moutai-prince-baijiu.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/64-moutai-yingbin-baijiu.png",
+      "sha": "5492d972015be5371a0bf337eae99b3ea14da9c4",
+      "bytes": 871700,
+      "role": "original-copy",
+      "organizedPath": "originals/茅台/64-moutai-yingbin-baijiu.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/65-moutai-guizhou-daqu.png",
+      "sha": "49f0cebccb168a57b02b75eafa0097d7c7c4c80f",
+      "bytes": 1038315,
+      "role": "original-copy",
+      "organizedPath": "originals/茅台/65-moutai-guizhou-daqu.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/66-yili-golden-milk.png",
+      "sha": "cd67b1f5b01b48d16ccc68cdf0c8ea40b494a73b",
+      "bytes": 1121747,
+      "role": "original-copy",
+      "organizedPath": "originals/伊利/66-yili-golden-milk.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/67-yili-ambrosial-yogurt.png",
+      "sha": "009e52a14c6a566f21d8735eca37a9648ea4a9a7",
+      "bytes": 1068408,
+      "role": "original-copy",
+      "organizedPath": "originals/伊利/67-yili-ambrosial-yogurt.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/68-yili-shuhua-milk.png",
+      "sha": "03dfaa6df4b4a833538b39c6bb1a60ed502f48d1",
+      "bytes": 987699,
+      "role": "original-copy",
+      "organizedPath": "originals/伊利/68-yili-shuhua-milk.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/69-yili-childrens-milk.png",
+      "sha": "254f40f84a223e278b2af04f50cddb22f1ba7119",
+      "bytes": 978556,
+      "role": "original-copy",
+      "organizedPath": "originals/伊利/69-yili-childrens-milk.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/70-yili-yogurt-drink.png",
+      "sha": "0b77cf0ba6caeb202261288221f01e91ec6afa9f",
+      "bytes": 1027277,
+      "role": "original-copy",
+      "organizedPath": "originals/伊利/70-yili-yogurt-drink.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/71-blue-moon-laundry-large.png",
+      "sha": "7f5abedf2d1e3229c1839725c79c0d455d67909d",
+      "bytes": 1173089,
+      "role": "original-copy",
+      "organizedPath": "originals/品牌补充/71-blue-moon-laundry-large.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/72-blue-moon-laundry-medium.png",
+      "sha": "393ebe034ed2ba1eb8e4478f31c035c0160af7bd",
+      "bytes": 1148334,
+      "role": "original-copy",
+      "organizedPath": "originals/品牌补充/72-blue-moon-laundry-medium.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/73-blue-moon-laundry-small.png",
+      "sha": "477a3d695db7c812ebf502a73e757ed77f80ba6f",
+      "bytes": 1014429,
+      "role": "original-copy",
+      "organizedPath": "originals/品牌补充/73-blue-moon-laundry-small.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/74-heart-to-heart-tissues.png",
+      "sha": "47852609147b407c0a49fa5926644a9b393758f1",
+      "bytes": 1124225,
+      "role": "original-copy",
+      "organizedPath": "originals/品牌补充/74-heart-to-heart-tissues.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/75-tempo-tissues.png",
+      "sha": "f7bd96af4f8546bfc7bb2875c7c276ad052e1fd5",
+      "bytes": 1166041,
+      "role": "original-copy",
+      "organizedPath": "originals/品牌补充/75-tempo-tissues.png"
+    },
+    {
+      "sourcePath": "docs/assets/brand-products/76-vinda-tissues.png",
+      "sha": "3673deaf3219c55c46c17199e2ef98c4fd04b9de",
+      "bytes": 1125850,
+      "role": "original-copy",
+      "organizedPath": "originals/品牌补充/76-vinda-tissues.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/01-laundry-care-still-life.png",
+      "sha": "a840f219d11eecac3f21c7b6c7f3a09d8c62c7f9",
+      "bytes": 1768619,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/洗护用品/01-laundry-care-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/02-personal-care-still-life.png",
+      "sha": "3442d6211dab5401c862c7f78fb83f498134579c",
+      "bytes": 1729846,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/个人护理/02-personal-care-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/03-paper-wipes-still-life.png",
+      "sha": "e6e04a83d4443472fb23340aa7ed828061cfde63",
+      "bytes": 1879214,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/纸品湿巾/03-paper-wipes-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/04-kitchen-cleaning-still-life.png",
+      "sha": "6003b928f5b088a4eb52a3f8df7e0554b77fcd99",
+      "bytes": 1785072,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/厨房清洁/04-kitchen-cleaning-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/05-disinfect-storage-still-life.png",
+      "sha": "9649f221ddfe525e9f2f37105debda8f9bbc7b42",
+      "bytes": 1664327,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/消毒收纳/05-disinfect-storage-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/06-home-appliances-still-life.png",
+      "sha": "18b0c9118cac7e7e1f6174fabcf89d2e52e7e615",
+      "bytes": 2178195,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/家用电器/06-home-appliances-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/07-food-beverages-still-life.png",
+      "sha": "e539969a4e5501b0bf63132484bbea4cac8178c5",
+      "bytes": 2227390,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/饮料食品/07-food-beverages-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/08-procter-gamble-still-life.png",
+      "sha": "b2356ec321e23a76f44f0e13867604382fd1c5f1",
+      "bytes": 1680102,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/宝洁公司/08-procter-gamble-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/09-nestle-still-life.png",
+      "sha": "7ac0ac3bca857af52396a65fd7e1524c7e437b12",
+      "bytes": 2033551,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/雀巢公司/09-nestle-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/10-pepsico-still-life.png",
+      "sha": "190b128bf75aa9353cfea54da26b884c6252fd28",
+      "bytes": 1833060,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/百事公司/10-pepsico-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/11-unilever-still-life.png",
+      "sha": "d5e935f6b6c83a70f8664c8b9ab74372fce93b27",
+      "bytes": 1839636,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/联合利华/11-unilever-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/12-moutai-still-life.png",
+      "sha": "bd2101cc977580ae90ea467b56027c4553f82f65",
+      "bytes": 1880543,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/茅台/12-moutai-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/13-yili-still-life.png",
+      "sha": "69a205425f262e330602ffeeaba130c80bcdf778",
+      "bytes": 1717305,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/伊利/13-yili-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/14-brand-supplements-still-life.png",
+      "sha": "3b988d5042015dc43338b5d1250539c3ca256232",
+      "bytes": 1881354,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/品牌补充/14-brand-supplements-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/15-fmcg-laundry-still-life.png",
+      "sha": "bf41f3016e460958ef6fa5c616784751bde4a32d",
+      "bytes": 1897469,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/洗护用品/15-fmcg-laundry-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/16-fmcg-personal-care-still-life.png",
+      "sha": "43dc7abc201fea34daf356f9dbe1e9a464759873",
+      "bytes": 1731204,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/个人护理/16-fmcg-personal-care-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/17-fmcg-paper-wipes-still-life.png",
+      "sha": "3bb42e500461b19c2c2107de2755d0f05b5df8ec",
+      "bytes": 1887450,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/纸品湿巾/17-fmcg-paper-wipes-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/18-fmcg-kitchen-cleaning-still-life.png",
+      "sha": "84140b4ba05c26729bc6349ba638b8befe09a7f2",
+      "bytes": 1829676,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/厨房清洁/18-fmcg-kitchen-cleaning-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/19-fmcg-disinfect-storage-still-life.png",
+      "sha": "93edf32842fb54ff03fe311cebaac922cb4e1a15",
+      "bytes": 2058890,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/消毒收纳/19-fmcg-disinfect-storage-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/20-fmcg-beverages-still-life.png",
+      "sha": "6df93cbbeba3efdfeef603aecd838a65047c4c77",
+      "bytes": 1876039,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/饮料食品/20-fmcg-beverages-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/category-still-life/21-fmcg-snacks-food-still-life.png",
+      "sha": "c0fad0b9f545fb0e5f55d66385f453dcf560c2fa",
+      "bytes": 1902495,
+      "role": "original-copy",
+      "organizedPath": "originals/桌面静物/饮料食品/21-fmcg-snacks-food-still-life.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/01-laundry-liquid.png",
+      "sha": "979f53827bf6c886dec098e5fd82beb410467971",
+      "bytes": 1086724,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/01-laundry-liquid.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/02-laundry-powder.png",
+      "sha": "efd7cd9987afe96c8491fc3b96623f82a1d3292d",
+      "bytes": 1333741,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/02-laundry-powder.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/03-laundry-pods.png",
+      "sha": "bc15679ad31801fcc39c07bbde219c8125bd18cd",
+      "bytes": 1376512,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/03-laundry-pods.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/04-fabric-softener.png",
+      "sha": "870dccd645dbd78f2182f0e4bfd75ea835447da1",
+      "bytes": 1036996,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/04-fabric-softener.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/05-hand-wash.png",
+      "sha": "91941dc8a2ac890f930024792da113d0472e6529",
+      "bytes": 953217,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/05-hand-wash.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/06-shampoo.png",
+      "sha": "d760ca52b9fa8d14b6e99b009c7d9b83ec80e4be",
+      "bytes": 889423,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/06-shampoo.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/07-conditioner.png",
+      "sha": "5d0f34b8efb9a17ee24feeecabb20181bf63bc14",
+      "bytes": 913640,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/07-conditioner.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/08-body-wash.png",
+      "sha": "56789c310fc0fb0a68644a40b5ac66f1189560dc",
+      "bytes": 1391583,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/08-body-wash.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/09-toothpaste.png",
+      "sha": "db3e1775959d2cb74246a6b99eee2a208884092d",
+      "bytes": 918943,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/09-toothpaste.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/10-facial-cleanser.png",
+      "sha": "5f7921e352427075f86d90b868e548df68a75e79",
+      "bytes": 881394,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/10-facial-cleanser.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/11-body-lotion.png",
+      "sha": "5263cc9c048f28c7267a964c089466248aa885e4",
+      "bytes": 1073373,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/11-body-lotion.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/12-toilet-paper.png",
+      "sha": "bab9c6186f38b7b7e78159826aca52b750fdc120",
+      "bytes": 1163158,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/12-toilet-paper.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/13-tissues.png",
+      "sha": "854e80bfe20a4063d31de0ab567b465544674b94",
+      "bytes": 1264730,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/13-tissues.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/14-wet-wipes.png",
+      "sha": "3136094056506d8453b8af82f60ed773b66dc6f1",
+      "bytes": 974693,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/14-wet-wipes.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/15-kitchen-towel.png",
+      "sha": "eb4213dcd9c732b779e9f20dca8470a080eb2e85",
+      "bytes": 1315121,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/15-kitchen-towel.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/16-dishwashing-liquid.png",
+      "sha": "776ef341c0d60253c630a954de7b349f05178b1d",
+      "bytes": 1049199,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/16-dishwashing-liquid.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/17-kitchen-cleaner.png",
+      "sha": "ba7074fd86cf9f4a7b078de4d454d74b0e658bcb",
+      "bytes": 996624,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/17-kitchen-cleaner.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/18-toilet-cleaner.png",
+      "sha": "e3d86e152e374367f31b22588b37943a9b912d9c",
+      "bytes": 1044630,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/18-toilet-cleaner.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/19-disinfectant.png",
+      "sha": "b55d3e486ee8d8b0d38939bcd638cb22af924721",
+      "bytes": 877495,
+      "role": "original-copy",
+      "organizedPath": "originals/消毒收纳/19-disinfectant.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/20-trash-bags.png",
+      "sha": "17bbcaa0389b4ca4489521b81e9526c54ef1bcd8",
+      "bytes": 1349611,
+      "role": "original-copy",
+      "organizedPath": "originals/消毒收纳/20-trash-bags.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/21-electric-kettle.png",
+      "sha": "c4da942d5b2954887141a4148be3e6f95bbca706",
+      "bytes": 1067272,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/21-electric-kettle.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/22-rice-cooker.png",
+      "sha": "e5f592ac4766c1e29bff060d8d28e1dcf4c1f118",
+      "bytes": 1059485,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/22-rice-cooker.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/23-microwave-oven.png",
+      "sha": "76189bffe9ce6692aab0c99e31b9657a007e1ce5",
+      "bytes": 1231093,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/23-microwave-oven.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/24-cordless-vacuum.png",
+      "sha": "be29c607e6a6eed2f982c17357e879f4c1ae5ca5",
+      "bytes": 831819,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/24-cordless-vacuum.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/25-hair-dryer.png",
+      "sha": "5639d35b6b00901ea7333a909a8add5104b4c2b2",
+      "bytes": 914355,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/25-hair-dryer.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/26-electric-fan.png",
+      "sha": "ee1a667e51fbcc745a2ea53af0033bbf8fe42865",
+      "bytes": 1267156,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/26-electric-fan.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/27-air-purifier.png",
+      "sha": "a7cc69203819b5a9fbc040d7ca1605c0f022a41a",
+      "bytes": 1407520,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/27-air-purifier.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/28-humidifier.png",
+      "sha": "0478bb5dbb40eb398e644432a39c209664e214cd",
+      "bytes": 926556,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/28-humidifier.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/29-electric-toothbrush.png",
+      "sha": "601e19e460fb2d6d3289494a324f55725a48b638",
+      "bytes": 824954,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/29-electric-toothbrush.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/30-steam-iron.png",
+      "sha": "a5755e9a06788bb9ffca30a3e7c7bb2b03918805",
+      "bytes": 1092923,
+      "role": "original-copy",
+      "organizedPath": "originals/家用电器/30-steam-iron.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/31-bottled-water.png",
+      "sha": "7fe0974a62108c88dc592fc1abca94e9f2170589",
+      "bytes": 997662,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/31-bottled-water.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/32-soda-can.png",
+      "sha": "25cf2e2ed6d39597c68ba3102376fc6d330aedfe",
+      "bytes": 1089924,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/32-soda-can.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/33-orange-juice.png",
+      "sha": "27f593989372535633889cdcda109ecff153be3f",
+      "bytes": 1029645,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/33-orange-juice.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/34-milk-carton.png",
+      "sha": "98011f375051f3abbf784d4f3cf2d2c26e53c4d7",
+      "bytes": 914615,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/34-milk-carton.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/35-instant-coffee.png",
+      "sha": "00cd4bf8c6c498491e320e4fec31e04736ba11ae",
+      "bytes": 1357017,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/35-instant-coffee.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/36-instant-noodles.png",
+      "sha": "fa3b72ef7b2ceb8e0ca48ce3481cb347641a176f",
+      "bytes": 1454896,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/36-instant-noodles.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/37-bread.png",
+      "sha": "79b7395b073e034940956be8b14ea12e88a948fe",
+      "bytes": 1234442,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/37-bread.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/38-eggs.png",
+      "sha": "847d44e36dda082cb968a35b44f8d71254078e15",
+      "bytes": 1737888,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/38-eggs.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/39-potato-chips.png",
+      "sha": "38b0abd395663fda36ffa535c0fbf92acfd166f7",
+      "bytes": 1237408,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/39-potato-chips.png"
+    },
+    {
+      "sourcePath": "docs/assets/daily-necessities-top20/40-cookies.png",
+      "sha": "287867eff64bb0ff1f64de36e606633a7519fde7",
+      "bytes": 1513103,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/40-cookies.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/aquafina-bottled-water.png",
+      "sha": "f3ecba3d294012b1157808eb6b553a6f7e0275b6",
+      "bytes": 1548026,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/aquafina-bottled-water.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/ariel-laundry-detergent.png",
+      "sha": "d5b5f65a9d5045ca5f1f9aa2757b41e69b610fbb",
+      "bytes": 1286494,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/ariel-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/bounty-paper-towels.png",
+      "sha": "381eac7f87e6c53777eedd53fc20875a6a91a5de",
+      "bytes": 1457919,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/bounty-paper-towels.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/britannia-good-day-cookies.png",
+      "sha": "ab1fc6bd87c86b05687b0c20d7b24272e5b0a3c9",
+      "bytes": 1228333,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/britannia-good-day-cookies.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/cascade-dishwasher-pods.png",
+      "sha": "ca953a58a62be79276a6288021073121ad5ef6a1",
+      "bytes": 1779759,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/cascade-dishwasher-pods.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/charmin-toilet-paper.png",
+      "sha": "8404a32d9bb492d2c01e6caa5d2599261f323ac7",
+      "bytes": 1624943,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/charmin-toilet-paper.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/cheetos-cheese-snacks.png",
+      "sha": "a7cb68bdb7ceb2b3508cc25bdc48f92362b6cc36",
+      "bytes": 1512278,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/cheetos-cheese-snacks.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/cif-cream-cleaner.png",
+      "sha": "6b71004729fe70d6aa92b3f4f82c690c499cb91d",
+      "bytes": 1231823,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/cif-cream-cleaner.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/clorox-disinfecting-spray.png",
+      "sha": "178ad5d962d7b1c0abd6ae06d53bf47f90744841",
+      "bytes": 1247192,
+      "role": "original-copy",
+      "organizedPath": "originals/消毒收纳/clorox-disinfecting-spray.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/coca-cola-soft-drink.png",
+      "sha": "f54487329575011e152ad8b5cb90cc831f4b3350",
+      "bytes": 1582728,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/coca-cola-soft-drink.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/colgate-toothpaste.png",
+      "sha": "636dc3478bb86af856e82f6ec086bd08bc0c4edc",
+      "bytes": 1424429,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/colgate-toothpaste.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/comfort-fabric-softener.png",
+      "sha": "9fe9a40d246d8082e544c9384a13a33fdd6e2323",
+      "bytes": 1247228,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/comfort-fabric-softener.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/dawn-dish-soap.png",
+      "sha": "220c425843c6fb4b61f2417eeb4a8f373ecf95b6",
+      "bytes": 1332690,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/dawn-dish-soap.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/doritos-tortilla-chips.png",
+      "sha": "c7c0dd750fd6162dd58b9eeb2b949f2b61e03c95",
+      "bytes": 1573929,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/doritos-tortilla-chips.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/downy-fabric-softener.png",
+      "sha": "cba317b9a6de67bea9e15d45a45aa535e7c49f81",
+      "bytes": 1314353,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/downy-fabric-softener.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/fanta-orange-soda.png",
+      "sha": "366e55b32cfbcd35fc259fe67e9685134bb97e74",
+      "bytes": 1774088,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/fanta-orange-soda.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/febreze-air-freshener.png",
+      "sha": "d4b8e4347d821a2dded4f5df68c8c88bb26cbab7",
+      "bytes": 1261059,
+      "role": "original-copy",
+      "organizedPath": "originals/消毒收纳/febreze-air-freshener.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/gillette-razor.png",
+      "sha": "94cf9d018a923211d8a1f7d205f68835a118f5a7",
+      "bytes": 1669287,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/gillette-razor.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/glad-food-storage-bags.png",
+      "sha": "8972786f60f2b7d54e5d3cb56bd45db7964e5f24",
+      "bytes": 1624364,
+      "role": "original-copy",
+      "organizedPath": "originals/消毒收纳/glad-food-storage-bags.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/indomie-instant-noodles.png",
+      "sha": "f9eff8557d918b9c2855c1b002684cb23258a08a",
+      "bytes": 1702720,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/indomie-instant-noodles.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/kleenex-wet-wipes.png",
+      "sha": "907fac5be9d1017cd7ad5a832d2e4fa52ff00ebb",
+      "bytes": 1388758,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/kleenex-wet-wipes.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/loreal-shampoo.png",
+      "sha": "1295943be67c6b481e2521789b1e20bcc5704d46",
+      "bytes": 1412745,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/loreal-shampoo.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/milo-malt-drink.png",
+      "sha": "4a483e81039e0edecfdb76924ca86a89564848f0",
+      "bytes": 1804064,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/milo-malt-drink.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/mr-clean-all-purpose-cleaner.png",
+      "sha": "a144e37cb5d78523e8542d046271a3e819497f6f",
+      "bytes": 1329891,
+      "role": "original-copy",
+      "organizedPath": "originals/厨房清洁/mr-clean-all-purpose-cleaner.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/nivea-sunscreen.png",
+      "sha": "630e60f32b386d9b703c50f00a6b6afa4b7cfef2",
+      "bytes": 1263259,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/nivea-sunscreen.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/oral-b-toothbrush.png",
+      "sha": "94a9b4b816a15d4e29c85f3d34116715bd68b7b5",
+      "bytes": 1526797,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/oral-b-toothbrush.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/ottogi-jin-ramen.png",
+      "sha": "e345e2ad25adf20bc142afef361125359d29f5d4",
+      "bytes": 1684547,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/ottogi-jin-ramen.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/palmolive-body-wash.png",
+      "sha": "e9712863e77e3fccdb6a9e7ba5a4715cffeab65f",
+      "bytes": 1381326,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/palmolive-body-wash.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/parle-g-biscuits.png",
+      "sha": "c652212081022e3fa9ba2a491c4bf6db48fe2b9e",
+      "bytes": 1592268,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/parle-g-biscuits.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/persil-laundry-detergent.png",
+      "sha": "68aff7857c9a0a1515141cca98200c8c092e6e52",
+      "bytes": 1477036,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/persil-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/puffs-facial-tissues.png",
+      "sha": "f299ebe39de13d4da44a0972bc00e65817da99ea",
+      "bytes": 1553227,
+      "role": "original-copy",
+      "organizedPath": "originals/纸品湿巾/puffs-facial-tissues.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/quaker-oats.png",
+      "sha": "adcdd10be6057edd59929bceb8132b60f0af3e50",
+      "bytes": 1800200,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/quaker-oats.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/red-bull-energy-drink.png",
+      "sha": "9e3230d452360c69880990e89516eb601446372c",
+      "bytes": 1632234,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/red-bull-energy-drink.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/softsoap-hand-soap.png",
+      "sha": "d041c93397989c7ad8747feb3b7d0bb42ba8dce2",
+      "bytes": 1357688,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/softsoap-hand-soap.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/sprite-lemon-lime-soda.png",
+      "sha": "fb97a2c5609c44798c395220086a29e95d7292fd",
+      "bytes": 1666062,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/sprite-lemon-lime-soda.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/starbucks-rtd-coffee.png",
+      "sha": "2fb7cc9e4a5f3f2100a1bc0842032740eb05d240",
+      "bytes": 1311563,
+      "role": "original-copy",
+      "organizedPath": "originals/饮料食品/starbucks-rtd-coffee.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/surf-laundry-detergent.png",
+      "sha": "2defe52b18d69e1b6cda849ee4bb996d9a5781c3",
+      "bytes": 1375148,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/surf-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/swiffer-duster.png",
+      "sha": "b72e04f1d0e0da5875fd01223e2d30e35e3c21b8",
+      "bytes": 1560693,
+      "role": "original-copy",
+      "organizedPath": "originals/消毒收纳/swiffer-duster.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/tide-laundry-detergent.png",
+      "sha": "2478efd6ee048733abd27c45eee3bd59bcc237de",
+      "bytes": 1071142,
+      "role": "original-copy",
+      "organizedPath": "originals/洗护用品/tide-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "docs/assets/fmcg-tear-labels/vaseline-body-care.png",
+      "sha": "054356450eb2d7e2d8aa80b4dcab90b27c67ba4b",
+      "bytes": 1380458,
+      "role": "original-copy",
+      "organizedPath": "originals/个人护理/vaseline-body-care.png"
+    },
+    {
+      "sourcePath": "docs/github-pages-qr.png",
+      "sha": "df1f3420faf865a00cce28f108b570263c4a4329",
+      "bytes": 562,
+      "role": "reference",
+      "organizedPath": "reference-images/docs/github-pages-qr.png"
+    },
+    {
+      "sourcePath": "docs/screenshot.png",
+      "sha": "1c6db7106f0051eab8532ee5f4bd03b23bc1377a",
+      "bytes": 84987,
+      "role": "reference",
+      "organizedPath": "reference-images/docs/screenshot.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/41-pg-head-shoulders-shampoo.png",
+      "sha": "013d3945e7a2d52ce9b6838365cff05a88b3976f",
+      "bytes": 1037265,
+      "role": "original",
+      "organizedPath": "originals/宝洁公司/41-pg-head-shoulders-shampoo.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/42-pg-safeguard-bar-soap.png",
+      "sha": "3ea9462402739710a536b37eea06a7d05a6a6655",
+      "bytes": 1202777,
+      "role": "original",
+      "organizedPath": "originals/宝洁公司/42-pg-safeguard-bar-soap.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/43-pg-pantene-conditioner.png",
+      "sha": "a44b90da9c0efc373d3041454e062d7efe3a8062",
+      "bytes": 841628,
+      "role": "original",
+      "organizedPath": "originals/宝洁公司/43-pg-pantene-conditioner.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/44-pg-crest-toothpaste.png",
+      "sha": "79c9a06d3c3522436e4943c83d0bf5af7d2c0c74",
+      "bytes": 853872,
+      "role": "original",
+      "organizedPath": "originals/宝洁公司/44-pg-crest-toothpaste.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/45-pg-olay-face-cream.png",
+      "sha": "28d2b15774bfd6e46ae18be97583ffd73a86318d",
+      "bytes": 879186,
+      "role": "original",
+      "organizedPath": "originals/宝洁公司/45-pg-olay-face-cream.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/46-nestle-instant-coffee.png",
+      "sha": "4ce44bf884686380a3cce4311675f4dce4397afe",
+      "bytes": 1441610,
+      "role": "original",
+      "organizedPath": "originals/雀巢公司/46-nestle-instant-coffee.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/47-nestle-milk-powder.png",
+      "sha": "357b820c6490b7e40e6b98a5e95e6c876f559265",
+      "bytes": 1081404,
+      "role": "original",
+      "organizedPath": "originals/雀巢公司/47-nestle-milk-powder.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/48-nestle-kitkat-chocolate.png",
+      "sha": "c95e7d5d49835dd1eaaf374a2095c96c5756a09f",
+      "bytes": 1042761,
+      "role": "original",
+      "organizedPath": "originals/雀巢公司/48-nestle-kitkat-chocolate.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/49-nestle-maggi-seasoning.png",
+      "sha": "5e3849876122872915c6a1b33c0a08c3c7a08af1",
+      "bytes": 824755,
+      "role": "original",
+      "organizedPath": "originals/雀巢公司/49-nestle-maggi-seasoning.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/50-nestle-condensed-milk.png",
+      "sha": "f5cedaaf9635f5193bb2c07cfa5a28ff8ba0d609",
+      "bytes": 1051361,
+      "role": "original",
+      "organizedPath": "originals/雀巢公司/50-nestle-condensed-milk.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/51-pepsico-pepsi-cola.png",
+      "sha": "102b2fc709b8ece0f5f3912f8d66f2861ed9514e",
+      "bytes": 1141762,
+      "role": "original",
+      "organizedPath": "originals/百事公司/51-pepsico-pepsi-cola.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/52-pepsico-7up-soda.png",
+      "sha": "d938e4c05b5228ee136ffca60ee6cf8efa8fd135",
+      "bytes": 1050481,
+      "role": "original",
+      "organizedPath": "originals/百事公司/52-pepsico-7up-soda.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/53-pepsico-mirinda-orange-soda.png",
+      "sha": "ecafd91b78f3460412c8c59a0ff1eebb78c6752f",
+      "bytes": 1023414,
+      "role": "original",
+      "organizedPath": "originals/百事公司/53-pepsico-mirinda-orange-soda.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/54-pepsico-lays-potato-chips.png",
+      "sha": "62f26146ca29556851656e2d43d374bc0298d7f9",
+      "bytes": 1184753,
+      "role": "original",
+      "organizedPath": "originals/百事公司/54-pepsico-lays-potato-chips.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/55-pepsico-gatorade-sports-drink.png",
+      "sha": "1d7158565f0f36442f0b6e1c8718272264d3b58e",
+      "bytes": 989271,
+      "role": "original",
+      "organizedPath": "originals/百事公司/55-pepsico-gatorade-sports-drink.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/56-unilever-lux-shampoo.png",
+      "sha": "2043c3bec61dbe5f79d57631ce35be21070d57b4",
+      "bytes": 878766,
+      "role": "original",
+      "organizedPath": "originals/联合利华/56-unilever-lux-shampoo.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/57-unilever-dove-body-wash.png",
+      "sha": "956b873c8a9f9b3a40327e456662bfbdec4ce34a",
+      "bytes": 910644,
+      "role": "original",
+      "organizedPath": "originals/联合利华/57-unilever-dove-body-wash.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/58-unilever-clear-shampoo.png",
+      "sha": "858cf22672c6d4318aee2f535a905ed06eb2e283",
+      "bytes": 954704,
+      "role": "original",
+      "organizedPath": "originals/联合利华/58-unilever-clear-shampoo.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/59-unilever-omo-laundry-liquid.png",
+      "sha": "a907bd415370855a427dfa6945e09b11061b218f",
+      "bytes": 1077005,
+      "role": "original",
+      "organizedPath": "originals/联合利华/59-unilever-omo-laundry-liquid.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/60-unilever-lipton-tea.png",
+      "sha": "2839c924e8d095a8cb548d0847c46df1224e8fd1",
+      "bytes": 1312189,
+      "role": "original",
+      "organizedPath": "originals/联合利华/60-unilever-lipton-tea.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/61-moutai-feitian-baijiu.png",
+      "sha": "df183b1d2f822b95e8cfc87cea4536680300af75",
+      "bytes": 1069631,
+      "role": "original",
+      "organizedPath": "originals/茅台/61-moutai-feitian-baijiu.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/62-moutai-1935-baijiu.png",
+      "sha": "f8f6d3aaddf06fb38b419409caca298b9bac27bd",
+      "bytes": 927002,
+      "role": "original",
+      "organizedPath": "originals/茅台/62-moutai-1935-baijiu.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/63-moutai-prince-baijiu.png",
+      "sha": "9707d54c74cd9b2508ffcfff0926252f58dfa805",
+      "bytes": 901756,
+      "role": "original",
+      "organizedPath": "originals/茅台/63-moutai-prince-baijiu.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/64-moutai-yingbin-baijiu.png",
+      "sha": "5492d972015be5371a0bf337eae99b3ea14da9c4",
+      "bytes": 871700,
+      "role": "original",
+      "organizedPath": "originals/茅台/64-moutai-yingbin-baijiu.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/65-moutai-guizhou-daqu.png",
+      "sha": "49f0cebccb168a57b02b75eafa0097d7c7c4c80f",
+      "bytes": 1038315,
+      "role": "original",
+      "organizedPath": "originals/茅台/65-moutai-guizhou-daqu.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/66-yili-golden-milk.png",
+      "sha": "cd67b1f5b01b48d16ccc68cdf0c8ea40b494a73b",
+      "bytes": 1121747,
+      "role": "original",
+      "organizedPath": "originals/伊利/66-yili-golden-milk.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/67-yili-ambrosial-yogurt.png",
+      "sha": "009e52a14c6a566f21d8735eca37a9648ea4a9a7",
+      "bytes": 1068408,
+      "role": "original",
+      "organizedPath": "originals/伊利/67-yili-ambrosial-yogurt.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/68-yili-shuhua-milk.png",
+      "sha": "03dfaa6df4b4a833538b39c6bb1a60ed502f48d1",
+      "bytes": 987699,
+      "role": "original",
+      "organizedPath": "originals/伊利/68-yili-shuhua-milk.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/69-yili-childrens-milk.png",
+      "sha": "254f40f84a223e278b2af04f50cddb22f1ba7119",
+      "bytes": 978556,
+      "role": "original",
+      "organizedPath": "originals/伊利/69-yili-childrens-milk.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/70-yili-yogurt-drink.png",
+      "sha": "0b77cf0ba6caeb202261288221f01e91ec6afa9f",
+      "bytes": 1027277,
+      "role": "original",
+      "organizedPath": "originals/伊利/70-yili-yogurt-drink.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/71-blue-moon-laundry-large.png",
+      "sha": "7f5abedf2d1e3229c1839725c79c0d455d67909d",
+      "bytes": 1173089,
+      "role": "original",
+      "organizedPath": "originals/品牌补充/71-blue-moon-laundry-large.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/72-blue-moon-laundry-medium.png",
+      "sha": "393ebe034ed2ba1eb8e4478f31c035c0160af7bd",
+      "bytes": 1148334,
+      "role": "original",
+      "organizedPath": "originals/品牌补充/72-blue-moon-laundry-medium.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/73-blue-moon-laundry-small.png",
+      "sha": "477a3d695db7c812ebf502a73e757ed77f80ba6f",
+      "bytes": 1014429,
+      "role": "original",
+      "organizedPath": "originals/品牌补充/73-blue-moon-laundry-small.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/74-heart-to-heart-tissues.png",
+      "sha": "47852609147b407c0a49fa5926644a9b393758f1",
+      "bytes": 1124225,
+      "role": "original",
+      "organizedPath": "originals/品牌补充/74-heart-to-heart-tissues.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/75-tempo-tissues.png",
+      "sha": "f7bd96af4f8546bfc7bb2875c7c276ad052e1fd5",
+      "bytes": 1166041,
+      "role": "original",
+      "organizedPath": "originals/品牌补充/75-tempo-tissues.png"
+    },
+    {
+      "sourcePath": "public/assets/brand-products/76-vinda-tissues.png",
+      "sha": "3673deaf3219c55c46c17199e2ef98c4fd04b9de",
+      "bytes": 1125850,
+      "role": "original",
+      "organizedPath": "originals/品牌补充/76-vinda-tissues.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/01-laundry-care-still-life.png",
+      "sha": "a840f219d11eecac3f21c7b6c7f3a09d8c62c7f9",
+      "bytes": 1768619,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/洗护用品/01-laundry-care-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/02-personal-care-still-life.png",
+      "sha": "3442d6211dab5401c862c7f78fb83f498134579c",
+      "bytes": 1729846,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/个人护理/02-personal-care-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/03-paper-wipes-still-life.png",
+      "sha": "e6e04a83d4443472fb23340aa7ed828061cfde63",
+      "bytes": 1879214,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/纸品湿巾/03-paper-wipes-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/04-kitchen-cleaning-still-life.png",
+      "sha": "6003b928f5b088a4eb52a3f8df7e0554b77fcd99",
+      "bytes": 1785072,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/厨房清洁/04-kitchen-cleaning-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/05-disinfect-storage-still-life.png",
+      "sha": "9649f221ddfe525e9f2f37105debda8f9bbc7b42",
+      "bytes": 1664327,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/消毒收纳/05-disinfect-storage-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/06-home-appliances-still-life.png",
+      "sha": "18b0c9118cac7e7e1f6174fabcf89d2e52e7e615",
+      "bytes": 2178195,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/家用电器/06-home-appliances-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/07-food-beverages-still-life.png",
+      "sha": "e539969a4e5501b0bf63132484bbea4cac8178c5",
+      "bytes": 2227390,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/饮料食品/07-food-beverages-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/08-procter-gamble-still-life.png",
+      "sha": "b2356ec321e23a76f44f0e13867604382fd1c5f1",
+      "bytes": 1680102,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/宝洁公司/08-procter-gamble-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/09-nestle-still-life.png",
+      "sha": "7ac0ac3bca857af52396a65fd7e1524c7e437b12",
+      "bytes": 2033551,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/雀巢公司/09-nestle-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/10-pepsico-still-life.png",
+      "sha": "190b128bf75aa9353cfea54da26b884c6252fd28",
+      "bytes": 1833060,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/百事公司/10-pepsico-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/11-unilever-still-life.png",
+      "sha": "d5e935f6b6c83a70f8664c8b9ab74372fce93b27",
+      "bytes": 1839636,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/联合利华/11-unilever-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/12-moutai-still-life.png",
+      "sha": "bd2101cc977580ae90ea467b56027c4553f82f65",
+      "bytes": 1880543,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/茅台/12-moutai-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/13-yili-still-life.png",
+      "sha": "69a205425f262e330602ffeeaba130c80bcdf778",
+      "bytes": 1717305,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/伊利/13-yili-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/14-brand-supplements-still-life.png",
+      "sha": "3b988d5042015dc43338b5d1250539c3ca256232",
+      "bytes": 1881354,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/品牌补充/14-brand-supplements-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/15-fmcg-laundry-still-life.png",
+      "sha": "bf41f3016e460958ef6fa5c616784751bde4a32d",
+      "bytes": 1897469,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/洗护用品/15-fmcg-laundry-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/16-fmcg-personal-care-still-life.png",
+      "sha": "43dc7abc201fea34daf356f9dbe1e9a464759873",
+      "bytes": 1731204,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/个人护理/16-fmcg-personal-care-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/17-fmcg-paper-wipes-still-life.png",
+      "sha": "3bb42e500461b19c2c2107de2755d0f05b5df8ec",
+      "bytes": 1887450,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/纸品湿巾/17-fmcg-paper-wipes-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/18-fmcg-kitchen-cleaning-still-life.png",
+      "sha": "84140b4ba05c26729bc6349ba638b8befe09a7f2",
+      "bytes": 1829676,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/厨房清洁/18-fmcg-kitchen-cleaning-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/19-fmcg-disinfect-storage-still-life.png",
+      "sha": "93edf32842fb54ff03fe311cebaac922cb4e1a15",
+      "bytes": 2058890,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/消毒收纳/19-fmcg-disinfect-storage-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/20-fmcg-beverages-still-life.png",
+      "sha": "6df93cbbeba3efdfeef603aecd838a65047c4c77",
+      "bytes": 1876039,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/饮料食品/20-fmcg-beverages-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/category-still-life/21-fmcg-snacks-food-still-life.png",
+      "sha": "c0fad0b9f545fb0e5f55d66385f453dcf560c2fa",
+      "bytes": 1902495,
+      "role": "original",
+      "organizedPath": "originals/桌面静物/饮料食品/21-fmcg-snacks-food-still-life.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/01-laundry-liquid.png",
+      "sha": "979f53827bf6c886dec098e5fd82beb410467971",
+      "bytes": 1086724,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/01-laundry-liquid.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/02-laundry-powder.png",
+      "sha": "efd7cd9987afe96c8491fc3b96623f82a1d3292d",
+      "bytes": 1333741,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/02-laundry-powder.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/03-laundry-pods.png",
+      "sha": "bc15679ad31801fcc39c07bbde219c8125bd18cd",
+      "bytes": 1376512,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/03-laundry-pods.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/04-fabric-softener.png",
+      "sha": "870dccd645dbd78f2182f0e4bfd75ea835447da1",
+      "bytes": 1036996,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/04-fabric-softener.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/05-hand-wash.png",
+      "sha": "91941dc8a2ac890f930024792da113d0472e6529",
+      "bytes": 953217,
+      "role": "original",
+      "organizedPath": "originals/个人护理/05-hand-wash.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/06-shampoo.png",
+      "sha": "d760ca52b9fa8d14b6e99b009c7d9b83ec80e4be",
+      "bytes": 889423,
+      "role": "original",
+      "organizedPath": "originals/个人护理/06-shampoo.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/07-conditioner.png",
+      "sha": "5d0f34b8efb9a17ee24feeecabb20181bf63bc14",
+      "bytes": 913640,
+      "role": "original",
+      "organizedPath": "originals/个人护理/07-conditioner.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/08-body-wash.png",
+      "sha": "56789c310fc0fb0a68644a40b5ac66f1189560dc",
+      "bytes": 1391583,
+      "role": "original",
+      "organizedPath": "originals/个人护理/08-body-wash.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/09-toothpaste.png",
+      "sha": "db3e1775959d2cb74246a6b99eee2a208884092d",
+      "bytes": 918943,
+      "role": "original",
+      "organizedPath": "originals/个人护理/09-toothpaste.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/10-facial-cleanser.png",
+      "sha": "5f7921e352427075f86d90b868e548df68a75e79",
+      "bytes": 881394,
+      "role": "original",
+      "organizedPath": "originals/个人护理/10-facial-cleanser.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/11-body-lotion.png",
+      "sha": "5263cc9c048f28c7267a964c089466248aa885e4",
+      "bytes": 1073373,
+      "role": "original",
+      "organizedPath": "originals/个人护理/11-body-lotion.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/12-toilet-paper.png",
+      "sha": "bab9c6186f38b7b7e78159826aca52b750fdc120",
+      "bytes": 1163158,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/12-toilet-paper.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/13-tissues.png",
+      "sha": "854e80bfe20a4063d31de0ab567b465544674b94",
+      "bytes": 1264730,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/13-tissues.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/14-wet-wipes.png",
+      "sha": "3136094056506d8453b8af82f60ed773b66dc6f1",
+      "bytes": 974693,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/14-wet-wipes.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/15-kitchen-towel.png",
+      "sha": "eb4213dcd9c732b779e9f20dca8470a080eb2e85",
+      "bytes": 1315121,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/15-kitchen-towel.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/16-dishwashing-liquid.png",
+      "sha": "776ef341c0d60253c630a954de7b349f05178b1d",
+      "bytes": 1049199,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/16-dishwashing-liquid.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/17-kitchen-cleaner.png",
+      "sha": "ba7074fd86cf9f4a7b078de4d454d74b0e658bcb",
+      "bytes": 996624,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/17-kitchen-cleaner.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/18-toilet-cleaner.png",
+      "sha": "e3d86e152e374367f31b22588b37943a9b912d9c",
+      "bytes": 1044630,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/18-toilet-cleaner.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/19-disinfectant.png",
+      "sha": "b55d3e486ee8d8b0d38939bcd638cb22af924721",
+      "bytes": 877495,
+      "role": "original",
+      "organizedPath": "originals/消毒收纳/19-disinfectant.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/20-trash-bags.png",
+      "sha": "17bbcaa0389b4ca4489521b81e9526c54ef1bcd8",
+      "bytes": 1349611,
+      "role": "original",
+      "organizedPath": "originals/消毒收纳/20-trash-bags.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/21-electric-kettle.png",
+      "sha": "c4da942d5b2954887141a4148be3e6f95bbca706",
+      "bytes": 1067272,
+      "role": "original",
+      "organizedPath": "originals/家用电器/21-electric-kettle.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/22-rice-cooker.png",
+      "sha": "e5f592ac4766c1e29bff060d8d28e1dcf4c1f118",
+      "bytes": 1059485,
+      "role": "original",
+      "organizedPath": "originals/家用电器/22-rice-cooker.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/23-microwave-oven.png",
+      "sha": "76189bffe9ce6692aab0c99e31b9657a007e1ce5",
+      "bytes": 1231093,
+      "role": "original",
+      "organizedPath": "originals/家用电器/23-microwave-oven.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/24-cordless-vacuum.png",
+      "sha": "be29c607e6a6eed2f982c17357e879f4c1ae5ca5",
+      "bytes": 831819,
+      "role": "original",
+      "organizedPath": "originals/家用电器/24-cordless-vacuum.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/25-hair-dryer.png",
+      "sha": "5639d35b6b00901ea7333a909a8add5104b4c2b2",
+      "bytes": 914355,
+      "role": "original",
+      "organizedPath": "originals/家用电器/25-hair-dryer.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/26-electric-fan.png",
+      "sha": "ee1a667e51fbcc745a2ea53af0033bbf8fe42865",
+      "bytes": 1267156,
+      "role": "original",
+      "organizedPath": "originals/家用电器/26-electric-fan.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/27-air-purifier.png",
+      "sha": "a7cc69203819b5a9fbc040d7ca1605c0f022a41a",
+      "bytes": 1407520,
+      "role": "original",
+      "organizedPath": "originals/家用电器/27-air-purifier.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/28-humidifier.png",
+      "sha": "0478bb5dbb40eb398e644432a39c209664e214cd",
+      "bytes": 926556,
+      "role": "original",
+      "organizedPath": "originals/家用电器/28-humidifier.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/29-electric-toothbrush.png",
+      "sha": "601e19e460fb2d6d3289494a324f55725a48b638",
+      "bytes": 824954,
+      "role": "original",
+      "organizedPath": "originals/家用电器/29-electric-toothbrush.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/30-steam-iron.png",
+      "sha": "a5755e9a06788bb9ffca30a3e7c7bb2b03918805",
+      "bytes": 1092923,
+      "role": "original",
+      "organizedPath": "originals/家用电器/30-steam-iron.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/31-bottled-water.png",
+      "sha": "7fe0974a62108c88dc592fc1abca94e9f2170589",
+      "bytes": 997662,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/31-bottled-water.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/32-soda-can.png",
+      "sha": "25cf2e2ed6d39597c68ba3102376fc6d330aedfe",
+      "bytes": 1089924,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/32-soda-can.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/33-orange-juice.png",
+      "sha": "27f593989372535633889cdcda109ecff153be3f",
+      "bytes": 1029645,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/33-orange-juice.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/34-milk-carton.png",
+      "sha": "98011f375051f3abbf784d4f3cf2d2c26e53c4d7",
+      "bytes": 914615,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/34-milk-carton.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/35-instant-coffee.png",
+      "sha": "00cd4bf8c6c498491e320e4fec31e04736ba11ae",
+      "bytes": 1357017,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/35-instant-coffee.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/36-instant-noodles.png",
+      "sha": "fa3b72ef7b2ceb8e0ca48ce3481cb347641a176f",
+      "bytes": 1454896,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/36-instant-noodles.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/37-bread.png",
+      "sha": "79b7395b073e034940956be8b14ea12e88a948fe",
+      "bytes": 1234442,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/37-bread.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/38-eggs.png",
+      "sha": "847d44e36dda082cb968a35b44f8d71254078e15",
+      "bytes": 1737888,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/38-eggs.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/39-potato-chips.png",
+      "sha": "38b0abd395663fda36ffa535c0fbf92acfd166f7",
+      "bytes": 1237408,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/39-potato-chips.png"
+    },
+    {
+      "sourcePath": "public/assets/daily-necessities-top20/40-cookies.png",
+      "sha": "287867eff64bb0ff1f64de36e606633a7519fde7",
+      "bytes": 1513103,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/40-cookies.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/aquafina-bottled-water.png",
+      "sha": "f3ecba3d294012b1157808eb6b553a6f7e0275b6",
+      "bytes": 1548026,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/aquafina-bottled-water.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/ariel-laundry-detergent.png",
+      "sha": "d5b5f65a9d5045ca5f1f9aa2757b41e69b610fbb",
+      "bytes": 1286494,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/ariel-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/bounty-paper-towels.png",
+      "sha": "381eac7f87e6c53777eedd53fc20875a6a91a5de",
+      "bytes": 1457919,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/bounty-paper-towels.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/britannia-good-day-cookies.png",
+      "sha": "ab1fc6bd87c86b05687b0c20d7b24272e5b0a3c9",
+      "bytes": 1228333,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/britannia-good-day-cookies.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/cascade-dishwasher-pods.png",
+      "sha": "ca953a58a62be79276a6288021073121ad5ef6a1",
+      "bytes": 1779759,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/cascade-dishwasher-pods.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/charmin-toilet-paper.png",
+      "sha": "8404a32d9bb492d2c01e6caa5d2599261f323ac7",
+      "bytes": 1624943,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/charmin-toilet-paper.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/cheetos-cheese-snacks.png",
+      "sha": "a7cb68bdb7ceb2b3508cc25bdc48f92362b6cc36",
+      "bytes": 1512278,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/cheetos-cheese-snacks.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/cif-cream-cleaner.png",
+      "sha": "6b71004729fe70d6aa92b3f4f82c690c499cb91d",
+      "bytes": 1231823,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/cif-cream-cleaner.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/clorox-disinfecting-spray.png",
+      "sha": "178ad5d962d7b1c0abd6ae06d53bf47f90744841",
+      "bytes": 1247192,
+      "role": "original",
+      "organizedPath": "originals/消毒收纳/clorox-disinfecting-spray.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/coca-cola-soft-drink.png",
+      "sha": "f54487329575011e152ad8b5cb90cc831f4b3350",
+      "bytes": 1582728,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/coca-cola-soft-drink.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/colgate-toothpaste.png",
+      "sha": "636dc3478bb86af856e82f6ec086bd08bc0c4edc",
+      "bytes": 1424429,
+      "role": "original",
+      "organizedPath": "originals/个人护理/colgate-toothpaste.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/comfort-fabric-softener.png",
+      "sha": "9fe9a40d246d8082e544c9384a13a33fdd6e2323",
+      "bytes": 1247228,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/comfort-fabric-softener.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/dawn-dish-soap.png",
+      "sha": "220c425843c6fb4b61f2417eeb4a8f373ecf95b6",
+      "bytes": 1332690,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/dawn-dish-soap.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/doritos-tortilla-chips.png",
+      "sha": "c7c0dd750fd6162dd58b9eeb2b949f2b61e03c95",
+      "bytes": 1573929,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/doritos-tortilla-chips.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/downy-fabric-softener.png",
+      "sha": "cba317b9a6de67bea9e15d45a45aa535e7c49f81",
+      "bytes": 1314353,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/downy-fabric-softener.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/fanta-orange-soda.png",
+      "sha": "366e55b32cfbcd35fc259fe67e9685134bb97e74",
+      "bytes": 1774088,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/fanta-orange-soda.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/febreze-air-freshener.png",
+      "sha": "d4b8e4347d821a2dded4f5df68c8c88bb26cbab7",
+      "bytes": 1261059,
+      "role": "original",
+      "organizedPath": "originals/消毒收纳/febreze-air-freshener.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/gillette-razor.png",
+      "sha": "94cf9d018a923211d8a1f7d205f68835a118f5a7",
+      "bytes": 1669287,
+      "role": "original",
+      "organizedPath": "originals/个人护理/gillette-razor.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/glad-food-storage-bags.png",
+      "sha": "8972786f60f2b7d54e5d3cb56bd45db7964e5f24",
+      "bytes": 1624364,
+      "role": "original",
+      "organizedPath": "originals/消毒收纳/glad-food-storage-bags.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/indomie-instant-noodles.png",
+      "sha": "f9eff8557d918b9c2855c1b002684cb23258a08a",
+      "bytes": 1702720,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/indomie-instant-noodles.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/kleenex-wet-wipes.png",
+      "sha": "907fac5be9d1017cd7ad5a832d2e4fa52ff00ebb",
+      "bytes": 1388758,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/kleenex-wet-wipes.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/loreal-shampoo.png",
+      "sha": "1295943be67c6b481e2521789b1e20bcc5704d46",
+      "bytes": 1412745,
+      "role": "original",
+      "organizedPath": "originals/个人护理/loreal-shampoo.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/milo-malt-drink.png",
+      "sha": "4a483e81039e0edecfdb76924ca86a89564848f0",
+      "bytes": 1804064,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/milo-malt-drink.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/mr-clean-all-purpose-cleaner.png",
+      "sha": "a144e37cb5d78523e8542d046271a3e819497f6f",
+      "bytes": 1329891,
+      "role": "original",
+      "organizedPath": "originals/厨房清洁/mr-clean-all-purpose-cleaner.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/nivea-sunscreen.png",
+      "sha": "630e60f32b386d9b703c50f00a6b6afa4b7cfef2",
+      "bytes": 1263259,
+      "role": "original",
+      "organizedPath": "originals/个人护理/nivea-sunscreen.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/oral-b-toothbrush.png",
+      "sha": "94a9b4b816a15d4e29c85f3d34116715bd68b7b5",
+      "bytes": 1526797,
+      "role": "original",
+      "organizedPath": "originals/个人护理/oral-b-toothbrush.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/ottogi-jin-ramen.png",
+      "sha": "e345e2ad25adf20bc142afef361125359d29f5d4",
+      "bytes": 1684547,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/ottogi-jin-ramen.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/palmolive-body-wash.png",
+      "sha": "e9712863e77e3fccdb6a9e7ba5a4715cffeab65f",
+      "bytes": 1381326,
+      "role": "original",
+      "organizedPath": "originals/个人护理/palmolive-body-wash.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/parle-g-biscuits.png",
+      "sha": "c652212081022e3fa9ba2a491c4bf6db48fe2b9e",
+      "bytes": 1592268,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/parle-g-biscuits.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/persil-laundry-detergent.png",
+      "sha": "68aff7857c9a0a1515141cca98200c8c092e6e52",
+      "bytes": 1477036,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/persil-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/puffs-facial-tissues.png",
+      "sha": "f299ebe39de13d4da44a0972bc00e65817da99ea",
+      "bytes": 1553227,
+      "role": "original",
+      "organizedPath": "originals/纸品湿巾/puffs-facial-tissues.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/quaker-oats.png",
+      "sha": "adcdd10be6057edd59929bceb8132b60f0af3e50",
+      "bytes": 1800200,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/quaker-oats.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/red-bull-energy-drink.png",
+      "sha": "9e3230d452360c69880990e89516eb601446372c",
+      "bytes": 1632234,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/red-bull-energy-drink.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/softsoap-hand-soap.png",
+      "sha": "d041c93397989c7ad8747feb3b7d0bb42ba8dce2",
+      "bytes": 1357688,
+      "role": "original",
+      "organizedPath": "originals/个人护理/softsoap-hand-soap.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/sprite-lemon-lime-soda.png",
+      "sha": "fb97a2c5609c44798c395220086a29e95d7292fd",
+      "bytes": 1666062,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/sprite-lemon-lime-soda.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/starbucks-rtd-coffee.png",
+      "sha": "2fb7cc9e4a5f3f2100a1bc0842032740eb05d240",
+      "bytes": 1311563,
+      "role": "original",
+      "organizedPath": "originals/饮料食品/starbucks-rtd-coffee.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/surf-laundry-detergent.png",
+      "sha": "2defe52b18d69e1b6cda849ee4bb996d9a5781c3",
+      "bytes": 1375148,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/surf-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/swiffer-duster.png",
+      "sha": "b72e04f1d0e0da5875fd01223e2d30e35e3c21b8",
+      "bytes": 1560693,
+      "role": "original",
+      "organizedPath": "originals/消毒收纳/swiffer-duster.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/tide-laundry-detergent.png",
+      "sha": "2478efd6ee048733abd27c45eee3bd59bcc237de",
+      "bytes": 1071142,
+      "role": "original",
+      "organizedPath": "originals/洗护用品/tide-laundry-detergent.png"
+    },
+    {
+      "sourcePath": "public/assets/fmcg-tear-labels/vaseline-body-care.png",
+      "sha": "054356450eb2d7e2d8aa80b4dcab90b27c67ba4b",
+      "bytes": 1380458,
+      "role": "original",
+      "organizedPath": "originals/个人护理/vaseline-body-care.png"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/41-pg-head-shoulders-shampoo.webp",
+      "sha": "3226fc9e3c1997df5d8a8b64a3beae5a4f6353ee",
+      "bytes": 4074,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/41-pg-head-shoulders-shampoo.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/42-pg-safeguard-bar-soap.webp",
+      "sha": "1a127cee5549ad1a3411d7e63aec286ec75cb2e1",
+      "bytes": 6798,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/42-pg-safeguard-bar-soap.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/43-pg-pantene-conditioner.webp",
+      "sha": "fb724257e18b31d704425a21a9400f2c7979a8c1",
+      "bytes": 2336,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/43-pg-pantene-conditioner.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/44-pg-crest-toothpaste.webp",
+      "sha": "2257631c9c52565565eb0c6617bdffd9a6859bfb",
+      "bytes": 2170,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/44-pg-crest-toothpaste.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/45-pg-olay-face-cream.webp",
+      "sha": "725405e55252819725ed880e76169af0c0909aad",
+      "bytes": 2820,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/45-pg-olay-face-cream.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/46-nestle-instant-coffee.webp",
+      "sha": "bb1af3d83c2679286e6b5add628c9b1d2d992a11",
+      "bytes": 13298,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/46-nestle-instant-coffee.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/47-nestle-milk-powder.webp",
+      "sha": "434100b62181ba029d84b245a8364ba0bb44e684",
+      "bytes": 6056,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/47-nestle-milk-powder.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/48-nestle-kitkat-chocolate.webp",
+      "sha": "96c6ee8d17f48b2501033288a53e0f1537cc4397",
+      "bytes": 3952,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/48-nestle-kitkat-chocolate.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/49-nestle-maggi-seasoning.webp",
+      "sha": "acb2107fe37dcb1b9e87d35a5107cf61d96c2dc0",
+      "bytes": 4376,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/49-nestle-maggi-seasoning.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/50-nestle-condensed-milk.webp",
+      "sha": "7596aaf29c2bb42d999b6f2da392c8623ebd7ffe",
+      "bytes": 5020,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/50-nestle-condensed-milk.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/51-pepsico-pepsi-cola.webp",
+      "sha": "03a793431932d32ddecfe909f14cd81505a0e290",
+      "bytes": 3546,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/51-pepsico-pepsi-cola.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/52-pepsico-7up-soda.webp",
+      "sha": "0e79d4d728dd427da0052bfc2f628da037d37353",
+      "bytes": 5810,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/52-pepsico-7up-soda.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/53-pepsico-mirinda-orange-soda.webp",
+      "sha": "f8cc279b61f87533db69c2b01f41ee20ed920b43",
+      "bytes": 4718,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/53-pepsico-mirinda-orange-soda.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/54-pepsico-lays-potato-chips.webp",
+      "sha": "855f5ec96fc02b23cce2281a43b038b9ecf1325a",
+      "bytes": 7444,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/54-pepsico-lays-potato-chips.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/55-pepsico-gatorade-sports-drink.webp",
+      "sha": "fa81099b91082a6823359df234c8f4406054a91d",
+      "bytes": 6480,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/55-pepsico-gatorade-sports-drink.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/56-unilever-lux-shampoo.webp",
+      "sha": "201415641049640bee726d0bcf071da1803aacf6",
+      "bytes": 2980,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/56-unilever-lux-shampoo.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/57-unilever-dove-body-wash.webp",
+      "sha": "05188dc65fa74335fda6936a9c334074d49fab78",
+      "bytes": 1662,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/57-unilever-dove-body-wash.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/58-unilever-clear-shampoo.webp",
+      "sha": "e7349518d2d35808d6d0118a51a8162900cb27f2",
+      "bytes": 2732,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/58-unilever-clear-shampoo.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/59-unilever-omo-laundry-liquid.webp",
+      "sha": "a0adaf57b6923d94a34cfca7d202a29693630dd8",
+      "bytes": 5334,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/59-unilever-omo-laundry-liquid.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/60-unilever-lipton-tea.webp",
+      "sha": "23795d87c1da0d6725e2e83ef82734fb3e9f0044",
+      "bytes": 7634,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/60-unilever-lipton-tea.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/61-moutai-feitian-baijiu.webp",
+      "sha": "6b264a38fbf9f74c7d7213bff8198276b61fd50d",
+      "bytes": 7058,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/61-moutai-feitian-baijiu.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/62-moutai-1935-baijiu.webp",
+      "sha": "e65a1fd4ae6971324b16c724b6195a14ae43503e",
+      "bytes": 6664,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/62-moutai-1935-baijiu.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/63-moutai-prince-baijiu.webp",
+      "sha": "1bdfbd95188c2bb00094472df4d55b13514acb6d",
+      "bytes": 6496,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/63-moutai-prince-baijiu.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/64-moutai-yingbin-baijiu.webp",
+      "sha": "3ef7a6b483bec0c00ef34cf074b3ca27831b32dd",
+      "bytes": 2402,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/64-moutai-yingbin-baijiu.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/65-moutai-guizhou-daqu.webp",
+      "sha": "cffcfa5b8f17a33891897016e5188d2bbe99b1f4",
+      "bytes": 4206,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/65-moutai-guizhou-daqu.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/66-yili-golden-milk.webp",
+      "sha": "b48149b13577aff8b60e35862bf2c80db079e35e",
+      "bytes": 2578,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/66-yili-golden-milk.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/67-yili-ambrosial-yogurt.webp",
+      "sha": "323c9ccc5802441c833fccebc2e97b72b17711f6",
+      "bytes": 2406,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/67-yili-ambrosial-yogurt.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/68-yili-shuhua-milk.webp",
+      "sha": "151621afbabe5237bd9128dd8d21b84b31828793",
+      "bytes": 3874,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/68-yili-shuhua-milk.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/69-yili-childrens-milk.webp",
+      "sha": "25fa02665d03205af2eb79b8d31b3924b08f1a2e",
+      "bytes": 4012,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/69-yili-childrens-milk.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/70-yili-yogurt-drink.webp",
+      "sha": "bd7ec08308fbdef2cf6f0128b1ddf610eb197ce0",
+      "bytes": 2506,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/70-yili-yogurt-drink.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/71-blue-moon-laundry-large.webp",
+      "sha": "6cc92982cac5e268465d98577c29c048061ef058",
+      "bytes": 5910,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/71-blue-moon-laundry-large.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/72-blue-moon-laundry-medium.webp",
+      "sha": "2641f6a3c2b72e076b5c055ead335e8a2b4ef1c5",
+      "bytes": 5850,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/72-blue-moon-laundry-medium.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/73-blue-moon-laundry-small.webp",
+      "sha": "8663aceb56530a260cfe58e291451d588be92fec",
+      "bytes": 3830,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/73-blue-moon-laundry-small.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/74-heart-to-heart-tissues.webp",
+      "sha": "c52a9db6f62406c82fc0d16972935c043e283024",
+      "bytes": 2058,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/74-heart-to-heart-tissues.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/75-tempo-tissues.webp",
+      "sha": "e437a96e9e503b4478a5caafcf90bb24c1936d1e",
+      "bytes": 3088,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/75-tempo-tissues.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/brand-products/76-vinda-tissues.webp",
+      "sha": "ac2702f1ebc564770f63b732edb3d65e3557c355",
+      "bytes": 3082,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/brand-products/76-vinda-tissues.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/01-laundry-care-still-life.webp",
+      "sha": "335ef59d7e0b0ef2f7e4257ef7c607542aa7561f",
+      "bytes": 8612,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/01-laundry-care-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/02-personal-care-still-life.webp",
+      "sha": "7dd925409a73a00e5a9c272dda87281b2f80f0b1",
+      "bytes": 6718,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/02-personal-care-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/03-paper-wipes-still-life.webp",
+      "sha": "edbe678eac601b292901cb5ff33c110d4c323084",
+      "bytes": 6948,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/03-paper-wipes-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/04-kitchen-cleaning-still-life.webp",
+      "sha": "25dc24ec6ae5785d3b90341d4414c5cc2cfcc9b3",
+      "bytes": 7112,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/04-kitchen-cleaning-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/05-disinfect-storage-still-life.webp",
+      "sha": "7a960c1d06b4a41560b3224286c9ba5481962ccb",
+      "bytes": 4874,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/05-disinfect-storage-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/06-home-appliances-still-life.webp",
+      "sha": "20b93af8c4584227929346c2fec5c625a77f4b16",
+      "bytes": 10826,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/06-home-appliances-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/07-food-beverages-still-life.webp",
+      "sha": "79c5d8e6223737d624352bd0948addc2cecfc076",
+      "bytes": 15322,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/07-food-beverages-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/08-procter-gamble-still-life.webp",
+      "sha": "5dd3621d95eb486665d3c94283572158c72fdee8",
+      "bytes": 8170,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/08-procter-gamble-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/09-nestle-still-life.webp",
+      "sha": "a82e1e9088e88192217166dcb678fab8b2e2b00b",
+      "bytes": 11584,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/09-nestle-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/10-pepsico-still-life.webp",
+      "sha": "ed1a4561dc005ed6ebf50d6b6ed119debefec050",
+      "bytes": 10242,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/10-pepsico-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/11-unilever-still-life.webp",
+      "sha": "3f7c3b0976d5f84f95fde7c2dd5f5b2277f1a23e",
+      "bytes": 9366,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/11-unilever-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/12-moutai-still-life.webp",
+      "sha": "eb9d25971814878ef13393a58d11268d61bc57fe",
+      "bytes": 11364,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/12-moutai-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/13-yili-still-life.webp",
+      "sha": "e9b238246a74056ec200b1dc3e3a402a51467bdc",
+      "bytes": 7474,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/13-yili-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/14-brand-supplements-still-life.webp",
+      "sha": "8700617eedebb77d5be55ce731506ea24e118ada",
+      "bytes": 8728,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/14-brand-supplements-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/15-fmcg-laundry-still-life.webp",
+      "sha": "6f7c3979379191186ec45851aaf945df223aaad6",
+      "bytes": 8610,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/15-fmcg-laundry-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/16-fmcg-personal-care-still-life.webp",
+      "sha": "a70a35bca0c05386b6eab108cdfd81c402dbc0bb",
+      "bytes": 5414,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/16-fmcg-personal-care-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/17-fmcg-paper-wipes-still-life.webp",
+      "sha": "5ce0678d0020d3ca40a1baa6b41bef7bb5744790",
+      "bytes": 5156,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/17-fmcg-paper-wipes-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/18-fmcg-kitchen-cleaning-still-life.webp",
+      "sha": "d11099e0f2a939fb80f086e29d800ca53a76fc7a",
+      "bytes": 7980,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/18-fmcg-kitchen-cleaning-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/19-fmcg-disinfect-storage-still-life.webp",
+      "sha": "0a2c517481757d1aee4855421cdfc42121b45f13",
+      "bytes": 8728,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/19-fmcg-disinfect-storage-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/20-fmcg-beverages-still-life.webp",
+      "sha": "26b31d0315098ce8ddd8f0947a18529863b4d7e8",
+      "bytes": 7392,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/20-fmcg-beverages-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/category-still-life/21-fmcg-snacks-food-still-life.webp",
+      "sha": "81a2eb28d9828ce1ed83083fdf5a8ebe1aa2a241",
+      "bytes": 7196,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/category-still-life/21-fmcg-snacks-food-still-life.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/01-laundry-liquid.webp",
+      "sha": "59e88dede45343e184fe5cd81fe81938246daa54",
+      "bytes": 6818,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/01-laundry-liquid.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/02-laundry-powder.webp",
+      "sha": "144018788f0cceef2ad7b65e55cb8839c5520aef",
+      "bytes": 4600,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/02-laundry-powder.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/03-laundry-pods.webp",
+      "sha": "fde0616952c5928b1b1a7e5bff07051d9b86bc2f",
+      "bytes": 12582,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/03-laundry-pods.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/04-fabric-softener.webp",
+      "sha": "c9302c11a3958fc057fe9c89ab9c2b4a1d484da3",
+      "bytes": 2194,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/04-fabric-softener.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/05-hand-wash.webp",
+      "sha": "e50ac634b8b3ca80f97eb073a36be17b54224884",
+      "bytes": 1610,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/05-hand-wash.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/06-shampoo.webp",
+      "sha": "fa4b35e59fbe0247417a54323ccbc3b850965c63",
+      "bytes": 2988,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/06-shampoo.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/07-conditioner.webp",
+      "sha": "9ea17032a590ccd92408c5c503c0c2d33024e016",
+      "bytes": 1324,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/07-conditioner.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/08-body-wash.webp",
+      "sha": "87c9c61381441db2ce82846a3c10158a138ac8aa",
+      "bytes": 2132,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/08-body-wash.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/09-toothpaste.webp",
+      "sha": "ab05d88f8638cb3e75714645e0178c7cf0369d22",
+      "bytes": 2650,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/09-toothpaste.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/10-facial-cleanser.webp",
+      "sha": "64ddedab39f63e8943c01d0a9655b1643ff95116",
+      "bytes": 1522,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/10-facial-cleanser.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/11-body-lotion.webp",
+      "sha": "fe554052827657e87ffe7e087ce3f6780bacd9cd",
+      "bytes": 3016,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/11-body-lotion.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/12-toilet-paper.webp",
+      "sha": "2d7a5d92143b6285bddc30dd9fef6165bb882024",
+      "bytes": 4352,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/12-toilet-paper.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/13-tissues.webp",
+      "sha": "e969dcdcb082c6ca1f3441894cf8c1f0a6c567ec",
+      "bytes": 2364,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/13-tissues.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/14-wet-wipes.webp",
+      "sha": "f0da1102f239810484f0adde4ecc057754c0c2d0",
+      "bytes": 3324,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/14-wet-wipes.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/15-kitchen-towel.webp",
+      "sha": "0eeb7f2178fbb7256ea842893ac9b269649f5fd8",
+      "bytes": 3928,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/15-kitchen-towel.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/16-dishwashing-liquid.webp",
+      "sha": "85603663470bbdc001a28f65d2582268838f8722",
+      "bytes": 3060,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/16-dishwashing-liquid.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/17-kitchen-cleaner.webp",
+      "sha": "f4e94067df3ad004246530f07e0338c2b629d543",
+      "bytes": 3804,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/17-kitchen-cleaner.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/18-toilet-cleaner.webp",
+      "sha": "edbc6bee558a30b1526902ad6c8de39071044398",
+      "bytes": 4104,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/18-toilet-cleaner.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/19-disinfectant.webp",
+      "sha": "7ea28d97894059f060258853592545977373d668",
+      "bytes": 2306,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/19-disinfectant.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/20-trash-bags.webp",
+      "sha": "36b721eac65eb246fa547aa2668adf36ebae3d31",
+      "bytes": 4414,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/20-trash-bags.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/21-electric-kettle.webp",
+      "sha": "419a9905444445beedb0e509a1f587e1b334b738",
+      "bytes": 3894,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/21-electric-kettle.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/22-rice-cooker.webp",
+      "sha": "f7e0327b2addd330fc4f96ad1051cb7d57f74d78",
+      "bytes": 4466,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/22-rice-cooker.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/23-microwave-oven.webp",
+      "sha": "62807fc00349cace40c0bb5c475b4b4632c55c6c",
+      "bytes": 3932,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/23-microwave-oven.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/24-cordless-vacuum.webp",
+      "sha": "04e8ae68b1afb5928c5cdadbe8d962d3b7ce3dea",
+      "bytes": 3570,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/24-cordless-vacuum.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/25-hair-dryer.webp",
+      "sha": "adf61b196e6b0fe17580dc2e5676164515fe90c4",
+      "bytes": 3428,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/25-hair-dryer.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/26-electric-fan.webp",
+      "sha": "0fb69062aca80071cfc591126c0f199c3edd2861",
+      "bytes": 13344,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/26-electric-fan.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/27-air-purifier.webp",
+      "sha": "55ecbd0a373643b77d767301112ca69a6bd7b047",
+      "bytes": 16954,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/27-air-purifier.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/28-humidifier.webp",
+      "sha": "538718101ee7f14c888e1fddd7e5f4f7363f1507",
+      "bytes": 4360,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/28-humidifier.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/29-electric-toothbrush.webp",
+      "sha": "f142c19e369812a24d0b889ceffcf1abc4c3dabb",
+      "bytes": 2786,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/29-electric-toothbrush.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/30-steam-iron.webp",
+      "sha": "cca6eafc40b1a503de599427bfcda3332cf88e95",
+      "bytes": 6682,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/30-steam-iron.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/31-bottled-water.webp",
+      "sha": "344ecf1e47ecb2085e295d11b340590b43844382",
+      "bytes": 3852,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/31-bottled-water.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/32-soda-can.webp",
+      "sha": "323ec6b682de4e10024d18e297dfb89fe43d603a",
+      "bytes": 2914,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/32-soda-can.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/33-orange-juice.webp",
+      "sha": "8b178704befea1d68fe67e60384e3348896a845e",
+      "bytes": 2802,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/33-orange-juice.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/34-milk-carton.webp",
+      "sha": "4609ad50b37683de9e1d7b265da4e0bc7e173672",
+      "bytes": 1576,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/34-milk-carton.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/35-instant-coffee.webp",
+      "sha": "3f3cc66fa55a55bb052e553440b4b76db6b9a5bd",
+      "bytes": 12358,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/35-instant-coffee.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/36-instant-noodles.webp",
+      "sha": "8cf65c38fa7660d93beb91788e69a2f8284c2beb",
+      "bytes": 9508,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/36-instant-noodles.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/37-bread.webp",
+      "sha": "b4ff3b3ccc3cfc50d8de2014b5130403b12dc0bb",
+      "bytes": 8876,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/37-bread.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/38-eggs.webp",
+      "sha": "0592cb0e8e84e39d24ca4a1915de285405cc23c9",
+      "bytes": 9770,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/38-eggs.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/39-potato-chips.webp",
+      "sha": "fbac041a1f5b73375bde996ec51b45368f285c7d",
+      "bytes": 8594,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/39-potato-chips.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/daily-necessities-top20/40-cookies.webp",
+      "sha": "417ae9c5da5eef2b2abdcf464b27f90677b125ca",
+      "bytes": 6100,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/daily-necessities-top20/40-cookies.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/aquafina-bottled-water.webp",
+      "sha": "a526d67543698f93ff587826706691c11a02a3f3",
+      "bytes": 5388,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/aquafina-bottled-water.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/ariel-laundry-detergent.webp",
+      "sha": "7103e3f9bb27431d504b29501b1583de16d1e41f",
+      "bytes": 2636,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/ariel-laundry-detergent.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/bounty-paper-towels.webp",
+      "sha": "5cf9e91e661ff996fd5c17806f72a5006a5387ee",
+      "bytes": 3300,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/bounty-paper-towels.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/britannia-good-day-cookies.webp",
+      "sha": "770635ae7ba5b9bb5a22b3c070dec46903dcca69",
+      "bytes": 6084,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/britannia-good-day-cookies.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/cascade-dishwasher-pods.webp",
+      "sha": "ce6c61a2a18b6a3bda563ec9af80e30d81a7cf0e",
+      "bytes": 4118,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/cascade-dishwasher-pods.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/charmin-toilet-paper.webp",
+      "sha": "51d942f9d2f69252eeb91b0edff8ac20448643e6",
+      "bytes": 5512,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/charmin-toilet-paper.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/cheetos-cheese-snacks.webp",
+      "sha": "14ce59511936fff28d9cc605c67b03373945429b",
+      "bytes": 6506,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/cheetos-cheese-snacks.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/cif-cream-cleaner.webp",
+      "sha": "7edcf38ec05381cab3b391fed1d2dbbb8fee1a7d",
+      "bytes": 2712,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/cif-cream-cleaner.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/clorox-disinfecting-spray.webp",
+      "sha": "fb66141d5728cae989fb6576d5a7878c85136276",
+      "bytes": 2422,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/clorox-disinfecting-spray.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/coca-cola-soft-drink.webp",
+      "sha": "f486f844f5e061cc41983f3b5d2b3eb3481c124e",
+      "bytes": 7000,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/coca-cola-soft-drink.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/colgate-toothpaste.webp",
+      "sha": "4fcfa15d56f9e4a0448176eab458362e980a5729",
+      "bytes": 3640,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/colgate-toothpaste.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/comfort-fabric-softener.webp",
+      "sha": "8895a92cb8f738360b3dd8728ef64a390c7396a3",
+      "bytes": 2500,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/comfort-fabric-softener.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/dawn-dish-soap.webp",
+      "sha": "f63deecf6075322f0312ff67fca963b74d2b5bea",
+      "bytes": 2644,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/dawn-dish-soap.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/doritos-tortilla-chips.webp",
+      "sha": "47dc6b3201bd020f944d18f6b69a13426bd8f0b0",
+      "bytes": 8094,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/doritos-tortilla-chips.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/downy-fabric-softener.webp",
+      "sha": "dcc7a336693f6fc5b4305a499480899de6a04e21",
+      "bytes": 2656,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/downy-fabric-softener.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/fanta-orange-soda.webp",
+      "sha": "ff5bfb4cd9980bf031e897d9b92e7c4a290e488b",
+      "bytes": 6956,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/fanta-orange-soda.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/febreze-air-freshener.webp",
+      "sha": "8398cec849231910330d7d8ab40df42e1f892bae",
+      "bytes": 2602,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/febreze-air-freshener.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/gillette-razor.webp",
+      "sha": "bf7e7b4066cfe8be40bf8ab33966ae0205a03f5f",
+      "bytes": 5696,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/gillette-razor.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/glad-food-storage-bags.webp",
+      "sha": "8c111c2829a476525e9c891a28533721b3c1ff25",
+      "bytes": 5090,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/glad-food-storage-bags.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/indomie-instant-noodles.webp",
+      "sha": "8bc9f995bfd868fbe775600b0f1925b5e7b0e809",
+      "bytes": 13358,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/indomie-instant-noodles.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/kleenex-wet-wipes.webp",
+      "sha": "4b947dfc3b660fbfe2987c35664692e78995a096",
+      "bytes": 4288,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/kleenex-wet-wipes.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/loreal-shampoo.webp",
+      "sha": "3ec4b50b62bc2b962d4b96c4f08034b99c21d558",
+      "bytes": 2688,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/loreal-shampoo.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/milo-malt-drink.webp",
+      "sha": "91a10b5364a6bb5bf3f193009889f70485c159c0",
+      "bytes": 6888,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/milo-malt-drink.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/mr-clean-all-purpose-cleaner.webp",
+      "sha": "8ef2d713ab76f619fe3a735ab4ab266c5bfb656c",
+      "bytes": 2298,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/mr-clean-all-purpose-cleaner.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/nivea-sunscreen.webp",
+      "sha": "3cf10d4706db77d86c4ab7ed4793be66ebd234f3",
+      "bytes": 2400,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/nivea-sunscreen.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/oral-b-toothbrush.webp",
+      "sha": "c4298ea782c452ea856cc71462fee393a1a9b8ca",
+      "bytes": 4046,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/oral-b-toothbrush.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/ottogi-jin-ramen.webp",
+      "sha": "b5a209646bbf215aa1b97258fdcb68aa581adb95",
+      "bytes": 12136,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/ottogi-jin-ramen.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/palmolive-body-wash.webp",
+      "sha": "a1e5a37dd096a9edccf1af343e43a2ba928872aa",
+      "bytes": 4724,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/palmolive-body-wash.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/parle-g-biscuits.webp",
+      "sha": "97b07b07710d494325b16806c988de23bf7337ac",
+      "bytes": 6714,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/parle-g-biscuits.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/persil-laundry-detergent.webp",
+      "sha": "37ff28b019750f79e65abf781864f62ab519eb44",
+      "bytes": 3912,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/persil-laundry-detergent.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/puffs-facial-tissues.webp",
+      "sha": "3e1241808e6e2423287f9a9bce563a014c4da1c1",
+      "bytes": 3022,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/puffs-facial-tissues.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/quaker-oats.webp",
+      "sha": "a179465790954658952770d162d663ad65ce7b4b",
+      "bytes": 6216,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/quaker-oats.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/red-bull-energy-drink.webp",
+      "sha": "38a846a97efb1e79351ca6afcefd260e626a511a",
+      "bytes": 4446,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/red-bull-energy-drink.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/softsoap-hand-soap.webp",
+      "sha": "49620e66073846d77211b238baccf3d183540be0",
+      "bytes": 3634,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/softsoap-hand-soap.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/sprite-lemon-lime-soda.webp",
+      "sha": "f85fa901f83e8c7431dadba872d607f1a6cdcc97",
+      "bytes": 5918,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/sprite-lemon-lime-soda.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/starbucks-rtd-coffee.webp",
+      "sha": "09bc4b07c07d0e8d02f7c656abc48e5c7c09e37b",
+      "bytes": 3286,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/starbucks-rtd-coffee.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/surf-laundry-detergent.webp",
+      "sha": "95f613ab0ae3bac47bf613cce018a5be561e51ed",
+      "bytes": 4722,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/surf-laundry-detergent.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/swiffer-duster.webp",
+      "sha": "74736bcfbcea2d6ec5b90d89deb53d844186b744",
+      "bytes": 6506,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/swiffer-duster.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/tide-laundry-detergent.webp",
+      "sha": "f1e327b2242c9a7d4d420b6d73d6d25f84ef9c20",
+      "bytes": 2598,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/tide-laundry-detergent.webp"
+    },
+    {
+      "sourcePath": "public/assets/thumbnails/fmcg-tear-labels/vaseline-body-care.webp",
+      "sha": "af85e683c1be8496e36cd57b27ee0911902218a9",
+      "bytes": 3644,
+      "role": "thumbnail",
+      "organizedPath": "derived-thumbnails/public/assets/thumbnails/fmcg-tear-labels/vaseline-body-care.webp"
+    },
+    {
+      "sourcePath": "public/favicon.svg",
+      "sha": "ca747cb66b233fedec5ff0c84f97bb4631c05dbf",
+      "bytes": 712,
+      "role": "reference",
+      "organizedPath": "reference-images/public/favicon.svg"
+    }
+  ]
+}

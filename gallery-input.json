@@ -1,0 +1,554 @@
+{
+  "image_directory": "/Users/sym/Documents/Codex/2026-10-02/https-github-com-holynova-image-gallery/outputs/daily-assets/originals",
+  "images": [
+    {
+      "source": "个人护理/05-hand-wash.png",
+      "bytes": 953217
+    },
+    {
+      "source": "个人护理/06-shampoo.png",
+      "bytes": 889423
+    },
+    {
+      "source": "个人护理/07-conditioner.png",
+      "bytes": 913640
+    },
+    {
+      "source": "个人护理/08-body-wash.png",
+      "bytes": 1391583
+    },
+    {
+      "source": "个人护理/09-toothpaste.png",
+      "bytes": 918943
+    },
+    {
+      "source": "个人护理/10-facial-cleanser.png",
+      "bytes": 881394
+    },
+    {
+      "source": "个人护理/11-body-lotion.png",
+      "bytes": 1073373
+    },
+    {
+      "source": "个人护理/colgate-toothpaste.png",
+      "bytes": 1424429
+    },
+    {
+      "source": "个人护理/gillette-razor.png",
+      "bytes": 1669287
+    },
+    {
+      "source": "个人护理/loreal-shampoo.png",
+      "bytes": 1412745
+    },
+    {
+      "source": "个人护理/nivea-sunscreen.png",
+      "bytes": 1263259
+    },
+    {
+      "source": "个人护理/oral-b-toothbrush.png",
+      "bytes": 1526797
+    },
+    {
+      "source": "个人护理/palmolive-body-wash.png",
+      "bytes": 1381326
+    },
+    {
+      "source": "个人护理/softsoap-hand-soap.png",
+      "bytes": 1357688
+    },
+    {
+      "source": "个人护理/vaseline-body-care.png",
+      "bytes": 1380458
+    },
+    {
+      "source": "伊利/66-yili-golden-milk.png",
+      "bytes": 1121747
+    },
+    {
+      "source": "伊利/67-yili-ambrosial-yogurt.png",
+      "bytes": 1068408
+    },
+    {
+      "source": "伊利/68-yili-shuhua-milk.png",
+      "bytes": 987699
+    },
+    {
+      "source": "伊利/69-yili-childrens-milk.png",
+      "bytes": 978556
+    },
+    {
+      "source": "伊利/70-yili-yogurt-drink.png",
+      "bytes": 1027277
+    },
+    {
+      "source": "厨房清洁/16-dishwashing-liquid.png",
+      "bytes": 1049199
+    },
+    {
+      "source": "厨房清洁/17-kitchen-cleaner.png",
+      "bytes": 996624
+    },
+    {
+      "source": "厨房清洁/18-toilet-cleaner.png",
+      "bytes": 1044630
+    },
+    {
+      "source": "厨房清洁/cascade-dishwasher-pods.png",
+      "bytes": 1779759
+    },
+    {
+      "source": "厨房清洁/cif-cream-cleaner.png",
+      "bytes": 1231823
+    },
+    {
+      "source": "厨房清洁/dawn-dish-soap.png",
+      "bytes": 1332690
+    },
+    {
+      "source": "厨房清洁/mr-clean-all-purpose-cleaner.png",
+      "bytes": 1329891
+    },
+    {
+      "source": "品牌补充/71-blue-moon-laundry-large.png",
+      "bytes": 1173089
+    },
+    {
+      "source": "品牌补充/72-blue-moon-laundry-medium.png",
+      "bytes": 1148334
+    },
+    {
+      "source": "品牌补充/73-blue-moon-laundry-small.png",
+      "bytes": 1014429
+    },
+    {
+      "source": "品牌补充/74-heart-to-heart-tissues.png",
+      "bytes": 1124225
+    },
+    {
+      "source": "品牌补充/75-tempo-tissues.png",
+      "bytes": 1166041
+    },
+    {
+      "source": "品牌补充/76-vinda-tissues.png",
+      "bytes": 1125850
+    },
+    {
+      "source": "宝洁公司/41-pg-head-shoulders-shampoo.png",
+      "bytes": 1037265
+    },
+    {
+      "source": "宝洁公司/42-pg-safeguard-bar-soap.png",
+      "bytes": 1202777
+    },
+    {
+      "source": "宝洁公司/43-pg-pantene-conditioner.png",
+      "bytes": 841628
+    },
+    {
+      "source": "宝洁公司/44-pg-crest-toothpaste.png",
+      "bytes": 853872
+    },
+    {
+      "source": "宝洁公司/45-pg-olay-face-cream.png",
+      "bytes": 879186
+    },
+    {
+      "source": "家用电器/21-electric-kettle.png",
+      "bytes": 1067272
+    },
+    {
+      "source": "家用电器/22-rice-cooker.png",
+      "bytes": 1059485
+    },
+    {
+      "source": "家用电器/23-microwave-oven.png",
+      "bytes": 1231093
+    },
+    {
+      "source": "家用电器/24-cordless-vacuum.png",
+      "bytes": 831819
+    },
+    {
+      "source": "家用电器/25-hair-dryer.png",
+      "bytes": 914355
+    },
+    {
+      "source": "家用电器/26-electric-fan.png",
+      "bytes": 1267156
+    },
+    {
+      "source": "家用电器/27-air-purifier.png",
+      "bytes": 1407520
+    },
+    {
+      "source": "家用电器/28-humidifier.png",
+      "bytes": 926556
+    },
+    {
+      "source": "家用电器/29-electric-toothbrush.png",
+      "bytes": 824954
+    },
+    {
+      "source": "家用电器/30-steam-iron.png",
+      "bytes": 1092923
+    },
+    {
+      "source": "桌面静物/个人护理/02-personal-care-still-life.png",
+      "bytes": 1729846
+    },
+    {
+      "source": "桌面静物/个人护理/16-fmcg-personal-care-still-life.png",
+      "bytes": 1731204
+    },
+    {
+      "source": "桌面静物/伊利/13-yili-still-life.png",
+      "bytes": 1717305
+    },
+    {
+      "source": "桌面静物/厨房清洁/04-kitchen-cleaning-still-life.png",
+      "bytes": 1785072
+    },
+    {
+      "source": "桌面静物/厨房清洁/18-fmcg-kitchen-cleaning-still-life.png",
+      "bytes": 1829676
+    },
+    {
+      "source": "桌面静物/品牌补充/14-brand-supplements-still-life.png",
+      "bytes": 1881354
+    },
+    {
+      "source": "桌面静物/宝洁公司/08-procter-gamble-still-life.png",
+      "bytes": 1680102
+    },
+    {
+      "source": "桌面静物/家用电器/06-home-appliances-still-life.png",
+      "bytes": 2178195
+    },
+    {
+      "source": "桌面静物/洗护用品/01-laundry-care-still-life.png",
+      "bytes": 1768619
+    },
+    {
+      "source": "桌面静物/洗护用品/15-fmcg-laundry-still-life.png",
+      "bytes": 1897469
+    },
+    {
+      "source": "桌面静物/消毒收纳/05-disinfect-storage-still-life.png",
+      "bytes": 1664327
+    },
+    {
+      "source": "桌面静物/消毒收纳/19-fmcg-disinfect-storage-still-life.png",
+      "bytes": 2058890
+    },
+    {
+      "source": "桌面静物/百事公司/10-pepsico-still-life.png",
+      "bytes": 1833060
+    },
+    {
+      "source": "桌面静物/纸品湿巾/03-paper-wipes-still-life.png",
+      "bytes": 1879214
+    },
+    {
+      "source": "桌面静物/纸品湿巾/17-fmcg-paper-wipes-still-life.png",
+      "bytes": 1887450
+    },
+    {
+      "source": "桌面静物/联合利华/11-unilever-still-life.png",
+      "bytes": 1839636
+    },
+    {
+      "source": "桌面静物/茅台/12-moutai-still-life.png",
+      "bytes": 1880543
+    },
+    {
+      "source": "桌面静物/雀巢公司/09-nestle-still-life.png",
+      "bytes": 2033551
+    },
+    {
+      "source": "桌面静物/饮料食品/07-food-beverages-still-life.png",
+      "bytes": 2227390
+    },
+    {
+      "source": "桌面静物/饮料食品/20-fmcg-beverages-still-life.png",
+      "bytes": 1876039
+    },
+    {
+      "source": "桌面静物/饮料食品/21-fmcg-snacks-food-still-life.png",
+      "bytes": 1902495
+    },
+    {
+      "source": "洗护用品/01-laundry-liquid.png",
+      "bytes": 1086724
+    },
+    {
+      "source": "洗护用品/02-laundry-powder.png",
+      "bytes": 1333741
+    },
+    {
+      "source": "洗护用品/03-laundry-pods.png",
+      "bytes": 1376512
+    },
+    {
+      "source": "洗护用品/04-fabric-softener.png",
+      "bytes": 1036996
+    },
+    {
+      "source": "洗护用品/ariel-laundry-detergent.png",
+      "bytes": 1286494
+    },
+    {
+      "source": "洗护用品/comfort-fabric-softener.png",
+      "bytes": 1247228
+    },
+    {
+      "source": "洗护用品/downy-fabric-softener.png",
+      "bytes": 1314353
+    },
+    {
+      "source": "洗护用品/persil-laundry-detergent.png",
+      "bytes": 1477036
+    },
+    {
+      "source": "洗护用品/surf-laundry-detergent.png",
+      "bytes": 1375148
+    },
+    {
+      "source": "洗护用品/tide-laundry-detergent.png",
+      "bytes": 1071142
+    },
+    {
+      "source": "消毒收纳/19-disinfectant.png",
+      "bytes": 877495
+    },
+    {
+      "source": "消毒收纳/20-trash-bags.png",
+      "bytes": 1349611
+    },
+    {
+      "source": "消毒收纳/clorox-disinfecting-spray.png",
+      "bytes": 1247192
+    },
+    {
+      "source": "消毒收纳/febreze-air-freshener.png",
+      "bytes": 1261059
+    },
+    {
+      "source": "消毒收纳/glad-food-storage-bags.png",
+      "bytes": 1624364
+    },
+    {
+      "source": "消毒收纳/swiffer-duster.png",
+      "bytes": 1560693
+    },
+    {
+      "source": "百事公司/51-pepsico-pepsi-cola.png",
+      "bytes": 1141762
+    },
+    {
+      "source": "百事公司/52-pepsico-7up-soda.png",
+      "bytes": 1050481
+    },
+    {
+      "source": "百事公司/53-pepsico-mirinda-orange-soda.png",
+      "bytes": 1023414
+    },
+    {
+      "source": "百事公司/54-pepsico-lays-potato-chips.png",
+      "bytes": 1184753
+    },
+    {
+      "source": "百事公司/55-pepsico-gatorade-sports-drink.png",
+      "bytes": 989271
+    },
+    {
+      "source": "纸品湿巾/12-toilet-paper.png",
+      "bytes": 1163158
+    },
+    {
+      "source": "纸品湿巾/13-tissues.png",
+      "bytes": 1264730
+    },
+    {
+      "source": "纸品湿巾/14-wet-wipes.png",
+      "bytes": 974693
+    },
+    {
+      "source": "纸品湿巾/15-kitchen-towel.png",
+      "bytes": 1315121
+    },
+    {
+      "source": "纸品湿巾/bounty-paper-towels.png",
+      "bytes": 1457919
+    },
+    {
+      "source": "纸品湿巾/charmin-toilet-paper.png",
+      "bytes": 1624943
+    },
+    {
+      "source": "纸品湿巾/kleenex-wet-wipes.png",
+      "bytes": 1388758
+    },
+    {
+      "source": "纸品湿巾/puffs-facial-tissues.png",
+      "bytes": 1553227
+    },
+    {
+      "source": "联合利华/56-unilever-lux-shampoo.png",
+      "bytes": 878766
+    },
+    {
+      "source": "联合利华/57-unilever-dove-body-wash.png",
+      "bytes": 910644
+    },
+    {
+      "source": "联合利华/58-unilever-clear-shampoo.png",
+      "bytes": 954704
+    },
+    {
+      "source": "联合利华/59-unilever-omo-laundry-liquid.png",
+      "bytes": 1077005
+    },
+    {
+      "source": "联合利华/60-unilever-lipton-tea.png",
+      "bytes": 1312189
+    },
+    {
+      "source": "茅台/61-moutai-feitian-baijiu.png",
+      "bytes": 1069631
+    },
+    {
+      "source": "茅台/62-moutai-1935-baijiu.png",
+      "bytes": 927002
+    },
+    {
+      "source": "茅台/63-moutai-prince-baijiu.png",
+      "bytes": 901756
+    },
+    {
+      "source": "茅台/64-moutai-yingbin-baijiu.png",
+      "bytes": 871700
+    },
+    {
+      "source": "茅台/65-moutai-guizhou-daqu.png",
+      "bytes": 1038315
+    },
+    {
+      "source": "雀巢公司/46-nestle-instant-coffee.png",
+      "bytes": 1441610
+    },
+    {
+      "source": "雀巢公司/47-nestle-milk-powder.png",
+      "bytes": 1081404
+    },
+    {
+      "source": "雀巢公司/48-nestle-kitkat-chocolate.png",
+      "bytes": 1042761
+    },
+    {
+      "source": "雀巢公司/49-nestle-maggi-seasoning.png",
+      "bytes": 824755
+    },
+    {
+      "source": "雀巢公司/50-nestle-condensed-milk.png",
+      "bytes": 1051361
+    },
+    {
+      "source": "饮料食品/31-bottled-water.png",
+      "bytes": 997662
+    },
+    {
+      "source": "饮料食品/32-soda-can.png",
+      "bytes": 1089924
+    },
+    {
+      "source": "饮料食品/33-orange-juice.png",
+      "bytes": 1029645
+    },
+    {
+      "source": "饮料食品/34-milk-carton.png",
+      "bytes": 914615
+    },
+    {
+      "source": "饮料食品/35-instant-coffee.png",
+      "bytes": 1357017
+    },
+    {
+      "source": "饮料食品/36-instant-noodles.png",
+      "bytes": 1454896
+    },
+    {
+      "source": "饮料食品/37-bread.png",
+      "bytes": 1234442
+    },
+    {
+      "source": "饮料食品/38-eggs.png",
+      "bytes": 1737888
+    },
+    {
+      "source": "饮料食品/39-potato-chips.png",
+      "bytes": 1237408
+    },
+    {
+      "source": "饮料食品/40-cookies.png",
+      "bytes": 1513103
+    },
+    {
+      "source": "饮料食品/aquafina-bottled-water.png",
+      "bytes": 1548026
+    },
+    {
+      "source": "饮料食品/britannia-good-day-cookies.png",
+      "bytes": 1228333
+    },
+    {
+      "source": "饮料食品/cheetos-cheese-snacks.png",
+      "bytes": 1512278
+    },
+    {
+      "source": "饮料食品/coca-cola-soft-drink.png",
+      "bytes": 1582728
+    },
+    {
+      "source": "饮料食品/doritos-tortilla-chips.png",
+      "bytes": 1573929
+    },
+    {
+      "source": "饮料食品/fanta-orange-soda.png",
+      "bytes": 1774088
+    },
+    {
+      "source": "饮料食品/indomie-instant-noodles.png",
+      "bytes": 1702720
+    },
+    {
+      "source": "饮料食品/milo-malt-drink.png",
+      "bytes": 1804064
+    },
+    {
+      "source": "饮料食品/ottogi-jin-ramen.png",
+      "bytes": 1684547
+    },
+    {
+      "source": "饮料食品/parle-g-biscuits.png",
+      "bytes": 1592268
+    },
+    {
+      "source": "饮料食品/quaker-oats.png",
+      "bytes": 1800200
+    },
+    {
+      "source": "饮料食品/red-bull-energy-drink.png",
+      "bytes": 1632234
+    },
+    {
+      "source": "饮料食品/sprite-lemon-lime-soda.png",
+      "bytes": 1666062
+    },
+    {
+      "source": "饮料食品/starbucks-rtd-coffee.png",
+      "bytes": 1311563
+    }
+  ],
+  "skipped_non_images": []
+}
