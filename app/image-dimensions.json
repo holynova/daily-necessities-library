@@ -1,0 +1,550 @@
+{
+  "/assets/brand-products/41-pg-head-shoulders-shampoo.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/42-pg-safeguard-bar-soap.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/43-pg-pantene-conditioner.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/44-pg-crest-toothpaste.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/45-pg-olay-face-cream.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/46-nestle-instant-coffee.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/47-nestle-milk-powder.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/48-nestle-kitkat-chocolate.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/49-nestle-maggi-seasoning.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/50-nestle-condensed-milk.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/51-pepsico-pepsi-cola.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/52-pepsico-7up-soda.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/53-pepsico-mirinda-orange-soda.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/54-pepsico-lays-potato-chips.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/55-pepsico-gatorade-sports-drink.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/56-unilever-lux-shampoo.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/57-unilever-dove-body-wash.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/58-unilever-clear-shampoo.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/59-unilever-omo-laundry-liquid.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/60-unilever-lipton-tea.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/61-moutai-feitian-baijiu.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/62-moutai-1935-baijiu.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/63-moutai-prince-baijiu.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/64-moutai-yingbin-baijiu.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/65-moutai-guizhou-daqu.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/66-yili-golden-milk.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/67-yili-ambrosial-yogurt.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/68-yili-shuhua-milk.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/69-yili-childrens-milk.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/70-yili-yogurt-drink.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/71-blue-moon-laundry-large.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/72-blue-moon-laundry-medium.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/73-blue-moon-laundry-small.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/74-heart-to-heart-tissues.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/75-tempo-tissues.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/brand-products/76-vinda-tissues.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/category-still-life/01-laundry-care-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/02-personal-care-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/03-paper-wipes-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/04-kitchen-cleaning-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/05-disinfect-storage-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/06-home-appliances-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/07-food-beverages-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/08-procter-gamble-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/09-nestle-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/10-pepsico-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/11-unilever-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/12-moutai-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/13-yili-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/14-brand-supplements-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/15-fmcg-laundry-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/16-fmcg-personal-care-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/17-fmcg-paper-wipes-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/18-fmcg-kitchen-cleaning-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/19-fmcg-disinfect-storage-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/20-fmcg-beverages-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/category-still-life/21-fmcg-snacks-food-still-life.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/assets/daily-necessities-top20/01-laundry-liquid.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/02-laundry-powder.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/03-laundry-pods.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/04-fabric-softener.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/05-hand-wash.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/06-shampoo.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/07-conditioner.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/08-body-wash.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/09-toothpaste.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/10-facial-cleanser.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/11-body-lotion.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/12-toilet-paper.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/13-tissues.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/14-wet-wipes.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/15-kitchen-towel.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/16-dishwashing-liquid.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/17-kitchen-cleaner.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/18-toilet-cleaner.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/19-disinfectant.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/20-trash-bags.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/21-electric-kettle.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/22-rice-cooker.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/23-microwave-oven.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/24-cordless-vacuum.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/25-hair-dryer.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/26-electric-fan.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/27-air-purifier.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/28-humidifier.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/29-electric-toothbrush.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/30-steam-iron.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/31-bottled-water.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/32-soda-can.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/33-orange-juice.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/34-milk-carton.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/35-instant-coffee.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/36-instant-noodles.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/37-bread.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/38-eggs.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/39-potato-chips.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/daily-necessities-top20/40-cookies.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/aquafina-bottled-water.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/ariel-laundry-detergent.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/bounty-paper-towels.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/britannia-good-day-cookies.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/cascade-dishwasher-pods.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/charmin-toilet-paper.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/cheetos-cheese-snacks.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/cif-cream-cleaner.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/clorox-disinfecting-spray.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/coca-cola-soft-drink.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/colgate-toothpaste.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/comfort-fabric-softener.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/dawn-dish-soap.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/doritos-tortilla-chips.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/downy-fabric-softener.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/fanta-orange-soda.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/febreze-air-freshener.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/gillette-razor.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/glad-food-storage-bags.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/indomie-instant-noodles.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/kleenex-wet-wipes.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/loreal-shampoo.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/milo-malt-drink.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/mr-clean-all-purpose-cleaner.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/nivea-sunscreen.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/oral-b-toothbrush.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/ottogi-jin-ramen.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/palmolive-body-wash.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/parle-g-biscuits.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/persil-laundry-detergent.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/puffs-facial-tissues.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/quaker-oats.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/red-bull-energy-drink.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/softsoap-hand-soap.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/sprite-lemon-lime-soda.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/starbucks-rtd-coffee.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/surf-laundry-detergent.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/swiffer-duster.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/tide-laundry-detergent.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/assets/fmcg-tear-labels/vaseline-body-care.png": {
+    "width": 1254,
+    "height": 1254
+  }
+}

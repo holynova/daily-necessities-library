@@ -2305,3 +2305,28 @@ body {
 .search-capsule .search-caption {
   flex-shrink: 0;
 }
+
+/* Keep the category scroller within the content width. */
+.series-tabs-wrap {
+  min-width: 0;
+  overflow: hidden;
+}
+.series-tabs {
+  min-width: 0;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+/* Reserve each image's intrinsic ratio, without artificial letterboxing. */
+.natural-feed .feed-card-media {
+  display: block;
+  aspect-ratio: auto;
+  background: transparent;
+}
+.natural-feed .feed-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

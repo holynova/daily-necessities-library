@@ -1,6 +1,6 @@
 {
   "name": "tear-labels",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "撕掉包装标签的 116 个常见产品 PNG 素材库，附 21 组桌面静物合集",
   "private": true,
   "engines": {
@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
-    "build:pages": "vite build --config vite.pages.config.ts",
+    "build:pages": "npm run assets:dimensions && vite build --config vite.pages.config.ts",
     "assets:thumbs": "node scripts/generate-thumbnails.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
@@ -17,7 +17,8 @@
     "assets:details": "node scripts/generate-details.mjs",
     "build:static": "npm run assets:details && npm run build:pages",
     "deploy:check": "wrangler deploy --dry-run --config wrangler.jsonc",
-    "deploy": "npm run build:static && wrangler deploy --config wrangler.jsonc"
+    "deploy": "npm run build:static && wrangler deploy --config wrangler.jsonc",
+    "assets:dimensions": "node scripts/generate-image-dimensions.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

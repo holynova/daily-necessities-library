@@ -17,6 +17,12 @@ import {
   X,
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import imageDimensions from './image-dimensions.json';
+
+const getImageDimensions = (source: string) =>
+  (imageDimensions as Record<string, { width: number; height: number }>)[
+    source
+  ] ?? { width: 400, height: 400 };
 
 type Product = {
   id: string;
@@ -464,9 +470,12 @@ export default function Home() {
         .join(' ')
         .toLowerCase();
 
-      return isCollectionView && (!query || searchText.includes(query));
+      return (
+        (isCollectionView || activeGroup === '全部') &&
+        (!query || searchText.includes(query))
+      );
     });
-  }, [isCollectionView, query]);
+  }, [isCollectionView, activeGroup, query]);
 
   const selectedProduct =
     products.find((product) => product.id === selectedId) ??
@@ -478,13 +487,23 @@ export default function Home() {
     ) ??
     filteredCollections[0] ??
     null;
-  const filteredFeedLength = isCollectionView
-    ? filteredCollections.length
-    : filteredProducts.length;
+  const feedItems: ShareTarget[] = [
+    ...filteredCollections.map((collection) => ({
+      type: 'collection' as const,
+      collection,
+    })),
+    ...filteredProducts.map((product) => ({
+      type: 'product' as const,
+      product,
+    })),
+  ];
+  const filteredFeedLength = feedItems.length;
   const feedFilterKey = `${activeGroup}\u0000${query}\u0000${sortOrder}`;
-  const renderLimit = feedRenderState.key === feedFilterKey ? feedRenderState.limit : INITIAL_FEED_ITEMS;
-  const visibleProducts = filteredProducts.slice(0, renderLimit);
-  const visibleCollections = filteredCollections.slice(0, renderLimit);
+  const renderLimit =
+    feedRenderState.key === feedFilterKey
+      ? feedRenderState.limit
+      : INITIAL_FEED_ITEMS;
+  const visibleFeedItems = feedItems.slice(0, renderLimit);
   const hasMoreFeedItems = renderLimit < filteredFeedLength;
   const modalItem =
     selectedType === 'collection' ? selectedCollection : selectedProduct;
@@ -507,10 +526,31 @@ export default function Home() {
           ),
         );
 
-  const visibleCount = isCollectionView
-    ? filteredCollections.length
-    : filteredProducts.length;
+  const visibleCount = filteredFeedLength;
   const shareUrl = shareItem ? getShareUrl(shareItem) : '';
+
+  // Only warm adjacent thumbnails while a detail is open; never prefetch originals.
+  useEffect(() => {
+    if (!modalOpen || modalListCount < 2) return;
+    for (const offset of [-1, 1]) {
+      const index = (modalIndex + offset + modalListCount) % modalListCount;
+      const source =
+        selectedType === 'collection'
+          ? filteredCollections[index]?.stillLife
+          : filteredProducts[index]?.image;
+      if (!source) continue;
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = getThumbnailUrl(source);
+    }
+  }, [
+    modalOpen,
+    modalIndex,
+    modalListCount,
+    selectedType,
+    filteredCollections,
+    filteredProducts,
+  ]);
 
   useEffect(() => {
     const sentinel = feedSentinelRef.current;
@@ -1073,83 +1113,84 @@ export default function Home() {
               </button>
             ))}
           </div>
-        ) : isCollectionView ? (
-          <div className="feed-grid collection-feed" aria-label="桌面静物合集">
-            {Array.from({ length: columnCount }, (_, column) => (
-              <div className="feed-column" key={column}>
-                {visibleCollections
-                  .filter((_, index) => index % columnCount === column)
-                  .map((summary) => {
-                    const collectionLabel = summary.label ?? summary.group;
-                    const itemCount = getCollectionProductCount(summary);
-                    const isLcpCandidate =
-                      visibleCollections.indexOf(summary) < 2;
-
-                    return (
-                      <article
-                        className="feed-card collection-card"
-                        key={summary.id}
-                      >
-                        <button
-                          className="feed-card-main"
-                          type="button"
-                          aria-label={'打开' + collectionLabel + '桌面静物合集'}
-                          onClick={() => openCollection(summary)}
-                        >
-                          <span className="feed-card-media">
-                            {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
-                            <img
-                              src={getThumbnailUrl(summary.stillLife)}
-                              alt={collectionLabel + '桌面静物合集图'}
-                              width={400}
-                              height={267}
-                              loading={isLcpCandidate ? 'eager' : 'lazy'}
-                              decoding="async"
-                              fetchPriority={isLcpCandidate ? 'high' : 'auto'}
-                              onError={(event) => {
-                                const originalSrc = getAssetUrl(
-                                  summary.stillLife,
-                                );
-                                if (
-                                  event.currentTarget.dataset.fallback !==
-                                  'used'
-                                ) {
-                                  event.currentTarget.dataset.fallback = 'used';
-                                  event.currentTarget.onerror = null;
-                                  event.currentTarget.src = originalSrc;
-                                }
-                              }}
-                            />
-                          </span>
-                          <span className="feed-card-info">
-                            <span className="feed-card-title">
-                              {collectionLabel}
-                            </span>
-                            <span className="feed-card-footer">
-                              <span className="author-name">
-                                桌面静物 · {itemCount} 件素材
-                              </span>
-                              <span className="card-arrow" aria-hidden="true">
-                                ↗
-                              </span>
-                            </span>
-                          </span>
-                        </button>
-                      </article>
-                    );
-                  })}
-              </div>
-            ))}
-          </div>
         ) : (
-          <div className="feed-grid product-feed" aria-label="日用品产品素材">
+          <div className="feed-grid natural-feed" aria-label="合集与日用品素材">
             {Array.from({ length: columnCount }, (_, column) => (
               <div className="feed-column" key={column}>
-                {visibleProducts
+                {visibleFeedItems
                   .filter((_, index) => index % columnCount === column)
-                  .map((product) => {
+                  .map((entry) => {
+                    if (entry.type === 'collection') {
+                      const summary = entry.collection;
+                      const collectionLabel = summary.label ?? summary.group;
+                      const itemCount = getCollectionProductCount(summary);
+                      const isLcpCandidate =
+                        visibleFeedItems.indexOf(entry) < columnCount;
+
+                      return (
+                        <article
+                          className="feed-card collection-card"
+                          key={summary.id}
+                        >
+                          <button
+                            className="feed-card-main"
+                            type="button"
+                            aria-label={
+                              '打开' + collectionLabel + '桌面静物合集'
+                            }
+                            onClick={() => openCollection(summary)}
+                          >
+                            <span className="feed-card-media">
+                              {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
+                              <img
+                                src={getThumbnailUrl(summary.stillLife)}
+                                alt={collectionLabel + '桌面静物合集图'}
+                                width={
+                                  getImageDimensions(summary.stillLife).width
+                                }
+                                height={
+                                  getImageDimensions(summary.stillLife).height
+                                }
+                                loading={isLcpCandidate ? 'eager' : 'lazy'}
+                                decoding="async"
+                                fetchPriority={isLcpCandidate ? 'high' : 'auto'}
+                                onError={(event) => {
+                                  const originalSrc = getDetailUrl(
+                                    summary.stillLife,
+                                  );
+                                  if (
+                                    event.currentTarget.dataset.fallback !==
+                                    'used'
+                                  ) {
+                                    event.currentTarget.dataset.fallback =
+                                      'used';
+                                    event.currentTarget.onerror = null;
+                                    event.currentTarget.src = originalSrc;
+                                  }
+                                }}
+                              />
+                            </span>
+                            <span className="feed-card-info">
+                              <span className="feed-card-title">
+                                {collectionLabel}
+                              </span>
+                              <span className="feed-card-footer">
+                                <span className="author-name">
+                                  桌面静物 · {itemCount} 件素材
+                                </span>
+                                <span className="card-arrow" aria-hidden="true">
+                                  ↗
+                                </span>
+                              </span>
+                            </span>
+                          </button>
+                        </article>
+                      );
+                    }
+                    const product = entry.product;
                     const isFavorite = favoriteIds.includes(product.id);
-                    const isLcpCandidate = visibleProducts.indexOf(product) < 2;
+                    const isLcpCandidate =
+                      visibleFeedItems.indexOf(entry) < columnCount;
 
                     return (
                       <article className="feed-card" key={product.id}>
@@ -1169,13 +1210,13 @@ export default function Home() {
                                 (product.treatment ?? '去标签纯色白底') +
                                 '产品图'
                               }
-                              width={400}
-                              height={400}
+                              width={getImageDimensions(product.image).width}
+                              height={getImageDimensions(product.image).height}
                               loading={isLcpCandidate ? 'eager' : 'lazy'}
                               decoding="async"
                               fetchPriority={isLcpCandidate ? 'high' : 'auto'}
                               onError={(event) => {
-                                const originalSrc = getAssetUrl(product.image);
+                                const originalSrc = getDetailUrl(product.image);
                                 if (
                                   event.currentTarget.dataset.fallback !==
                                   'used'
@@ -1276,7 +1317,7 @@ export default function Home() {
 
       <footer className="wander-footer">
         <span>
-          日常图鉴 <small>v1.1.0</small>
+          日常图鉴 <small>v1.1.1</small>
         </span>
         <span>无品牌素材 · 原图 PNG</span>
         <a
