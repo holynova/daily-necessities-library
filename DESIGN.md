@@ -1,4 +1,4 @@
-# 日常图鉴 · Wander
+# 撕标签 · Wander
 
 The selected direction is Wander: a calm browsing interface that makes the next useful image easy to discover. The catalogue retains all 116 original product records and 21 still-life collections.
 

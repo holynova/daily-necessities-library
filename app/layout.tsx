@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '日常图鉴｜无品牌产品素材库',
+  title: '撕标签｜无品牌产品素材库',
   description: '以暖纸张、海绿色操作色和卡片流展示 116 个无品牌日用品 PNG 与 21 组桌面静物合集。',
   openGraph: {
-    title: '日常图鉴｜无品牌产品素材库',
+    title: '撕标签｜无品牌产品素材库',
     description: '以暖纸张、海绿色操作色和卡片流展示 116 个无品牌日用品 PNG 与 21 组桌面静物合集。',
     type: 'website',
   },

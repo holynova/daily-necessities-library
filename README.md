@@ -1,10 +1,10 @@
 <p align="right"><strong>简体中文</strong> · <a href="./README.en.md">English</a></p>
 
-<p align="center"><img src="./assets/readme/hero.svg" width="100%" alt="撕标签 · 日常图鉴"></p>
+<p align="center"><img src="./assets/readme/hero.svg" width="100%" alt="撕标签"></p>
 
-# 日常图鉴 · Wander
+# 撕标签 · Wander
 
-116 张去标签产品 PNG 与 21 组桌面静物合集，包含 40 张新增快销品。Wander 界面以橄榄绿分类标签、双列瀑布流和底部导航浏览日常素材，首页合集优先，图片按原始比例显示；列表懒加载缩略图，详情解码后切换高清 WebP，下载保留原图。**当前版本：1.1.1。**
+116 张去标签产品 PNG 与 21 组桌面静物合集，包含 40 张新增快销品。Wander 界面以橄榄绿分类标签、双列瀑布流和底部导航浏览日常素材，首页合集优先，图片按原始比例显示；列表懒加载缩略图，详情解码后切换高清 WebP，下载保留原图。**当前版本：1.1.2。**
 
 [在线体验](https://daily-necessities-library.xiaosang.cc/) · [GitHub 源码](https://github.com/holynova/daily-necessities-library) · [备用镜像](https://holynova.github.io/daily-necessities-library/) · [更多作品](https://xiaosang.cc/)
 

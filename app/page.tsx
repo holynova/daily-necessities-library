@@ -767,7 +767,7 @@ export default function Home() {
   const copyShareLink = async () => {
     if (!shareItem || !shareUrl) return;
 
-    const text = `【日常图鉴】${getShareTitle(shareItem)}\n${shareUrl}`;
+    const text = `【撕标签】${getShareTitle(shareItem)}\n${shareUrl}`;
     try {
       await navigator.clipboard.writeText(text);
       setShareFeedback('分享链接已复制');
@@ -865,7 +865,7 @@ export default function Home() {
       context.fillStyle = '#878c84';
       context.font =
         '18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
-      context.fillText('日常图鉴 · 本地 PNG 素材库', 56, 1078);
+      context.fillText('撕标签 · 本地 PNG 素材库', 56, 1078);
 
       const qrImage = await loadImage(shareQrDataUrl);
       const qrSize = 132;
@@ -887,7 +887,7 @@ export default function Home() {
       const downloadUrl = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
       anchor.href = downloadUrl;
-      anchor.download = `日常图鉴分享卡片_${getShareTitle(shareItem)}.png`;
+      anchor.download = `撕标签分享卡片_${getShareTitle(shareItem)}.png`;
       document.body.appendChild(anchor);
       anchor.click();
       anchor.remove();
@@ -915,13 +915,13 @@ export default function Home() {
               setSearchTerm('');
               window.scrollTo({ top: 0 });
             }}
-            aria-label="日常图鉴首页"
+            aria-label="撕标签首页"
           >
             <span className="brand-logo" aria-hidden="true">
               <Grid2X2 size={21} strokeWidth={1.6} />
             </span>
-            <span className="brand-title">日常图鉴</span>
-            <span className="brand-en">DAILY INDEX</span>
+            <span className="brand-title">撕标签</span>
+            <span className="brand-en">TEAR LABELS</span>
           </button>
           <div className="header-tools">
             <a
@@ -1317,7 +1317,7 @@ export default function Home() {
 
       <footer className="wander-footer">
         <span>
-          日常图鉴 <small>v1.1.1</small>
+          撕标签 <small>v1.1.2</small>
         </span>
         <span>无品牌素材 · 原图 PNG</span>
         <a
@@ -1395,7 +1395,7 @@ export default function Home() {
                 <span className="note-author-name">
                   {selectedType === 'collection'
                     ? '桌面静物合集'
-                    : '日用品图鉴'}
+                    : '撕标签'}
                 </span>
                 <span className="note-author-divider">·</span>
                 <span className="note-author-sub">
@@ -1665,7 +1665,7 @@ export default function Home() {
               <div className="share-card-footer">
                 <div className="share-card-footer-copy">
                   <strong>扫码查看素材</strong>
-                  <span>日常图鉴 · 本地 PNG 素材库</span>
+                  <span>撕标签 · 本地 PNG 素材库</span>
                 </div>
                 <div className="share-card-qr-wrap">
                   {shareQrDataUrl ? (
