@@ -1,71 +1,34 @@
-<p align="right">
-  <strong>简体中文</strong> · <a href="./README.en.md">English</a>
-</p>
+<p align="right"><strong>简体中文</strong> · <a href="./README.en.md">English</a></p>
 
-<p align="center">
-  <img src="./assets/readme/hero.svg" width="100%" alt="撕标签 · 去品牌白底静物素材库 - Unbranded Objects & Daily Necessities">
-</p>
+<p align="center"><img src="./assets/readme/hero.svg" width="100%" alt="撕标签 · 日常图鉴"></p>
 
-撕掉包装标签，保留 116 张低饱和的产品白底 PNG；含日用品、饮料食品、6 个公司专题与 1 个补充组，并集中收录 21 组桌面静物合集。新增 40 张完整去标、低饱和的快销品素材，单独归入“新增快销品”分类，配套 7 组细分桌面静物合照，支持筛选、搜索、预览、下载。
+# 日常图鉴 · Wander
 
-<p align="center">
-  <a href="https://daily-necessities-library.xiaosang.cc/"><strong>🌐 在线体验 (Live Demo)</strong></a> · 
-  <a href="https://holynova.github.io/daily-necessities-library/"><strong>🚀 备选镜像 (GitHub Pages)</strong></a> · 
-  <a href="https://github.com/holynova/daily-necessities-library"><strong>📦 GitHub 源码</strong></a> · 
-  <a href="https://xiaosang.cc/"><strong>✨ 更多作品集</strong></a>
-</p>
+116 张去标签产品 PNG 与 21 组桌面静物合集，包含 40 张新增快销品。Wander 界面以橄榄绿分类标签、双列瀑布流和底部导航浏览日常素材，保留产品完整轮廓。**当前版本：1.1.0。**
 
----
+[在线体验](https://daily-necessities-library.xiaosang.cc/) · [GitHub 源码](https://github.com/holynova/daily-necessities-library) · [备用镜像](https://holynova.github.io/daily-necessities-library/) · [更多作品](https://xiaosang.cc/)
 
-## 真实预览 (Proof of Work)
+<p align="center"><img src="./assets/readme/screenshot.png" width="390" alt="Wander 移动端实际页面"></p>
 
-<p align="center">
-  <img src="./assets/readme/screenshot.png" width="100%" alt="撕标签 · 去品牌白底静物素材库 实际运行效果截图">
-</p>
+- 分类目录、全库搜索、推荐 / 最新 / 名称排序。
+- 浏览器本地收藏、原图下载、分享二维码及 PNG 海报导出。
+- 首批 12 张，滚动追加；列表使用 WebP 缩略图，详情解码后升级为高清 WebP，下载仍取 PNG 原图。
+- 桌面四列、手机双列；支持键盘翻图、触摸滑动和减少动态效果。
 
----
+图片名称与品牌参考沿用现有素材元信息，下载保留原始白底 PNG。
 
-## 项目简介 (What It Is)
-
-去除所有商标印花与商业贴纸，专注物品本身的造型、材质与光影美感。精选收录 116 张高分辨率、纯净白底透明通道 PNG 素材，其中新增 40 张完整去标、低饱和的快销品素材。涵盖日常清洁、饮料食物、个护文具及 21 组专业桌面静物陈列组（原有 14 组加新增快销品 7 组），专为 UI 设计师、合成插画师与电商提案打造。
-
----
-
-## 核心机制与特色 (Why It Matters)
-
-- **彻底去品牌化处理**：抹去瓶身 Logo、商标条码与广告文字，只保留最纯粹的产品轮廓与几何形态。
-- **专业静物影棚布光**：顶置柔光箱与双侧补光，保留清透高光与真实落影，便于在任意背景上无缝合成。
-- **像素级边缘透明抠图**：精确保留毛边、半透明液体与玻璃折射边缘，免去二次抠图成本。
-- **多维检索与一键获取**：支持按分类筛选、关键词即时搜索、深浅底色对比预览与单张/批量下载。
-
----
-
-## 收录清单与规格 (Inventory & Scope)
-
-日用品组（水壶、洗发乳、喷雾）、食品饮料组（玻璃瓶苏打水、易拉罐、利乐包）、6 大公司专题办公品、21 组精调桌面静物合辑；其中“新增快销品”分类集中展示 40 张新增素材及 7 组对应细分合照。
-
----
-
-## 快速开始 (Quick Start)
-
-### 1. 在线体验
-无需安装任何环境，直接在浏览器中打开：
-- 🌐 **主站演示 (Primary)**：[https://daily-necessities-library.xiaosang.cc/](https://daily-necessities-library.xiaosang.cc/)
-- 🚀 **备选镜像 (GitHub Pages)**：[https://holynova.github.io/daily-necessities-library/](https://holynova.github.io/daily-necessities-library/)
-
-### 2. 本地运行与调试
-克隆仓库后执行以下命令：
+## 运行与发布
 
 ```bash
-git clone https://github.com/holynova/daily-necessities-library.git
-cd daily-necessities-library
-npm install && npm run dev
+npm ci
+npm run dev
+npm run build:static
+npm run deploy:check
+npm run deploy
 ```
 
----
+源码与配置统一维护在 `master`。Cloudflare Worker 为 `daily-necessities-library`，使用上述命令从本地主分支手动发布。原有 GitHub Pages 镜像流程保留。
 
-## 开源协议与作者 (License & Author)
+<p align="center"><img src="./assets/readme/qr.png" width="150" alt="在线体验二维码"></p>
 
-- **作者**：[holynova (小桑)](https://xiaosang.cc/)
-- **授权协议**：[MIT License](./LICENSE)
-- **合辑收录**：本仓库作为精选项目收录于 [Where Craft Lives (xiaosang.cc)](https://xiaosang.cc/)。
+作者：[holynova](https://github.com/holynova)。

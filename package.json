@@ -1,6 +1,6 @@
 {
   "name": "tear-labels",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "撕掉包装标签的 116 个常见产品 PNG 素材库，附 21 组桌面静物合集",
   "private": true,
   "engines": {
@@ -13,7 +13,11 @@
     "assets:thumbs": "node scripts/generate-thumbnails.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "assets:details": "node scripts/generate-details.mjs",
+    "build:static": "npm run assets:details && npm run build:pages",
+    "deploy:check": "wrangler deploy --dry-run --config wrangler.jsonc",
+    "deploy": "npm run build:static && wrangler deploy --config wrangler.jsonc"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

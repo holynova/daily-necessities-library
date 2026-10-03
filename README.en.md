@@ -1,69 +1,27 @@
-<p align="right">
-  <a href="./README.md">简体中文</a> · <strong>English</strong>
-</p>
+<p align="right"><a href="./README.md">简体中文</a> · <strong>English</strong></p>
 
-<p align="center">
-  <img src="./assets/readme/hero.svg" width="100%" alt="Unbranded Objects & Daily Necessities">
-</p>
+# Daily Index · Wander
 
-<p align="center">
-  <a href="https://daily-necessities-library.xiaosang.cc/"><strong>🌐 Live Demo (Primary)</strong></a> · 
-  <a href="https://holynova.github.io/daily-necessities-library/"><strong>🚀 Mirror (GitHub Pages)</strong></a> · 
-  <a href="https://github.com/holynova/daily-necessities-library"><strong>📦 GitHub Source</strong></a> · 
-  <a href="https://xiaosang.cc/"><strong>✨ Portfolio</strong></a>
-</p>
+A catalogue of 116 unbranded product PNGs and 21 still-life collections, including 40 newer consumer goods. Version **1.1.0** uses a Wander interface: olive category pills, a masonry feed, and Discover / Categories / Favorites navigation. Product images remain fully visible without cropping.
 
----
+[Live demo](https://daily-necessities-library.xiaosang.cc/) · [Source](https://github.com/holynova/daily-necessities-library) · [Pages mirror](https://holynova.github.io/daily-necessities-library/)
 
-## Proof of Work
+<p align="center"><img src="./assets/readme/screenshot.png" width="390" alt="Wander mobile interface"></p>
 
-<p align="center">
-  <img src="./assets/readme/screenshot.png" width="100%" alt="Unbranded Objects & Daily Necessities Live Interface Screenshot">
-</p>
+Search the full catalogue, browse categories, sort by recommendation, latest, or name, and save favorites locally. Preview details, download original PNGs, or generate a share link, QR code, and PNG poster. The feed starts with 12 thumbnails and adds more on scroll, with an explicit load-more control. Detail previews upgrade to decoded WebP images; downloads retain original PNGs. Desktop has four columns, mobile has two, with keyboard navigation, swipe gestures, and reduced-motion support.
 
----
-
-## What It Is
-
-Stripping away all logos, barcodes, and packaging clutter to spotlight the pure form, material, and softbox illumination of everyday items. Includes 76 high-resolution transparent PNG assets across daily amenities, bottled beverages, groceries, and 14 curated desktop still-life collections.
-
----
-
-## Why It Matters (Key Features)
-
-- **Complete De-branding Treatment**: Eliminates commercial logos and marketing stickers to celebrate geometric purity and product tactile nature.
-- **Studio Softbox Illumination**: Dual-side diffused lights with top softbox preserving natural highlights and clean contact shadows.
-- **Sub-pixel Transparent Cutouts**: Accurately renders translucent liquids, glass refraction, and crisp silhouettes ready for compositing.
-- **Multi-dimensional Filtering**: Fast search, category tags, light/dark canvas inspection, and instant one-click downloads.
-
----
-
-## Inventory & Scope
-
-Everyday amenities, beverages & groceries, 6 corporate office suites, and 14 arranged desktop still life groups.
-
----
-
-## Quick Start
-
-### 1. Live Demos
-Experience it directly in your browser without any setup:
-- 🌐 **Primary Demo**: [https://daily-necessities-library.xiaosang.cc/](https://daily-necessities-library.xiaosang.cc/)
-- 🚀 **Alternative Mirror (GitHub Pages)**: [https://holynova.github.io/daily-necessities-library/](https://holynova.github.io/daily-necessities-library/)
-
-### 2. Local Development
-Clone the repository and launch locally:
+Product names and reference brands preserve the existing metadata. Downloads use the original white-background PNG files.
 
 ```bash
-git clone https://github.com/holynova/daily-necessities-library.git
-cd daily-necessities-library
-npm install && npm run dev
+npm ci
+npm run dev
+npm run build:static
+npm run deploy:check
+npm run deploy
 ```
 
----
+Source and Worker configuration share the `master` branch. Deploy `daily-necessities-library` manually through Wrangler; the existing GitHub Pages mirror workflow is retained.
 
-## License & Author
+<p align="center"><img src="./assets/readme/qr.png" width="150" alt="Live demo QR code"></p>
 
-- **Author**: [holynova (Xiaosang)](https://xiaosang.cc/)
-- **License**: [MIT License](./LICENSE)
-- **Featured Collection**: Curated as part of [Where Craft Lives (xiaosang.cc)](https://xiaosang.cc/).
+By [holynova](https://github.com/holynova).

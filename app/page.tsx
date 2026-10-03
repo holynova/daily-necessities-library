@@ -6,6 +6,11 @@ import {
   Download,
   GitBranch as Github,
   Heart,
+  Bookmark,
+  Compass,
+  Grid2X2,
+  SlidersHorizontal,
+  ArrowUpRight,
   Link2,
   Search,
   Share2,
@@ -42,22 +47,35 @@ type ShareTarget =
   | { type: 'product'; product: Product }
   | { type: 'collection'; collection: CollectionSummary };
 
-const INITIAL_FEED_ITEMS = 20;
-const FEED_CHUNK_SIZE = 20;
+const INITIAL_FEED_ITEMS = 12;
+const FEED_CHUNK_SIZE = 12;
 
 const GITHUB_PAGES_PATH = '/daily-necessities-library';
 
 const getAssetUrl = (source: string) => {
   if (!source.startsWith('/assets/')) return source;
 
-  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith(GITHUB_PAGES_PATH) ? GITHUB_PAGES_PATH : '';
+  const basePath =
+    typeof window !== 'undefined' &&
+    window.location.pathname.startsWith(GITHUB_PAGES_PATH)
+      ? GITHUB_PAGES_PATH
+      : '';
   return `${basePath}${source}`;
 };
 
 const getThumbnailUrl = (source: string) => {
-  const thumbnailSource = source.startsWith('/assets/') ? source.replace('/assets/', '/assets/thumbnails/').replace(/\.png$/i, '.webp') : source;
+  const thumbnailSource = source.startsWith('/assets/')
+    ? source
+        .replace('/assets/', '/assets/thumbnails/')
+        .replace(/\.png$/i, '.webp')
+    : source;
   return getAssetUrl(thumbnailSource);
 };
+
+const getDetailUrl = (source: string) =>
+  getAssetUrl(
+    source.replace('/assets/', '/assets/details/').replace(/\.png$/i, '.webp'),
+  );
 
 type ProgressiveImageProps = {
   src: string;
@@ -81,13 +99,21 @@ function ProgressiveImage({
   fetchPriority = 'auto',
 }: ProgressiveImageProps) {
   const resolvedSrc = getAssetUrl(src);
-  const resolvedThumbnailSrc = thumbnailSrc ? getAssetUrl(thumbnailSrc) : getThumbnailUrl(src);
-  const [displaySrc, setDisplaySrc] = useState(resolvedThumbnailSrc || resolvedSrc);
+  const resolvedThumbnailSrc = thumbnailSrc
+    ? getAssetUrl(thumbnailSrc)
+    : getThumbnailUrl(src);
+  const [displaySrc, setDisplaySrc] = useState(
+    resolvedThumbnailSrc || resolvedSrc,
+  );
 
   useEffect(() => {
     let cancelled = false;
 
-    if (!resolvedSrc || !resolvedThumbnailSrc || resolvedThumbnailSrc === resolvedSrc) {
+    if (
+      !resolvedSrc ||
+      !resolvedThumbnailSrc ||
+      resolvedThumbnailSrc === resolvedSrc
+    ) {
       return () => {
         cancelled = true;
       };
@@ -99,10 +125,14 @@ function ProgressiveImage({
     };
 
     highResolutionImage.decoding = 'async';
-    highResolutionImage.onload = promoteImage;
+    if (typeof highResolutionImage.decode !== 'function')
+      highResolutionImage.onload = promoteImage;
     highResolutionImage.src = resolvedSrc;
     if (typeof highResolutionImage.decode === 'function') {
-      void highResolutionImage.decode().then(promoteImage).catch(() => undefined);
+      void highResolutionImage
+        .decode()
+        .then(promoteImage)
+        .catch(() => undefined);
     }
 
     return () => {
@@ -123,7 +153,8 @@ function ProgressiveImage({
       decoding="async"
       fetchPriority={fetchPriority}
       onError={(event) => {
-        if (event.currentTarget.src !== resolvedSrc) {
+        if (event.currentTarget.dataset.fallback !== 'used') {
+          event.currentTarget.dataset.fallback = 'used';
           event.currentTarget.onerror = null;
           event.currentTarget.src = resolvedSrc;
         }
@@ -132,7 +163,9 @@ function ProgressiveImage({
   );
 }
 
-const newFmcgProductIds = new Set(Array.from({ length: 40 }, (_, index) => String(index + 77)));
+const newFmcgProductIds = new Set(
+  Array.from({ length: 40 }, (_, index) => String(index + 77)),
+);
 
 const products: Product[] = [
   { id: '01', name: '洗衣液', group: '洗护用品', reference: '深层洁净洗衣液', brand: '蓝月亮', image: '/assets/daily-necessities-top20/01-laundry-liquid.png', accent: '#168bd1' },
@@ -323,16 +356,36 @@ const drawContain = (context: CanvasRenderingContext2D, image: HTMLImageElement,
 
 export default function Home() {
   const [activeGroup, setActiveGroup] = useState('全部');
+  const [directoryOpen, setDirectoryOpen] = useState(false);
+  const [columnCount, setColumnCount] = useState(2);
+  useEffect(() => {
+    const updateColumns = () =>
+      setColumnCount(
+        window.innerWidth > 1100 ? 4 : window.innerWidth > 680 ? 3 : 2,
+      );
+    updateColumns();
+    window.addEventListener('resize', updateColumns);
+    return () => window.removeEventListener('resize', updateColumns);
+  }, []);
+  const [sortOrder, setSortOrder] = useState('推荐');
+  const touchStartRef = useRef<number | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedId, setSelectedId] = useState('01');
-  const [selectedCollectionId, setSelectedCollectionId] = useState(collectionSummaries[0].id);
-  const [selectedType, setSelectedType] = useState<'product' | 'collection'>('product');
+  const [selectedCollectionId, setSelectedCollectionId] = useState(
+    collectionSummaries[0].id,
+  );
+  const [selectedType, setSelectedType] = useState<'product' | 'collection'>(
+    'product',
+  );
   const [modalOpen, setModalOpen] = useState(false);
   const [shareItem, setShareItem] = useState<ShareTarget | null>(null);
   const [shareQrDataUrl, setShareQrDataUrl] = useState('');
   const [shareFeedback, setShareFeedback] = useState('');
   const [isSavingShareCard, setIsSavingShareCard] = useState(false);
-  const [feedRenderState, setFeedRenderState] = useState({ key: '', limit: INITIAL_FEED_ITEMS });
+  const [feedRenderState, setFeedRenderState] = useState({
+    key: '',
+    limit: INITIAL_FEED_ITEMS,
+  });
   const feedSentinelRef = useRef<HTMLDivElement>(null);
   const [favoriteIds, setFavoriteIds] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
@@ -342,36 +395,72 @@ export default function Home() {
 
     try {
       const parsed = JSON.parse(stored);
-      return Array.isArray(parsed) ? parsed.filter((id): id is string => typeof id === 'string') : [];
+      return Array.isArray(parsed)
+        ? parsed.filter((id): id is string => typeof id === 'string')
+        : [];
     } catch {
       window.localStorage.removeItem('daily-library-favorites');
       return [];
     }
   });
 
-  const navGroups = ['全部', '合集', ...groups.filter((group) => group !== '全部' && group !== '合集'), '我的收藏'];
+  const navGroups = [
+    '全部',
+    '合集',
+    ...groups.filter((group) => group !== '全部' && group !== '合集'),
+    '我的收藏',
+  ];
   const isCollectionView = activeGroup === '合集';
   const isFavoritesView = activeGroup === '我的收藏';
   const query = searchTerm.trim().toLowerCase();
 
   const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
+    const result = products.filter((product) => {
       const matchesGroup =
         activeGroup === '全部' ||
-        (isFavoritesView ? favoriteIds.includes(product.id) : isProductInGroup(product, activeGroup));
-      const searchText = [product.id, product.name, product.group, product.collectionGroup, product.brand, product.reference]
+        (isFavoritesView
+          ? favoriteIds.includes(product.id)
+          : isProductInGroup(product, activeGroup));
+      const searchText = [
+        product.id,
+        product.name,
+        product.group,
+        product.collectionGroup,
+        product.brand,
+        product.reference,
+      ]
         .filter(Boolean)
         .join(' ')
         .toLowerCase();
 
-      return !isCollectionView && matchesGroup && (!query || searchText.includes(query));
+      return (
+        !isCollectionView &&
+        matchesGroup &&
+        (!query || searchText.includes(query))
+      );
     });
-  }, [activeGroup, favoriteIds, isCollectionView, isFavoritesView, query]);
+    if (sortOrder === '最新') return result.slice().reverse();
+    if (sortOrder === '名称')
+      return result.slice().sort((a, b) => a.name.localeCompare(b.name, 'zh'));
+    return result;
+  }, [
+    activeGroup,
+    favoriteIds,
+    isCollectionView,
+    isFavoritesView,
+    query,
+    sortOrder,
+  ]);
 
   const filteredCollections = useMemo(() => {
     return collectionSummaries.filter((summary, index) => {
       const number = String(index + 1).padStart(2, '0');
-      const searchText = [number, summary.label ?? summary.group, summary.description, '桌面静物']
+      const searchText = [
+        number,
+        summary.label ?? summary.group,
+        summary.description,
+        '桌面静物',
+      ]
         .join(' ')
         .toLowerCase();
 
@@ -379,36 +468,70 @@ export default function Home() {
     });
   }, [isCollectionView, query]);
 
-  const selectedProduct = products.find((product) => product.id === selectedId) ?? filteredProducts[0] ?? null;
-  const selectedCollection = collectionSummaries.find((summary) => summary.id === selectedCollectionId) ?? filteredCollections[0] ?? null;
-  const filteredFeedLength = isCollectionView ? filteredCollections.length : filteredProducts.length;
-  const feedFilterKey = `${activeGroup}\u0000${query}`;
-  const supportsProgressiveFeed = typeof window === 'undefined' || 'IntersectionObserver' in window;
-  const renderLimit = supportsProgressiveFeed && feedRenderState.key === feedFilterKey ? feedRenderState.limit : supportsProgressiveFeed ? INITIAL_FEED_ITEMS : filteredFeedLength;
+  const selectedProduct =
+    products.find((product) => product.id === selectedId) ??
+    filteredProducts[0] ??
+    null;
+  const selectedCollection =
+    collectionSummaries.find(
+      (summary) => summary.id === selectedCollectionId,
+    ) ??
+    filteredCollections[0] ??
+    null;
+  const filteredFeedLength = isCollectionView
+    ? filteredCollections.length
+    : filteredProducts.length;
+  const feedFilterKey = `${activeGroup}\u0000${query}\u0000${sortOrder}`;
+  const renderLimit = feedRenderState.key === feedFilterKey ? feedRenderState.limit : INITIAL_FEED_ITEMS;
   const visibleProducts = filteredProducts.slice(0, renderLimit);
   const visibleCollections = filteredCollections.slice(0, renderLimit);
   const hasMoreFeedItems = renderLimit < filteredFeedLength;
-  const modalItem = selectedType === 'collection' ? selectedCollection : selectedProduct;
-  const modalListCount = selectedType === 'collection' ? filteredCollections.length : filteredProducts.length;
+  const modalItem =
+    selectedType === 'collection' ? selectedCollection : selectedProduct;
+  const modalListCount =
+    selectedType === 'collection'
+      ? filteredCollections.length
+      : filteredProducts.length;
   const modalIndex =
     selectedType === 'collection'
-      ? Math.max(0, filteredCollections.findIndex((summary) => summary.id === selectedCollection?.id))
-      : Math.max(0, filteredProducts.findIndex((product) => product.id === selectedProduct?.id));
+      ? Math.max(
+          0,
+          filteredCollections.findIndex(
+            (summary) => summary.id === selectedCollection?.id,
+          ),
+        )
+      : Math.max(
+          0,
+          filteredProducts.findIndex(
+            (product) => product.id === selectedProduct?.id,
+          ),
+        );
 
-  const visibleCount = isCollectionView ? filteredCollections.length : filteredProducts.length;
-  const totalCount = isCollectionView ? collectionSummaries.length : isFavoritesView ? favoriteIds.length : activeGroup === '全部' ? products.length : getProductCount(activeGroup);
+  const visibleCount = isCollectionView
+    ? filteredCollections.length
+    : filteredProducts.length;
   const shareUrl = shareItem ? getShareUrl(shareItem) : '';
 
   useEffect(() => {
     const sentinel = feedSentinelRef.current;
-    if (!sentinel || !hasMoreFeedItems) return;
+    if (
+      !sentinel ||
+      !hasMoreFeedItems ||
+      directoryOpen ||
+      !('IntersectionObserver' in window)
+    )
+      return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (!entries[0]?.isIntersecting) return;
         setFeedRenderState((current) => {
-          const currentLimit = current.key === feedFilterKey ? current.limit : INITIAL_FEED_ITEMS;
-          return { key: feedFilterKey, limit: Math.min(currentLimit + FEED_CHUNK_SIZE, filteredFeedLength) };
+          const currentLimit =
+            current.key === feedFilterKey ? current.limit : INITIAL_FEED_ITEMS;
+          return {
+            key: feedFilterKey,
+            limit: Math.min(currentLimit + FEED_CHUNK_SIZE, filteredFeedLength),
+          };
         });
       },
       { rootMargin: '480px 0px' },
@@ -416,14 +539,7 @@ export default function Home() {
 
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [feedFilterKey, filteredFeedLength, hasMoreFeedItems]);
-
-  const countForGroup = (group: string) => {
-    if (group === '全部') return products.length;
-    if (group === '合集') return collectionSummaries.length;
-    if (group === '我的收藏') return favoriteIds.length;
-    return getProductCount(group);
-  };
+  }, [feedFilterKey, filteredFeedLength, hasMoreFeedItems, directoryOpen]);
 
   const openProduct = (product: Product) => {
     setSelectedId(product.id);
@@ -453,12 +569,15 @@ export default function Home() {
     if (!modalOpen || modalListCount === 0) return;
 
     if (selectedType === 'collection') {
-      const nextIndex = (modalIndex + offset + filteredCollections.length) % filteredCollections.length;
+      const nextIndex =
+        (modalIndex + offset + filteredCollections.length) %
+        filteredCollections.length;
       setSelectedCollectionId(filteredCollections[nextIndex].id);
       return;
     }
 
-    const nextIndex = (modalIndex + offset + filteredProducts.length) % filteredProducts.length;
+    const nextIndex =
+      (modalIndex + offset + filteredProducts.length) % filteredProducts.length;
     setSelectedId(filteredProducts[nextIndex].id);
   };
 
@@ -500,12 +619,15 @@ export default function Home() {
 
     const timeoutId = window.setTimeout(() => {
       if (itemType === 'collection') {
-        const collection = collectionSummaries.find((summary) => summary.id === itemId);
+        const collection = collectionSummaries.find(
+          (summary) => summary.id === itemId,
+        );
         if (!collection) return;
         setSelectedCollectionId(collection.id);
         setSelectedType('collection');
         setModalOpen(true);
-        if (params.get('share') === '1') setShareItem({ type: 'collection', collection });
+        if (params.get('share') === '1')
+          setShareItem({ type: 'collection', collection });
         return;
       }
 
@@ -514,7 +636,8 @@ export default function Home() {
       setSelectedId(product.id);
       setSelectedType('product');
       setModalOpen(true);
-      if (params.get('share') === '1') setShareItem({ type: 'product', product });
+      if (params.get('share') === '1')
+        setShareItem({ type: 'product', product });
     }, 0);
 
     return () => window.clearTimeout(timeoutId);
@@ -536,10 +659,49 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   });
 
+  useEffect(() => {
+    if (!modalOpen && !shareItem) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const dialog = document.querySelector<HTMLElement>(
+      shareItem ? '.share-card-modal' : '.note-detail-modal',
+    );
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialog?.querySelector<HTMLElement>('button, a[href]')?.focus();
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab' || !dialog) return;
+      const focusable = [
+        ...dialog.querySelectorAll<HTMLElement>(
+          'button:not(:disabled), a[href], input, select',
+        ),
+      ].filter((el) => el.getClientRects().length > 0);
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    document.addEventListener('keydown', trapFocus);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', trapFocus);
+      if (previous?.isConnected) previous.focus();
+    };
+  }, [modalOpen, shareItem]);
+
   const toggleFavorite = (id: string) => {
     setFavoriteIds((current) => {
-      const next = current.includes(id) ? current.filter((favoriteId) => favoriteId !== id) : [...current, id];
-      window.localStorage.setItem('daily-library-favorites', JSON.stringify(next));
+      const next = current.includes(id)
+        ? current.filter((favoriteId) => favoriteId !== id)
+        : [...current, id];
+      window.localStorage.setItem(
+        'daily-library-favorites',
+        JSON.stringify(next),
+      );
       return next;
     });
   };
@@ -552,12 +714,13 @@ export default function Home() {
         window.setTimeout(() => {
           const anchor = document.createElement('a');
           anchor.href = getAssetUrl(product.image);
-          anchor.download = 'daily-necessities-' + product.id + '-' + product.name + '.png';
+          anchor.download =
+            'daily-necessities-' + product.id + '-' + product.name + '.png';
           document.body.appendChild(anchor);
           anchor.click();
           anchor.remove();
-      }, index * 160);
-    });
+        }, index * 160);
+      });
   };
 
   const copyShareLink = async () => {
@@ -599,7 +762,8 @@ export default function Home() {
       context.textAlign = 'center';
       context.textBaseline = 'middle';
       context.fillStyle = '#68716b';
-      context.font = '500 22px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.font =
+        '500 22px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
       context.fillText(getShareSeries(shareItem), width / 2, 70);
 
       const image = await loadImage(getShareImage(shareItem));
@@ -611,19 +775,38 @@ export default function Home() {
       context.fillRect(imageBoxX, imageBoxY, imageBoxWidth, imageBoxHeight);
       context.save();
       context.beginPath();
-      context.roundRect(imageBoxX, imageBoxY, imageBoxWidth, imageBoxHeight, 16);
+      context.roundRect(
+        imageBoxX,
+        imageBoxY,
+        imageBoxWidth,
+        imageBoxHeight,
+        16,
+      );
       context.clip();
-      drawContain(context, image, imageBoxX, imageBoxY, imageBoxWidth, imageBoxHeight);
+      drawContain(
+        context,
+        image,
+        imageBoxX,
+        imageBoxY,
+        imageBoxWidth,
+        imageBoxHeight,
+      );
       context.restore();
 
       context.textAlign = 'left';
       context.fillStyle = '#2d3230';
-      context.font = '700 34px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.font =
+        '700 34px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
       context.fillText(getShareTitle(shareItem), 56, 872);
       context.fillStyle = '#68716b';
-      context.font = '20px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.font =
+        '20px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
       const description = getShareDescription(shareItem);
-      context.fillText(description.length > 34 ? `${description.slice(0, 33)}…` : description, 56, 916);
+      context.fillText(
+        description.length > 34 ? `${description.slice(0, 33)}…` : description,
+        56,
+        916,
+      );
 
       context.beginPath();
       context.setLineDash([9, 7]);
@@ -635,10 +818,12 @@ export default function Home() {
       context.setLineDash([]);
 
       context.fillStyle = '#2d3230';
-      context.font = '700 22px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.font =
+        '700 22px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
       context.fillText('扫码查看素材', 56, 1038);
       context.fillStyle = '#878c84';
-      context.font = '18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
+      context.font =
+        '18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
       context.fillText('日常图鉴 · 本地 PNG 素材库', 56, 1078);
 
       const qrImage = await loadImage(shareQrDataUrl);
@@ -654,7 +839,9 @@ export default function Home() {
       context.stroke();
       context.drawImage(qrImage, qrX, qrY, qrSize, qrSize);
 
-      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'));
+      const blob = await new Promise<Blob | null>((resolve) =>
+        canvas.toBlob(resolve, 'image/png'),
+      );
       if (!blob) throw new Error('海报生成失败');
       const downloadUrl = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
@@ -678,29 +865,23 @@ export default function Home() {
     <main className="library-app">
       <header className="app-header">
         <div className="header-main-row">
-          <div className="brand-area">
-            <span className="brand-logo" aria-hidden="true">日</span>
+          <button
+            className="brand-area"
+            type="button"
+            onClick={() => {
+              setDirectoryOpen(false);
+              setActiveGroup('全部');
+              setSearchTerm('');
+              window.scrollTo({ top: 0 });
+            }}
+            aria-label="日常图鉴首页"
+          >
+            <span className="brand-logo" aria-hidden="true">
+              <Grid2X2 size={21} strokeWidth={1.6} />
+            </span>
             <span className="brand-title">日常图鉴</span>
-          </div>
-
-          <label className="search-capsule">
-            <Search className="search-icon" size={14} strokeWidth={2.2} aria-hidden="true" />
-            <span className="sr-only">搜索日用品素材</span>
-            <input
-              id="search-input"
-              type="search"
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-              placeholder="搜索品类、品牌参考或编号..."
-              autoComplete="off"
-            />
-            {searchTerm ? (
-              <button className="clear-search" type="button" aria-label="清除搜索" onClick={clearSearch}>
-                <X size={14} aria-hidden="true" />
-              </button>
-            ) : null}
-          </label>
-
+            <span className="brand-en">DAILY INDEX</span>
+          </button>
           <div className="header-tools">
             <a
               className="github-link"
@@ -708,179 +889,448 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
               aria-label="打开 GitHub 源码仓库"
-              title="GitHub 源码仓库"
               data-umami-event="open-github"
             >
-              <Github size={16} strokeWidth={1.8} aria-hidden="true" />
+              <Github size={17} />
               <span>GitHub</span>
             </a>
-            <span className="header-count">{String(visibleCount).padStart(2, '0')} / {String(totalCount).padStart(2, '0')}</span>
             <button
               className="btn-top-download"
               type="button"
               onClick={downloadFavorites}
               disabled={favoriteIds.length === 0}
-              title={favoriteIds.length === 0 ? '先在卡片上收藏素材' : '下载收藏的素材'}
+              aria-label={`下载收藏的 ${favoriteIds.length} 张素材`}
             >
-              <Download size={13} strokeWidth={2.2} aria-hidden="true" />
-              <span>下载收藏 <strong>{favoriteIds.length}</strong></span>
+              <Download size={16} />
+              <span>
+                下载收藏 <strong>{favoriteIds.length}</strong>
+              </span>
             </button>
           </div>
         </div>
-
+        <div className="wander-intro">
+          <div>
+            <p className="wander-eyebrow">THE BEAUTY IN EVERYDAY THINGS</p>
+            <h1>
+              {directoryOpen
+                ? '从喜欢的分类开始。'
+                : isFavoritesView
+                  ? '把喜欢的日常，留下。'
+                  : isCollectionView
+                    ? '一起看，换一种灵感。'
+                    : '好设计，藏在日常里。'}
+            </h1>
+            <p className="wander-description">
+              {directoryOpen
+                ? '按品类和专题，找到合适的素材。'
+                : isFavoritesView
+                  ? '你的私人素材夹，下次灵感从这里开始。'
+                  : '去掉标签，留下形状、材质和一点生活的美。'}
+            </p>
+          </div>
+          <p className="wander-inventory">
+            <strong>{products.length}</strong> 张产品素材 <span>·</span>{' '}
+            {collectionSummaries.length} 组静物合集
+          </p>
+        </div>
+        <label className="search-capsule">
+          <Search className="search-icon" size={18} aria-hidden="true" />
+          <span className="sr-only">搜索日用品素材</span>
+          <input
+            id="search-input"
+            type="search"
+            value={searchTerm}
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+              setDirectoryOpen(false);
+            }}
+            placeholder="搜索品类、品牌参考或编号"
+            autoComplete="off"
+          />
+          {searchTerm ? (
+            <button
+              className="clear-search"
+              type="button"
+              aria-label="清除搜索"
+              onClick={clearSearch}
+            >
+              <X size={15} />
+            </button>
+          ) : (
+            <span className="search-caption" aria-hidden="true">
+              找到一份灵感
+            </span>
+          )}
+        </label>
         <div className="series-tabs-wrap">
           <nav className="series-tabs" aria-label="素材分类">
-            {navGroups.map((group) => {
-              const isActive = activeGroup === group;
-              const count = countForGroup(group);
-
-              return (
+            {navGroups
+              .filter((group) => group !== '我的收藏')
+              .map((group) => (
                 <button
-                  className={'series-tab' + (isActive ? ' active' : '')}
+                  className={
+                    'series-tab' +
+                    (!directoryOpen && activeGroup === group ? ' active' : '')
+                  }
                   type="button"
                   key={group}
-                  aria-pressed={isActive}
+                  aria-pressed={!directoryOpen && activeGroup === group}
                   onClick={() => {
                     setActiveGroup(group);
+                    setDirectoryOpen(false);
+                    setSearchTerm('');
                     setModalOpen(false);
                   }}
                 >
-                  <span className="tab-text">
-                    {group}
-                    {group === '我的收藏' ? <span className="fav-badge">{count}</span> : null}
-                  </span>
-                  <span className="tab-indicator" aria-hidden="true" />
+                  <span className="tab-text">{group}</span>
                 </button>
-              );
-            })}
+              ))}
           </nav>
         </div>
       </header>
 
       <section className="feed-container" aria-label="日用品素材库">
         <div className="feed-status">
-          <span>DAILY NECESSITIES / LOCAL ASSETS</span>
-          <span>{visibleCount} {isCollectionView ? 'STILL LIFE SETS' : 'UNBRANDED PNG ASSETS'}</span>
+          <span>
+            {directoryOpen
+              ? '分类目录'
+              : isCollectionView
+                ? '桌面静物'
+                : isFavoritesView
+                  ? '我的收藏'
+                  : activeGroup === '全部'
+                    ? '为你发现'
+                    : activeGroup}
+            <span className="status-count">
+              {' '}
+              · {directoryOpen ? categorySummaries.length : visibleCount}{' '}
+              {directoryOpen
+                ? '个分类'
+                : isCollectionView
+                  ? '组合集'
+                  : '张素材'}
+            </span>
+          </span>
+          {!directoryOpen && !isCollectionView ? (
+            <label className="sort-control">
+              <SlidersHorizontal size={13} aria-hidden="true" />
+              <span className="sr-only">素材排序</span>
+              <select
+                aria-label="素材排序"
+                value={sortOrder}
+                onChange={(event) => setSortOrder(event.target.value)}
+              >
+                <option>推荐</option>
+                <option>最新</option>
+                <option>名称</option>
+              </select>
+            </label>
+          ) : (
+            <span className="collection-caption">看见日常的另一面</span>
+          )}
         </div>
 
         {query ? (
           <div className="search-result-line">
             <span>正在搜索 “{searchTerm}”</span>
-            <button type="button" onClick={clearSearch}>清除</button>
+            <button type="button" onClick={clearSearch}>
+              清除
+            </button>
           </div>
         ) : null}
 
-        {isCollectionView ? (
+        {directoryOpen ? (
+          <div className="category-directory">
+            {categorySummaries.map((summary, index) => (
+              <button
+                type="button"
+                className="category-entry"
+                key={summary.group}
+                onClick={() => {
+                  setActiveGroup(summary.group);
+                  setDirectoryOpen(false);
+                  setSearchTerm('');
+                }}
+              >
+                <ProgressiveImage
+                  src={getThumbnailUrl(summary.stillLife)}
+                  thumbnailSrc={getThumbnailUrl(summary.stillLife)}
+                  alt={summary.group + '分类封面'}
+                  width={400}
+                  height={267}
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                />
+                <span>
+                  <small>COLLECTION {String(index + 1).padStart(2, '0')}</small>
+                  <strong>{summary.group}</strong>
+                  <span>
+                    {getProductCount(summary.group)} 张素材 ·{' '}
+                    {summary.description}
+                  </span>
+                </span>
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </button>
+            ))}
+          </div>
+        ) : isCollectionView ? (
           <div className="feed-grid collection-feed" aria-label="桌面静物合集">
-            {visibleCollections.map((summary, index) => {
-              const collectionLabel = summary.label ?? summary.group;
-              const itemCount = getCollectionProductCount(summary);
-              const isLcpCandidate = index < 4;
+            {Array.from({ length: columnCount }, (_, column) => (
+              <div className="feed-column" key={column}>
+                {visibleCollections
+                  .filter((_, index) => index % columnCount === column)
+                  .map((summary) => {
+                    const collectionLabel = summary.label ?? summary.group;
+                    const itemCount = getCollectionProductCount(summary);
+                    const isLcpCandidate =
+                      visibleCollections.indexOf(summary) < 2;
 
-              return (
-                <article className="feed-card collection-card" key={summary.id}>
-                  <button
-                    className="feed-card-main"
-                    type="button"
-                    aria-label={'打开' + collectionLabel + '桌面静物合集'}
-                    onClick={() => openCollection(summary)}
-                  >
-                    <span className="feed-card-media">
-                      {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
-                      <img
-                        src={getThumbnailUrl(summary.stillLife)}
-                        alt={collectionLabel + '桌面静物合集图'}
-                        width={400}
-                        height={267}
-                        loading={isLcpCandidate ? 'eager' : 'lazy'}
-                        decoding="async"
-                        fetchPriority={isLcpCandidate ? 'high' : 'auto'}
-                        onError={(event) => {
-                          const originalSrc = getAssetUrl(summary.stillLife);
-                          if (event.currentTarget.src !== originalSrc) {
-                            event.currentTarget.onerror = null;
-                            event.currentTarget.src = originalSrc;
-                          }
-                        }}
-                      />
-                    </span>
-                    <span className="feed-card-info">
-                      <span className="feed-card-title">{collectionLabel}</span>
-                      <span className="feed-card-footer">
-                        <span className="author-name">桌面静物 · {itemCount} 件素材</span>
-                        <span className="card-arrow" aria-hidden="true">↗</span>
-                      </span>
-                    </span>
-                  </button>
-                </article>
-              );
-            })}
+                    return (
+                      <article
+                        className="feed-card collection-card"
+                        key={summary.id}
+                      >
+                        <button
+                          className="feed-card-main"
+                          type="button"
+                          aria-label={'打开' + collectionLabel + '桌面静物合集'}
+                          onClick={() => openCollection(summary)}
+                        >
+                          <span className="feed-card-media">
+                            {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
+                            <img
+                              src={getThumbnailUrl(summary.stillLife)}
+                              alt={collectionLabel + '桌面静物合集图'}
+                              width={400}
+                              height={267}
+                              loading={isLcpCandidate ? 'eager' : 'lazy'}
+                              decoding="async"
+                              fetchPriority={isLcpCandidate ? 'high' : 'auto'}
+                              onError={(event) => {
+                                const originalSrc = getAssetUrl(
+                                  summary.stillLife,
+                                );
+                                if (
+                                  event.currentTarget.dataset.fallback !==
+                                  'used'
+                                ) {
+                                  event.currentTarget.dataset.fallback = 'used';
+                                  event.currentTarget.onerror = null;
+                                  event.currentTarget.src = originalSrc;
+                                }
+                              }}
+                            />
+                          </span>
+                          <span className="feed-card-info">
+                            <span className="feed-card-title">
+                              {collectionLabel}
+                            </span>
+                            <span className="feed-card-footer">
+                              <span className="author-name">
+                                桌面静物 · {itemCount} 件素材
+                              </span>
+                              <span className="card-arrow" aria-hidden="true">
+                                ↗
+                              </span>
+                            </span>
+                          </span>
+                        </button>
+                      </article>
+                    );
+                  })}
+              </div>
+            ))}
           </div>
         ) : (
           <div className="feed-grid product-feed" aria-label="日用品产品素材">
-            {visibleProducts.map((product, index) => {
-              const isFavorite = favoriteIds.includes(product.id);
-              const isLcpCandidate = index < 4;
+            {Array.from({ length: columnCount }, (_, column) => (
+              <div className="feed-column" key={column}>
+                {visibleProducts
+                  .filter((_, index) => index % columnCount === column)
+                  .map((product) => {
+                    const isFavorite = favoriteIds.includes(product.id);
+                    const isLcpCandidate = visibleProducts.indexOf(product) < 2;
 
-              return (
-                <article className="feed-card" key={product.id}>
-                  <button
-                    className="feed-card-main"
-                    type="button"
-                    aria-label={'打开' + product.name + '详情'}
-                    onClick={() => openProduct(product)}
-                  >
-                    <span className="feed-card-media product-media">
-                      {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
-                      <img
-                        src={getThumbnailUrl(product.image)}
-                        alt={product.name + '，' + (product.treatment ?? '去标签纯色白底') + '产品图'}
-                        width={400}
-                        height={400}
-                        loading={isLcpCandidate ? 'eager' : 'lazy'}
-                        decoding="async"
-                        fetchPriority={isLcpCandidate ? 'high' : 'auto'}
-                        onError={(event) => {
-                          const originalSrc = getAssetUrl(product.image);
-                          if (event.currentTarget.src !== originalSrc) {
-                            event.currentTarget.onerror = null;
-                            event.currentTarget.src = originalSrc;
+                    return (
+                      <article className="feed-card" key={product.id}>
+                        <button
+                          className="feed-card-main"
+                          type="button"
+                          aria-label={'打开' + product.name + '详情'}
+                          onClick={() => openProduct(product)}
+                        >
+                          <span className="feed-card-media product-media">
+                            {/* oxlint-disable-next-line next/no-img-element -- local image assets stay client-side for fast browsing. */}
+                            <img
+                              src={getThumbnailUrl(product.image)}
+                              alt={
+                                product.name +
+                                '，' +
+                                (product.treatment ?? '去标签纯色白底') +
+                                '产品图'
+                              }
+                              width={400}
+                              height={400}
+                              loading={isLcpCandidate ? 'eager' : 'lazy'}
+                              decoding="async"
+                              fetchPriority={isLcpCandidate ? 'high' : 'auto'}
+                              onError={(event) => {
+                                const originalSrc = getAssetUrl(product.image);
+                                if (
+                                  event.currentTarget.dataset.fallback !==
+                                  'used'
+                                ) {
+                                  event.currentTarget.dataset.fallback = 'used';
+                                  event.currentTarget.onerror = null;
+                                  event.currentTarget.src = originalSrc;
+                                }
+                              }}
+                            />
+                          </span>
+                          <span className="feed-card-info">
+                            <span className="feed-card-title">
+                              {product.name}
+                            </span>
+                            <span className="feed-card-footer">
+                              <span className="author-name">
+                                #{product.id} · PNG
+                              </span>
+                              <span className="card-category">
+                                {product.collectionGroup ?? product.group}
+                              </span>
+                            </span>
+                          </span>
+                        </button>
+                        <button
+                          className={
+                            'card-like-btn' + (isFavorite ? ' liked' : '')
                           }
-                        }}
-                      />
-                    </span>
-                    <span className="feed-card-info">
-                      <span className="feed-card-title">{product.name}</span>
-                      <span className="feed-card-footer">
-                        <span className="author-name">{product.group}{product.brand ? ' · ' + product.brand + '参考' : ''}</span>
-                      </span>
-                    </span>
-                  </button>
-                  <button
-                    className={'card-like-btn' + (isFavorite ? ' liked' : '')}
-                    type="button"
-                    aria-label={isFavorite ? '取消收藏' : '收藏'}
-                    aria-pressed={isFavorite}
-                    onClick={() => toggleFavorite(product.id)}
-                  >
-                    <Heart size={15} strokeWidth={1.8} fill={isFavorite ? 'currentColor' : 'none'} aria-hidden="true" />
-                    <span className="sr-only">{isFavorite ? '已收藏' : '收藏'}</span>
-                  </button>
-                </article>
-              );
-            })}
+                          type="button"
+                          aria-label={isFavorite ? '取消收藏' : '收藏'}
+                          aria-pressed={isFavorite}
+                          onClick={() => toggleFavorite(product.id)}
+                        >
+                          <Bookmark
+                            size={15}
+                            strokeWidth={1.8}
+                            fill={isFavorite ? 'currentColor' : 'none'}
+                            aria-hidden="true"
+                          />
+                          <span className="sr-only">
+                            {isFavorite ? '已收藏' : '收藏'}
+                          </span>
+                        </button>
+                      </article>
+                    );
+                  })}
+              </div>
+            ))}
           </div>
         )}
-        {hasMoreFeedItems ? <div ref={feedSentinelRef} className="feed-sentinel" aria-hidden="true" /> : null}
-        {visibleCount === 0 ? (
+        {!directoryOpen && hasMoreFeedItems ? (
+          <>
+            <button
+              className="feed-load-more"
+              type="button"
+              onClick={() =>
+                setFeedRenderState({
+                  key: feedFilterKey,
+                  limit: Math.min(
+                    renderLimit + FEED_CHUNK_SIZE,
+                    filteredFeedLength,
+                  ),
+                })
+              }
+            >
+              加载更多素材 <ChevronRight size={14} />
+            </button>
+            <div
+              ref={feedSentinelRef}
+              className="feed-sentinel"
+              aria-hidden="true"
+            />
+          </>
+        ) : null}
+        {!directoryOpen && visibleCount > 0 && !hasMoreFeedItems ? (
+          <p className="feed-end">这一页的日常，已经看完了。</p>
+        ) : null}
+        {!directoryOpen && visibleCount === 0 ? (
           <div className="empty-state">
-            <span className="empty-symbol" aria-hidden="true">⌕</span>
+            <span className="empty-symbol" aria-hidden="true">
+              ⌕
+            </span>
             <h2>没有匹配的素材</h2>
             <p>试试别的关键词，或返回全部分类。</p>
-            <button type="button" onClick={() => { setActiveGroup('全部'); setSearchTerm(''); }}>返回全部</button>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveGroup('全部');
+                setSearchTerm('');
+              }}
+            >
+              返回全部
+            </button>
           </div>
         ) : null}
       </section>
+
+      <footer className="wander-footer">
+        <span>
+          日常图鉴 <small>v1.1.0</small>
+        </span>
+        <span>无品牌素材 · 原图 PNG</span>
+        <a
+          href="https://github.com/holynova/daily-necessities-library"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub ↗
+        </a>
+      </footer>
+      <nav className="wander-nav" aria-label="主导航">
+        <button
+          type="button"
+          className={!directoryOpen && !isFavoritesView ? 'active' : ''}
+          aria-pressed={!directoryOpen && !isFavoritesView}
+          onClick={() => {
+            setDirectoryOpen(false);
+            setActiveGroup('全部');
+            setSearchTerm('');
+            window.scrollTo({ top: 0 });
+          }}
+        >
+          <Compass size={21} />
+          <span>发现</span>
+        </button>
+        <button
+          type="button"
+          className={directoryOpen ? 'active' : ''}
+          aria-pressed={directoryOpen}
+          onClick={() => {
+            setDirectoryOpen(true);
+            setSearchTerm('');
+            window.scrollTo({ top: 0 });
+          }}
+        >
+          <Grid2X2 size={21} />
+          <span>分类</span>
+        </button>
+        <button
+          type="button"
+          className={isFavoritesView && !directoryOpen ? 'active' : ''}
+          aria-pressed={isFavoritesView && !directoryOpen}
+          onClick={() => {
+            setDirectoryOpen(false);
+            setActiveGroup('我的收藏');
+            setSearchTerm('');
+            window.scrollTo({ top: 0 });
+          }}
+        >
+          <Bookmark size={21} />
+          <span>
+            收藏{favoriteIds.length ? ` · ${favoriteIds.length}` : ''}
+          </span>
+        </button>
+      </nav>
 
       {modalOpen && modalItem ? (
         <dialog
@@ -891,33 +1341,97 @@ export default function Home() {
         >
           <div className="note-window">
             <div className="note-header">
-              <button className="note-btn-back" type="button" aria-label="返回素材列表" onClick={() => setModalOpen(false)}>
+              <button
+                className="note-btn-back"
+                type="button"
+                aria-label="返回素材列表"
+                onClick={() => setModalOpen(false)}
+              >
                 <ChevronLeft size={22} strokeWidth={2.2} aria-hidden="true" />
               </button>
               <div className="note-author-info">
-                <span className="note-author-name">{selectedType === 'collection' ? '桌面静物合集' : '日用品图鉴'}</span>
+                <span className="note-author-name">
+                  {selectedType === 'collection'
+                    ? '桌面静物合集'
+                    : '日用品图鉴'}
+                </span>
                 <span className="note-author-divider">·</span>
-                <span className="note-author-sub">{String(modalIndex + 1).padStart(2, '0')} / {String(modalListCount).padStart(2, '0')}</span>
+                <span className="note-author-sub">
+                  {String(modalIndex + 1).padStart(2, '0')} /{' '}
+                  {String(modalListCount).padStart(2, '0')}
+                </span>
               </div>
-              <button className="note-close" type="button" aria-label="关闭详情" onClick={() => setModalOpen(false)}>
+              <button
+                className="note-close"
+                type="button"
+                aria-label="关闭详情"
+                onClick={() => setModalOpen(false)}
+              >
                 <X size={19} aria-hidden="true" />
               </button>
             </div>
 
-            <button className="note-nav-btn note-nav-prev" type="button" aria-label="上一项" onClick={() => navigateSelection(-1)}>
+            <button
+              className="note-nav-btn note-nav-prev"
+              type="button"
+              aria-label="上一项"
+              onClick={() => navigateSelection(-1)}
+            >
               <ChevronLeft size={23} aria-hidden="true" />
             </button>
-            <button className="note-nav-btn note-nav-next" type="button" aria-label="下一项" onClick={() => navigateSelection(1)}>
+            <button
+              className="note-nav-btn note-nav-next"
+              type="button"
+              aria-label="下一项"
+              onClick={() => navigateSelection(1)}
+            >
               <ChevronRight size={23} aria-hidden="true" />
             </button>
 
             <div className="note-scroll-body">
-              <div className="note-media-wrap">
+              <div
+                className="note-media-wrap"
+                onTouchStart={(event) => {
+                  touchStartRef.current = event.touches[0]?.clientX ?? null;
+                }}
+                onTouchEnd={(event) => {
+                  const start = touchStartRef.current;
+                  touchStartRef.current = null;
+                  if (start === null) return;
+                  const distance =
+                    (event.changedTouches[0]?.clientX ?? start) - start;
+                  if (Math.abs(distance) > 55)
+                    navigateSelection(distance < 0 ? 1 : -1);
+                }}
+              >
                 <ProgressiveImage
-                  key={(selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image) ?? ''}
-                  className={selectedType === 'collection' ? 'note-main-img collection-main-img' : 'note-main-img'}
-                  src={(selectedType === 'collection' ? selectedCollection?.stillLife : selectedProduct?.image) ?? ''}
-                  alt={selectedType === 'collection' ? (selectedCollection?.label ?? selectedCollection?.group ?? '') + '桌面静物合集大图' : (selectedProduct?.name ?? '') + '大图预览'}
+                  key={
+                    (selectedType === 'collection'
+                      ? selectedCollection?.stillLife
+                      : selectedProduct?.image) ?? ''
+                  }
+                  className={
+                    selectedType === 'collection'
+                      ? 'note-main-img collection-main-img'
+                      : 'note-main-img'
+                  }
+                  src={getDetailUrl(
+                    (selectedType === 'collection'
+                      ? selectedCollection?.stillLife
+                      : selectedProduct?.image) ?? '',
+                  )}
+                  thumbnailSrc={getThumbnailUrl(
+                    (selectedType === 'collection'
+                      ? selectedCollection?.stillLife
+                      : selectedProduct?.image) ?? '',
+                  )}
+                  alt={
+                    selectedType === 'collection'
+                      ? (selectedCollection?.label ??
+                          selectedCollection?.group ??
+                          '') + '桌面静物合集大图'
+                      : (selectedProduct?.name ?? '') + '大图预览'
+                  }
                   loading="eager"
                   fetchPriority="high"
                 />
@@ -926,32 +1440,85 @@ export default function Home() {
               <div className="note-content-container">
                 <div className="note-title-row">
                   <div>
-                    <p className="note-kicker">{selectedType === 'collection' ? 'STILL LIFE / COLLECTION' : (selectedProduct?.group ?? 'PRODUCT') + ' / ASSET'}</p>
-                    <h2 className="note-title">{selectedType === 'collection' ? selectedCollection?.label ?? selectedCollection?.group : selectedProduct?.name}</h2>
+                    <p className="note-kicker">
+                      {selectedType === 'collection'
+                        ? 'STILL LIFE / COLLECTION'
+                        : (selectedProduct?.group ?? 'PRODUCT') + ' / ASSET'}
+                    </p>
+                    <h2 className="note-title">
+                      {selectedType === 'collection'
+                        ? (selectedCollection?.label ??
+                          selectedCollection?.group)
+                        : selectedProduct?.name}
+                    </h2>
                   </div>
                   {selectedType === 'product' && selectedProduct ? (
                     <button
-                      className={'note-like-btn' + (favoriteIds.includes(selectedProduct.id) ? ' liked' : '')}
+                      className={
+                        'note-like-btn' +
+                        (favoriteIds.includes(selectedProduct.id)
+                          ? ' liked'
+                          : '')
+                      }
                       type="button"
-                      aria-label={favoriteIds.includes(selectedProduct.id) ? '取消收藏' : '收藏'}
+                      aria-label={
+                        favoriteIds.includes(selectedProduct.id)
+                          ? '取消收藏'
+                          : '收藏'
+                      }
                       aria-pressed={favoriteIds.includes(selectedProduct.id)}
                       onClick={() => toggleFavorite(selectedProduct.id)}
                     >
-                      <Heart size={21} strokeWidth={1.7} fill={favoriteIds.includes(selectedProduct.id) ? 'currentColor' : 'none'} aria-hidden="true" />
+                      <Heart
+                        size={21}
+                        strokeWidth={1.7}
+                        fill={
+                          favoriteIds.includes(selectedProduct.id)
+                            ? 'currentColor'
+                            : 'none'
+                        }
+                        aria-hidden="true"
+                      />
                     </button>
                   ) : null}
                 </div>
 
                 <p className="note-desc">
                   {selectedType === 'collection'
-                    ? '桌面静物合集 · ' + (selectedCollection?.description ?? '本地静物素材')
+                    ? '桌面静物合集 · ' +
+                      (selectedCollection?.description ?? '本地静物素材')
                     : '去标签、纯色白底的日常产品素材，适合直接用于界面设计、拼贴与提案。'}
                 </p>
 
                 <div className="note-detail-list">
-                  <div><span>内容</span><strong>{selectedType === 'collection' ? getCollectionProductCount(selectedCollection as CollectionSummary) + ' 件素材' : selectedProduct?.group}</strong></div>
-                  <div><span>参考</span><strong>{selectedType === 'collection' ? '桌面静物 · 3:2 PNG' : (selectedProduct?.brand ?? '通用产品') + ' · ' + (selectedProduct?.reference ?? '纯色表面')}</strong></div>
-                  <div><span>编号</span><strong>{selectedType === 'collection' ? String(modalIndex + 1).padStart(2, '0') : selectedProduct?.id}</strong></div>
+                  <div>
+                    <span>内容</span>
+                    <strong>
+                      {selectedType === 'collection'
+                        ? getCollectionProductCount(
+                            selectedCollection as CollectionSummary,
+                          ) + ' 件素材'
+                        : selectedProduct?.group}
+                    </strong>
+                  </div>
+                  <div>
+                    <span>参考</span>
+                    <strong>
+                      {selectedType === 'collection'
+                        ? '桌面静物 · 3:2 PNG'
+                        : (selectedProduct?.brand ?? '通用产品') +
+                          ' · ' +
+                          (selectedProduct?.reference ?? '纯色表面')}
+                    </strong>
+                  </div>
+                  <div>
+                    <span>编号</span>
+                    <strong>
+                      {selectedType === 'collection'
+                        ? String(modalIndex + 1).padStart(2, '0')
+                        : selectedProduct?.id}
+                    </strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -963,9 +1530,15 @@ export default function Home() {
                 type="button"
                 onClick={() => {
                   if (selectedType === 'collection' && selectedCollection) {
-                    openShareCard({ type: 'collection', collection: selectedCollection });
+                    openShareCard({
+                      type: 'collection',
+                      collection: selectedCollection,
+                    });
                   } else if (selectedType === 'product' && selectedProduct) {
-                    openShareCard({ type: 'product', product: selectedProduct });
+                    openShareCard({
+                      type: 'product',
+                      product: selectedProduct,
+                    });
                   }
                 }}
                 aria-label="生成分享卡片"
@@ -975,11 +1548,23 @@ export default function Home() {
               </button>
               <a
                 className="note-bottom-action"
-                href={getAssetUrl(selectedType === 'collection' ? selectedCollection?.stillLife ?? '' : selectedProduct?.image ?? '')}
+                href={getAssetUrl(
+                  selectedType === 'collection'
+                    ? (selectedCollection?.stillLife ?? '')
+                    : (selectedProduct?.image ?? ''),
+                )}
                 download={
                   selectedType === 'collection'
-                    ? 'daily-necessities-' + (selectedCollection?.label ?? selectedCollection?.group ?? 'collection') + '.png'
-                    : 'daily-necessities-' + (selectedProduct?.id ?? '') + '-' + (selectedProduct?.name ?? 'asset') + '.png'
+                    ? 'daily-necessities-' +
+                      (selectedCollection?.label ??
+                        selectedCollection?.group ??
+                        'collection') +
+                      '.png'
+                    : 'daily-necessities-' +
+                      (selectedProduct?.id ?? '') +
+                      '-' +
+                      (selectedProduct?.name ?? 'asset') +
+                      '.png'
                 }
                 aria-label="下载当前素材"
               >
@@ -1000,19 +1585,34 @@ export default function Home() {
         >
           <div className="share-modal-window">
             <div className="share-modal-header">
-              <span className="share-modal-heading" id="share-card-title">分享素材卡片</span>
-              <button className="share-modal-close" type="button" aria-label="关闭分享卡片" onClick={closeShareCard}>
+              <span className="share-modal-heading" id="share-card-title">
+                分享素材卡片
+              </span>
+              <button
+                className="share-modal-close"
+                type="button"
+                aria-label="关闭分享卡片"
+                onClick={closeShareCard}
+              >
                 <X size={17} strokeWidth={2.4} aria-hidden="true" />
               </button>
             </div>
 
             <div className="share-card-paper">
               <div className="share-card-header">
-                <span className="share-card-series">{getShareSeries(shareItem)}</span>
+                <span className="share-card-series">
+                  {getShareSeries(shareItem)}
+                </span>
               </div>
 
               <div className="share-card-art-box">
-                <ProgressiveImage key={getShareImage(shareItem)} src={getShareImage(shareItem)} alt={getShareTitle(shareItem) + '分享卡片预览'} loading="eager" fetchPriority="high" />
+                <ProgressiveImage
+                  key={getShareImage(shareItem)}
+                  src={getShareImage(shareItem)}
+                  alt={getShareTitle(shareItem) + '分享卡片预览'}
+                  loading="eager"
+                  fetchPriority="high"
+                />
               </div>
 
               <div className="share-card-meta">
@@ -1028,7 +1628,11 @@ export default function Home() {
                 <div className="share-card-qr-wrap">
                   {shareQrDataUrl ? (
                     /* oxlint-disable-next-line next/no-img-element -- QR preview is generated as a data URL. */
-                    <img className="share-card-qr" src={shareQrDataUrl} alt="分享链接二维码" />
+                    <img
+                      className="share-card-qr"
+                      src={shareQrDataUrl}
+                      alt="分享链接二维码"
+                    />
                   ) : (
                     <span className="share-card-qr-loading">生成中</span>
                   )}
@@ -1037,16 +1641,27 @@ export default function Home() {
             </div>
 
             <div className="share-modal-actions">
-              <button className="share-save-btn" type="button" onClick={saveShareCard} disabled={!shareQrDataUrl || isSavingShareCard}>
+              <button
+                className="share-save-btn"
+                type="button"
+                onClick={saveShareCard}
+                disabled={!shareQrDataUrl || isSavingShareCard}
+              >
                 <Download size={17} strokeWidth={2.1} aria-hidden="true" />
                 <span>{isSavingShareCard ? '正在生成…' : '保存分享卡片'}</span>
               </button>
-              <button className="share-link-btn" type="button" onClick={copyShareLink}>
+              <button
+                className="share-link-btn"
+                type="button"
+                onClick={copyShareLink}
+              >
                 <Link2 size={16} strokeWidth={2.1} aria-hidden="true" />
                 <span>复制链接</span>
               </button>
             </div>
-            {shareFeedback ? <output className="share-feedback">{shareFeedback}</output> : null}
+            {shareFeedback ? (
+              <output className="share-feedback">{shareFeedback}</output>
+            ) : null}
           </div>
         </dialog>
       ) : null}
