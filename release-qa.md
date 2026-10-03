@@ -7,6 +7,7 @@
 - README links, screenshot/QR presence and visible version checks passed.
 - 26 browser checks passed: catalogue counts, initial batch, mobile/desktop columns, thumbnail-only list requests, full-catalogue search, all-category browsing, persistent favorites, decoded detail WebP, PNG download, share QR/poster export, keyboard closing, sort, empty state, all 116 items reachable, 320px layout, and rapid detail navigation.
 - 4 failure/compatibility checks passed: failed detail requests retain thumbnails; no IntersectionObserver preserves initial batching and manual load-more; no decode API uses the load-event fallback.
+- Direct product and collection share URLs were checked; collection links now restore the collection feed so previous/next navigation remains available.
 - No JavaScript errors during normal interaction checks. Failure tests intentionally abort detail requests.
 - 137 detail assets: 5,109,552 bytes, compared with 180,878,392 bytes for the original PNG group. This is an asset-size comparison, not a measured speed improvement. Second generator run rebuilt zero unchanged files.
 - Full repository `npm run lint` still reports 19 existing errors in unused scaffold components/hooks. Those files were unchanged; application-scoped lint passes.

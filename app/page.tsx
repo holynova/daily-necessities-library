@@ -623,6 +623,7 @@ export default function Home() {
           (summary) => summary.id === itemId,
         );
         if (!collection) return;
+        setActiveGroup('合集');
         setSelectedCollectionId(collection.id);
         setSelectedType('collection');
         setModalOpen(true);
