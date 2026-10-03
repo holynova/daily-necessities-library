@@ -22,3 +22,11 @@ Production verification is performed after deployment; deployment IDs and verifi
 - List requests only thumbnails in the normal path; thumbnail failure uses compressed detail fallback. Current details decode before replacement; adjacent thumbnails only are prefetched.
 - 27 browser checks passed, including slow details, rapid navigation, failed-detail retention, filtering, actual ratios and all five widths.
 - Existing detail generation reused all 137 assets (0 regenerated): 5,109,552 bytes versus 180,878,392 original bytes. Asset totals are not a measured speed improvement.
+
+## 1.1.3 mobile viewport follow-up
+
+- Reproduced pre-fix viewport overflow at 280px: document/body were 320px due to body min-width. Standard 320–680px views did not reproduce whole-document overflow in Chromium; the reporter's device/browser has not been specified.
+- Removed the body minimum width and mobile navigation button minimum widths; constrained shrinkable flex content and share window to available width.
+- Mobile search input is 16px to avoid small-input automatic zoom on iOS; no disabling of user zoom. Added safe-area spacing and dynamic viewport modal height, larger mobile metadata and category touch targets.
+- Chromium and WebKit with iPhone 13 emulation each passed 60 viewport/state checks: 280,320,360,375,390,414,430,540,680px portrait and 844px landscape; home/search/categories/favorites/detail/share.
+- Checks verified scrollWidth <= viewport, attempted horizontal window scrolling remained at 0, and visible controls stayed inside the viewport (excluding intentional category strip scrolling). No physical iPhone test; keyboard autozoom is prevented through input font sizing rather than reproduced by the desktop WebKit harness.

@@ -2,7 +2,7 @@
 
 # Tear Labels · Wander
 
-A catalogue of 116 unbranded product PNGs and 21 still-life collections, including 40 newer consumer goods. Version **1.1.2** uses a Wander interface: olive category pills, a masonry feed, and Discover / Categories / Favorites navigation. Collections appear first. Images keep their intrinsic ratio; lists lazy-load thumbnails, details upgrade after decoding, and downloads retain original PNGs.
+A catalogue of 116 unbranded product PNGs and 21 still-life collections, including 40 newer consumer goods. Version **1.1.3** uses a Wander interface: olive category pills, a masonry feed, and Discover / Categories / Favorites navigation. Collections appear first. Images keep their intrinsic ratio; lists lazy-load thumbnails, details upgrade after decoding, and downloads retain original PNGs.
 
 [Live demo](https://daily-necessities-library.xiaosang.cc/) · [Source](https://github.com/holynova/daily-necessities-library) · [Pages mirror](https://holynova.github.io/daily-necessities-library/)
 

@@ -985,7 +985,7 @@ export default function Home() {
               setSearchTerm(event.target.value);
               setDirectoryOpen(false);
             }}
-            placeholder="搜索品类、品牌参考或编号"
+            placeholder="搜索品类、品牌或编号"
             autoComplete="off"
           />
           {searchTerm ? (
@@ -1317,7 +1317,7 @@ export default function Home() {
 
       <footer className="wander-footer">
         <span>
-          撕标签 <small>v1.1.2</small>
+          撕标签 <small>v1.1.3</small>
         </span>
         <span>无品牌素材 · 原图 PNG</span>
         <a
