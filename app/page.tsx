@@ -959,8 +959,9 @@ export default function Home() {
                   ? '把喜欢的日常，留下。'
                   : isCollectionView
                     ? '一起看，换一种灵感。'
-                    : '好设计，藏在日常里。'}
+                    : '去掉标签，留下形状、材质和一点生活的美。'}
             </h1>
+            {(directoryOpen || isFavoritesView || isCollectionView) && (
             <p className="wander-description">
               {directoryOpen
                 ? '按品类和专题，找到合适的素材。'
@@ -968,6 +969,7 @@ export default function Home() {
                   ? '你的私人素材夹，下次灵感从这里开始。'
                   : '去掉标签，留下形状、材质和一点生活的美。'}
             </p>
+            )}
           </div>
           <p className="wander-inventory">
             <strong>{products.length}</strong> 张产品素材 <span>·</span>{' '}
@@ -1317,7 +1319,7 @@ export default function Home() {
 
       <footer className="wander-footer">
         <span>
-          撕标签 <small>v1.1.3</small>
+          撕标签 <small>v1.1.4</small>
         </span>
         <span>无品牌素材 · 原图 PNG</span>
         <a
