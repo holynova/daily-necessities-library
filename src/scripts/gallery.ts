@@ -9,8 +9,7 @@ if (!manifestElement || !configElement || !galleryElement || !lightboxElement) t
 const gallery = galleryElement;
 const lightbox = lightboxElement;
 
-type CatalogImage = ImageManifest & {record:{title:string,group:string,kind:string,brand?:string,newFmcg?:boolean}};
-const manifest = JSON.parse(manifestElement.textContent || '{"images":[]}') as Omit<Manifest, 'images'> & {images:CatalogImage[]};
+const manifest = JSON.parse(manifestElement.textContent || '{"images":[]}') as Manifest;
 const config = JSON.parse(configElement.textContent || '{}') as {
   features: { download: boolean; share: boolean };
   batchSize: number;
@@ -43,38 +42,94 @@ function variantSrcset(variants: ImageManifest['variants']['thumb']['avif']): st
   return variants.map((variant) => `${toUrl(variant.src)} ${variant.width}w`).join(', ');
 }
 
-const search = document.querySelector<HTMLInputElement>('#gallery-search');
-let activeKind = 'all';
-let saved = new Set<string>();
-try { saved = new Set(JSON.parse(localStorage.getItem('daily-saved') || '[]')); } catch {}
-function matchingImages(): CatalogImage[] {
-  const query = (search?.value || '').trim().toLocaleLowerCase();
-  return manifest.images.filter(image => {
-    const record = image.record;
-    return (activeCollection === 'all' || image.collection === activeCollection)
-      && (activeKind === 'all' || activeKind === record.kind || (activeKind === 'new' && record.newFmcg) || (activeKind === 'saved' && saved.has(image.id)))
-      && (!query || [record.title,record.group,record.brand,image.alt].join(' ').toLocaleLowerCase().includes(query));
-  });
+function createCard(image: ImageManifest, index: number): HTMLElement {
+  const article = document.createElement('article');
+  article.className = 'gallery-card';
+  article.dataset.galleryCard = '';
+  article.dataset.imageId = image.id;
+  article.dataset.collection = image.collection;
+
+  const button = document.createElement('button');
+  button.className = 'gallery-card__button';
+  button.type = 'button';
+  button.dataset.galleryOpen = image.id;
+  button.setAttribute('aria-label', `打开图片：${image.alt}`);
+  const picture = document.createElement('picture');
+  const avif = document.createElement('source');
+  avif.type = 'image/avif';
+  avif.srcset = variantSrcset(image.variants.thumb.avif);
+  avif.sizes = '(min-width: 1100px) 31vw, (min-width: 700px) 47vw, 94vw';
+  const webp = document.createElement('source');
+  webp.type = 'image/webp';
+  webp.srcset = variantSrcset(image.variants.thumb.webp);
+  webp.sizes = avif.sizes;
+  const fallback = image.variants.thumb.jpeg[0];
+  const img = document.createElement('img');
+  img.src = toUrl(fallback.src);
+  img.srcset = variantSrcset(image.variants.thumb.jpeg);
+  img.sizes = avif.sizes;
+  img.width = image.width;
+  img.height = image.height;
+  img.alt = image.alt;
+  img.loading = index === 0 ? 'eager' : 'lazy';
+  img.decoding = 'async';
+  picture.append(avif, webp, img);
+  button.append(picture);
+  article.append(button);
+  if (image.caption) {
+    const caption = document.createElement('p');
+    caption.className = 'gallery-card__caption';
+    caption.textContent = image.caption;
+    article.append(caption);
+  }
+  return article;
 }
+
+function updateVisibleCount(): void {
+  if (!visibleCount) return;
+  const cards = [...gallery.querySelectorAll<HTMLElement>('[data-gallery-card]')];
+  visibleCount.textContent = String(cards.filter((card) => !card.hidden).length);
+}
+
 function applyFilter(): void {
-  const matches = matchingImages();
-  const visible = new Set(matches.slice(0,nextIndex).map(image=>image.id));
-  for (const card of gallery.querySelectorAll<HTMLElement>('[data-gallery-card]')) card.hidden = !visible.has(card.dataset.imageId || '');
-  document.querySelectorAll<HTMLButtonElement>('[data-collection-filter]').forEach(button=>{const active=button.dataset.collectionFilter===activeCollection;button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active));});
-  document.querySelectorAll<HTMLButtonElement>('[data-kind]').forEach(button=>{const active=button.dataset.kind===activeKind;button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active));});
-  document.querySelectorAll<HTMLButtonElement>('[data-save]').forEach(button=>{const active=saved.has(button.dataset.save||'');button.textContent=active?'♥':'♡';button.setAttribute('aria-pressed',String(active));});
-  if(visibleCount) visibleCount.textContent = String(visible.size);
-  const total=document.querySelector('#matched-count'); if(total) total.textContent=String(matches.length);
-  const empty=document.querySelector<HTMLElement>('#gallery-empty');if(empty)empty.hidden=matches.length>0;
-  if(loadMore)loadMore.hidden=nextIndex>=matches.length;
+  for (const card of gallery.querySelectorAll<HTMLElement>('[data-gallery-card]')) {
+    card.hidden = activeCollection !== 'all' && card.dataset.collection !== activeCollection;
+  }
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-collection-filter]')) {
+    const isActive = button.dataset.collectionFilter === activeCollection;
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  }
+  updateVisibleCount();
+  const total = document.querySelector('#matched-count');
+  if (total) total.textContent = String(navigationImages().length);
+  const complete = nextIndex >= navigationImages().length;
+  if (loadMore) loadMore.hidden = complete;
+  if (sentinel) sentinel.hidden = complete;
 }
-function loadNextBatch(): void {nextIndex += config.batchSize;applyFilter();}
-function navigationImages(): ImageManifest[] {return matchingImages();}
-search?.addEventListener('input',()=>{nextIndex=config.batchSize;applyFilter();});
-for(const button of document.querySelectorAll<HTMLButtonElement>('[data-kind]'))button.addEventListener('click',()=>{activeKind=button.dataset.kind||'all';nextIndex=config.batchSize;applyFilter();});
-gallery.addEventListener('click',event=>{const button=event.target instanceof Element?event.target.closest<HTMLElement>('[data-save]'):null;if(!button)return;const id=button.dataset.save!;saved.has(id)?saved.delete(id):saved.add(id);try{localStorage.setItem('daily-saved',JSON.stringify([...saved]));}catch{}applyFilter();});
-document.querySelector('#gallery-reset')?.addEventListener('click',()=>{activeCollection='all';activeKind='all';if(search)search.value='';nextIndex=config.batchSize;applyFilter();});
-document.addEventListener('keydown',event=>{if(event.key==='/'&&!lightbox.open&&!(event.target instanceof HTMLInputElement)){event.preventDefault();search?.focus();}});
+
+function loadNextBatch(): void {
+  const matching = navigationImages();
+  if (nextIndex >= matching.length) {
+    if (loadMore) loadMore.hidden = true;
+    if (sentinel) sentinel.hidden = true;
+    return;
+  }
+  const fragment = document.createDocumentFragment();
+  const end = Math.min(nextIndex + config.batchSize, matching.length);
+  for (let index = nextIndex; index < end; index += 1) fragment.append(createCard(matching[index], index));
+  gallery.append(fragment);
+  nextIndex = end;
+  applyFilter();
+  if (nextIndex >= matching.length) {
+    if (loadMore) loadMore.hidden = true;
+    if (sentinel) sentinel.hidden = true;
+  }
+}
+
+function navigationImages(): ImageManifest[] {
+  return activeCollection === 'all' ? manifest.images : manifest.images.filter((image) => image.collection === activeCollection);
+}
 
 function preloadAdjacent(image: ImageManifest): void {
   const images = navigationImages();
@@ -109,7 +164,7 @@ function setLightboxImage(image: ImageManifest): void {
   if (lightboxPosition) lightboxPosition.textContent = `${index + 1} / ${images.length}`;
   if (downloadLink) {
     downloadLink.href = toUrl(image.download?.src || fallback.src);
-    downloadLink.download = `${image.slug}.png`;
+    downloadLink.download = `${image.slug}.${image.download ? "png" : "jpg"}`;
   }
   preloadAdjacent(image);
 }
@@ -149,7 +204,9 @@ for (const button of document.querySelectorAll<HTMLButtonElement>('[data-collect
   button.addEventListener('click', () => {
     activeCollection = button.dataset.collectionFilter || 'all';
     trackGalleryEvent('collection_select', { collection: activeCollection });
-    nextIndex = config.batchSize;
+    const matching = navigationImages();
+    nextIndex = Math.min(config.batchSize, matching.length);
+    gallery.replaceChildren(...matching.slice(0, nextIndex).map(createCard));
     applyFilter();
   });
 }
@@ -166,11 +223,11 @@ downloadLink?.addEventListener('click', () => {
 shareButton?.addEventListener('click', async () => {
   const image = manifest.images.find((candidate) => candidate.id === currentImageId);
   if (!image) return;
-  const shareData = { title: image.caption || image.alt, text: image.alt, url: new URL(`?image=${encodeURIComponent(image.slug)}`,window.location.href).href };
+  const shareData = { title: image.caption || image.alt, text: image.alt, url: new URL(`?image=${encodeURIComponent(image.slug)}`, window.location.href).href };
   try {
     if (navigator.share) await navigator.share(shareData);
     else if (navigator.clipboard) await navigator.clipboard.writeText(shareData.url);
-    if(shareButton){shareButton.textContent='链接已复制';setTimeout(()=>{shareButton.textContent='分享';},1800);}
+    if (shareButton) {shareButton.textContent = '已分享'; setTimeout(() => {shareButton.textContent = '分享';}, 1800);}
     trackGalleryEvent('share_click', { image_id: image.id, collection: image.collection });
   } catch {
     // A cancelled native share is intentionally silent.
@@ -210,6 +267,8 @@ if ('IntersectionObserver' in window && sentinel) {
 }
 
 trackGalleryEvent('gallery_view', { collection: 'all' });
+updateVisibleCount();
+
 applyFilter();
-const linked = manifest.images.find(image=>image.slug===new URLSearchParams(location.search).get('image'));
-if(linked)openLightbox(linked);
+const sharedImage = manifest.images.find(image => image.slug === new URLSearchParams(location.search).get("image"));
+if (sharedImage) openLightbox(sharedImage);
