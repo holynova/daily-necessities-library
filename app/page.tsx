@@ -250,46 +250,46 @@ const products: Product[] = [
   { id: '74', name: '心相印抽纸', group: '品牌补充', reference: '经典抽纸', brand: '心相印', image: '/assets/brand-products/74-heart-to-heart-tissues.png', accent: '#e5a8b2' },
   { id: '75', name: '德宝抽纸', group: '品牌补充', reference: '柔韧抽纸', brand: '德宝', image: '/assets/brand-products/75-tempo-tissues.png', accent: '#34538a' },
   { id: '76', name: '维达抽纸', group: '品牌补充', reference: '超韧抽纸', brand: '维达', image: '/assets/brand-products/76-vinda-tissues.png', accent: '#2f64bc' },
-  { id: '77', name: '汰渍洗衣液', group: '洗护用品', reference: '液体洗衣液', brand: 'Tide', image: '/assets/fmcg-tear-labels/tide-laundry-detergent.png', accent: '#8ea8b6', treatment: '完整去标 · 低饱和表面' },
-  { id: '78', name: '碧浪洗衣液', group: '洗护用品', reference: '液体洗衣液', brand: 'Ariel', image: '/assets/fmcg-tear-labels/ariel-laundry-detergent.png', accent: '#8ba5a0', treatment: '完整去标 · 低饱和表面' },
-  { id: '79', name: '当妮衣物柔顺剂', group: '洗护用品', reference: '衣物柔顺剂', brand: 'Downy', image: '/assets/fmcg-tear-labels/downy-fabric-softener.png', accent: '#aa9aa9', treatment: '完整去标 · 低饱和表面' },
-  { id: '80', name: 'Persil 洗衣液', group: '洗护用品', reference: '液体洗衣液', brand: 'Persil', image: '/assets/fmcg-tear-labels/persil-laundry-detergent.png', accent: '#6f7d75', treatment: '完整去标 · 低饱和表面' },
-  { id: '81', name: 'Surf 洗衣液', group: '洗护用品', reference: '洗衣液补充袋', brand: 'Surf', image: '/assets/fmcg-tear-labels/surf-laundry-detergent.png', accent: '#a198a7', treatment: '完整去标 · 低饱和表面' },
-  { id: '82', name: '金纺衣物柔顺剂', group: '洗护用品', reference: '衣物柔顺剂', brand: 'Comfort', image: '/assets/fmcg-tear-labels/comfort-fabric-softener.png', accent: '#9aa58e', treatment: '完整去标 · 低饱和表面' },
-  { id: '83', name: '欧乐 B 牙刷', group: '个人护理', reference: '透明罩卡纸牙刷', brand: 'Oral-B', image: '/assets/fmcg-tear-labels/oral-b-toothbrush.png', accent: '#7f9cab', treatment: '完整去标 · 低饱和表面' },
-  { id: '84', name: '吉列剃须刀', group: '个人护理', reference: '剃须刀与纸套', brand: 'Gillette', image: '/assets/fmcg-tear-labels/gillette-razor.png', accent: '#787f87', treatment: '完整去标 · 低饱和表面' },
-  { id: '85', name: '高露洁牙膏', group: '个人护理', reference: '软管牙膏', brand: 'Colgate', image: '/assets/fmcg-tear-labels/colgate-toothpaste.png', accent: '#a77f82', treatment: '完整去标 · 低饱和表面' },
-  { id: '86', name: '棕榄沐浴露', group: '个人护理', reference: '透明泵头沐浴露', brand: 'Palmolive', image: '/assets/fmcg-tear-labels/palmolive-body-wash.png', accent: '#858e75', treatment: '完整去标 · 低饱和表面' },
-  { id: '87', name: 'Softsoap 洗手液', group: '个人护理', reference: '按压泵洗手液', brand: 'Softsoap', image: '/assets/fmcg-tear-labels/softsoap-hand-soap.png', accent: '#b1969b', treatment: '完整去标 · 低饱和表面' },
-  { id: '88', name: '凡士林修护霜', group: '个人护理', reference: '身体护理霜罐', brand: 'Vaseline', image: '/assets/fmcg-tear-labels/vaseline-body-care.png', accent: '#b89d87', treatment: '完整去标 · 低饱和表面' },
-  { id: '89', name: '欧莱雅洗发水', group: '个人护理', reference: '扁椭圆洗发水', brand: "L'Oréal Paris", image: '/assets/fmcg-tear-labels/loreal-shampoo.png', accent: '#83787b', treatment: '完整去标 · 低饱和表面' },
-  { id: '90', name: '妮维雅防晒乳', group: '个人护理', reference: '翻盖防晒乳', brand: 'NIVEA', image: '/assets/fmcg-tear-labels/nivea-sunscreen.png', accent: '#8da4b1', treatment: '完整去标 · 低饱和表面' },
-  { id: '91', name: 'Bounty 厨房纸', group: '纸品湿巾', reference: '厨房纸卷与纸套', brand: 'Bounty', image: '/assets/fmcg-tear-labels/bounty-paper-towels.png', accent: '#a9a18d', treatment: '完整去标 · 低饱和表面' },
-  { id: '92', name: 'Charmin 卷纸', group: '纸品湿巾', reference: '多卷卫生纸包', brand: 'Charmin', image: '/assets/fmcg-tear-labels/charmin-toilet-paper.png', accent: '#b6a1ab', treatment: '完整去标 · 低饱和表面' },
-  { id: '93', name: 'Puffs 抽纸', group: '纸品湿巾', reference: '方盒抽纸', brand: 'Puffs', image: '/assets/fmcg-tear-labels/puffs-facial-tissues.png', accent: '#9ba4b0', treatment: '完整去标 · 低饱和表面' },
-  { id: '94', name: '舒洁湿巾', group: '纸品湿巾', reference: '软抽湿巾包', brand: 'Kleenex', image: '/assets/fmcg-tear-labels/kleenex-wet-wipes.png', accent: '#9aafa7', treatment: '完整去标 · 低饱和表面' },
-  { id: '95', name: 'Dawn 洗洁精', group: '厨房清洁', reference: '透明洗洁精', brand: 'Dawn', image: '/assets/fmcg-tear-labels/dawn-dish-soap.png', accent: '#8fa5af', treatment: '完整去标 · 低饱和表面' },
-  { id: '96', name: 'Cascade 洗碗机凝珠', group: '厨房清洁', reference: '洗碗机凝珠纸盒', brand: 'Cascade', image: '/assets/fmcg-tear-labels/cascade-dishwasher-pods.png', accent: '#9aa995', treatment: '完整去标 · 低饱和表面' },
-  { id: '97', name: 'Mr. Clean 多用途清洁剂', group: '厨房清洁', reference: '扳机喷雾清洁剂', brand: 'Mr. Clean', image: '/assets/fmcg-tear-labels/mr-clean-all-purpose-cleaner.png', accent: '#949f8e', treatment: '完整去标 · 低饱和表面' },
-  { id: '98', name: 'Cif 厨房清洁乳', group: '厨房清洁', reference: '挤压式清洁乳', brand: 'Cif', image: '/assets/fmcg-tear-labels/cif-cream-cleaner.png', accent: '#ae8585', treatment: '完整去标 · 低饱和表面' },
-  { id: '99', name: 'Febreze 空气清新剂', group: '消毒收纳', reference: '空气清新剂喷雾', brand: 'Febreze', image: '/assets/fmcg-tear-labels/febreze-air-freshener.png', accent: '#9590a4', treatment: '完整去标 · 低饱和表面' },
-  { id: '100', name: 'Clorox 消毒喷雾', group: '消毒收纳', reference: '扳机消毒喷雾', brand: 'Clorox', image: '/assets/fmcg-tear-labels/clorox-disinfecting-spray.png', accent: '#a5b2a0', treatment: '完整去标 · 低饱和表面' },
-  { id: '101', name: 'Glad 保鲜袋', group: '消毒收纳', reference: '保鲜袋分配纸盒', brand: 'Glad', image: '/assets/fmcg-tear-labels/glad-food-storage-bags.png', accent: '#94a4aa', treatment: '完整去标 · 低饱和表面' },
-  { id: '102', name: 'Swiffer 除尘拖把', group: '消毒收纳', reference: '除尘工具与纸套', brand: 'Swiffer', image: '/assets/fmcg-tear-labels/swiffer-duster.png', accent: '#9696a7', treatment: '完整去标 · 低饱和表面' },
-  { id: '103', name: '可口可乐', group: '饮料食品', reference: '玻璃瓶可乐', brand: 'Coca-Cola', image: '/assets/fmcg-tear-labels/coca-cola-soft-drink.png', accent: '#9a7772', treatment: '完整去标 · 低饱和表面' },
-  { id: '104', name: 'Sprite 柠檬汽水', group: '饮料食品', reference: '柠檬青柠汽水罐', brand: 'Sprite', image: '/assets/fmcg-tear-labels/sprite-lemon-lime-soda.png', accent: '#92a699', treatment: '完整去标 · 低饱和表面' },
-  { id: '105', name: 'Fanta 橙味汽水', group: '饮料食品', reference: '橙味汽水罐', brand: 'Fanta Orange', image: '/assets/fmcg-tear-labels/fanta-orange-soda.png', accent: '#b29a84', treatment: '完整去标 · 低饱和表面' },
-  { id: '106', name: 'Aquafina 瓶装水', group: '饮料食品', reference: '细长 PET 瓶装水', brand: 'Aquafina', image: '/assets/fmcg-tear-labels/aquafina-bottled-water.png', accent: '#9caeb5', treatment: '完整去标 · 低饱和表面' },
-  { id: '107', name: '红牛能量饮料', group: '饮料食品', reference: '金属能量饮料罐', brand: 'Red Bull', image: '/assets/fmcg-tear-labels/red-bull-energy-drink.png', accent: '#9c9482', treatment: '完整去标 · 低饱和表面' },
-  { id: '108', name: '星巴克即饮咖啡', group: '饮料食品', reference: '即饮咖啡瓶', brand: 'Starbucks', image: '/assets/fmcg-tear-labels/starbucks-rtd-coffee.png', accent: '#9a8074', treatment: '完整去标 · 低饱和表面' },
-  { id: '109', name: '美禄麦芽饮料', group: '饮料食品', reference: '麦芽可可饮料罐', brand: 'Milo', image: '/assets/fmcg-tear-labels/milo-malt-drink.png', accent: '#889889', treatment: '完整去标 · 低饱和表面' },
-  { id: '110', name: '多力多滋玉米片', group: '饮料食品', reference: '三角玉米片立袋', brand: 'Doritos', image: '/assets/fmcg-tear-labels/doritos-tortilla-chips.png', accent: '#a78e78', treatment: '完整去标 · 低饱和表面' },
-  { id: '111', name: '奇多芝士膨化', group: '饮料食品', reference: '芝士膨化零食立袋', brand: 'Cheetos', image: '/assets/fmcg-tear-labels/cheetos-cheese-snacks.png', accent: '#afa388', treatment: '完整去标 · 低饱和表面' },
-  { id: '112', name: '桂格燕麦片', group: '饮料食品', reference: '燕麦圆罐', brand: 'Quaker', image: '/assets/fmcg-tear-labels/quaker-oats.png', accent: '#9ea8af', treatment: '完整去标 · 低饱和表面' },
-  { id: '113', name: 'Indomie 方便面', group: '饮料食品', reference: '方形枕式面饼袋', brand: 'Indomie', image: '/assets/fmcg-tear-labels/indomie-instant-noodles.png', accent: '#9c8279', treatment: '完整去标 · 低饱和表面' },
-  { id: '114', name: 'Ottogi 辣味方便面', group: '饮料食品', reference: '辣味方形枕式面袋', brand: 'Ottogi Jin Ramen', image: '/assets/fmcg-tear-labels/ottogi-jin-ramen.png', accent: '#9e817d', treatment: '完整去标 · 低饱和表面' },
-  { id: '115', name: 'Parle-G 饼干', group: '饮料食品', reference: '小型枕式饼干包', brand: 'Parle-G', image: '/assets/fmcg-tear-labels/parle-g-biscuits.png', accent: '#ab9b75', treatment: '完整去标 · 低饱和表面' },
-  { id: '116', name: 'Britannia Good Day 饼干', group: '饮料食品', reference: '立式饼干袋', brand: 'Good Day', image: '/assets/fmcg-tear-labels/britannia-good-day-cookies.png', accent: '#ae917b', treatment: '完整去标 · 低饱和表面' },
+  { id: '77', name: '汰渍洗衣液', group: '洗护用品', reference: '液体洗衣液', brand: 'Tide', image: '/assets/fmcg-tear-labels/tide-laundry-detergent.png', accent: '#8ea8b6', treatment: '完整去标，低饱和表面' },
+  { id: '78', name: '碧浪洗衣液', group: '洗护用品', reference: '液体洗衣液', brand: 'Ariel', image: '/assets/fmcg-tear-labels/ariel-laundry-detergent.png', accent: '#8ba5a0', treatment: '完整去标，低饱和表面' },
+  { id: '79', name: '当妮衣物柔顺剂', group: '洗护用品', reference: '衣物柔顺剂', brand: 'Downy', image: '/assets/fmcg-tear-labels/downy-fabric-softener.png', accent: '#aa9aa9', treatment: '完整去标，低饱和表面' },
+  { id: '80', name: 'Persil 洗衣液', group: '洗护用品', reference: '液体洗衣液', brand: 'Persil', image: '/assets/fmcg-tear-labels/persil-laundry-detergent.png', accent: '#6f7d75', treatment: '完整去标，低饱和表面' },
+  { id: '81', name: 'Surf 洗衣液', group: '洗护用品', reference: '洗衣液补充袋', brand: 'Surf', image: '/assets/fmcg-tear-labels/surf-laundry-detergent.png', accent: '#a198a7', treatment: '完整去标，低饱和表面' },
+  { id: '82', name: '金纺衣物柔顺剂', group: '洗护用品', reference: '衣物柔顺剂', brand: 'Comfort', image: '/assets/fmcg-tear-labels/comfort-fabric-softener.png', accent: '#9aa58e', treatment: '完整去标，低饱和表面' },
+  { id: '83', name: '欧乐 B 牙刷', group: '个人护理', reference: '透明罩卡纸牙刷', brand: 'Oral-B', image: '/assets/fmcg-tear-labels/oral-b-toothbrush.png', accent: '#7f9cab', treatment: '完整去标，低饱和表面' },
+  { id: '84', name: '吉列剃须刀', group: '个人护理', reference: '剃须刀与纸套', brand: 'Gillette', image: '/assets/fmcg-tear-labels/gillette-razor.png', accent: '#787f87', treatment: '完整去标，低饱和表面' },
+  { id: '85', name: '高露洁牙膏', group: '个人护理', reference: '软管牙膏', brand: 'Colgate', image: '/assets/fmcg-tear-labels/colgate-toothpaste.png', accent: '#a77f82', treatment: '完整去标，低饱和表面' },
+  { id: '86', name: '棕榄沐浴露', group: '个人护理', reference: '透明泵头沐浴露', brand: 'Palmolive', image: '/assets/fmcg-tear-labels/palmolive-body-wash.png', accent: '#858e75', treatment: '完整去标，低饱和表面' },
+  { id: '87', name: 'Softsoap 洗手液', group: '个人护理', reference: '按压泵洗手液', brand: 'Softsoap', image: '/assets/fmcg-tear-labels/softsoap-hand-soap.png', accent: '#b1969b', treatment: '完整去标，低饱和表面' },
+  { id: '88', name: '凡士林修护霜', group: '个人护理', reference: '身体护理霜罐', brand: 'Vaseline', image: '/assets/fmcg-tear-labels/vaseline-body-care.png', accent: '#b89d87', treatment: '完整去标，低饱和表面' },
+  { id: '89', name: '欧莱雅洗发水', group: '个人护理', reference: '扁椭圆洗发水', brand: "L'Oréal Paris", image: '/assets/fmcg-tear-labels/loreal-shampoo.png', accent: '#83787b', treatment: '完整去标，低饱和表面' },
+  { id: '90', name: '妮维雅防晒乳', group: '个人护理', reference: '翻盖防晒乳', brand: 'NIVEA', image: '/assets/fmcg-tear-labels/nivea-sunscreen.png', accent: '#8da4b1', treatment: '完整去标，低饱和表面' },
+  { id: '91', name: 'Bounty 厨房纸', group: '纸品湿巾', reference: '厨房纸卷与纸套', brand: 'Bounty', image: '/assets/fmcg-tear-labels/bounty-paper-towels.png', accent: '#a9a18d', treatment: '完整去标，低饱和表面' },
+  { id: '92', name: 'Charmin 卷纸', group: '纸品湿巾', reference: '多卷卫生纸包', brand: 'Charmin', image: '/assets/fmcg-tear-labels/charmin-toilet-paper.png', accent: '#b6a1ab', treatment: '完整去标，低饱和表面' },
+  { id: '93', name: 'Puffs 抽纸', group: '纸品湿巾', reference: '方盒抽纸', brand: 'Puffs', image: '/assets/fmcg-tear-labels/puffs-facial-tissues.png', accent: '#9ba4b0', treatment: '完整去标，低饱和表面' },
+  { id: '94', name: '舒洁湿巾', group: '纸品湿巾', reference: '软抽湿巾包', brand: 'Kleenex', image: '/assets/fmcg-tear-labels/kleenex-wet-wipes.png', accent: '#9aafa7', treatment: '完整去标，低饱和表面' },
+  { id: '95', name: 'Dawn 洗洁精', group: '厨房清洁', reference: '透明洗洁精', brand: 'Dawn', image: '/assets/fmcg-tear-labels/dawn-dish-soap.png', accent: '#8fa5af', treatment: '完整去标，低饱和表面' },
+  { id: '96', name: 'Cascade 洗碗机凝珠', group: '厨房清洁', reference: '洗碗机凝珠纸盒', brand: 'Cascade', image: '/assets/fmcg-tear-labels/cascade-dishwasher-pods.png', accent: '#9aa995', treatment: '完整去标，低饱和表面' },
+  { id: '97', name: 'Mr. Clean 多用途清洁剂', group: '厨房清洁', reference: '扳机喷雾清洁剂', brand: 'Mr. Clean', image: '/assets/fmcg-tear-labels/mr-clean-all-purpose-cleaner.png', accent: '#949f8e', treatment: '完整去标，低饱和表面' },
+  { id: '98', name: 'Cif 厨房清洁乳', group: '厨房清洁', reference: '挤压式清洁乳', brand: 'Cif', image: '/assets/fmcg-tear-labels/cif-cream-cleaner.png', accent: '#ae8585', treatment: '完整去标，低饱和表面' },
+  { id: '99', name: 'Febreze 空气清新剂', group: '消毒收纳', reference: '空气清新剂喷雾', brand: 'Febreze', image: '/assets/fmcg-tear-labels/febreze-air-freshener.png', accent: '#9590a4', treatment: '完整去标，低饱和表面' },
+  { id: '100', name: 'Clorox 消毒喷雾', group: '消毒收纳', reference: '扳机消毒喷雾', brand: 'Clorox', image: '/assets/fmcg-tear-labels/clorox-disinfecting-spray.png', accent: '#a5b2a0', treatment: '完整去标，低饱和表面' },
+  { id: '101', name: 'Glad 保鲜袋', group: '消毒收纳', reference: '保鲜袋分配纸盒', brand: 'Glad', image: '/assets/fmcg-tear-labels/glad-food-storage-bags.png', accent: '#94a4aa', treatment: '完整去标，低饱和表面' },
+  { id: '102', name: 'Swiffer 除尘拖把', group: '消毒收纳', reference: '除尘工具与纸套', brand: 'Swiffer', image: '/assets/fmcg-tear-labels/swiffer-duster.png', accent: '#9696a7', treatment: '完整去标，低饱和表面' },
+  { id: '103', name: '可口可乐', group: '饮料食品', reference: '玻璃瓶可乐', brand: 'Coca-Cola', image: '/assets/fmcg-tear-labels/coca-cola-soft-drink.png', accent: '#9a7772', treatment: '完整去标，低饱和表面' },
+  { id: '104', name: 'Sprite 柠檬汽水', group: '饮料食品', reference: '柠檬青柠汽水罐', brand: 'Sprite', image: '/assets/fmcg-tear-labels/sprite-lemon-lime-soda.png', accent: '#92a699', treatment: '完整去标，低饱和表面' },
+  { id: '105', name: 'Fanta 橙味汽水', group: '饮料食品', reference: '橙味汽水罐', brand: 'Fanta Orange', image: '/assets/fmcg-tear-labels/fanta-orange-soda.png', accent: '#b29a84', treatment: '完整去标，低饱和表面' },
+  { id: '106', name: 'Aquafina 瓶装水', group: '饮料食品', reference: '细长 PET 瓶装水', brand: 'Aquafina', image: '/assets/fmcg-tear-labels/aquafina-bottled-water.png', accent: '#9caeb5', treatment: '完整去标，低饱和表面' },
+  { id: '107', name: '红牛能量饮料', group: '饮料食品', reference: '金属能量饮料罐', brand: 'Red Bull', image: '/assets/fmcg-tear-labels/red-bull-energy-drink.png', accent: '#9c9482', treatment: '完整去标，低饱和表面' },
+  { id: '108', name: '星巴克即饮咖啡', group: '饮料食品', reference: '即饮咖啡瓶', brand: 'Starbucks', image: '/assets/fmcg-tear-labels/starbucks-rtd-coffee.png', accent: '#9a8074', treatment: '完整去标，低饱和表面' },
+  { id: '109', name: '美禄麦芽饮料', group: '饮料食品', reference: '麦芽可可饮料罐', brand: 'Milo', image: '/assets/fmcg-tear-labels/milo-malt-drink.png', accent: '#889889', treatment: '完整去标，低饱和表面' },
+  { id: '110', name: '多力多滋玉米片', group: '饮料食品', reference: '三角玉米片立袋', brand: 'Doritos', image: '/assets/fmcg-tear-labels/doritos-tortilla-chips.png', accent: '#a78e78', treatment: '完整去标，低饱和表面' },
+  { id: '111', name: '奇多芝士膨化', group: '饮料食品', reference: '芝士膨化零食立袋', brand: 'Cheetos', image: '/assets/fmcg-tear-labels/cheetos-cheese-snacks.png', accent: '#afa388', treatment: '完整去标，低饱和表面' },
+  { id: '112', name: '桂格燕麦片', group: '饮料食品', reference: '燕麦圆罐', brand: 'Quaker', image: '/assets/fmcg-tear-labels/quaker-oats.png', accent: '#9ea8af', treatment: '完整去标，低饱和表面' },
+  { id: '113', name: 'Indomie 方便面', group: '饮料食品', reference: '方形枕式面饼袋', brand: 'Indomie', image: '/assets/fmcg-tear-labels/indomie-instant-noodles.png', accent: '#9c8279', treatment: '完整去标，低饱和表面' },
+  { id: '114', name: 'Ottogi 辣味方便面', group: '饮料食品', reference: '辣味方形枕式面袋', brand: 'Ottogi Jin Ramen', image: '/assets/fmcg-tear-labels/ottogi-jin-ramen.png', accent: '#9e817d', treatment: '完整去标，低饱和表面' },
+  { id: '115', name: 'Parle-G 饼干', group: '饮料食品', reference: '小型枕式饼干包', brand: 'Parle-G', image: '/assets/fmcg-tear-labels/parle-g-biscuits.png', accent: '#ab9b75', treatment: '完整去标，低饱和表面' },
+  { id: '116', name: 'Britannia Good Day 饼干', group: '饮料食品', reference: '立式饼干袋', brand: 'Good Day', image: '/assets/fmcg-tear-labels/britannia-good-day-cookies.png', accent: '#ae917b', treatment: '完整去标，低饱和表面' },
 ].map((product) => (newFmcgProductIds.has(product.id) ? { ...product, collectionGroup: '新增快销品' } : product));
 
 const groups = ['全部', '合集', '新增快销品', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品', '宝洁公司', '雀巢公司', '百事公司', '联合利华', '茅台', '伊利', '品牌补充'];
@@ -313,13 +313,13 @@ const categorySummaries: CategorySummary[] = [
 ];
 
 const newFmcgCollections: CollectionSummary[] = [
-  { id: 'fmcg-laundry', group: '新增快销品', label: '新增快销品 · 洗护', stillLife: '/assets/category-still-life/15-fmcg-laundry-still-life.png', description: '6 件新增洗护素材', accent: '#8ea8b6', itemIds: ['77', '78', '79', '80', '81', '82'] },
-  { id: 'fmcg-personal-care', group: '新增快销品', label: '新增快销品 · 个人护理', stillLife: '/assets/category-still-life/16-fmcg-personal-care-still-life.png', description: '8 件新增个人护理素材', accent: '#a77f82', itemIds: ['83', '84', '85', '86', '87', '88', '89', '90'] },
-  { id: 'fmcg-paper-wipes', group: '新增快销品', label: '新增快销品 · 纸品湿巾', stillLife: '/assets/category-still-life/17-fmcg-paper-wipes-still-life.png', description: '4 件新增纸品湿巾素材', accent: '#9ba4b0', itemIds: ['91', '92', '93', '94'] },
-  { id: 'fmcg-kitchen-cleaning', group: '新增快销品', label: '新增快销品 · 厨房清洁', stillLife: '/assets/category-still-life/18-fmcg-kitchen-cleaning-still-life.png', description: '4 件新增厨房清洁素材', accent: '#949f8e', itemIds: ['95', '96', '97', '98'] },
-  { id: 'fmcg-disinfect-storage', group: '新增快销品', label: '新增快销品 · 消毒收纳', stillLife: '/assets/category-still-life/19-fmcg-disinfect-storage-still-life.png', description: '4 件新增消毒收纳素材', accent: '#9696a7', itemIds: ['99', '100', '101', '102'] },
-  { id: 'fmcg-beverages', group: '新增快销品', label: '新增快销品 · 饮料', stillLife: '/assets/category-still-life/20-fmcg-beverages-still-life.png', description: '7 件新增饮料素材', accent: '#9a8074', itemIds: ['103', '104', '105', '106', '107', '108', '109'] },
-  { id: 'fmcg-snacks-food', group: '新增快销品', label: '新增快销品 · 零食食品', stillLife: '/assets/category-still-life/21-fmcg-snacks-food-still-life.png', description: '7 件新增零食食品素材', accent: '#a78e78', itemIds: ['110', '111', '112', '113', '114', '115', '116'] },
+  { id: 'fmcg-laundry', group: '新增快销品', label: '新增快销品：洗护', stillLife: '/assets/category-still-life/15-fmcg-laundry-still-life.png', description: '6 件新增洗护素材', accent: '#8ea8b6', itemIds: ['77', '78', '79', '80', '81', '82'] },
+  { id: 'fmcg-personal-care', group: '新增快销品', label: '新增快销品：个人护理', stillLife: '/assets/category-still-life/16-fmcg-personal-care-still-life.png', description: '8 件新增个人护理素材', accent: '#a77f82', itemIds: ['83', '84', '85', '86', '87', '88', '89', '90'] },
+  { id: 'fmcg-paper-wipes', group: '新增快销品', label: '新增快销品：纸品湿巾', stillLife: '/assets/category-still-life/17-fmcg-paper-wipes-still-life.png', description: '4 件新增纸品湿巾素材', accent: '#9ba4b0', itemIds: ['91', '92', '93', '94'] },
+  { id: 'fmcg-kitchen-cleaning', group: '新增快销品', label: '新增快销品：厨房清洁', stillLife: '/assets/category-still-life/18-fmcg-kitchen-cleaning-still-life.png', description: '4 件新增厨房清洁素材', accent: '#949f8e', itemIds: ['95', '96', '97', '98'] },
+  { id: 'fmcg-disinfect-storage', group: '新增快销品', label: '新增快销品：消毒收纳', stillLife: '/assets/category-still-life/19-fmcg-disinfect-storage-still-life.png', description: '4 件新增消毒收纳素材', accent: '#9696a7', itemIds: ['99', '100', '101', '102'] },
+  { id: 'fmcg-beverages', group: '新增快销品', label: '新增快销品：饮料', stillLife: '/assets/category-still-life/20-fmcg-beverages-still-life.png', description: '7 件新增饮料素材', accent: '#9a8074', itemIds: ['103', '104', '105', '106', '107', '108', '109'] },
+  { id: 'fmcg-snacks-food', group: '新增快销品', label: '新增快销品：零食食品', stillLife: '/assets/category-still-life/21-fmcg-snacks-food-still-life.png', description: '7 件新增零食食品素材', accent: '#a78e78', itemIds: ['110', '111', '112', '113', '114', '115', '116'] },
 ];
 
 const collectionSummaries: CollectionSummary[] = [
@@ -335,8 +335,8 @@ const getShareTitle = (target: ShareTarget) => target.type === 'product' ? targe
 const getShareImage = (target: ShareTarget) => target.type === 'product' ? target.product.image : target.collection.stillLife;
 const getShareSeries = (target: ShareTarget) => target.type === 'product' ? target.product.group : '桌面静物合集';
 const getShareDescription = (target: ShareTarget) => target.type === 'product'
-  ? `${target.product.group} · ${target.product.brand}参考 · ${target.product.reference}`
-  : `${target.collection.description} · 本地 PNG 素材`;
+  ? `${target.product.group}，${target.product.brand}参考，${target.product.reference}`
+  : `${target.collection.description}，本地 PNG 素材`;
 const getShareUrl = (target: ShareTarget) => {
   if (typeof window === 'undefined') return '';
   const id = target.type === 'product' ? target.product.id : target.collection.id;
@@ -388,6 +388,8 @@ export default function Home() {
   const [shareQrDataUrl, setShareQrDataUrl] = useState('');
   const [shareFeedback, setShareFeedback] = useState('');
   const [isSavingShareCard, setIsSavingShareCard] = useState(false);
+  const [isDownloadingFavorites, setIsDownloadingFavorites] =
+    useState(false);
   const [feedRenderState, setFeedRenderState] = useState({
     key: '',
     limit: INITIAL_FEED_ITEMS,
@@ -748,20 +750,27 @@ export default function Home() {
   };
 
   const downloadFavorites = () => {
-    favoriteIds
+    if (isDownloadingFavorites || favoriteIds.length === 0) return;
+    const targets = favoriteIds
       .map((id) => products.find((product) => product.id === id))
-      .filter((product): product is Product => Boolean(product))
-      .forEach((product, index) => {
-        window.setTimeout(() => {
-          const anchor = document.createElement('a');
-          anchor.href = getAssetUrl(product.image);
-          anchor.download =
-            'daily-necessities-' + product.id + '-' + product.name + '.png';
-          document.body.appendChild(anchor);
-          anchor.click();
-          anchor.remove();
-        }, index * 160);
-      });
+      .filter((product): product is Product => Boolean(product));
+    if (targets.length === 0) return;
+    setIsDownloadingFavorites(true);
+    targets.forEach((product, index) => {
+      window.setTimeout(() => {
+        const anchor = document.createElement('a');
+        anchor.href = getAssetUrl(product.image);
+        anchor.download =
+          'daily-necessities-' + product.id + '-' + product.name + '.png';
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }, index * 160);
+    });
+    window.setTimeout(
+      () => setIsDownloadingFavorites(false),
+      targets.length * 160 + 600,
+    );
   };
 
   const copyShareLink = async () => {
@@ -865,7 +874,7 @@ export default function Home() {
       context.fillStyle = '#878c84';
       context.font =
         '18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif';
-      context.fillText('撕标签 · 本地 PNG 素材库', 56, 1078);
+      context.fillText('撕标签，本地 PNG 素材库', 56, 1078);
 
       const qrImage = await loadImage(shareQrDataUrl);
       const qrSize = 132;
@@ -939,12 +948,18 @@ export default function Home() {
               className="btn-top-download"
               type="button"
               onClick={downloadFavorites}
-              disabled={favoriteIds.length === 0}
+              disabled={favoriteIds.length === 0 || isDownloadingFavorites}
               aria-label={`下载收藏的 ${favoriteIds.length} 张素材`}
             >
               <Download size={16} />
               <span>
-                下载收藏 <strong>{favoriteIds.length}</strong>
+                {isDownloadingFavorites ? (
+                  '正在下载…'
+                ) : (
+                  <>
+                    下载收藏 <strong>{favoriteIds.length}</strong>
+                  </>
+                )}
               </span>
             </button>
           </div>
@@ -972,7 +987,7 @@ export default function Home() {
             )}
           </div>
           <p className="wander-inventory">
-            <strong>{products.length}</strong> 张产品素材 <span>·</span>{' '}
+            <strong>{products.length}</strong> 张产品素材，{' '}
             {collectionSummaries.length} 组静物合集
           </p>
         </div>
@@ -1046,7 +1061,7 @@ export default function Home() {
                     : activeGroup}
             <span className="status-count">
               {' '}
-              · {directoryOpen ? categorySummaries.length : visibleCount}{' '}
+              ，共 {directoryOpen ? categorySummaries.length : visibleCount}{' '}
               {directoryOpen
                 ? '个分类'
                 : isCollectionView
@@ -1104,10 +1119,10 @@ export default function Home() {
                   loading={index < 2 ? 'eager' : 'lazy'}
                 />
                 <span>
-                  <small>COLLECTION {String(index + 1).padStart(2, '0')}</small>
+                  <small>合集 {String(index + 1).padStart(2, '0')}</small>
                   <strong>{summary.group}</strong>
                   <span>
-                    {getProductCount(summary.group)} 张素材 ·{' '}
+                    {getProductCount(summary.group)} 张素材，{' '}
                     {summary.description}
                   </span>
                 </span>
@@ -1178,7 +1193,7 @@ export default function Home() {
                               </span>
                               <span className="feed-card-footer">
                                 <span className="author-name">
-                                  桌面静物 · {itemCount} 件素材
+                                  桌面静物，{itemCount} 件素材
                                 </span>
                                 <span className="card-arrow" aria-hidden="true">
                                   ↗
@@ -1236,7 +1251,7 @@ export default function Home() {
                             </span>
                             <span className="feed-card-footer">
                               <span className="author-name">
-                                #{product.id} · PNG
+                                #{product.id} PNG
                               </span>
                               <span className="card-category">
                                 {product.collectionGroup ?? product.group}
@@ -1321,7 +1336,7 @@ export default function Home() {
         <span>
           撕标签 <small>v1.1.4</small>
         </span>
-        <span>无品牌素材 · 原图 PNG</span>
+        <span>无品牌素材，原图 PNG</span>
         <a
           href="https://github.com/holynova/daily-necessities-library"
           target="_blank"
@@ -1371,7 +1386,7 @@ export default function Home() {
         >
           <Bookmark size={21} />
           <span>
-            收藏{favoriteIds.length ? ` · ${favoriteIds.length}` : ''}
+            收藏{favoriteIds.length ? ` ${favoriteIds.length}` : ''}
           </span>
         </button>
       </nav>
@@ -1399,7 +1414,7 @@ export default function Home() {
                     ? '桌面静物合集'
                     : '撕标签'}
                 </span>
-                <span className="note-author-divider">·</span>
+                <span className="note-author-divider">—</span>
                 <span className="note-author-sub">
                   {String(modalIndex + 1).padStart(2, '0')} /{' '}
                   {String(modalListCount).padStart(2, '0')}
@@ -1486,8 +1501,8 @@ export default function Home() {
                   <div>
                     <p className="note-kicker">
                       {selectedType === 'collection'
-                        ? 'STILL LIFE / COLLECTION'
-                        : (selectedProduct?.group ?? 'PRODUCT') + ' / ASSET'}
+                        ? '桌面静物 / 合集'
+                        : (selectedProduct?.group ?? '产品') + ' / 产品'}
                     </p>
                     <h2 className="note-title">
                       {selectedType === 'collection'
@@ -1529,7 +1544,7 @@ export default function Home() {
 
                 <p className="note-desc">
                   {selectedType === 'collection'
-                    ? '桌面静物合集 · ' +
+                    ? '桌面静物合集：' +
                       (selectedCollection?.description ?? '本地静物素材')
                     : '去标签、纯色白底的日常产品素材，适合直接用于界面设计、拼贴与提案。'}
                 </p>
@@ -1549,9 +1564,9 @@ export default function Home() {
                     <span>参考</span>
                     <strong>
                       {selectedType === 'collection'
-                        ? '桌面静物 · 3:2 PNG'
+                        ? '桌面静物，3:2 PNG'
                         : (selectedProduct?.brand ?? '通用产品') +
-                          ' · ' +
+                          '，' +
                           (selectedProduct?.reference ?? '纯色表面')}
                     </strong>
                   </div>
@@ -1568,7 +1583,7 @@ export default function Home() {
             </div>
 
             <div className="note-bottom-bar">
-              <span className="note-bottom-hint">本地素材 · 点击下载</span>
+              <span className="note-bottom-hint">本地 PNG 素材，点击下载</span>
               <button
                 className="note-bottom-action note-share-action"
                 type="button"
@@ -1667,7 +1682,7 @@ export default function Home() {
               <div className="share-card-footer">
                 <div className="share-card-footer-copy">
                   <strong>扫码查看素材</strong>
-                  <span>撕标签 · 本地 PNG 素材库</span>
+                  <span>撕标签，本地 PNG 素材库</span>
                 </div>
                 <div className="share-card-qr-wrap">
                   {shareQrDataUrl ? (
