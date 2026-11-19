@@ -12,12 +12,12 @@
   <a href="https://holynova.github.io/daily-necessities-library/">Mirror</a>
 </p>
 
-Tear Labels is a library of unbranded daily-necessity images: 116 label-free product PNGs plus 21 desktop still-life sets. Logos, trademarks, and label text are all removed — only the product's shape, material, and color remain, on a uniform white product-photography background, ready to use. The Wander interface browses them with olive category tags, a two-column waterfall, and bottom navigation, with collections first on the homepage.
+Tear Labels is a library of unbranded daily-necessity images: 116 label-free product PNGs plus 21 desktop still-life sets. Logos, trademarks, and label text are all removed — only the product's shape, material, and color remain, on a uniform white product-photography background, ready to use. The homepage shows still-life collections first. Switch between all images and collections above the gallery, or open Categories from the bottom navigation.
 
 ## Screenshots
 
 <p align="center">
-  <img src="./assets/readme/screenshot-mobile.jpg" width="300" alt="Wander mobile homepage: 116 product images and 21 still-life sets, category tags and a two-column waterfall">
+  <img src="./assets/readme/screenshot-mobile.jpg" width="300" alt="Wander mobile homepage: 116 product images and 21 still-life sets, gallery shortcuts and a two-column masonry grid">
   <img src="./assets/readme/still-life-sample.jpg" width="400" alt="Sample still-life set: laundry care group — a blue detergent bottle, an orange detergent bag, a small white bottle and laundry pods">
 </p>
 

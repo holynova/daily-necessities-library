@@ -12,12 +12,12 @@
   <a href="https://holynova.github.io/daily-necessities-library/">备用镜像</a>
 </p>
 
-撕标签是一个去品牌日用品素材库：116 张去标签产品 PNG 与 21 组桌面静物合集。包装上的 Logo、商标与标签文字全部去掉，只留下产品的形状、材质与颜色，统一纯白商品摄影底，拿来就能用。Wander 界面以橄榄绿分类标签、双列瀑布流与底部导航浏览，首页合集优先。
+撕标签是一个去品牌日用品素材库：116 张去标签产品 PNG 与 21 组桌面静物合集。包装上的 Logo、商标与标签文字全部去掉，只留下产品的形状、材质与颜色，统一纯白商品摄影底，拿来就能用。首页优先展示桌面静物合集。顶部可切换「全部」与「合集」，具体分类从底部「分类」进入。
 
 ## 截图
 
 <p align="center">
-  <img src="./assets/readme/screenshot-mobile.jpg" width="300" alt="Wander 移动端首页：116 张产品素材与 21 组静物合集，分类标签与双列瀑布流">
+  <img src="./assets/readme/screenshot-mobile.jpg" width="300" alt="Wander 移动端首页：116 张产品素材与 21 组静物合集，全部与合集入口、双列瀑布流">
   <img src="./assets/readme/still-life-sample.jpg" width="400" alt="静物合集示例：洗护用品组，蓝色洗衣液瓶、橙色洗衣粉袋、白色小瓶与洗衣凝珠">
 </p>
 

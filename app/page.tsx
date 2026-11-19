@@ -292,7 +292,6 @@ const products: Product[] = [
   { id: '116', name: 'Britannia Good Day 饼干', group: '饮料食品', reference: '立式饼干袋', brand: 'Good Day', image: '/assets/fmcg-tear-labels/britannia-good-day-cookies.png', accent: '#ae917b', treatment: '完整去标 · 低饱和表面' },
 ].map((product) => (newFmcgProductIds.has(product.id) ? { ...product, collectionGroup: '新增快销品' } : product));
 
-const groups = ['全部', '合集', '新增快销品', '洗护用品', '个人护理', '纸品湿巾', '厨房清洁', '消毒收纳', '家用电器', '饮料食品', '宝洁公司', '雀巢公司', '百事公司', '联合利华', '茅台', '伊利', '品牌补充'];
 
 const categorySummaries: CategorySummary[] = [
   { group: '洗护用品', stillLife: '/assets/category-still-life/01-laundry-care-still-life.png', description: '衣物清洁与护理', accent: '#168bd1' },
@@ -410,12 +409,7 @@ export default function Home() {
     }
   });
 
-  const navGroups = [
-    '全部',
-    '合集',
-    ...groups.filter((group) => group !== '全部' && group !== '合集'),
-    '我的收藏',
-  ];
+  const galleryTabs = ['全部', '合集'];
   const isCollectionView = activeGroup === '合集';
   const isFavoritesView = activeGroup === '我的收藏';
   const query = searchTerm.trim().toLowerCase();
@@ -921,7 +915,6 @@ export default function Home() {
               <Grid2X2 size={21} strokeWidth={1.6} />
             </span>
             <span className="brand-title">撕标签</span>
-            <span className="brand-en">TEAR LABELS</span>
           </button>
           <div className="header-tools">
             <a
@@ -951,7 +944,6 @@ export default function Home() {
         </div>
         <div className="wander-intro">
           <div>
-            <p className="wander-eyebrow">THE BEAUTY IN EVERYDAY THINGS</p>
             <h1>
               {directoryOpen
                 ? '从喜欢的分类开始。'
@@ -961,24 +953,15 @@ export default function Home() {
                     ? '一起看，换一种灵感。'
                     : '去掉标签，留下形状、材质和一点生活的美。'}
             </h1>
-            {(directoryOpen || isFavoritesView || isCollectionView) && (
-            <p className="wander-description">
-              {directoryOpen
-                ? '按品类和专题，找到合适的素材。'
-                : isFavoritesView
-                  ? '你的私人素材夹，下次灵感从这里开始。'
-                  : '去掉标签，留下形状、材质和一点生活的美。'}
-            </p>
-            )}
           </div>
           <p className="wander-inventory">
             <strong>{products.length}</strong> 张产品素材 <span>·</span>{' '}
             {collectionSummaries.length} 组静物合集
           </p>
         </div>
-        <label className="search-capsule">
+        <div className="search-capsule">
           <Search className="search-icon" size={18} aria-hidden="true" />
-          <span className="sr-only">搜索日用品素材</span>
+          <label className="sr-only" htmlFor="search-input">搜索日用品素材</label>
           <input
             id="search-input"
             type="search"
@@ -999,35 +982,29 @@ export default function Home() {
             >
               <X size={15} />
             </button>
-          ) : (
-            <span className="search-caption" aria-hidden="true">
-              找到一份灵感
-            </span>
-          )}
-        </label>
+          ) : null}
+        </div>
         <div className="series-tabs-wrap">
-          <nav className="series-tabs" aria-label="素材分类">
-            {navGroups
-              .filter((group) => group !== '我的收藏')
-              .map((group) => (
-                <button
-                  className={
-                    'series-tab' +
-                    (!directoryOpen && activeGroup === group ? ' active' : '')
-                  }
-                  type="button"
-                  key={group}
-                  aria-pressed={!directoryOpen && activeGroup === group}
-                  onClick={() => {
-                    setActiveGroup(group);
-                    setDirectoryOpen(false);
-                    setSearchTerm('');
-                    setModalOpen(false);
-                  }}
-                >
-                  <span className="tab-text">{group}</span>
-                </button>
-              ))}
+          <nav className="series-tabs" aria-label="浏览范围">
+            {galleryTabs.map((group) => (
+              <button
+                className={
+                  'series-tab' +
+                  (!directoryOpen && activeGroup === group ? ' active' : '')
+                }
+                type="button"
+                key={group}
+                aria-pressed={!directoryOpen && activeGroup === group}
+                onClick={() => {
+                  setActiveGroup(group);
+                  setDirectoryOpen(false);
+                  setSearchTerm('');
+                  setModalOpen(false);
+                }}
+              >
+                <span className="tab-text">{group}</span>
+              </button>
+            ))}
           </nav>
         </div>
       </header>
@@ -1042,7 +1019,7 @@ export default function Home() {
                 : isFavoritesView
                   ? '我的收藏'
                   : activeGroup === '全部'
-                    ? '为你发现'
+                    ? '全部素材'
                     : activeGroup}
             <span className="status-count">
               {' '}
@@ -1068,19 +1045,8 @@ export default function Home() {
                 <option>名称</option>
               </select>
             </label>
-          ) : (
-            <span className="collection-caption">看见日常的另一面</span>
-          )}
+          ) : null}
         </div>
-
-        {query ? (
-          <div className="search-result-line">
-            <span>正在搜索 “{searchTerm}”</span>
-            <button type="button" onClick={clearSearch}>
-              清除
-            </button>
-          </div>
-        ) : null}
 
         {directoryOpen ? (
           <div className="category-directory">
@@ -1294,9 +1260,6 @@ export default function Home() {
             />
           </>
         ) : null}
-        {!directoryOpen && visibleCount > 0 && !hasMoreFeedItems ? (
-          <p className="feed-end">这一页的日常，已经看完了。</p>
-        ) : null}
         {!directoryOpen && visibleCount === 0 ? (
           <div className="empty-state">
             <span className="empty-symbol" aria-hidden="true">
@@ -1319,7 +1282,7 @@ export default function Home() {
 
       <footer className="wander-footer">
         <span>
-          撕标签 <small>v1.1.4</small>
+          撕标签 <small>v1.1.5</small>
         </span>
         <span>无品牌素材 · 原图 PNG</span>
         <a
